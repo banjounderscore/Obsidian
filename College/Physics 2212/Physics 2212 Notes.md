@@ -1,4 +1,4 @@
-# Physics 2212 — Electricity & Magnetism: Comprehensive Notes (Weeks 1–5)
+# Physics 2212A — Electricity & Magnetism: Comprehensive Notes (Weeks 1–5)
 
 *2026-09-22*
 
@@ -37,10 +37,10 @@ The cross ("vector") product of two vectors is itself a vector; it appears later
 **Coulomb's Law.** The force that point charge $q_1$ at $\vec r_1$ exerts on point charge $q_2$ at $\vec r_2$:
 
 $$
-\vec F_{21} = \frac{q_1 q_2}{4\pi\epsilon_0}\, \frac{\vec r_2-\vec r_1}{|\vec r_2-\vec r_1|^3} = -\vec F_{12}
+\vec F_{21} = k\,q_1 q_2\, \frac{\vec r_2-\vec r_1}{|\vec r_2-\vec r_1|^3} = -\vec F_{12}
 $$
 
-with Coulomb's constant $k = 1/(4\pi\epsilon_0) = 9\times10^9$ N·m²/C². Magnitude, with $R = |\vec r_2-\vec r_1|$:
+with Coulomb's constant $k = 9\times10^9$ N·m²/C². Magnitude, with $R = |\vec r_2-\vec r_1|$:
 
 $$
 |\vec F| = \frac{k|q_1q_2|}{R^2}
@@ -53,6 +53,34 @@ An inverse-square law, just like Newton's law of gravitation. Like charges repel
 $$
 \vec F_Q = \vec F_{Q1}+\vec F_{Q2}+\cdots+\vec F_{QN}
 $$
+
+**Useful approximation: the binomial approximation.** For any real exponent $n$ and any small $\epsilon$ ($|\epsilon| \ll 1$):
+
+$$
+(1+\epsilon)^n \approx 1+n\epsilon
+$$
+
+This comes from truncating the full binomial series $(1+\epsilon)^n = 1+n\epsilon+\frac{n(n-1)}{2!}\epsilon^2+\cdots$ after the first-order term, since every higher-order term is smaller by an extra factor of $\epsilon$. It works for any $n$ — positive, negative, fractional — not just positive integers, and it is the single most useful trick for taking a "far away" or "very close" limit anywhere in this course.
+
+**How to use it, step by step.**
+1. Identify a large quantity (call it $d$) and a small quantity (call it $s$), with $d \gg s$.
+2. Force whatever expression you have into the form $(\text{big})^n(1+\epsilon)^n$ by factoring the large quantity out of every term, leaving $\epsilon = \pm s/d$ (or similar) as the leftover small ratio.
+3. Replace $(1+\epsilon)^n$ with $1+n\epsilon$.
+4. Distribute and simplify — the leading (zeroth-order) term is often what you already knew, and the interesting physics is in the $n\epsilon$ correction term.
+
+**Worked example: the on-axis dipole field, redone with this tool.** Starting from Section 3's exact expression and factoring $r$ out of each denominator, $(r\mp s/2)^{-2} = r^{-2}(1\mp s/2r)^{-2}$. Apply the rule with $n=-2$ and $\epsilon=\mp s/(2r)$:
+
+$$
+\left(1-\frac{s}{2r}\right)^{-2} \approx 1+2\cdot\frac{s}{2r} = 1+\frac{s}{r}, \qquad \left(1+\frac{s}{2r}\right)^{-2} \approx 1-2\cdot\frac{s}{2r} = 1-\frac{s}{r}
+$$
+
+$$
+\vec E_\parallel(\vec r) = \frac{kq}{r^2}\left[\left(1+\frac{s}{r}\right)-\left(1-\frac{s}{r}\right)\right]\hat r = \frac{kq}{r^2}\cdot\frac{2s}{r}\,\hat r = k\frac{2qs}{r^3}\hat r = k\frac{2\vec p}{r^3}
+$$
+
+matching Section 3 exactly — the binomial tool is just a faster, more systematic way to get there than combining the two fractions by hand and canceling.
+
+**Where else this appears in these notes.** The point-charge limit of the disk's potential (Section 11.2) is the $n=1/2$ case of the same rule, applied to $\sqrt{z^2+R^2}=|z|(1+R^2/z^2)^{1/2}\approx|z|\left(1+\tfrac{1}{2}\tfrac{R^2}{z^2}\right)$. Any time you see a "far field" ($r \gg$ the object's size) or "close-up" limit taken in these notes, this is the tool doing the work under the hood.
 
 ## 2. The Electric Field
 
@@ -565,43 +593,79 @@ The lesson: each term uses the straight-line distance from that specific charge 
 
 ## 14. Quick-Reference Formula Sheet
 
-Constants: $e = 1.6\times10^{-19}$ C, $k = 1/(4\pi\epsilon_0) = 9\times10^9$ N·m²/C².
+Constants: $e = 1.6\times10^{-19}$ C, $k = 9\times10^9$ N·m²/C².
+
+### 14.1 Coulomb's Law, Fields, and Forces
 
 | Concept | Formula |
 | --- | --- |
-| Coulomb's Law | $\vec F_{21} = \dfrac{q_1q_2}{4\pi\epsilon_0}\dfrac{\vec r_2-\vec r_1}{\lVert\vec r_2-\vec r_1\rVert^3}$ |
+| Coulomb's Law | $\vec F_{21} = kq_1q_2\,\dfrac{\vec r_2-\vec r_1}{\lVert\vec r_2-\vec r_1\rVert^3}$ |
 | Field of a point charge | $\vec E(\vec r) = \dfrac{kq}{r^2}\hat r$ |
 | Force from a field | $\vec F = Q\vec E$ |
 | Far-field, net charge $Q$ | $\vec E \approx \dfrac{kQ}{r^2}\hat r$, for $r\gg s$ |
-| Dipole moment | $\vec p = qs$ (points $-q\to+q$); general: $\vec p=\sum q_k\vec r_k$ |
-| Dipole field, on-axis | $\vec E_\parallel \approx k\dfrac{2\vec p}{r^3}$ |
-| Dipole field, ⊥ bisector | $\vec E_\perp \approx -k\dfrac{\vec p}{r^3}$ |
-| Dipole field, general point | $\vec E(\vec r) = k\dfrac{3(\vec p\cdot\hat r)\hat r-\vec p}{r^3}$ |
+
+### 14.2 Electric Dipole
+
+| Concept                     | Formula                                                              |
+| --------------------------- | -------------------------------------------------------------------- |
+| Dipole moment               | $\vec p = qs$ (points $-q\to+q$); general: $\vec p=\sum q_k\vec r_k$ |
+| Dipole field, on-axis       | $\vec E_\parallel \approx k\dfrac{2\vec p}{r^3}$                     |
+| Dipole field, ⊥ bisector    | $\vec E_\perp \approx -k\dfrac{\vec p}{r^3}$                         |
+| Dipole field, general point | $\vec E(\vec r) = k\dfrac{3(\vec p\cdot\hat r)\hat r-\vec p}{r^3}$   |
+
+### 14.3 Polarization, Conductors, and Insulators
+
+| Concept | Formula |
+| --- | --- |
 | Induced dipole moment | $\vec p = \alpha\vec E_{ext}$ |
-| Field inside a polarized insulator | $E_{inside}=E_{ext}/\kappa$ |
+| Force: point charge on induced dipole | $F_O = -2\alpha k^2 e^2/d^5$ (attractive, toward the charge) |
+| Bulk insulator dipole moment | $\vec p_{body} = Q\vec s$ |
+| Field inside a polarized insulator | $E_{inside}=E_{ext}/\kappa$ ($\kappa>1$, dielectric constant) |
+| Conductor polarization condition | $\vec E_{pol}=-\vec E_{ext}$, so $\lvert\vec E_{pol}\rvert=\lvert\vec E_{ext}\rvert$ |
 | Field inside a conductor | $E_{inside}=0$ (always) |
-| Infinite line charge | $\vec E(\vec s) = \dfrac{2k\lambda}{s}\hat s$ |
-| Ring, on-axis | $E_z = \dfrac{kqz}{(z^2+R^2)^{3/2}}$ |
-| Disk, on-axis | $E_z = 2\pi k\sigma\left[\dfrac{z}{\lvert z\rvert}-\dfrac{z}{\sqrt{z^2+R^2}}\right]$ |
-| Infinite sheet | $E = 2\pi k\sigma$ (uniform, both sides) |
-| Parallel-plate capacitor | $E_{in}=4\pi k\sigma$; $E_{out}=0$ |
-| Spherical shell, $r>R$ | $E=kQ/r^2$ |
-| Spherical shell, $r<R$ | $E=0$ |
-| Solid ball, $r>R$ | $E=kQ/r^2$ |
-| Solid ball, $r<R$ | $E=kQr/R^3$ |
+| Potential inside a conductor | $V=\text{constant}$ (everywhere inside and on the surface) |
+
+### 14.4 Continuous Charge Distributions (Field)
+
+| Concept                          | Formula                                                                              |
+| -------------------------------- | ------------------------------------------------------------------------------------ |
+| Charge density definitions       | $\rho=\Delta q/\Delta V$; $\sigma=\Delta q/\Delta A$; $\lambda=\Delta q/\Delta\ell$  |
+| Infinite line charge             | $\vec E(\vec s) = \dfrac{2k\lambda}{s}\hat s$                                        |
+| Ring, on-axis                    | $E_z = \dfrac{kqz}{(z^2+R^2)^{3/2}}$                                                 |
+| Disk, on-axis                    | $E_z = 2\pi k\sigma\left[\dfrac{z}{\lvert z\rvert}-\dfrac{z}{\sqrt{z^2+R^2}}\right]$ |
+| Infinite sheet                   | $E = 2\pi k\sigma$ (uniform, both sides)                                             |
+| Parallel-plate capacitor (field) | $E_{in}=4\pi k\sigma$; $E_{out}=0$                                                   |
+| Spherical shell, $r>R$           | $E=kQ/r^2$                                                                           |
+| Spherical shell, $r<R$           | $E=0$                                                                                |
+| Solid ball, $r>R$                | $E=kQ/r^2$                                                                           |
+| Solid ball, $r<R$                | $E=kQr/R^3$                                                                          |
+
+### 14.5 Electric Potential
+
+| Concept | Formula |
+| --- | --- |
 | Electric potential energy | $U(\vec r)=qV(\vec r)$ |
 | Potential from field | $V(\vec r_2)-V(\vec r_1)=-\displaystyle\int_{\vec r_1}^{\vec r_2}\vec E\cdot d\vec r$ |
 | Field from potential | $E_x=-\partial V/\partial x$ (similarly $y,z$) |
 | Point charge potential | $V(\vec r)=kq/r$ |
 | Potential superposition | $V=\displaystyle\sum_i kq_i/r_i$ (scalar sum) |
+
+### 14.6 Potential of Continuous Charge Distributions
+
+| Concept | Formula |
+| --- | --- |
 | Ring potential, on-axis | $V(z)=kQ/\sqrt{z^2+R^2}$ |
 | Disk potential, on-axis | $V(z)=2\pi k\sigma\left[\sqrt{z^2+R^2}-\lvert z\rvert\right]$ |
 | Spherical shell potential, $r>R$ | $V=kQ/r$ |
 | Spherical shell potential, $r<R$ | $V=kQ/R$ (constant) |
 | Solid ball potential, $r>R$ | $V=kQ/r$ |
 | Solid ball potential, $r<R$ | $V=\dfrac{kQ}{2R}\left(3-\dfrac{r^2}{R^2}\right)$ |
+
+### 14.7 Capacitance and Dielectrics
+
+| Concept | Formula |
+| --- | --- |
 | Ideal parallel-plate capacitance | $C=A/(4\pi k\ell)$ |
 | Dielectric-filled capacitance | $C_\kappa=\kappa C$ ($\kappa>1$) |
-| Potential inside a conductor | $V=\text{constant}$ |
 
 **Discontinuity rule:** $E$ is discontinuous crossing an infinitesimally thin charged surface (disk, sheet, shell); $E$ is continuous crossing into a charge that fills a volume (solid ball).

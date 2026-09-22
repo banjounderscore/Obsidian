@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Physics 2212/Physics 2212 Notes.md",
+                "file": "Physics 2212/Physics 2212 Notes V2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Physics 2212 Notes"
+              "title": "Physics 2212 Notes V2"
             }
           }
         ]
@@ -159,6 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Physics 2212/Physics 2212 Notes V2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -166,13 +167,23 @@
               "icon": "lucide-list",
               "title": "Outline"
             }
+          },
+          {
+            "id": "f137bad314c51d59",
+            "type": "leaf",
+            "state": {
+              "type": "quiet-outline",
+              "state": {},
+              "icon": "lines-of-text",
+              "title": "Quiet Outline"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -182,14 +193,32 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "omnisearch:Omnisearch": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-kanban:Create new board": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "3effa3c0f9efbaae",
   "lastOpenFiles": [
+    "Physics 2212/Exam 1 Practice Problems.md",
+    "Physics 2212/Physics 2212 Notes V2.md",
+    "Physics 2212/Physics 2212 Notes.md",
+    "Physics 2212/images/29_dielectric_capacitor.png",
+    "Physics 2212/images/28_radial_circular_path.png",
+    "Physics 2212/images/27_point_charge_equipotentials.png",
+    "Physics 2212/images/26_work_line_integral.png",
+    "Physics 2212/images/25_ball_E_V_plot.png",
+    "Physics 2212/images/24_shell_E_V_plot.png",
+    "Physics 2212/images/23_parallel_plate_capacitor.png",
+    "Physics 2212/images/22_infinite_sheet_field.png",
+    "Physics 2212/images/21_disk_E_and_V_plot.png",
+    "Physics 2212/images/20_disk_geometry.png",
+    "Physics 2212/images",
+    "Physics 2212/Physics 2212 Notes.zip",
     "Physics 2212/Physics 2212 Notes (1).md",
     "Physics 2212",
-    "Physics 2212/Physics 2212 Notes.md",
     "Physics.md",
     "Welcome.md"
   ]

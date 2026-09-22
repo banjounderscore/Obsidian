@@ -5,5 +5,7 @@
   "templater-obsidian",
   "obsidian-kanban",
   "image-converter",
-  "obsidian-git"
+  "obsidian-git",
+  "obsidian-quiet-outline",
+  "obsidian-latex-suite"
 ]
