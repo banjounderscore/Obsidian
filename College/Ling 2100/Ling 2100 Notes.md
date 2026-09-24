@@ -101,13 +101,15 @@ Think of what to say → choose words → order them → recall pronunciation �
 | Discreteness | Continuous sound mapped to discrete category |
 | Displacement | Can discuss absent/imaginary/hypothetical things |
 | Prevarication | Can be used to lie |
-| Duality of patterning | Sounds → **morphemes** (smallest meaningful pieces of a word, e.g. *un-*, *-ing*) → words (two combinable levels) |
+| Duality of patterning | Sounds → morphemes → words (two combinable levels) |
 | Productivity | Infinite novel utterances |
 | Learnability | Can learn a new language |
 | Cultural transmission | You learn the language(s) around you |
 | Reflexiveness | Language can describe itself |
 
 > ⚠️ "Languages change over time" is **NOT** on this list — it's a theme, not a Hockett feature.
+
+- **Morpheme**: the smallest piece of a word that carries meaning on its own — you can't break it down any further without losing the meaning. *Walk* is one morpheme. *Walking* is two: *walk* + *-ing*. *Un-* and *-ing* are morphemes too, even though they can't stand alone as words.
 
 ## Arbitrariness vs. Iconicity
 - **Iconic** = sound depicts meaning (*buzz, boom* = onomatopoeia).
@@ -349,7 +351,7 @@ Features:
 - Plus place features: labial/coronal/dorsal.
 
 ## Allomorphs
-Like allophones, but tied to a specific **morpheme** (need not be in complementary distribution; must be semantically equivalent).
+Like allophones, but tied to a specific **morpheme** (need not be in complementary distribution; must be semantically equivalent). E.g. the plural morpheme "-s" is pronounced [s] in *cats*, [z] in *dogs*, and [əz] in *foxes* — same suffix, same meaning, different pronunciation depending on context. Same idea with "a" vs. "an": same word, [ə haʊs] *a house* vs. [ən aʊɚ] *an hour*.
 - "a/an": [ə]/[ən] — **epenthesis** of [n] before a vowel.
 - "in-": [m]/[n]/[ŋ] — nasal place assimilation.
 - Past tense "-ed": [t]/[d]/[əd]. Plural "-s": [s]/[z]/[əz]. — both voicing assimilation + epenthesis.
