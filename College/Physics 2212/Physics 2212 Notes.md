@@ -955,21 +955,21 @@ Constants: $e = 1.602\times10^{-19}$ C, $k=1/(4\pi\epsilon_0) = 9\times10^9$ N·
 
 ### 15.1 Coulomb's Law, Fields, and Forces
 
-| Concept                   | Formula                                                                             |     |
-| ------------------------- | ----------------------------------------------------------------------------------- | --- |
-| Coulomb's Law             | $\vec F_{21} = kq_1q_2\,\dfrac{\vec r_2-\vec r_1}{\lVert\vec r_2-\vec r_1\rVert^3}$ |     |
-| Field of a point charge   | $\vec E(\vec r) = \dfrac{kq}{r^2}\hat r$                                            |     |
-| Force from a field        | $\vec F = Q\vec E$                                                                  |     |
-| Far-field, net charge $Q$ | $\vec E \approx \dfrac{kQ}{r^2}\hat r$, for $r\gg s$                                |     |
+| Concept                   | Formula                                                                             |
+| ------------------------- | ----------------------------------------------------------------------------------- |
+| Coulomb's Law             | $\vec F_{21} = kq_1q_2\,\dfrac{\vec r_2-\vec r_1}{\lVert\vec r_2-\vec r_1\rVert^3}$ |
+| Field of a point charge   | $\vec E(\vec r) = \dfrac{kq}{r^2}\hat r$                                            |
+| Force from a field        | $\vec F = Q\vec E$                                                                  |
+| Far-field, net charge $Q$ | $\vec E \approx \dfrac{kQ}{r^2}\hat r$, for $r\gg s$                                |
 
 ### 15.2 Electric Dipole
 
-| Concept                     | Formula                                                              |     |
-| --------------------------- | -------------------------------------------------------------------- | --- |
-| Dipole moment               | $\vec p = qs$ (points $-q\to+q$); general: $\vec p=\sum q_k\vec r_k$ |     |
-| Dipole field, on-axis       | $\vec E_\parallel \approx k\dfrac{2\vec p}{r^3}$                     |     |
-| Dipole field, ⊥ bisector    | $\vec E_\perp \approx -k\dfrac{\vec p}{r^3}$                         |     |
-| Dipole field, general point | $\vec E(\vec r) = k\dfrac{3(\vec p\cdot\hat r)\hat r-\vec p}{r^3}$   |     |
+| Concept                     | Formula                                                              |
+| --------------------------- | -------------------------------------------------------------------- |
+| Dipole moment               | $\vec p = qs$ (points $-q\to+q$); general: $\vec p=\sum q_k\vec r_k$ |
+| Dipole field, on-axis       | $\vec E_\parallel \approx k\dfrac{2\vec p}{r^3}$                     |
+| Dipole field, ⊥ bisector    | $\vec E_\perp \approx -k\dfrac{\vec p}{r^3}$                         |
+| Dipole field, general point | $\vec E(\vec r) = k\dfrac{3(\vec p\cdot\hat r)\hat r-\vec p}{r^3}$   |
 
 ### 15.3 Polarization, Conductors, and Insulators
 
