@@ -117,6 +117,11 @@ Examples you'll use:
 - $\sqrt{1+\epsilon}\approx1+\tfrac12\epsilon$
 - $\ln(1+\epsilon)\approx\epsilon-\tfrac12\epsilon^2$ (Taylor series, needed for some log answers)
 
+**Why:** $(1+\epsilon)^n=1+n\epsilon+\frac{n(n-1)}{2}\epsilon^2+\cdots$, and each term is smaller by another factor of $\epsilon$. (If the first two terms cancel, keep the $\epsilon^2$ term.)
+
+**How:** factor the **big** quantity out so a $1+(\text{small})$ is left. Example, $z\gg R$:
+$$\frac{z}{\sqrt{z^2+R^2}}=\frac{z}{z\sqrt{1+R^2/z^2}}=\left(1+\frac{R^2}{z^2}\right)^{-1/2}\approx1-\frac{R^2}{2z^2}$$
+
 You use this to check answers: far from any charged object with net charge $Q$, the field must look like $kQ/r^2$. That is the **far-field theorem**.
 
 ---
@@ -249,7 +254,7 @@ This is what the graders want to see written out, step by step. Practice-exam ru
 $$
 dE_x = k\frac{\lambda\,dx}{(L+d-x)^3}(L+d-x)=k\frac{\lambda\,dx}{(L+d-x)^2}
 $$
-4. Integrate over the rod, $x=0\to L$. Substitute $u=L+d-x$, $du=-dx$:
+4. Integrate over the rod, $x=0\to L$. **Antiderivative:** substitute $u=L+d-x$, so $du=-dx$ and $\int\frac{dx}{(L+d-x)^2}=\int\frac{-du}{u^2}=+\frac1u=\frac{1}{L+d-x}$. (The minus from $du=-dx$ cancels the minus from $\int u^{-2}du=-1/u$.) Then plug in the limits:
 $$
 E_x=k\lambda\int_0^L\frac{dx}{(L+d-x)^2}=k\lambda\left[\frac{1}{L+d-x}\right]_0^L=k\lambda\left(\frac1d-\frac1{L+d}\right)=k\lambda\frac{L}{d(L+d)}
 $$
@@ -307,7 +312,7 @@ $$
 $$
 E_y=k\lambda h\int_0^L\frac{dx}{(x^2+h^2)^{3/2}}=k\lambda h\left[\frac{x}{h^2\sqrt{x^2+h^2}}\right]_0^L=\frac{k\lambda L}{h\sqrt{L^2+h^2}}
 $$
-6. **Check.** As $h\gg L$: $E_y\to k\lambda L/h^2=kQ/h^2$ ✓. Also $E_x\to -k\lambda\cdot\frac{L^2}{2h^3}\to0$ faster, so the field becomes purely "up", as it should when the rod looks like a point.
+6. **Check.** As $h\gg L$: $\sqrt{L^2+h^2}\approx h$, so $E_y\to k\lambda L/h^2=kQ/h^2$ ✓. For $E_x$, factor out $h$ and use the binomial approximation: $\frac1h-\frac{1}{\sqrt{L^2+h^2}}=\frac1h\left[1-\left(1+\frac{L^2}{h^2}\right)^{-1/2}\right]\approx\frac1h\cdot\frac{L^2}{2h^2}$. So $E_x\approx-\frac{k\lambda L^2}{2h^3}$, which shrinks like $1/h^3$, faster than $E_y$. The field becomes purely "up", as it should when the rod looks like a point charge directly below.
 
 ### 4.3 Finite rod, observation point on its perpendicular bisector
 
@@ -349,7 +354,11 @@ mid/.default=0.5}
 3. **Symmetry:** the piece at $+y$ and the piece at $-y$ have equal $dE_x$ but opposite $dE_y$. Mathematically, the $E_y$ integrand $-y/(x^2+y^2)^{3/2}$ is an **odd function** integrated over symmetric limits, so $E_y=0$.
 4. Then integrate $E_x$:
 $$
-E_x=k\lambda x\int_{-L/2}^{L/2}\frac{dy}{(x^2+y^2)^{3/2}}=k\lambda x\left[\frac{y}{x^2\sqrt{x^2+y^2}}\right]_{-L/2}^{L/2}=\frac{k\lambda L}{x\sqrt{x^2+(L/2)^2}}
+E_x=k\lambda x\int_{-L/2}^{L/2}\frac{dy}{(x^2+y^2)^{3/2}}=k\lambda x\left[\frac{y}{x^2\sqrt{x^2+y^2}}\right]_{-L/2}^{L/2}
+$$
+Plugging in the limits: the top limit gives $\frac{L/2}{x^2\sqrt{x^2+L^2/4}}$, and subtracting the bottom limit subtracts $\frac{-L/2}{x^2\sqrt{x^2+L^2/4}}$, so the two halves add to $\frac{L}{x^2\sqrt{x^2+L^2/4}}$. Multiply by $k\lambda x$ (one $x$ cancels):
+$$
+E_x=\frac{k\lambda L}{x\sqrt{x^2+(L/2)^2}}
 $$
 $$
 \boxed{\vec E(x,0)=\frac{kQ}{x\sqrt{x^2+(L/2)^2}}\,\hat x}
@@ -526,7 +535,7 @@ mid/.default=0.5}
 1. $dq=\lambda R\,d\phi$ with $\lambda=Q/2\pi R$, located at $(R\cos\phi,R\sin\phi,0)$.
 2. $\vec r=\langle-R\cos\phi,\,-R\sin\phi,\,z\rangle$, $|\vec r|=\sqrt{R^2+z^2}$ (the same for every piece).
 3. The $x$- and $y$-components involve $\int_0^{2\pi}\cos\phi\,d\phi=\int_0^{2\pi}\sin\phi\,d\phi=0$. They cancel by symmetry: opposite sides of the ring push sideways in opposite directions.
-4. That leaves the $z$-component:
+4. That leaves the $z$-component. From $d\vec E=k\,dq\,\vec r/|\vec r|^3$, the $z$-part uses $r_z=z$, so $dE_z=\dfrac{k\,dq\,z}{(R^2+z^2)^{3/2}}$. Everything except $dq$ is the same for every piece, so it comes outside the integral, and $\int dq=Q$ (adding up every piece's charge gives the total):
 $$
 E_z=k\frac{z}{(R^2+z^2)^{3/2}}\int dq=\boxed{\ \frac{kQz}{(z^2+R^2)^{3/2}}\ }
 $$
@@ -610,7 +619,7 @@ $$
 $$
 \boxed{\ E_z=2\pi k\sigma\left(\frac{z}{|z|}-\frac{z}{\sqrt{z^2+R^2}}\right)\ }
 $$
-(For $z>0$ this is $2\pi k\sigma\left(1-\dfrac{z}{\sqrt{z^2+R^2}}\right)$.)
+**Where $z/|z|$ comes from:** at the lower limit $r=0$, the bracket is $-\frac{1}{\sqrt{z^2}}$, and $\sqrt{z^2}=|z|$ (a square root is never negative). Subtracting the lower limit gives $+\frac{1}{|z|}$, and multiplying by the $z$ out front gives $\frac{z}{|z|}$. That's just the sign of $z$: $+1$ above the disk, $-1$ below. (For $z>0$ the result is $2\pi k\sigma\left(1-\dfrac{z}{\sqrt{z^2+R^2}}\right)$.)
 
 ```tikz
 \usepackage{pgfplots}
@@ -678,7 +687,7 @@ mid/.default=0.5}
 \end{document}
 ```
 
-Let $R\to\infty$ in the disk result. The second term vanishes:
+Let $R\to\infty$ in the disk result. The second term $\frac{z}{\sqrt{z^2+R^2}}$ goes to zero, because its denominator grows without limit while the top stays fixed. Only $\frac{z}{|z|}=\pm1$ survives:
 $$
 \boxed{\ |\vec E|=2\pi k\sigma=\frac{\sigma}{2\epsilon_0}\ }\quad\text{pointing away from the sheet (if }\sigma>0\text{) on both sides}
 $$
@@ -736,6 +745,8 @@ $$
 $$
 Outside, the shell acts like a point charge at its center. Inside, the field is exactly zero.
 
+**Why zero inside:** from any inside point, the near patch of shell is close but small, and the opposite patch is far but bigger. Patch area grows like distance², which exactly offsets the $1/r^2$, so opposite patches cancel.
+
 ```tikz
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.16}
@@ -776,7 +787,9 @@ xlabel={$r/R$},ylabel={$V\ (kQ/R)$},title={$V$: continuous, kinked at $r=R$},xti
 $$
 \vec E_{\text{out}}=\frac{kQ}{r^2}\hat r,\qquad \vec E_{\text{in}}=\frac{kQ\,r}{R^3}\hat r
 $$
-Why: inside, only the charge closer to the center than you counts, $Q_{\text{enc}}=Q\,r^3/R^3$. All the outer shells contribute zero (shell theorem), so $E_{\text{in}}=kQ_{\text{enc}}/r^2=kQr/R^3$.
+Why: treat the ball as nested shells. Shells outside radius $r$ give zero; shells inside act like a point charge at the center. Charge is proportional to volume, so
+$$Q_{\text{enc}}=Q\cdot\frac{\tfrac43\pi r^3}{\tfrac43\pi R^3}=Q\frac{r^3}{R^3},\qquad E_{\text{in}}=\frac{kQ_{\text{enc}}}{r^2}=\frac{kQ}{r^2}\cdot\frac{r^3}{R^3}=\frac{kQr}{R^3}.$$
+At $r=R$ both formulas give $kQ/R^2$, so there's no jump.
 
 ```tikz
 \usepackage{pgfplots}
@@ -816,7 +829,8 @@ xlabel={$r/R$},ylabel={$V\ (kQ/R)$},title={$V$: smooth everywhere},xtick={1,2,3,
 $$
 Q_{\text{enc}}(r)=\int_0^r\rho(r')\,4\pi r'^2\,dr',\qquad E(r)=\frac{kQ_{\text{enc}}(r)}{r^2}
 $$
-Example: $\rho=\beta r$ gives $Q_{\text{enc}}=\pi\beta r^4$, so inside $E=k\pi\beta r^2$.
+Here $\rho\,4\pi r'^2\,dr'$ is the charge in a thin shell of radius $r'$ and thickness $dr'$ (shell area $4\pi r'^2$ times thickness). Example: $\rho=\beta r$ gives
+$$Q_{\text{enc}}=\int_0^r\beta r'\cdot4\pi r'^2\,dr'=4\pi\beta\frac{r^4}{4}=\pi\beta r^4,\qquad E=\frac{k\pi\beta r^4}{r^2}=k\pi\beta r^2.$$
 
 ### 4.11 Non-uniform rod
 
@@ -938,7 +952,7 @@ mid/.default=0.5}
 
 1. $\vec E=0$ everywhere inside the metal, whether the conductor is charged or neutral, polarized or not.
 2. Since $\vec E=0$ inside, $\Delta V=-\int\vec E\cdot d\vec l=0$ between any two points of the metal. **The whole conductor is at one potential.**
-3. Any net charge lives on the surface.
+3. Any net charge lives on the surface. Why: excess charge inside the metal would make a field around itself, which contradicts fact 1. Like charges also repel each other, so they spread out as far apart as they can get, which is the surface.
 4. Just outside the surface, $\vec E$ is perpendicular to the surface. (A sideways component would push surface charges along, which isn't equilibrium.)
 5. **Empty cavity inside a conductor:** $\vec E=0$ in the cavity too (shielding / Faraday cage). Proof: take any path through the cavity that starts and ends on the cavity wall. Both endpoints are at the same potential, so $\int\vec E\cdot d\vec l=0$ for *every* path, which forces $\vec E_{\text{cavity}}=0$.
 
@@ -981,7 +995,7 @@ If the shell also carries its own net charge $Q$: inner wall $-q$, outer surface
 
 ### 6.3 Polarized insulators near charges
 
-A neutral insulator near a charge gets polarized, with the opposite-sign end closer to the charge, so it is **attracted**. The polarization field inside points opposite to $\vec E_{\text{ext}}$ and reduces it, but **never** reverses or fully cancels it.
+A neutral insulator near a charge gets polarized, with the opposite-sign end closer to the charge. It is **attracted**, because the near end (opposite sign, attracted) is closer than the far end (same sign, repelled), and Coulomb's force is stronger at shorter distance. So attraction wins. The polarization field inside points opposite to $\vec E_{\text{ext}}$ and reduces it, but **never** reverses or fully cancels it.
 
 > [!example] Lecture-style conceptual question
 > Two equal negative balls sit near a neutral plastic block. What is the field at the block's center? Add three contributions: ball 1, ball 2, and the block's polarization. The polarization field opposes the net external field but is smaller, so **the net field still points the way the external field does**.
@@ -1029,10 +1043,13 @@ mid/.default=0.5}
 $$
 W=\int_{\vec r_i}^{\vec r_f}\vec F\cdot d\vec l
 $$
+($d\vec l$ = a tiny step along the path; see §9.)
 - $W>0$ when the force points along the motion (it speeds the object up).
 - $W<0$ when the force opposes the motion.
 
-**Work–energy theorem:** $W_{\text{net}}=\Delta K$.
+**Work–energy theorem:** $W_{\text{net}}=\Delta K$, with $K=\tfrac12mv^2$.
+
+**Conservative force:** its work doesn't depend on the path (electric force from static charges: yes; friction: no). Only these get a potential energy, since $U$ must depend only on position.
 
 **Potential energy** is defined so that
 $$
@@ -1059,6 +1076,12 @@ $$
 \boxed{\ \Delta V=V_f-V_i=-\int_i^f\vec E\cdot d\vec l\ }\qquad\qquad \boxed{\ \Delta U=q\,\Delta V\ }
 $$
 
+> [!important] What is $d\vec l$?
+> A **tiny step along your path** from $i$ to $f$ (also written $d\vec r$ or $d\vec s$). $\vec E\cdot d\vec l$ keeps only the part of the step along $\vec E$:
+> - along $\vec E$: $\Delta V<0$ · against $\vec E$: $\Delta V>0$ · perpendicular: $\Delta V=0$
+>
+> Write it in the **positive** coordinate direction ($dx\,\hat x$, $dy\,\hat y$, $dr\,\hat r$) and let the **limits** (start → end) set the direction. Example, radial path: $\Delta V=-\int_{r_1}^{r_2}\frac{kq}{r^2}\hat r\cdot dr\,\hat r=-\int_{r_1}^{r_2}\frac{kq}{r^2}dr$, even if $r_2<r_1$. Using $-dr\,\hat r$ **and** reversed limits counts the direction twice.
+
 - **Potential $V$** (volts, V = J/C) is a property of a *location* in space, set up by the source charges.
 - **Potential energy $U$** (joules) belongs to a *specific charge $q$* sitting at that location: $U=qV$.
 - Only **differences** matter. You pick where $V=0$ (the reference). For finite charge distributions the usual choice is $V(\infty)=0$.
@@ -1077,7 +1100,7 @@ $$
 
 ### 9.2 Equipotentials
 
-**Equipotential surfaces** are surfaces of constant $V$. $\vec E$ is always **perpendicular** to them and points toward lower $V$. For a point charge, they are concentric spheres. For a uniform field, they are flat planes perpendicular to $\vec E$.
+**Equipotential surfaces** are surfaces of constant $V$. $\vec E$ is always **perpendicular** to them and points toward lower $V$. Why perpendicular: a step $d\vec l$ *along* an equipotential has $\Delta V=0$, so $\vec E\cdot d\vec l=0$ for every such step, which means $\vec E$ has no component along the surface. For a point charge, they are concentric spheres. For a uniform field, they are flat planes perpendicular to $\vec E$.
 
 ```tikz
 \usetikzlibrary{arrows.meta,decorations.markings,calc}
@@ -1106,7 +1129,7 @@ mid/.default=0.5}
 
 ### 9.3 Path independence and closed loops
 
-The electric field from static charges is **conservative**: $\Delta V$ between two points is the same for **every** path. Consequences:
+The electric field from static charges is **conservative**: $\Delta V$ between two points is the same for **every** path. Why: around a point charge, any path splits into radial steps (which change $V$) and arc steps ($\perp\vec E$, no change), and the radial steps always total the same (§10.2). Any distribution is a sum of point charges. Consequences:
 - **Pick the easiest path.** Break it into segments along $\vec E$ (where $\vec E\cdot d\vec l=E\,dl$) and segments perpendicular to $\vec E$ (where it is 0).
 - **Closed loops:** $\oint\vec E\cdot d\vec l=0$. Around any closed path, the potential differences sum to zero. **This is the physics behind Kirchhoff's loop rule** in Part IV.
 
@@ -1156,9 +1179,9 @@ mid/.default=0.5}
 
 ### 10.1 Uniform (constant) field
 
-For constant $\vec E$:
+For constant $\vec E$, the field is the same at every step, so it comes out of the integral, and adding up all the steps gives the total displacement, $\int_i^f d\vec l=\Delta\vec r=\vec r_f-\vec r_i$:
 $$
-\Delta V=-\vec E\cdot\Delta\vec r
+\Delta V=-\int_i^f\vec E\cdot d\vec l=-\vec E\cdot\int_i^f d\vec l=-\vec E\cdot\Delta\vec r
 $$
 For a straight move of distance $d$ along $\vec E$: $\Delta V=-Ed$.
 
@@ -1180,6 +1203,7 @@ Take $\vec E=\dfrac{kq}{r^2}\hat r$ and a radial path from $r_1$ to $r_2$:
 $$
 V(r_2)-V(r_1)=-\int_{r_1}^{r_2}\frac{kq}{r^2}dr=kq\left[\frac1r\right]_{r_1}^{r_2}=\frac{kq}{r_2}-\frac{kq}{r_1}
 $$
+(The antiderivative of $r^{-2}$ is $-1/r$; that minus combines with the minus in front of the integral to give $+kq/r$.)
 Now set $V(\infty)=0$ (let $r_1\to\infty$):
 $$
 \boxed{\ V(r)=\frac{kq}{r}\ }
@@ -1320,27 +1344,31 @@ $V$ is **continuous** at $z=0$, while $E$ jumps there.
 
 Limits:
 - Close to the disk ($|z|\ll R$): $V\approx2\pi k\sigma(R-|z|)$, a constant minus $2\pi k\sigma|z|$. That is the linear $V$ of an infinite sheet.
-- Far away: $\sqrt{z^2+R^2}-|z|\approx\dfrac{R^2}{2|z|}$, so $V\approx kQ/|z|$ ✓.
+- Far away: factor out $|z|$ and use the binomial approximation, $\sqrt{z^2+R^2}=|z|\left(1+\frac{R^2}{z^2}\right)^{1/2}\approx|z|\left(1+\frac{R^2}{2z^2}\right)$. Subtracting $|z|$ leaves $\dfrac{R^2}{2|z|}$, so $V\approx2\pi k\sigma\dfrac{R^2}{2|z|}=\dfrac{k(\sigma\pi R^2)}{|z|}=\dfrac{kQ}{|z|}$ ✓.
 
 ### 11.3 Rod on axis, beyond its end
 
 Same setup as §4.1:
 $$
-V=\int_0^L\frac{k\lambda\,dx}{L+d-x}=k\lambda\ln\frac{L+d}{d}
+V=\int_0^L\frac{k\lambda\,dx}{L+d-x}=k\lambda\Big[-\ln(L+d-x)\Big]_0^L=k\lambda\big[-\ln d+\ln(L+d)\big]=k\lambda\ln\frac{L+d}{d}
 $$
+(With $u=L+d-x$, $du=-dx$, so $\int\frac{dx}{L+d-x}=-\ln u$.) Each piece is a distance $L+d-x$ from P, and potential needs only that distance, not a direction.
 
 ### 11.4 Rod on its perpendicular bisector
 
 Same setup as §4.3:
 $$
-V=k\lambda\int_{-L/2}^{L/2}\frac{dy}{\sqrt{x^2+y^2}}=k\lambda\ln\frac{L/2+\sqrt{x^2+L^2/4}}{-L/2+\sqrt{x^2+L^2/4}}
+V=k\lambda\int_{-L/2}^{L/2}\frac{dy}{\sqrt{x^2+y^2}}=k\lambda\Big[\ln\big(y+\sqrt{x^2+y^2}\big)\Big]_{-L/2}^{L/2}=k\lambda\ln\frac{L/2+\sqrt{x^2+L^2/4}}{-L/2+\sqrt{x^2+L^2/4}}
 $$
+(The ✍️ integral $\int\frac{dy}{\sqrt{x^2+y^2}}=\ln(y+\sqrt{x^2+y^2})$ from §5; subtracting two logs gives the log of a ratio.)
 
 ## 12. Getting $\vec E$ from $V$
 
 $$
 E_x=-\frac{\partial V}{\partial x},\quad E_y=-\frac{\partial V}{\partial y},\quad E_z=-\frac{\partial V}{\partial z}\qquad\left(\vec E=-\nabla V\right)
 $$
+- **What $\partial V/\partial x$ means:** a *partial* derivative. Differentiate with respect to $x$ while treating $y$ and $z$ as constants. Example: $V=kq/\sqrt{x^2+y^2}$ gives $\partial V/\partial x=-kqx/(x^2+y^2)^{3/2}$.
+- **Why the minus sign:** it's the reverse of $\Delta V=-\int\vec E\cdot d\vec l$. For a tiny step $dx$ along $x$, $dV=-E_x\,dx$, so $E_x=-dV/dx$.
 - $\vec E$ points in the direction $V$ **decreases** fastest.
 - In 1D: $E_x=-dV/dx$. A steep $V(x)$ graph means a strong field.
 - Shortcut: $V$ is a scalar integral (easy), and its derivative gives $\vec E$. **Warning:** if you only know $V$ along an axis, you only get the field component along that axis.
@@ -1353,6 +1381,8 @@ The energy to assemble point charges from infinity:
 $$
 U_{\text{pair}}=\frac{kq_1q_2}{r_{12}},\qquad U_{\text{system}}=\sum_{\text{pairs}}\frac{kq_iq_j}{r_{ij}}
 $$
+**Where it comes from:** $U=qV$. Charge $q_1$ makes potential $V=kq_1/r$ at distance $r$; put $q_2$ there and $U=q_2V=kq_1q_2/r$. That's the work you'd do to bring $q_2$ in from infinity (where $U=0$).
+
 Count each pair **once**: three charges have three pairs, four charges have six. $U>0$ for like charges (you had to push them together); $U<0$ for unlike charges.
 
 ### 13.2 A charge moving through a potential difference
@@ -1378,7 +1408,7 @@ $$
 
 ### 13.3 Escape / closest-approach problems
 
-Two charges approach head-on. At closest approach the relative KE is zero, so
+A charge $q_2$ (mass $m$) is fired straight at a **fixed** charge $q_1$ of the same sign, starting far away with speed $v_0$. Repulsion slows it until it momentarily stops at the closest distance $r_{\min}$. All the starting kinetic energy has become potential energy ($U=0$ far away, $K=0$ at the turning point), so
 $$
 \frac12mv_0^2=\frac{kq_1q_2}{r_{\min}}\qquad\text{(starting from far away)}
 $$
@@ -1429,7 +1459,7 @@ Despite the name, EMF is a **potential difference** (volts), not a force. Inside
 **Analogy:** a skydiver reaches terminal velocity when drag balances gravity. An electron in a wire reaches a constant **drift velocity** when collisions balance the electric force.
 
 - The field accelerates the electron: $\vec F_E=-e\vec E$.
-- Collisions with the lattice ions act like a drag force $-m\vec v/\tau$, where $\tau$ is the average time between collisions.
+- Collisions with the lattice ions act like a drag force $-m\vec v/\tau$, where $\tau$ is the average time between collisions: each collision wipes out momentum $m\vec v$, once per $\tau$, and force = momentum lost per time.
 - Steady state means zero net force:
 $$
 -e\vec E-\frac{m\vec v}{\tau}=0\quad\Longrightarrow\quad\vec v_d=-\frac{e\tau}{m}\vec E,\qquad |v_d|=\frac{e\tau E}{m}
@@ -1447,7 +1477,7 @@ I=enA\frac{e\tau E}{m}=\underbrace{\frac{ne^2\tau}{m}}_{\sigma_c}AE
 $$
 Here $\sigma_c=ne^2\tau/m$ is the **conductivity** (a material property). Its inverse $\rho_c=1/\sigma_c$ is the **resistivity**. (Don't confuse these with charge densities $\sigma$ and $\rho$; same letters, different meaning.)
 
-In a uniform wire of length $L$, the steady-state field is constant, so $\Delta V=EL$ and $E=\Delta V/L$:
+In a uniform wire of length $L$, the steady-state field is constant and points along the wire. Walking the length of the wire, $\vec E\cdot d\vec l=E\,dl$ at every step, so $|\Delta V|=\int E\,dl=EL$ (the uniform-field result from §10.1). Then $E=\Delta V/L$:
 $$
 I=\sigma_cA\frac{\Delta V}{L}\quad\Longrightarrow\quad\boxed{\ \Delta V=IR\ },\qquad\boxed{\ R=\frac{L}{\sigma_cA}=\frac{\rho_cL}{A}\ }
 $$
@@ -1544,6 +1574,8 @@ mid/.default=0.5}
 > | a resistor **opposite to** your assumed current $I$ | $+IR$ |
 >
 > The battery sign depends only on which terminal you enter, **not** on the current direction. The resistor sign depends only on your walking direction compared to the assumed current.
+
+**Why these signs:** the $+$ terminal is $\mathcal E$ higher than the $-$ terminal, and current flows through a resistor from high $V$ to low $V$ (drop $IR$). A wrong guess for the current direction just makes $I$ come out negative.
 
 **Single loop, one battery, one resistor:** $+\mathcal E-IR=0$, so $\mathcal E=IR$. That follows from the loop rule plus Ohm's law; it isn't a law by itself.
 

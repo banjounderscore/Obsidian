@@ -261,7 +261,12 @@ $$
 > [!warning] The single most common beginner mistake
 > This is **vector** addition, never scalar addition. You cannot add magnitudes and then "figure out" a direction afterward — you must add the $x$-components together and the $y$-components together separately (or draw the head-to-tail diagram), *then* take the magnitude of the result if you need it. A force of 5 N right plus a force of 5 N left is **0**, not 10 N.
 
-**Worked example.** Three charges: $q_1=+e$, a test charge $Q$ sits between them, and $q_3=-2e$. The force on $Q$ is $\vec F_2 = \vec F_{21}+\vec F_{23}$ — you compute each Coulomb force separately using the formula above (each pointing along the line connecting the relevant pair of charges, repulsive from $q_1$ since $Q$ is presumably positive, attractive toward $q_3$ since it's negative), then add the two vectors head-to-tail to get the true net force direction — which in general points *nowhere near* either individual contribution.
+**Worked example (diagram above).** Positive $Q$ ("charge 2") feels $\vec F_2=\vec F_{21}+\vec F_{23}$:
+1. $\vec F_{21}=kQe\,\vec r/r^3$ with $\vec r=\vec r_Q-\vec r_{q_1}$: points away from $q_1$ (repulsion).
+2. $\vec F_{23}=kQ(-2e)\,\vec r'/r'^3$ with $\vec r'=\vec r_Q-\vec r_{q_3}$: the minus sign flips it toward $q_3$ (attraction).
+3. Add $x$-components and $y$-components separately; take the magnitude last.
+
+The net force points in neither individual direction, which is why you can't skip the vector addition.
 
 ---
 
@@ -343,6 +348,7 @@ We say the point charge (and its field) exhibits **rotational symmetry**. This i
 
 - Field lines **begin** on positive charge (or at infinity).
 - Field lines **end** on negative charge (or at infinity).
+- Field lines **never cross** (the field has only one direction at each point), and $\vec E$ is tangent to the line.
 
 ### 4.6 Superposition of fields
 
@@ -430,7 +436,7 @@ $$
 \vec E_\parallel = \vec E_+ + \vec E_- = k\left[\frac{q}{(x-s/2)^2}-\frac{q}{(x+s/2)^2}\right]\hat x
 $$
 
-This is the **exact** result for any $x$. Taking $r\gg s$ (using the binomial approximation from Section 1.4):
+This is the **exact** result for any $x$. Far away ($x=r\gg s$), the binomial approximation (worked out in Section 1.4) turns the bracket into $\frac{q}{x^2}\left(1+\frac sx\right)-\frac{q}{x^2}\left(1-\frac sx\right)=\frac{2qs}{x^3}$, with $qs=p$:
 
 $$
 \vec E_\parallel(\vec r) \approx k\,\frac{2\vec p}{r^3}
@@ -464,13 +470,13 @@ mid/.default=0.5}
 \end{document}
 ```
 
-Now restrict to observation points on the axis *perpendicular* to the dipole's symmetry axis. By the geometry, the $x$-components of the two point-charge fields cancel ($E_x = -E_x'$) while the $y$-components add ($E_y=E_y'=-E_y\hat y$ each), giving $\vec E_\perp = \vec E + \vec E' = -2E_y\,\hat y$. Writing $E=kq/(r^2+(s/2)^2)$ and $\sin\theta = (s/2)/\sqrt{r^2+(s/2)^2}$:
+Now take P on the perpendicular bisector, distance $r$ from the center ($+q$ on top, $-q$ below). P is equally far from both charges, so both fields have magnitude $E=\dfrac{kq}{r^2+(s/2)^2}$. The $+q$ field points right-and-down, the $-q$ field left-and-down: horizontal parts **cancel**, vertical parts **add** to $2E\sin\theta$ downward, with $\sin\theta=\dfrac{s/2}{\sqrt{r^2+(s/2)^2}}$ from the triangle:
 
 $$
 \vec E_\perp = -2E\sin\theta\,\hat y = -2\frac{kq}{r^2+(s/2)^2}\cdot\frac{s/2}{\sqrt{r^2+(s/2)^2}}\,\hat y
 $$
 
-Taking $r\gg s$:
+For $r\gg s$, drop $(s/2)^2$ next to $r^2$: $E_\perp\approx2\cdot\dfrac{kq}{r^2}\cdot\dfrac{s/2}{r}=\dfrac{kqs}{r^3}$, pointing down. $\vec p$ points up ($-q\to+q$), so down is $-\vec p$:
 
 $$
 \vec E_\perp(\vec r) \approx -k\,\frac{\vec p}{r^3}
@@ -647,12 +653,12 @@ Two **antiparallel** dipoles (e.g. two oppositely oriented water molecules) attr
 
 A charge (say, an electron) at distance $d$ from a nonpolar molecule induces $\vec p=\alpha\vec E_O$ in that molecule. You cannot use $\vec F=Q\vec E$ directly on the molecule since the *neutral* molecule has $Q=0$ — instead use Newton's third law: compute the force the *molecule's induced dipole field* exerts back on the electron, then flip the sign.
 
-$$
-\vec F_e = -e\,\vec E_{\text{at }e}, \qquad \vec p = \alpha \vec E_O = \alpha\left(-k\frac{e}{d^2}\right)\hat x = -\frac{\alpha k e}{d^2}\hat x
-$$
+1. The electron's field at the molecule has magnitude $E_O=ke/d^2$, so the induced moment is $p=\alpha E_O=\alpha ke/d^2$ (pointing toward the electron).
+2. The electron sits on that dipole's axis, so the dipole's field there is $\dfrac{2kp}{d^3}=\dfrac{2\alpha k^2e}{d^5}$, and the force on the electron is $e$ times that.
+3. Newton's third law gives the same magnitude on the molecule. It's attractive, since the dipole's $+$ end faces the electron:
 
 $$
-\vec F_O = -\vec F_e = -\frac{2\alpha k^2 e^2}{d^5}\hat x
+|\vec F_O|=\frac{2\alpha k^2 e^2}{d^5}\quad\text{(attractive)}
 $$
 
 This is an **attractive** force falling off as $1/d^5$ — a full three powers steeper than Coulomb's $1/d^2$, because one of the two "charges" involved is only *induced*, not fixed: as $d$ increases, not only does the ordinary Coulomb $1/d^2$ kick in, but the induced dipole moment itself *also* shrinks (since $E_O\propto 1/d^2$), giving extra powers of $1/d$.
@@ -840,6 +846,8 @@ mid/.default=0.5}
 ```
 
 If you scoop a cavity out of a conductor, the surface charge still rearranges so that $\vec E=0$ throughout the solid conductor material — and, remarkably, $\vec E=0$ throughout the *empty cavity* too, as long as no charge sits inside the cavity itself. This is exactly why a conducting shell shields its interior from any external field — the working principle behind a Faraday cage.
+
+**Why the cavity has no field:** a field line in the cavity would have to run from one point on the wall to another, so the field would do work moving a charge between them. But the whole conductor is at one potential, so that work must be zero. The only possibility is no field at all.
 
 ### 7.5 Worked conceptual examples
 

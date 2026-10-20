@@ -76,9 +76,19 @@ Integrate **each component separately**.
 - Superposition shortcuts: a hole is a full shape plus a negative-density piece; sheets add region by region; a shell contributes 0 inside itself.
 
 ### 1.5 Integrals
-**On the sheet ✅:** $\int\frac{dx}{(x^2+a^2)^{3/2}}=\frac{x}{a^2\sqrt{x^2+a^2}}$ · $\int\frac{x\,dx}{(x^2+a^2)^{3/2}}=-\frac1{\sqrt{x^2+a^2}}$ · $\int\frac{dx}{x+a}=\ln(x+a)$ · $\int\frac{dx}{(x+a)^2}=-\frac1{x+a}$ · $\int\frac{dx}{(x+a)^3}=-\frac1{2(x+a)^2}$ · $\int\frac{a\,dx}{x(x+b)}=\frac ab\int\left(\frac1x-\frac1{x+b}\right)dx$ · polynomials
-
-**Know yourself ✍️:** $\int\frac{dx}{\sqrt{x^2+a^2}}=\ln(x+\sqrt{x^2+a^2})$ · $\int\frac{x\,dx}{\sqrt{x^2+a^2}}=\sqrt{x^2+a^2}$ · $\int\sin\theta\cos\theta\,d\theta=\tfrac12\sin^2\theta$ · $\int\cos=\sin$, $\int\sin=-\cos$
+| Integral | Result | Sheet | Shows up in |
+|---|---|---|---|
+| $\displaystyle\int\frac{dx}{(x^2+a^2)^{3/2}}$ | $\dfrac{x}{a^2\sqrt{x^2+a^2}}$ | ✅ | rod, off the end or on the bisector |
+| $\displaystyle\int\frac{x\,dx}{(x^2+a^2)^{3/2}}$ | $-\dfrac{1}{\sqrt{x^2+a^2}}$ | ✅ | rod components, disk, annulus |
+| $\displaystyle\int\frac{dx}{x+a}$ | $\ln(x+a)$ | ✅ | potential of a rod, line charge $\Delta V$ |
+| $\displaystyle\int\frac{dx}{(x+a)^2}$ | $-\dfrac{1}{x+a}$ | ✅ | rod on its axis |
+| $\displaystyle\int\frac{dx}{(x+a)^3}$ | $-\dfrac{1}{2(x+a)^2}$ | ✅ | dipole $\Delta V$ on the axis |
+| $\displaystyle\int\frac{a\,dx}{x(x+b)}$ | $\dfrac ab\displaystyle\int\left(\frac1x-\frac1{x+b}\right)dx$ | ✅ | partial fractions |
+| $\displaystyle\int a\,dx,\ \int ax\,dx,\ \int ax^2\,dx$ | $ax,\ \tfrac12ax^2,\ \tfrac13ax^3$ | ✅ | non-uniform $\lambda$, total charge $Q$ |
+| $\displaystyle\int\frac{dx}{\sqrt{x^2+a^2}}$ | $\ln\!\left(x+\sqrt{x^2+a^2}\right)$ | ✍️ | $V$ of a rod on its bisector |
+| $\displaystyle\int\frac{x\,dx}{\sqrt{x^2+a^2}}$ | $\sqrt{x^2+a^2}$ | ✍️ | $V$ of a disk |
+| $\displaystyle\int\cos\theta\,d\theta,\ \int\sin\theta\,d\theta$ | $\sin\theta,\ -\cos\theta$ | ✍️ | arcs |
+| $\displaystyle\int\sin\theta\cos\theta\,d\theta$ | $\tfrac12\sin^2\theta$ | ✍️ | hemisphere |
 
 Split $\frac{x}{(d+x)^2}=\frac1{d+x}-\frac{d}{(d+x)^2}$ to reduce it to sheet integrals.
 
