@@ -65,24 +65,27 @@ mid/.default=0.5}
 > 3. A second, identical rod ($-Q$, length $L$) is placed horizontally on top of the first, forming a "T" (centered on the $y$-axis at $y=L$). Find the new net field at the observation location.
 
 > [!success]- Solution
-> **Part 1.** The charge density is $\lambda=\dfrac{-Q}{L}$, so a piece at $\langle0,y,0\rangle$ has $dQ=-\dfrac{Q}{L}dy$.
->
-> Separation vector (observation − source):
-> $$\vec r=\langle0,-h,0\rangle-\langle0,y,0\rangle=\langle0,-(h+y),0\rangle,\qquad |\vec r|=h+y,\qquad \hat r=-\hat y$$
-> Field of the piece:
+> **Part 1.** The rod is uniform, so the charge density is total charge over length, and a tiny piece of length $dy$ carries $\lambda\,dy$:
+> $$\lambda=\frac{Q_{\text{tot}}}{L}=\frac{-Q}{L}$$
+> $$dQ=\lambda\,dy=-\frac{Q}{L}\,dy\qquad\text{(piece at }\langle0,y,0\rangle)$$
+> The separation vector points from the piece (source) to P (observation):
+> $$\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle0,-h,0\rangle-\langle0,y,0\rangle=\langle0,-(h+y),0\rangle$$
+> $$|\vec r|=\sqrt{r_x^2+r_y^2+r_z^2}=h+y,\qquad \hat r=\frac{\vec r}{|\vec r|}=\langle0,-1,0\rangle=-\hat y$$
+> Each tiny piece acts like a point charge:
 > $$d\vec E=\frac{k\,dQ}{|\vec r|^2}\hat r=\frac{k\left(-\frac QL dy\right)}{(h+y)^2}(-\hat y)=\boxed{\frac{kQ\,dy}{L(h+y)^2}\,\hat y}$$
-> **Direction check:** the rod is negative, so the field points *toward* it. The rod is above P, so the field points up ($+\hat y$) ✓.
+> **Direction check:** the rod is negative, so the field points toward it (up, $+\hat y$) ✓.
 >
-> **Part 2.** Integrate over the rod, $y=0\to L$ (a ✅ formula-sheet integral):
-> $$\vec E=\frac{kQ}{L}\hat y\int_0^L\frac{dy}{(h+y)^2}=\frac{kQ}{L}\left[-\frac1{h+y}\right]_0^L\hat y=\frac{kQ}{L}\left(\frac1h-\frac1{h+L}\right)\hat y=\boxed{\frac{kQ}{h(h+L)}\,\hat y}$$
-> **Check:** for $h\gg L$, this becomes $kQ/h^2$ (far-field) ✓.
+> **Part 2.** Add up all the pieces by integrating $y$ over the rod, $0\to L$. Only $y$ changes from piece to piece, so everything else comes outside the integral. Sheet integral: $\int\frac{dx}{(x+a)^2}=-\frac{1}{x+a}$.
+> $$\vec E=\int d\vec E=\frac{kQ}{L}\hat y\int_0^L\frac{dy}{(h+y)^2}=\frac{kQ}{L}\left[-\frac{1}{h+y}\right]_0^L\hat y=\frac{kQ}{L}\left(\frac1h-\frac{1}{h+L}\right)\hat y=\boxed{\frac{kQ}{h(h+L)}\,\hat y}$$
+> (Common denominator: $\frac1h-\frac1{h+L}=\frac{L}{h(h+L)}$.) **Check:** $h\gg L$ gives $kQ/h^2$ ✓.
 >
-> **Part 3.** Use superposition: $\vec E_{\text{net}}=\vec E_{\text{vertical rod}}+\vec E_{\text{top rod}}$.
+> **Part 3.** Superposition: the new field is the first rod's field (part 2) plus the top rod's field.
+> $$\vec E_{\text{net}}=\vec E_{\text{vertical}}+\vec E_{\text{top}}$$
+> P is on the top rod's perpendicular bisector, $r=h+L$ from its center. ✅ Sheet rod formula:
+> $$|\vec E_{\text{top}}|=\frac{kQ}{r\sqrt{r^2+(L/2)^2}}=\frac{kQ}{(h+L)\sqrt{(h+L)^2+L^2/4}}\qquad(\text{toward the rod, }+\hat y)$$
+> $$\vec E_{\text{net}}=\frac{kQ}{h(h+L)}\hat y+\frac{kQ}{(h+L)\sqrt{(h+L)^2+L^2/4}}\hat y=\boxed{\frac{kQ}{h+L}\left(\frac1h+\frac{1}{\sqrt{(h+L)^2+\frac{L^2}{4}}}\right)\hat y}$$
 >
-> P is on the **perpendicular bisector** of the top rod, a distance $r=h+L$ from its center, so the sheet's rod formula applies: $|\vec E|=\dfrac{kQ}{r\sqrt{r^2+(L/2)^2}}$. The rod is negative, so this field also points toward the rod ($+\hat y$):
-> $$\vec E_{\text{net}}=\left[\frac{kQ}{h(h+L)}+\frac{kQ}{(h+L)\sqrt{(h+L)^2+L^2/4}}\right]\hat y=\boxed{\frac{kQ}{h+L}\left(\frac1h+\frac{1}{\sqrt{(h+L)^2+\frac{L^2}{4}}}\right)\hat y}$$
->
-> **Variation:** put P at $\langle d,0,0\rangle$ (beside the rod's bottom end). Now $\vec r=\langle d,-y,0\rangle$, and you need both $E_x$ and $E_y$.
+> **Variation:** put P at $\langle d,0,0\rangle$. Now $\vec r=\langle d,-y,0\rangle$, and both $E_x$ and $E_y$ survive.
 
 ---
 
@@ -125,21 +128,24 @@ mid/.default=0.5}
 > - **D.** An identical arc with charge $+Q$ is placed in the third quadrant. How does the field at the origin change? (a) goes to zero (b) doubles, same direction (c) quadruples, same direction (d) doubles, opposite direction (e) quadruples, opposite direction (f) can't be determined
 
 > [!success]- Solution
-> **A.** The arc length is $\tfrac{\pi}{2}R$, so $\lambda=\dfrac{-Q}{\pi R/2}=-\dfrac{2Q}{\pi R}$. A piece has length $R\,d\theta$, so
-> $$dQ=\lambda R\,d\theta=\boxed{-\frac{2Q}{\pi}\,d\theta}$$
+> **A.** The charge is spread evenly along the arc, so $\lambda$ is total charge over arc length (a quarter circle is $\frac14$ of $2\pi R$). A piece spanning angle $d\theta$ has arc length $R\,d\theta$:
+> $$\lambda=\frac{Q_{\text{tot}}}{\text{arc length}}=\frac{-Q}{\frac{\pi}{2}R}=-\frac{2Q}{\pi R}$$
+> $$dQ=\lambda\,dl=\lambda R\,d\theta=-\frac{2Q}{\pi R}\,R\,d\theta=\boxed{-\frac{2Q}{\pi}\,d\theta}$$
 >
-> **B.** The source is at $\langle R\cos\theta,R\sin\theta,0\rangle$, so
-> $$\vec r=\vec 0-\langle R\cos\theta,R\sin\theta,0\rangle,\qquad |\vec r|=R,\qquad \hat r=\langle-\cos\theta,-\sin\theta,0\rangle$$
-> $$d\vec E=\frac{k\,dQ}{R^2}\hat r=\frac{k\left(-\frac{2Q}{\pi}d\theta\right)}{R^2}\langle-\cos\theta,-\sin\theta,0\rangle=\boxed{\frac{2kQ\,d\theta}{\pi R^2}\langle\cos\theta,\sin\theta,0\rangle}$$
-> Each piece is negative, so its field points toward that piece, outward into the first quadrant ✓.
+> **B.** The piece is at $\vec r_{\text{src}}=\langle R\cos\theta,R\sin\theta,0\rangle$.
+> $$\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle0,0,0\rangle-\langle R\cos\theta,R\sin\theta,0\rangle=\langle-R\cos\theta,-R\sin\theta,0\rangle$$
+> $$|\vec r|=\sqrt{R^2\cos^2\theta+R^2\sin^2\theta}=R,\qquad\hat r=\frac{\vec r}{|\vec r|}=\langle-\cos\theta,-\sin\theta,0\rangle$$
+> Every piece is the same distance $R$ from the origin, which keeps the integral simple. Point-charge field of the piece:
+> $$d\vec E=\frac{k\,dQ}{|\vec r|^2}\hat r=\frac{k\left(-\frac{2Q}{\pi}d\theta\right)}{R^2}\langle-\cos\theta,-\sin\theta,0\rangle=\boxed{\frac{2kQ\,d\theta}{\pi R^2}\langle\cos\theta,\sin\theta,0\rangle}$$
+> Each piece is negative, so its field points toward it (into the first quadrant) ✓.
 >
-> **C.** Integrate $\theta=0\to\pi/2$:
-> $$\vec E=\frac{2kQ}{\pi R^2}\left\langle\int_0^{\pi/2}\cos\theta\,d\theta,\ \int_0^{\pi/2}\sin\theta\,d\theta,\ 0\right\rangle=\frac{2kQ}{\pi R^2}\langle1-0,\ 0-(-1),\ 0\rangle=\boxed{\frac{2kQ}{\pi R^2}\langle1,1,0\rangle}$$
-> The magnitude is $\dfrac{2\sqrt2\,kQ}{\pi R^2}$, pointing at $45°$ into the first quadrant.
+> **C.** Add up every piece: integrate $\theta$ across the arc, $0\to\pi/2$, one component at a time. With $\int\cos\theta\,d\theta=\sin\theta$ and $\int\sin\theta\,d\theta=-\cos\theta$:
+> $$\vec E=\int d\vec E=\frac{2kQ}{\pi R^2}\left\langle\Big[\sin\theta\Big]_0^{\pi/2},\ \Big[-\cos\theta\Big]_0^{\pi/2},\ 0\right\rangle=\frac{2kQ}{\pi R^2}\langle1-0,\ 0+1,\ 0\rangle=\boxed{\frac{2kQ}{\pi R^2}\langle1,1,0\rangle}$$
+> $$|\vec E|=\sqrt{E_x^2+E_y^2}=\frac{2kQ}{\pi R^2}\sqrt{1^2+1^2}=\frac{2\sqrt2\,kQ}{\pi R^2}\qquad(45°\text{ into the first quadrant})$$
 >
-> **D. (b) Doubles, same direction.** The $+Q$ arc in the third quadrant pushes the field *away* from itself, which is toward the first quadrant. That's the same direction as the $-Q$ arc's pull, with the same magnitude by symmetry.
+> **D. (b) Doubles, same direction.** The $+Q$ arc in the third quadrant pushes the field away from itself, toward the first quadrant: same direction as the $-Q$ arc's pull, same magnitude by symmetry.
 >
-> **Grader note:** the key takes off points for an extra factor of $R$. The most common error is $dQ=\lambda\,d\theta$ instead of $\lambda R\,d\theta$.
+> **Grader note:** the key takes off points for $dQ=\lambda\,d\theta$ (missing the $R$).
 >
 > **Variation:** put the arc in the second quadrant ($\theta=\pi/2\to\pi$) with $+Q$.
 
@@ -184,24 +190,22 @@ mid/.default=0.5}
 > - **D.** Integrate to find $\vec E$ at the origin.
 
 > [!success]- Solution
-> **A.**
-> $$\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle0,0,0\rangle-\langle R\cos\theta,R\sin\theta,0\rangle=\boxed{\langle-R\cos\theta,\,-R\sin\theta,\,0\rangle}$$
+> **A.** A piece at angle $\theta$ on a circle of radius $R$ sits at $\langle R\cos\theta,R\sin\theta,0\rangle$. The vector points from that piece to the observation point (the origin), and every piece is the same distance $R$ away:
+> $$\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle0,0,0\rangle-\langle R\cos\theta,R\sin\theta,0\rangle=\boxed{\langle-R\cos\theta,\,-R\sin\theta,\,0\rangle},\qquad|\vec r|=R$$
 >
-> **B.** The arc length is $R\alpha$, so $\lambda=-\dfrac{Q}{R\alpha}$ and $dQ=\lambda R\,d\theta=\boxed{-\dfrac{Q}{\alpha}\,d\theta}$.
+> **B.** The arc spans angle $\alpha$, so its length is $R\alpha$ (arc length = radius × angle in radians). The piece's charge is charge-per-length times its length $R\,d\theta$:
+> $$\lambda=\frac{Q_{\text{tot}}}{\text{arc length}}=\frac{-Q}{R\alpha},\qquad dQ=\lambda R\,d\theta=\frac{-Q}{R\alpha}R\,d\theta=\boxed{-\frac{Q}{\alpha}\,d\theta}$$
 >
-> **C.**
+> **C.** Treat the piece as a point charge, using $\vec r$ from part A (with $|\vec r|=R$):
 > $$d\vec E=\frac{k\,dQ}{|\vec r|^3}\vec r=\frac{k\left(-\frac Q\alpha d\theta\right)}{R^3}\langle-R\cos\theta,-R\sin\theta,0\rangle=\boxed{\frac{kQ}{\alpha R^2}\langle\cos\theta,\sin\theta,0\rangle\,d\theta}$$
-> It points from the origin **toward** the piece, since the piece is negative.
+> It points from the origin **toward** the piece (negative charge).
 >
-> **D.**
-> $$\vec E=\frac{kQ}{\alpha R^2}\left\langle\int_0^\alpha\cos\theta\,d\theta,\ \int_0^\alpha\sin\theta\,d\theta,\ 0\right\rangle=\boxed{\frac{kQ}{\alpha R^2}\langle\sin\alpha,\ 1-\cos\alpha,\ 0\rangle}$$
+> **D.** Add up all the pieces by integrating $\theta$ from $0$ to $\alpha$, one component at a time, with $\int\cos\theta\,d\theta=\sin\theta$ and $\int\sin\theta\,d\theta=-\cos\theta$:
+> $$\vec E=\int d\vec E=\frac{kQ}{\alpha R^2}\left\langle\Big[\sin\theta\Big]_0^\alpha,\ \Big[-\cos\theta\Big]_0^\alpha,\ 0\right\rangle=\boxed{\frac{kQ}{\alpha R^2}\langle\sin\alpha,\ 1-\cos\alpha,\ 0\rangle}$$
 >
-> **Checks:**
-> - $\alpha=\pi/2$ gives $\frac{2kQ}{\pi R^2}\langle1,1,0\rangle$, which matches 1.2 ✓.
-> - $\alpha=\pi$ gives $\frac{2kQ}{\pi R^2}\hat y$ (semicircle) ✓.
-> - $\alpha=2\pi$ gives $\vec 0$ (full ring) ✓.
+> **Checks:** $\alpha=\pi/2$ matches 1.2 ✓; $\alpha=\pi$ gives $\frac{2kQ}{\pi R^2}\hat y$ ✓; $\alpha=2\pi$ gives $\vec 0$ (full ring) ✓.
 >
-> **Variation:** let the arc run from $\theta=-\alpha/2$ to $+\alpha/2$ (symmetric about $+x$). Then $E_y=0$ by symmetry and $E_x=-\dfrac{2kQ}{\alpha R^2}\sin\dfrac\alpha2$.
+> **Variation:** arc from $-\alpha/2$ to $+\alpha/2$. Then $E_y=0$ and $E_x=-\dfrac{2kQ}{\alpha R^2}\sin\dfrac\alpha2$.
 
 ---
 
@@ -247,29 +251,26 @@ mid/.default=0.5}
 > - **C.** Integrate, then simplify in the limit $x\gg L$. Hint: $(1+\epsilon)^N\approx1+N\epsilon+\frac{N(N-1)}{2}\epsilon^2$.
 
 > [!success]- Solution
-> **Densities:** each rod has $|\lambda|=\dfrac{Q}{L/2}=\dfrac{2Q}{L}$.
+> Each rod has length $L/2$ with its charge spread evenly, so:
+> $$|\lambda|=\frac{Q_{\text{tot}}}{\text{length}}=\frac{Q}{L/2}=\frac{2Q}{L}\qquad(\text{top rod }-,\ \text{bottom rod }+)$$
 >
-> **A.**
-> - $d\vec E_-$ points **toward** the negative piece at $(0,y)$: up and to the left.
-> - $d\vec E_+$ points **away from** the positive piece at $(0,-y)$: up and to the right.
-> - The $x$-components cancel, so $d\vec E$ points straight **up** ($+\hat y$).
+> **A.** $d\vec E_-$ points toward the negative piece at $(0,y)$ (up-left). $d\vec E_+$ points away from the positive piece at $(0,-y)$ (up-right). The $x$-parts cancel, so $d\vec E$ points **up**.
 >
-> **B.** Negative piece at $\langle0,y,0\rangle$, with $dQ_-=-\dfrac{2Q}{L}dy$ and $\vec r_-=\langle x,-y,0\rangle$:
-> $$d\vec E_-=k\frac{-\frac{2Q}{L}dy}{(x^2+y^2)^{3/2}}\langle x,-y,0\rangle$$
-> Positive piece at $\langle0,-y,0\rangle$, with $dQ_+=+\dfrac{2Q}{L}dy$ and $\vec r_+=\langle x,y,0\rangle$:
-> $$d\vec E_+=k\frac{\frac{2Q}{L}dy}{(x^2+y^2)^{3/2}}\langle x,y,0\rangle$$
+> **B.** Each piece uses $d\vec E=\dfrac{k\,dQ}{|\vec r|^3}\vec r$.
+> - Negative piece: $dQ_-=\lambda_-dy=-\frac{2Q}{L}dy$ at $\langle0,y,0\rangle$
+> $$\vec r_-=\langle x,0,0\rangle-\langle0,y,0\rangle=\langle x,-y,0\rangle,\qquad d\vec E_-=\frac{k\left(-\frac{2Q}{L}dy\right)}{(x^2+y^2)^{3/2}}\langle x,-y,0\rangle$$
+> - Positive piece: $dQ_+=+\frac{2Q}{L}dy$ at $\langle0,-y,0\rangle$
+> $$\vec r_+=\langle x,0,0\rangle-\langle0,-y,0\rangle=\langle x,y,0\rangle,\qquad d\vec E_+=\frac{k\left(\frac{2Q}{L}dy\right)}{(x^2+y^2)^{3/2}}\langle x,y,0\rangle$$
 > Adding them, the $x$-parts cancel and the $y$-parts add:
-> $$\boxed{d\vec E=\frac{4kQ}{L}\frac{y\,dy}{(x^2+y^2)^{3/2}}\,\hat y}$$
+> $$d\vec E=d\vec E_-+d\vec E_+=\frac{2kQ\,dy}{L(x^2+y^2)^{3/2}}\langle -x+x,\ y+y,\ 0\rangle=\boxed{\frac{4kQ}{L}\frac{y\,dy}{(x^2+y^2)^{3/2}}\,\hat y}$$
 >
-> **C.** Integrate $y=0\to L/2$ (a ✅ sheet integral):
-> $$\vec E=\frac{4kQ}{L}\left[-\frac{1}{\sqrt{x^2+y^2}}\right]_0^{L/2}\hat y=\boxed{\frac{4kQ}{L}\left(\frac1x-\frac{1}{\sqrt{x^2+L^2/4}}\right)\hat y}$$
-> **Far limit ($x\gg L$):**
-> $$\frac{1}{\sqrt{x^2+L^2/4}}=\frac1x\left(1+\frac{L^2}{4x^2}\right)^{-1/2}\approx\frac1x\left(1-\frac{L^2}{8x^2}\right)$$
-> so the bracket is $\approx\dfrac{L^2}{8x^3}$, giving
-> $$\vec E\approx\boxed{\frac{kQL}{2x^3}\,\hat y}$$
-> **Check:** this is a dipole. The charge centers sit at $\pm L/4$, so $p=Q\cdot\frac L2$, pointing from $-$ to $+$ ($-\hat y$). The perpendicular dipole field is $-k\vec p/x^3=+\dfrac{kQL}{2x^3}\hat y$ ✓.
+> **C.** Integrate $y$ over one rod's length, $0\to L/2$ (each $y$ already pairs a negative piece with its matching positive piece). Sheet integral $\int\frac{x\,dx}{(x^2+a^2)^{3/2}}=-\frac{1}{\sqrt{x^2+a^2}}$ (variable $y$, $a=x$):
+> $$\vec E=\int_0^{L/2}d\vec E=\frac{4kQ}{L}\left[-\frac{1}{\sqrt{x^2+y^2}}\right]_0^{L/2}\hat y=\boxed{\frac{4kQ}{L}\left(\frac1x-\frac{1}{\sqrt{x^2+L^2/4}}\right)\hat y}$$
+> **Far limit:** for $x\gg L$ the two terms nearly cancel, so expand the second one. Binomial $(1+\epsilon)^n\approx1+n\epsilon$ with $\epsilon=\frac{L^2}{4x^2}$, $n=-\frac12$:
+> $$\frac{1}{\sqrt{x^2+L^2/4}}=\frac1x\left(1+\frac{L^2}{4x^2}\right)^{-1/2}\approx\frac1x\left(1-\frac{L^2}{8x^2}\right)\quad\Longrightarrow\quad\vec E\approx\frac{4kQ}{L}\cdot\frac{L^2}{8x^3}\hat y=\boxed{\frac{kQL}{2x^3}\,\hat y}$$
+> **Check:** a dipole with $p=Q\cdot\frac L2$ pointing $-\hat y$: $\vec E_\perp=-\frac{k\vec p}{x^3}=+\frac{kQL}{2x^3}\hat y$ ✓.
 >
-> **Variation:** put the observation point on the $y$-axis at $\langle0,-D,0\rangle$ below both rods. (No symmetry help, but only $E_y$ survives.)
+> **Variation:** observation point at $\langle0,-D,0\rangle$ below both rods (only $E_y$ survives).
 
 ---
 
@@ -313,17 +314,18 @@ mid/.default=0.5}
 > - **D.** Find $\vec E$ in the limit $0<z\ll R$.
 
 > [!success]- Solution
-> **A.** The area is $\pi R^2-\pi\left(\frac R2\right)^2=\frac34\pi R^2$, so $\sigma=\dfrac{4Q}{3\pi R^2}$. A ring has area $2\pi r\,dr$:
-> $$dQ=\sigma\,2\pi r\,dr=\boxed{\frac{8Q}{3R^2}\,r\,dr}$$
+> **A.** The annulus is a full disk minus the hole, with the charge spread evenly over that area. A thin ring of radius $r$ and width $dr$ has area $2\pi r\,dr$ (circumference × width):
+> $$A=\pi R^2-\pi\left(\tfrac R2\right)^2=\tfrac34\pi R^2,\qquad\sigma=\frac{Q_{\text{tot}}}{A}=\frac{Q}{\frac34\pi R^2}=\frac{4Q}{3\pi R^2}$$
+> $$dQ=\sigma\,dA=\sigma\,2\pi r\,dr=\frac{4Q}{3\pi R^2}2\pi r\,dr=\boxed{\frac{8Q}{3R^2}\,r\,dr}$$
 >
-> **B.** Use the ✅ ring formula with $q\to dQ$ and $R\to r$:
-> $$d\vec E=\frac{k\,dQ\,z}{(z^2+r^2)^{3/2}}\hat z=\boxed{\frac{8kQz}{3R^2}\frac{r\,dr}{(z^2+r^2)^{3/2}}\,\hat z}$$
+> **B.** Each thin ring is a ring of charge, so reuse the known on-axis ring result instead of starting from point charges. ✅ Ring formula $E_z=\dfrac{kqz}{(z^2+R^2)^{3/2}}$ with $q\to dQ$, $R\to r$:
+> $$dE_z=\frac{k\,dQ\,z}{(z^2+r^2)^{3/2}}=\boxed{\frac{8kQz}{3R^2}\frac{r\,dr}{(z^2+r^2)^{3/2}}}\ (\hat z)$$
 >
-> **C.** Integrate $r=R/2\to R$ (substitute $u=z^2+r^2$):
-> $$\vec E=\frac{8kQz}{3R^2}\left[-\frac{1}{\sqrt{z^2+r^2}}\right]_{R/2}^{R}\hat z=\boxed{\frac{8kQz}{3R^2}\left(\frac{1}{\sqrt{z^2+R^2/4}}-\frac{1}{\sqrt{z^2+R^2}}\right)\hat z}$$
-> **Cross-check by superposition:** a full disk of radius $R$ minus a disk of radius $R/2$ (same $\sigma$), each using the ✅ disk formula, gives the same answer.
+> **C.** Add up the rings from the inner edge $r=R/2$ to the outer edge $r=R$. Sheet integral $\int\frac{x\,dx}{(x^2+a^2)^{3/2}}=-\frac{1}{\sqrt{x^2+a^2}}$ (variable $r$, $a=z$):
+> $$\vec E=\int_{R/2}^{R}d\vec E=\frac{8kQz}{3R^2}\left[-\frac{1}{\sqrt{z^2+r^2}}\right]_{R/2}^{R}\hat z=\boxed{\frac{8kQz}{3R^2}\left(\frac{1}{\sqrt{z^2+R^2/4}}-\frac{1}{\sqrt{z^2+R^2}}\right)\hat z}$$
+> **Cross-check:** full disk ($R$) minus disk ($R/2$), same $\sigma$, using the ✅ disk formula, gives the same result.
 >
-> **D.** For $z\ll R$, the bracket is $\approx\dfrac{1}{R/2}-\dfrac1R=\dfrac1R$, so
+> **D.** For $z\ll R$: $\sqrt{z^2+R^2/4}\approx\frac R2$ and $\sqrt{z^2+R^2}\approx R$, so the bracket $\approx\frac2R-\frac1R=\frac1R$:
 > $$\vec E\approx\boxed{\frac{8kQz}{3R^3}\,\hat z}$$
 > The field is zero at the center and grows linearly with $z$. There's no charge at the hole, so there's no "sheet" jump at $z=0$, unlike a full disk.
 >
@@ -342,19 +344,21 @@ mid/.default=0.5}
 > - **D.** Show that it reduces to a point charge when $d\gg L$.
 
 > [!success]- Solution
-> **A.** $dQ=\lambda\,dx=\alpha x\,dx$, so $Q=\displaystyle\int_0^L\alpha x\,dx=\boxed{\tfrac12\alpha L^2}$. ✅ (This is a polynomial integral from the sheet.)
+> **A.** The density changes along the rod, so you can't just multiply density × length. Add up the charge of every piece instead:
+> $$dQ=\lambda\,dx=\alpha x\,dx,\qquad Q=\int dQ=\int_0^L\alpha x\,dx=\alpha\Big[\tfrac{x^2}{2}\Big]_0^L=\boxed{\tfrac12\alpha L^2}$$
 >
-> **B.** The piece is at $\langle x,0,0\rangle$:
-> $$\vec r=\langle-d,0,0\rangle-\langle x,0,0\rangle=\langle-(d+x),0,0\rangle,\qquad |\vec r|=d+x$$
-> $$d\vec E=\frac{k\,\alpha x\,dx}{(d+x)^3}\langle-(d+x),0,0\rangle=\boxed{-\frac{k\alpha\,x\,dx}{(d+x)^2}\,\hat x}$$
+> **B.** A piece at $\langle x,0,0\rangle$ is to the right of P, so $\vec r$ (piece → P) points in the $-x$ direction:
+> $$\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle-d,0,0\rangle-\langle x,0,0\rangle=\langle-(d+x),0,0\rangle,\qquad|\vec r|=d+x$$
+> Point-charge field of the piece (positive, so it points away from the rod, toward $-x$):
+> $$d\vec E=\frac{k\,dQ}{|\vec r|^3}\vec r=\frac{k\,\alpha x\,dx}{(d+x)^3}\langle-(d+x),0,0\rangle=\boxed{-\frac{k\alpha\,x\,dx}{(d+x)^2}\,\hat x}$$
 >
-> **C.** Split the integrand so it uses only sheet integrals: $\dfrac{x}{(d+x)^2}=\dfrac{1}{d+x}-\dfrac{d}{(d+x)^2}$. Then
-> $$\int_0^L\frac{x\,dx}{(d+x)^2}=\Big[\ln(d+x)\Big]_0^L+d\left[\frac{1}{d+x}\right]_0^L=\ln\frac{d+L}{d}-\frac{L}{d+L}$$
-> $$\boxed{\vec E=-k\alpha\left[\ln\!\left(1+\frac Ld\right)-\frac{L}{L+d}\right]\hat x}$$
+> **C.** Integrate over the rod, $x=0\to L$. The integrand isn't directly on the sheet, so split $\frac{x}{(d+x)^2}=\frac{1}{d+x}-\frac{d}{(d+x)^2}$ and use the sheet integrals $\int\frac{dx}{x+a}=\ln(x+a)$, $\int\frac{dx}{(x+a)^2}=-\frac{1}{x+a}$:
+> $$\int_0^L\frac{x\,dx}{(d+x)^2}=\Big[\ln(d+x)\Big]_0^L+d\left[\frac{1}{d+x}\right]_0^L=\ln\frac{d+L}{d}+d\left(\frac{1}{d+L}-\frac1d\right)=\ln\frac{d+L}{d}-\frac{L}{d+L}$$
+> $$\vec E=\int d\vec E=\boxed{-k\alpha\left[\ln\!\left(1+\frac Ld\right)-\frac{L}{L+d}\right]\hat x}$$
 >
-> **D.** Let $\epsilon=L/d\ll1$. Then $\ln(1+\epsilon)\approx\epsilon-\tfrac12\epsilon^2$ and $\dfrac{\epsilon}{1+\epsilon}\approx\epsilon-\epsilon^2$, so the bracket is $\approx\tfrac12\epsilon^2=\dfrac{L^2}{2d^2}$. That gives
-> $$\vec E\approx-\frac{k\alpha L^2}{2d^2}\hat x=-\frac{kQ}{d^2}\hat x\ \checkmark$$
-> (pointing away from the positive rod, toward $-x$).
+> **D.** Far away, the rod should look like a point charge $Q$. Check it with $\epsilon=L/d\ll1$: $\ln(1+\epsilon)\approx\epsilon-\tfrac12\epsilon^2$ (Taylor) and $\frac{\epsilon}{1+\epsilon}=\epsilon(1+\epsilon)^{-1}\approx\epsilon(1-\epsilon)$ (binomial). The bracket $\approx\tfrac12\epsilon^2=\frac{L^2}{2d^2}$:
+> $$\vec E\approx-\frac{k\alpha L^2}{2d^2}\hat x=-\frac{kQ}{d^2}\hat x\ \checkmark\qquad(Q=\tfrac12\alpha L^2)$$
+> It points away from the positive rod, toward $-x$, like a point charge $Q$ would.
 
 ---
 
@@ -402,23 +406,21 @@ mid/.default=0.5}
 > - **E.** Repeat D if the cube were plastic.
 
 > [!success]- Solution
-> **External field at the origin.** Use $\vec r=$ obs − source for each ball:
-> - Ball at $\langle d,0,0\rangle$: $\vec r=\langle-d,0,0\rangle$, so $\vec E_1=\dfrac{kQ}{d^2}(-\hat x)$.
-> - Ball at $\langle-2d,0,0\rangle$: $\vec r=\langle2d,0,0\rangle$, so $\vec E_2=\dfrac{kQ}{4d^2}(+\hat x)$.
+> **External field at the origin.** Point charge $\vec E=\dfrac{kq}{|\vec r|^2}\hat r$, $\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}$:
+> $$\vec r_1=\langle0,0,0\rangle-\langle d,0,0\rangle=\langle-d,0,0\rangle\ \Rightarrow\ \vec E_1=\frac{kQ}{d^2}(-\hat x)$$
+> $$\vec r_2=\langle0,0,0\rangle-\langle-2d,0,0\rangle=\langle2d,0,0\rangle\ \Rightarrow\ \vec E_2=\frac{kQ}{(2d)^2}(+\hat x)=\frac{kQ}{4d^2}\hat x$$
+> $$\vec E_{\text{ext}}=\vec E_1+\vec E_2=\left(-1+\tfrac14\right)\frac{kQ}{d^2}\hat x=-\frac{3kQ}{4d^2}\hat x$$
 >
-> Together:
-> $$\vec E_{\text{ext}}=-\frac{3kQ}{4d^2}\hat x$$
+> **A. Direction 7 ($-\hat x$).** $\vec p=\alpha\vec E_{\text{ext}}$: an induced dipole lines up with the applied field.
 >
-> **A. Direction 7 ($-\hat x$).** An induced dipole lines up with the applied field, $\vec p=\alpha\vec E_{\text{ext}}$.
+> **B. Direction 3 ($+\hat x$).** An induced dipole is always attracted toward the **stronger** field, i.e. toward the nearer charge. Mario's $-$ end faces the closer ball at $+d$, and that attraction beats the repulsion of his $+$ end.
 >
-> **B. Direction 3 ($+\hat x$).** An induced dipole is always attracted toward the **stronger** field, i.e. toward the nearer charge. Mario's $-$ end faces the closer ball at $+d$, and that attraction beats the repulsion of the $+$ end.
+> **C.** Metal in equilibrium:
+> $$\vec E_{\text{net}}=\vec E_{\text{ext}}+\vec E_{\text{Mario}}=0\ \Rightarrow\ \vec E_{\text{Mario}}=-\vec E_{\text{ext}}=\boxed{\frac{3kQ}{4d^2}\hat x=\frac{3Q}{16\pi\epsilon_0d^2}\hat x}$$
 >
-> **C.** Mario is a conductor, so $\vec E_{\text{net}}=0$ inside, which means $\vec E_{\text{Mario}}=-\vec E_{\text{ext}}$:
-> $$\boxed{\vec E_{\text{Mario}}=\frac{3kQ}{4d^2}\hat x=\frac{3Q}{16\pi\epsilon_0d^2}\hat x}$$
+> **D. Metal cube:** charge on the **surface** only. Electrons move opposite $\vec E_{\text{ext}}$ (toward $+x$): **right face $-$**, **left face $+$**, interior neutral.
 >
-> **D. Metal cube:** excess charge sits **on the surface**. Electrons move opposite $\vec E_{\text{ext}}$ (toward $+x$), so the **right face is $-$** and the **left face is $+$**. The interior is neutral.
->
-> **E. Plastic cube:** charges can't travel. Every molecule becomes a small dipole with its $+$ end on the left and $-$ end on the right, slightly stronger near the right side (closer to the nearer ball). There is no net surface charge pile-up like in metal.
+> **E. Plastic cube:** charges can't travel. Each molecule becomes a small dipole ($+$ left, $-$ right), slightly stronger on the right (nearer ball). No surface pile-up.
 
 ---
 
@@ -463,17 +465,19 @@ mid/.default=0.5}
 > 3. Find $|\vec E_{\text{metal}}|$ at the block's center.
 
 > [!success]- Solution
-> **Fields at the center** (take the ball on the left, $+x$ to the right, $+y$ up):
-> - **Ball** ($-Q$, distance $d/2$): the field points toward the ball, $\vec E_{\text{ball}}=-\dfrac{kQ}{(d/2)^2}\hat x=-\dfrac{4kQ}{d^2}\hat x$.
-> - **Dipole:** $\vec p$ points from $-$ to $+$, i.e. down ($-\hat y$). The center lies on the dipole's perpendicular bisector, so the ✅ sheet formula gives $\vec E_\perp=-\dfrac{k\vec p}{r^3}=+\dfrac{kQs}{(d/2)^3}\hat y=\dfrac{8kQs}{d^3}\hat y$.
+> **Fields at the center** (ball on the left, $+x$ right, $+y$ up):
+> - **Ball**, point charge $E=\dfrac{kq}{r^2}$ with $q=Q$, $r=\frac d2$, pointing toward the ball:
+> $$\vec E_{\text{ball}}=-\frac{kQ}{(d/2)^2}\hat x=-\frac{4kQ}{d^2}\hat x$$
+> - **Dipole:** $\vec p=Qs$ from $-$ to $+$, i.e. $\vec p=-Qs\,\hat y$. The center is on its perpendicular bisector, so (✅ sheet) $\vec E_\perp=-\dfrac{k\vec p}{r^3}$:
+> $$\vec E_{\text{dip}}=-\frac{k(-Qs\,\hat y)}{(d/2)^3}=\frac{8kQs}{d^3}\hat y$$
 >
-> **1. Charge distribution:** electrons move opposite $\vec E_{\text{ext}}$, which is mostly $-x$ with a slight $+y$. So the **right face is $-$** and the **left face is $+$**, with a slight $+$ on top and $-$ on the bottom. All of it is on the surface.
+> **1. Charge distribution:** electrons move opposite $\vec E_{\text{ext}}$ (mostly $-x$, slightly $+y$): **right face $-$**, **left face $+$**, slight $+$ on top and $-$ on the bottom. All on the surface.
 >
-> **2.** $\vec E_{\text{ball}}$ is a long arrow pointing left. $\vec E_{\text{dipole}}$ is a short arrow pointing up (since $s\ll d$). $\vec E_{\text{metal}}$ points right and slightly down, exactly canceling the two. $\vec E_{\text{net}}=0$ (say "zero" explicitly).
+> **2.** $\vec E_{\text{ball}}$: long, left. $\vec E_{\text{dip}}$: short, up ($s\ll d$). $\vec E_{\text{metal}}$: right and slightly down, cancelling both. $\vec E_{\text{net}}=0$ (say so).
 >
-> **3.** The block is a conductor, so $\vec E_{\text{net}}=0$:
-> $$\vec E_{\text{metal}}=-(\vec E_{\text{ball}}+\vec E_{\text{dip}})=\left\langle\frac{4kQ}{d^2},\ -\frac{8kQs}{d^3},\ 0\right\rangle$$
-> $$|\vec E_{\text{metal}}|=\boxed{\frac{4kQ}{d^2}\sqrt{1+\frac{4s^2}{d^2}}}$$
+> **3.** Inside a conductor in equilibrium the total field is zero, so the metal's own charges must exactly cancel the other two fields:
+> $$\vec E_{\text{net}}=\vec E_{\text{ball}}+\vec E_{\text{dip}}+\vec E_{\text{metal}}=0\ \Rightarrow\ \vec E_{\text{metal}}=-(\vec E_{\text{ball}}+\vec E_{\text{dip}})=\left\langle\frac{4kQ}{d^2},\ -\frac{8kQs}{d^3},\ 0\right\rangle$$
+> $$|\vec E_{\text{metal}}|=\sqrt{E_x^2+E_y^2}=\sqrt{\left(\frac{4kQ}{d^2}\right)^2+\left(\frac{8kQs}{d^3}\right)^2}=\boxed{\frac{4kQ}{d^2}\sqrt{1+\frac{4s^2}{d^2}}}$$
 
 ---
 
@@ -517,23 +521,22 @@ mid/.default=0.5}
 > - **C.** The whole object is placed between two large oppositely charged plates. How does $V_0-V_{R_a}$ change? (no change / increases / decreases / can't tell)
 
 > [!success]- Solution
-> **Field in each region** (only charge *inside* radius $r$ contributes, since a shell gives zero inside itself):
-> | Region | $\vec E$ |
-> |---|---|
-> | $r<R_a$ (inside the metal) | $0$ (conductor) |
-> | $R_a<r<R_b$ | $\dfrac{2kQ}{r^2}\hat r$ |
-> | $r>R_b$ | $\dfrac{k(2Q-Q)}{r^2}\hat r=\dfrac{kQ}{r^2}\hat r$ |
+> **Field in each region:** $E=\dfrac{kQ_{\text{enc}}}{r^2}$ (a shell gives zero inside itself; a conductor has $E=0$ inside).
+> | Region | $Q_{\text{enc}}$ | $\vec E$ |
+> |---|---|---|
+> | $r<R_a$ (metal) | | $0$ |
+> | $R_a<r<R_b$ | $2Q$ | $\dfrac{2kQ}{r^2}\hat r$ |
+> | $r>R_b$ | $2Q-Q=Q$ | $\dfrac{kQ}{r^2}\hat r$ |
 >
-> **A.** Go radially from $R_b$ to $R_a$ with $d\vec l=dr\,\hat r$:
-> $$V_{R_a}-V_{R_b}=-\int_{R_b}^{R_a}\frac{2kQ}{r^2}dr=2kQ\left[\frac1r\right]_{R_b}^{R_a}=\boxed{2kQ\left(\frac1{R_a}-\frac1{R_b}\right)}$$
-> **Sign check:** you moved inward, against $\vec E$ (which points outward), so $\Delta V>0$ ✓.
+> **A.** $\Delta V=-\int\vec E\cdot d\vec l$, radially from $R_b$ to $R_a$, $d\vec l=dr\,\hat r$, and $\int r^{-2}dr=-\frac1r$:
+> $$V_{R_a}-V_{R_b}=-\int_{R_b}^{R_a}\frac{2kQ}{r^2}\,dr=-2kQ\left[-\frac1r\right]_{R_b}^{R_a}=\boxed{2kQ\left(\frac1{R_a}-\frac1{R_b}\right)}$$
+> **Sign check:** inward is against $\vec E$, so $\Delta V>0$ ✓.
 >
-> **B.** Add up the regions:
-> $$V_0-V_\infty=\underbrace{(V_0-V_{R_a})}_{0\text{ (metal)}}+\underbrace{(V_{R_a}-V_{R_b})}_{\text{part A}}+\underbrace{(V_{R_b}-V_\infty)}_{kQ/R_b}$$
-> $$=\boxed{kQ\left(\frac{2}{R_a}-\frac1{R_b}\right)}$$
-> **Superposition check:** at the center, the sphere contributes $\dfrac{k(2Q)}{R_a}$ and the shell (constant inside) contributes $-\dfrac{kQ}{R_b}$ ✓.
+> **B.** Add the regions. Outside both, the net $+Q$ acts like a point charge: $\Delta V=kq\left(\frac{1}{r_f}-\frac{1}{r_i}\right)$.
+> $$V_0-V_\infty=\underbrace{(V_0-V_{R_a})}_{0\ (\text{metal})}+\underbrace{(V_{R_a}-V_{R_b})}_{\text{part A}}+\underbrace{kQ\left(\frac{1}{R_b}-\frac1\infty\right)}_{V_{R_b}-V_\infty}=2kQ\left(\frac1{R_a}-\frac1{R_b}\right)+\frac{kQ}{R_b}=\boxed{kQ\left(\frac{2}{R_a}-\frac1{R_b}\right)}$$
+> **Superposition check:** $V=\sum\frac{kq}{r}$ at the center: $\frac{k(2Q)}{R_a}+\frac{k(-Q)}{R_b}$ ✓.
 >
-> **C. No change.** $\vec E=0$ inside the metal no matter what external field is applied, so $V_0-V_{R_a}=0$ always.
+> **C. No change.** $\vec E=0$ inside the metal regardless of outside fields, so $V_0-V_{R_a}=0$.
 
 ---
 
@@ -581,19 +584,20 @@ mid/.default=0.5}
 > - **B.** It then enters the second capacitor just missing the negative plate and exits after crossing the full separation $s$, just missing the positive plate. Find its exit speed. (The field outside the capacitors is negligible.)
 
 > [!success]- Solution
-> **Fields (✅ sheet capacitor formula):** inside each capacitor $|\vec E|=\dfrac{Q/A}{\epsilon_0}$ with $A=\pi R^2$:
-> $$E_1=\frac{Q}{\pi R^2\epsilon_0},\qquad E_2=\frac{3Q}{\pi R^2\epsilon_0}$$
-> Each field is uniform and points from the $+$ plate to the $-$ plate.
+> **Fields.** ✅ Capacitor formula $E=\dfrac{Q/A}{\epsilon_0}$ with $A=\pi R^2$, pointing from $+$ to $-$:
+> $$E_1=\frac{Q/(\pi R^2)}{\epsilon_0}=\frac{Q}{\pi R^2\epsilon_0},\qquad E_2=\frac{3Q}{\pi R^2\epsilon_0}$$
 >
-> **A.** The electron goes from the $-$ plate to the $+$ plate, i.e. **against** $\vec E_1$. In a uniform field $\Delta V=-\vec E\cdot\Delta\vec r=+E_1s$:
-> $$\Delta V_1=\frac{Qs}{\pi R^2\epsilon_0},\qquad \Delta U_1=q\Delta V_1=\boxed{-\frac{eQs}{\pi R^2\epsilon_0}}$$
-> **Sign check:** the electron is attracted to the $+$ plate, so it speeds up. $\Delta K>0$ means $\Delta U<0$ ✓.
+> **A.** Uniform field: $\Delta V=-\vec E\cdot\Delta\vec r$. The electron moves distance $s$ from the $-$ plate to the $+$ plate, opposite $\vec E_1$, so $\vec E_1\cdot\Delta\vec r=-E_1s$:
+> $$\Delta V_1=-\vec E_1\cdot\Delta\vec r=+E_1s=\frac{Qs}{\pi R^2\epsilon_0}$$
+> $$\Delta U_1=q\Delta V_1=(-e)\frac{Qs}{\pi R^2\epsilon_0}=\boxed{-\frac{eQs}{\pi R^2\epsilon_0}}$$
+> **Sign check:** attracted to $+$, speeds up, so $\Delta U<0$ ✓.
 >
-> **B.** Split the electron's displacement into a part along the plates (perpendicular to $\vec E_2$, contributing $\Delta V=0$) and a part across the gap (length $s$, from the $-$ side to the $+$ side, against $\vec E_2$):
-> $$\Delta V_2=+E_2s=\frac{3Qs}{\pi R^2\epsilon_0},\qquad \Delta U_2=-\frac{3eQs}{\pi R^2\epsilon_0}$$
-> **Energy conservation** (system: electron + capacitors): $\Delta K=-(\Delta U_1+\Delta U_2)=\dfrac{4eQs}{\pi R^2\epsilon_0}$. Then
-> $$\tfrac12m_ev_f^2=\tfrac12m_ev_0^2+\frac{4eQs}{\pi R^2\epsilon_0}\quad\Longrightarrow\quad\boxed{v_f=\sqrt{v_0^2+\frac{8eQs}{\pi R^2\epsilon_0m_e}}}$$
-> The angle $\theta$ and the length of the path inside the plates **don't matter**. Only the displacement along $\vec E$ counts.
+> **B.** Only the part of the displacement along $\vec E_2$ counts (motion along the plates is $\perp\vec E_2$). It crosses $s$ from $-$ to $+$:
+> $$\Delta V_2=+E_2s=\frac{3Qs}{\pi R^2\epsilon_0},\qquad\Delta U_2=q\Delta V_2=-\frac{3eQs}{\pi R^2\epsilon_0}$$
+> Energy conservation (system: electron + capacitors), $\Delta K+\Delta U=0$:
+> $$\Delta K=-(\Delta U_1+\Delta U_2)=\frac{4eQs}{\pi R^2\epsilon_0}$$
+> $$\Delta K=\tfrac12m_ev_f^2-\tfrac12m_ev_0^2\ \Rightarrow\ v_f=\sqrt{v_0^2+\frac{2\Delta K}{m_e}}=\boxed{\sqrt{v_0^2+\frac{8eQs}{\pi R^2\epsilon_0m_e}}}$$
+> $\theta$ and the path length don't matter; only displacement along $\vec E$ counts.
 
 ---
 
@@ -637,24 +641,23 @@ mid/.default=0.5}
 > 3. Find $V_C-V_B$.
 
 > [!success]- Solution
-> **Dipole moment:** $\vec p$ points from $-$ to $+$, so $\vec p=qs(-\hat x)$. On the axis (✅ sheet):
-> $$\vec E_\parallel=\frac{2k\vec p}{x^3}=-\frac{2kqs}{x^3}\hat x$$
-> The field points toward the dipole along this axis, because you're on the $-$ side.
+> **Dipole moment and field** ($\vec p$ points $-\to+$, i.e. $-\hat x$; ✅ on-axis formula):
+> $$\vec p=qs\,(-\hat x),\qquad\vec E_\parallel=\frac{2k\vec p}{x^3}=\frac{2k(-qs\,\hat x)}{x^3}=-\frac{2kqs}{x^3}\hat x$$
+> The field points toward the dipole along this axis, because you're on its $-$ side.
 >
-> **1.** Path along $x$ from $d$ to $2d$, $d\vec l=dx\,\hat x$:
+> **1.** $\Delta V=-\int\vec E\cdot d\vec l$ with $d\vec l=dx\,\hat x$, and $\int x^{-3}dx=-\frac{1}{2x^2}$:
 > $$V_B-V_A=-\int_d^{2d}\left(-\frac{2kqs}{x^3}\right)dx=2kqs\left[-\frac{1}{2x^2}\right]_d^{2d}=kqs\left(\frac1{d^2}-\frac1{4d^2}\right)=\boxed{\frac{3kqs}{4d^2}}$$
-> **Sign check:** you move $+x$, against $\vec E$ (which points $-x$), so $\Delta V>0$ ✓ ("uphill").
+> **Sign check:** moving $+x$ against $\vec E$ ($-x$), so $\Delta V>0$ ✓.
 >
-> **2.** First,
-> $$V_\infty-V_B=-\int_{2d}^{\infty}\left(-\frac{2kqs}{x^3}\right)dx=2kqs\cdot\frac{1}{2(2d)^2}=\frac{kqs}{4d^2}$$
-> Energy conservation, with $K_i=0$ and charge $-e$:
-> $$\Delta K=-q\Delta V=-(-e)\frac{kqs}{4d^2}\quad\Longrightarrow\quad\boxed{K_f=\frac{ekqs}{4d^2}}$$
+> **2.** The electron's energy change depends on $\Delta V$ from B to $\infty$. Same integral as part 1, new limits:
+> $$V_\infty-V_B=-\int_{2d}^{\infty}\left(-\frac{2kqs}{x^3}\right)dx=2kqs\left[-\frac{1}{2x^2}\right]_{2d}^{\infty}=2kqs\cdot\frac{1}{8d^2}=\frac{kqs}{4d^2}$$
+> Energy conservation, $\Delta K=-q\Delta V$ with $q=-e$ and $K_i=0$:
+> $$K_f=K_i+\Delta K=0-(-e)\frac{kqs}{4d^2}=\boxed{\frac{ekqs}{4d^2}}$$
 > **Sanity:** near the $-$ end $V$ is negative, and an electron is pushed toward higher $V$, so it speeds up going out to $\infty$ ✓.
 >
-> **3.** Path independence: go from $B$ out to $\infty$, then in along the $y$-axis to $C$:
-> $$V_C-V_B=(V_C-V_\infty)+(V_\infty-V_B)$$
-> On the perpendicular bisector, $\vec E_\perp$ is parallel to $\hat x$ while $d\vec l=dy\,\hat y$, so $\vec E\cdot d\vec l=0$ and $V_C-V_\infty=0$. Therefore
-> $$V_C-V_B=\boxed{\frac{kqs}{4d^2}}$$
+> **3.** Path independence: $B\to\infty\to C$ (in along the $y$-axis).
+> $$V_C-V_B=(V_C-V_\infty)+(V_\infty-V_B)=0+\frac{kqs}{4d^2}=\boxed{\frac{kqs}{4d^2}}$$
+> On the bisector $\vec E_\perp\parallel\hat x$ while $d\vec l=dy\,\hat y$, so $\vec E\cdot d\vec l=0$ and $V_C-V_\infty=0$.
 
 ---
 
@@ -699,18 +702,22 @@ mid/.default=0.5}
 > - **(extra credit)** Find $V_4-V_1$.
 
 > [!success]- Solution
-> $\vec p=es\,\hat x$ (from $F^-$ to $H^+$). On the axis, $\vec E=\dfrac{2kes}{x^3}\hat x$, pointing **away** from the dipole on the $+$ side.
+> **Dipole moment and field** ($F^-$ to $H^+$; ✅ on-axis formula):
+> $$\vec p=es\,\hat x,\qquad\vec E_\parallel=\frac{2k\vec p}{x^3}=\frac{2kes}{x^3}\hat x$$
+> This points **away** from the dipole, since points 1 and 2 are on its $+$ side.
 >
-> **(a)**
-> $$V_2-V_1=-\int_{d_1}^{d_2}\frac{2kes}{x^3}dx=kes\left[\frac{1}{x^2}\right]_{d_1}^{d_2}=\boxed{kes\left(\frac1{d_2^2}-\frac1{d_1^2}\right)}<0$$
-> You moved along $\vec E$, so the potential went **down** ✓.
+> **(a)** $\Delta V=-\int\vec E\cdot d\vec l$ along the axis, $\int x^{-3}dx=-\frac{1}{2x^2}$:
+> $$V_2-V_1=-\int_{d_1}^{d_2}\frac{2kes}{x^3}dx=-2kes\left[-\frac{1}{2x^2}\right]_{d_1}^{d_2}=\boxed{kes\left(\frac1{d_2^2}-\frac1{d_1^2}\right)}<0$$
+> Moved along $\vec E$, so $V$ went **down** ✓.
 >
-> **(b)** First, $V_\infty-V_2=kes\left(0-\dfrac{1}{d_2^2}\right)=-\dfrac{kes}{d_2^2}$. Then $\tfrac12m_pv^2=-e(V_\infty-V_2)=\dfrac{ke^2s}{d_2^2}$, so
-> $$\boxed{v=\frac{e}{d_2}\sqrt{\frac{2ks}{m_p}}}$$
+> **(b)** Same integral from $d_2$ to $\infty$:
+> $$V_\infty-V_2=kes\left(\frac{1}{\infty^2}-\frac{1}{d_2^2}\right)=-\frac{kes}{d_2^2}$$
+> Energy conservation from rest, $\tfrac12mv^2=\Delta K=-q\Delta V$ with $q=+e$:
+> $$\tfrac12m_pv^2=-e\left(-\frac{kes}{d_2^2}\right)=\frac{ke^2s}{d_2^2}\ \Rightarrow\ v=\sqrt{\frac{2ke^2s}{m_pd_2^2}}=\boxed{\frac{e}{d_2}\sqrt{\frac{2ks}{m_p}}}$$
 >
-> **(c)** Along the perpendicular line, $\vec E\perp d\vec l$, so $\boxed{V_3-V_4=0}$.
+> **(c)** Along the perpendicular line $\vec E\perp d\vec l$, so $\vec E\cdot d\vec l=0$ and $\boxed{V_3-V_4=0}$.
 >
-> **(EC)** Go from 1 out to $\infty$ along the axis, around at infinity, then in to 4 along the perpendicular (which adds 0):
+> **(EC)** $1\to\infty$ along the axis, then $\infty\to4$ along the perpendicular (adds 0):
 > $$V_4-V_1=(V_4-V_\infty)+(V_\infty-V_1)=0+kes\left(0-\frac1{d_1^2}\right)=\boxed{-\frac{kes}{d_1^2}}$$
 
 ---
@@ -750,15 +757,13 @@ mid/.default=0.5}
 > A long thin metal wire (radius $r$, length $L$) sits on the axis of a concentric long metal tube (radius $R$). A power supply keeps $+Q$ on the wire and $-Q$ on the tube. Like a spherical shell, the tube produces zero field everywhere inside itself. Find $V_{\text{tube}}-V_{\text{wire}}$, and check the sign.
 
 > [!success]- Solution
-> **Field between them:** only the wire contributes (the tube gives 0 inside). The wire is long ($\rho\ll L$), so the ✅ sheet formula gives
-> $$\vec E=\frac{1}{4\pi\epsilon_0}\frac{2Q/L}{\rho}\hat\rho=\frac{2kQ}{L\rho}\hat\rho$$
-> (radially outward).
+> **Field between them:** only the wire counts (the tube gives 0 inside). ✅ Sheet "rod, $r\ll L$" formula:
+> $$E=\frac{1}{4\pi\epsilon_0}\frac{2Q/L}{\rho}=\frac{2kQ}{L\rho}\qquad(\text{radially outward})$$
+> **Integrate:** $\Delta V=-\int\vec E\cdot d\vec l$ from $\rho=r$ to $\rho=R$, $d\vec l=d\rho\,\hat\rho$, $\int\frac{d\rho}{\rho}=\ln\rho$:
+> $$V_{\text{tube}}-V_{\text{wire}}=-\int_r^R\frac{2kQ}{L\rho}\,d\rho=-\frac{2kQ}{L}\Big[\ln\rho\Big]_r^R=-\frac{2kQ}{L}\ln\frac Rr=\boxed{\frac{2kQ}{L}\ln\frac rR=\frac{Q}{2\pi\epsilon_0L}\ln\frac rR}$$
+> **Sign check:** $r<R$ so $\ln(r/R)<0$; moving along $\vec E$ gives $\Delta V<0$ ✓.
 >
-> **Integrate outward** from the wire surface ($\rho=r$) to the tube ($\rho=R$), with $d\vec l=d\rho\,\hat\rho$:
-> $$V_{\text{tube}}-V_{\text{wire}}=-\int_r^R\frac{2kQ}{L\rho}d\rho=-\frac{2kQ}{L}\ln\frac Rr=\boxed{\frac{2kQ}{L}\ln\frac rR=\frac{Q}{2\pi\epsilon_0L}\ln\frac rR}$$
-> **Sign check:** $r<R$, so $\ln(r/R)<0$. You moved along $\vec E$, so $\Delta V<0$ ✓.
->
-> **Variation:** a point at radius $\rho_0$ between them. $V(\rho_0)-V_{\text{wire}}=-\dfrac{2kQ}{L}\ln\dfrac{\rho_0}{r}$.
+> **Variation:** at radius $\rho_0$: $V(\rho_0)-V_{\text{wire}}=-\frac{2kQ}{L}\ln\frac{\rho_0}{r}$.
 
 ---
 
@@ -806,21 +811,21 @@ mid/.default=0.5}
 > - **D.** Adding A + B + C gives $V_3-V_1$. How would it change if point 1 were at $\langle0,0,L/2\rangle$ instead?
 
 > [!success]- Solution
-> **Tool:** outside a shell, it acts like a point charge, so the ✅ sheet formula $\Delta V=kq\left(\frac1{r_f}-\frac1{r_i}\right)$ applies. Inside a shell, $V$ is constant.
+> **Tool:** outside a shell use ✅ $\Delta V=kq\left(\dfrac{1}{r_f}-\dfrac{1}{r_i}\right)$ (distances from that shell's center). Inside a shell, $V$ is constant.
 >
-> **Distances to each center:** point 1 is $\sqrt{(L/2)^2+(L/2)^2}=L/\sqrt2$ away; point 2 is $L/2$ away; point 3 is $L$ from the $-$ center and at the center of the $+$ shell.
+> **Distances:** point 1 is $\sqrt{(L/2)^2+(L/2)^2}=\frac{L}{\sqrt2}$ from either center; point 2 is $\frac L2$ from either; point 3 is $L$ from the $-$ center and at the $+$ center.
 >
-> **A.** $r_i=L/\sqrt2$, $r_f=L/2$:
-> $$V_2-V_1=kQ\left(\frac2L-\frac{\sqrt2}{L}\right)=\boxed{\frac{kQ}{L}(2-\sqrt2)}$$
+> **A.** $+$ shell, $r_i=\frac{L}{\sqrt2}$, $r_f=\frac L2$:
+> $$V_2-V_1=kQ\left(\frac{1}{L/2}-\frac{1}{L/\sqrt2}\right)=kQ\left(\frac2L-\frac{\sqrt2}{L}\right)=\boxed{\frac{kQ}{L}(2-\sqrt2)}$$
 >
-> **B.** Same distances, charge $-Q$: $\boxed{-\dfrac{kQ}{L}(2-\sqrt2)}$.
+> **B.** $-$ shell, same distances, $q=-Q$: $\boxed{-\dfrac{kQ}{L}(2-\sqrt2)}$.
 >
-> **C.**
-> - $+$ shell: from 2 (outside, $r=L/2$) to its surface, then inside where nothing changes. That gives $kQ\left(\frac1R-\frac2L\right)$.
-> - $-$ shell: from $r=L/2$ to $r=L$ gives $-kQ\left(\frac1L-\frac2L\right)=+\frac{kQ}{L}$.
-> $$V_3-V_2=\boxed{kQ\left(\frac1R-\frac1L\right)}$$
+> **C.** Superposition, one shell at a time:
+> $$+\text{ shell }(r_i=\tfrac L2\to r_f=R,\ \text{then constant inside}):\quad kQ\left(\frac1R-\frac{1}{L/2}\right)=kQ\left(\frac1R-\frac2L\right)$$
+> $$-\text{ shell }(r_i=\tfrac L2\to r_f=L):\quad k(-Q)\left(\frac1L-\frac{1}{L/2}\right)=+\frac{kQ}{L}$$
+> $$V_3-V_2=kQ\left(\frac1R-\frac2L\right)+\frac{kQ}{L}=\boxed{kQ\left(\frac1R-\frac1L\right)}$$
 >
-> **D. No change.** The new point 1 is also $L/\sqrt2$ from both centers, so A and B are unchanged (and still cancel). In fact, every point on the midplane $x=0$ has $V=0$.
+> **D. No change.** The new point 1 is also $\frac{L}{\sqrt2}$ from both centers, so A and B are unchanged (and still cancel). Every point on the midplane $x=0$ has $V=0$.
 
 ---
 
@@ -866,23 +871,24 @@ mid/.default=0.5}
 > - **D.** An electron starts at $B$ with speed $v$ and (somehow) follows the circular path to $A$. Sketch its speed along the way.
 
 > [!success]- Solution
-> **A.** Come in from $\infty$ along the $y$-axis. $\vec E_\perp$ is parallel to $\hat x$ and $d\vec l$ is parallel to $\hat y$, so $\vec E\cdot d\vec l=0$ and $\boxed{V_A-V_\infty=0}$.
+> **A.** In from $\infty$ along the $y$-axis: $\vec E_\perp\parallel\hat x$, $d\vec l\parallel\hat y$, so $\vec E\cdot d\vec l=0$ and $\boxed{V_A-V_\infty=0}$.
 >
-> **B.** On the axis, $\vec E=\dfrac{2kp}{x^3}\hat x$:
-> $$V_B-V_\infty=-\int_\infty^R\frac{2kp}{x^3}dx=\boxed{\frac{kp}{R^2}}$$
+> **B.** ✅ On-axis field $\vec E=\dfrac{2kp}{x^3}\hat x$; $\Delta V=-\int\vec E\cdot d\vec l$ from $\infty$ to $R$, $\int x^{-3}dx=-\frac{1}{2x^2}$:
+> $$V_B-V_\infty=-\int_\infty^R\frac{2kp}{x^3}dx=-2kp\left[-\frac{1}{2x^2}\right]_\infty^R=\boxed{\frac{kp}{R^2}}$$
 >
-> **C.** Put $+q$ at $\langle\frac s2,0,0\rangle$ and $-q$ at $\langle-\frac s2,0,0\rangle$, with $p=qs$. The point is $P_\theta=\langle R\sin\theta,R\cos\theta,0\rangle$. Its distances to the two charges are
-> $$r_\pm^2=R^2\mp Rs\sin\theta+\tfrac{s^2}{4}\approx R^2\left(1\mp\frac sR\sin\theta\right)$$
-> Using $(1\mp\epsilon)^{-1/2}\approx1\pm\frac\epsilon2$:
-> $$\frac1{r_\pm}\approx\frac1R\left(1\pm\frac{s}{2R}\sin\theta\right)$$
-> Each charge's potential relative to $\infty$ is $kq/r$, so
-> $$V_{P_\theta}=\frac{kq}{r_+}-\frac{kq}{r_-}\approx\frac{kq}{R}\cdot\frac sR\sin\theta=\frac{kp\sin\theta}{R^2}$$
-> $$V_A-V_{P_\theta}=\boxed{-\frac{kp\sin\theta}{R^2}}$$
-> **Check:** $\theta=90°$ (point B) gives $-kp/R^2$, consistent with A and B ✓.
+> **C.** Find each charge's potential separately (point charge, $V=kq/r$), then add. Place $+q$ at $\langle\frac s2,0,0\rangle$, $-q$ at $\langle-\frac s2,0,0\rangle$, $p=qs$, and $P_\theta=\langle R\sin\theta,R\cos\theta,0\rangle$.
+> $$r_\pm^2=|\vec r_P-\vec r_\pm|^2=\left(R\sin\theta\mp\tfrac s2\right)^2+R^2\cos^2\theta=R^2\mp Rs\sin\theta+\tfrac{s^2}{4}\approx R^2\left(1\mp\frac sR\sin\theta\right)$$
+> Binomial $(1+\epsilon)^n\approx1+n\epsilon$ with $n=-\frac12$:
+> $$\frac1{r_\pm}=\frac1R\left(1\mp\frac sR\sin\theta\right)^{-1/2}\approx\frac1R\left(1\pm\frac{s}{2R}\sin\theta\right)$$
+> Potential of point charges, $V=\sum\dfrac{kq_i}{r_i}$:
+> $$V_{P_\theta}=\frac{kq}{r_+}-\frac{kq}{r_-}\approx\frac{kq}{R}\cdot\frac sR\sin\theta=\frac{kp\sin\theta}{R^2}\quad\Longrightarrow\quad V_A-V_{P_\theta}=0-\frac{kp\sin\theta}{R^2}=\boxed{-\frac{kp\sin\theta}{R^2}}$$
+> **Check:** $\theta=90°$ (B) gives $-kp/R^2$ ✓.
 >
-> **D.** Measured from B, the electron's potential energy rises along the path: $\Delta U=-e\left[V(\theta)-V_B\right]=\dfrac{ekp}{R^2}(1-\sin\theta)$. Energy conservation then gives
-> $$v(\theta)=\sqrt{v^2-\frac{2ekp}{m_eR^2}(1-\sin\theta)}$$
-> The speed **decreases smoothly** from $v$ at $B$ to its minimum $\sqrt{v^2-2ekp/(m_eR^2)}$ at $A$. (The electron is moving from high $V$ to low $V$, which slows a negative charge.)
+> **D.** $\Delta U=q\Delta V$ with $q=-e$, measured from B:
+> $$\Delta U=(-e)\left[\frac{kp\sin\theta}{R^2}-\frac{kp}{R^2}\right]=\frac{ekp}{R^2}(1-\sin\theta)$$
+> Energy conservation, $\tfrac12m_ev(\theta)^2=\tfrac12m_ev^2-\Delta U$:
+> $$v(\theta)=\sqrt{v^2-\frac{2\Delta U}{m_e}}=\sqrt{v^2-\frac{2ekp}{m_eR^2}(1-\sin\theta)}$$
+> The speed **decreases smoothly** from $v$ at B to its minimum at A (a negative charge slows going from high $V$ to low $V$).
 
 ---
 
@@ -893,11 +899,11 @@ mid/.default=0.5}
 > In a region of uniform field $\vec E=\langle E_x,E_y,0\rangle$, find $V_B-V_A$ for $A=\langle x_A,y_A,0\rangle$ and $B=\langle x_B,y_B,0\rangle$. The original problem used $\vec E=\langle200,-250,0\rangle$ V/m, $A=\langle0.02,0.03,0\rangle$ m, $B=\langle0.05,-0.06,0\rangle$ m.
 
 > [!success]- Solution
-> For a constant field, $\vec E$ comes out of the integral:
+> For a constant field, $\vec E$ comes out of the integral and $\int d\vec l=\Delta\vec r$:
 > $$V_B-V_A=-\int_A^B\vec E\cdot d\vec l=-\vec E\cdot(\vec r_B-\vec r_A)=\boxed{-\left[E_x(x_B-x_A)+E_y(y_B-y_A)\right]}$$
-> Original numbers: $-\left[200(0.03)+(-250)(-0.09)\right]=-(6+22.5)=-28.5\ \text{V}$.
+> Original numbers: $-\left[200(0.05-0.02)+(-250)(-0.06-0.03)\right]=-(6+22.5)=-28.5\ \text{V}$.
 >
-> **Lesson:** only the displacement **along** $\vec E$ matters, and the path shape doesn't.
+> Only the displacement **along** $\vec E$ matters; the path shape doesn't.
 
 ---
 
@@ -942,20 +948,24 @@ mid/.default=0.5}
 > 3. Find the power delivered or absorbed by each battery and dissipated in each resistor, and check energy conservation.
 
 > [!success]- Solution
-> **1.** Guess clockwise $I$. Walk clockwise from $b$:
+> **1.** Loop rule $\sum\Delta V=0$. Guess clockwise $I$ and walk clockwise from $b$:
 > - up through $\mathcal E_1$ ($-\to+$): $+\mathcal E_1$
 > - across $R_1$ with $I$: $-IR_1$
 > - down through $\mathcal E_2$ ($+\to-$): $-\mathcal E_2$
 > - across $R_2$ with $I$: $-IR_2$
-> $$\mathcal E_1-IR_1-\mathcal E_2-IR_2=0\quad\Longrightarrow\quad\boxed{I=\frac{\mathcal E_1-\mathcal E_2}{R_1+R_2}}\ \text{clockwise}$$
-> (If $\mathcal E_2>\mathcal E_1$, $I$ comes out negative, meaning the current runs counterclockwise.)
+> $$\sum\Delta V=\mathcal E_1-IR_1-\mathcal E_2-IR_2=0\quad\Longrightarrow\quad\boxed{I=\frac{\mathcal E_1-\mathcal E_2}{R_1+R_2}}\ \text{clockwise}$$
+> (If $\mathcal E_2>\mathcal E_1$, $I<0$: counterclockwise.)
 >
-> **2.** Path 1, from $b$ up the left side and across the top:
-> $$V_a-V_b=\mathcal E_1-IR_1=\mathcal E_1-\frac{R_1(\mathcal E_1-\mathcal E_2)}{R_1+R_2}=\boxed{\frac{\mathcal E_1R_2+\mathcal E_2R_1}{R_1+R_2}}$$
-> Path 2, from $b$ across the bottom (against $I$, so $+IR_2$), then up through $\mathcal E_2$ ($-\to+$):
-> $$V_a-V_b=IR_2+\mathcal E_2=\frac{\mathcal E_1R_2+\mathcal E_2R_1}{R_1+R_2}\ \checkmark$$
+> **2.** $V_a-V_b=\sum\Delta V$ along any path from $b$ to $a$.
+> Path 1 (up the left, across the top):
+> $$V_a-V_b=\mathcal E_1-IR_1=\mathcal E_1-R_1\frac{\mathcal E_1-\mathcal E_2}{R_1+R_2}=\boxed{\frac{\mathcal E_1R_2+\mathcal E_2R_1}{R_1+R_2}}$$
+> Path 2 (across the bottom against $I$, up through $\mathcal E_2$ $-\to+$):
+> $$V_a-V_b=+IR_2+\mathcal E_2=R_2\frac{\mathcal E_1-\mathcal E_2}{R_1+R_2}+\mathcal E_2=\frac{\mathcal E_1R_2+\mathcal E_2R_1}{R_1+R_2}\ \checkmark$$
 >
-> **3.** $\mathcal E_1$ delivers $\mathcal E_1I$. $\mathcal E_2$ has current forced in at its $+$ terminal, so it **absorbs** $\mathcal E_2I$ (it's being charged). The resistors dissipate $I^2R_1$ and $I^2R_2$. Check: $\mathcal E_1I-\mathcal E_2I=I(\mathcal E_1-\mathcal E_2)=I^2(R_1+R_2)$ ✓.
+> **3.** Battery $P=\mathcal EI$; resistor $P=I^2R$.
+> - $\mathcal E_1$ delivers $\mathcal E_1I$. $\mathcal E_2$ has current forced in at its $+$ terminal, so it **absorbs** $\mathcal E_2I$ (being charged).
+> - Resistors dissipate $I^2R_1+I^2R_2$.
+> - Check: $\mathcal E_1I-\mathcal E_2I=I(\mathcal E_1-\mathcal E_2)=I\cdot I(R_1+R_2)=I^2(R_1+R_2)$ ✓.
 
 ---
 
@@ -1003,27 +1013,30 @@ to[short] (4,3) to[lamp,l=Bulb 1] (6,3) -- (6.6,3);
 > - **F.** What power do the batteries deliver?
 
 > [!success]- Solution
-> **A.** With the switch open, **no current flows**, so there's no drop across any bulb. $B$ is wired to $A$, and $C$ connects through the (currentless) bulbs to $N$. So
-> $$V_B-V_C=V_A-V_N=\boxed{2\mathcal E}=3.0\text{ V}$$
+> **A.** Switch open: **no current**, so every bulb has $\Delta V=IR=0$. $B$ is wired to $A$; $C$ connects through the bulbs to $N$:
+> $$V_B-V_C=V_A-V_N=\mathcal E+\mathcal E=\boxed{2\mathcal E}=3.0\text{ V}$$
 > The entire battery voltage appears across the open gap.
 >
-> **B.** No current means no drop across bulbs 2/3, so $\boxed{V_D-V_K=0}$.
+> **B.** $\Delta V=IR$ with $I=0$: $\boxed{V_D-V_K=0}$.
 >
-> **C.** Current leaves the $+$ terminal $A$, goes around through $B$, $C$, $D$, through bulbs 2 and 3 in parallel to $K$, through bulb 1 to $N$.
+> **C.** Current: $A\to B\to C\to D\to$ (bulbs 2 and 3 in parallel) $\to K\to$ bulb 1 $\to N$.
 > - Loop through bulb 2: $2\mathcal E-I_1R_1-I_2R_2=0$
 > - Loop through bulb 3: $2\mathcal E-I_1R_1-I_3R_3=0$
-> - Node at $D$ (or $K$): $I_1=I_2+I_3$
-> - (The loop around bulbs 2 and 3 only, $I_2R_2-I_3R_3=0$, is not independent.)
+> - Node at $D$: $I_1=I_2+I_3$
+> - (The loop around bulbs 2 and 3 alone, $I_2R_2-I_3R_3=0$, is not independent: it's the difference of the first two.)
 >
-> **D.** Subtracting the loops gives $I_2R_2=I_3R_3$. Combined with the node rule:
-> $$I_1=\frac{2\mathcal E}{R_1+\frac{R_2R_3}{R_2+R_3}},\qquad I_2=I_1\frac{R_3}{R_2+R_3},\qquad I_3=I_1\frac{R_2}{R_2+R_3}$$
-> With numbers: $R_{23}=\frac{35\cdot28}{63}=15.6\,\Omega$, so
-> $$I_1=\frac{3.0}{29.6}\approx\boxed{0.101\text{ A}},\qquad I_2\approx\boxed{0.045\text{ A}},\qquad I_3\approx\boxed{0.056\text{ A}}$$
+> **D.** Bulbs 2 and 3 are in parallel, then in series with bulb 1:
+> $$R_{23}=\frac{R_2R_3}{R_2+R_3}=\frac{35\cdot28}{35+28}=15.6\ \Omega,\qquad R_{\rm tot}=R_1+R_{23}=14+15.6=29.6\ \Omega$$
+> $$I_1=\frac{2\mathcal E}{R_{\rm tot}}=\frac{3.0}{29.6}=\boxed{0.101\text{ A}}$$
+> Current divider:
+> $$I_2=I_1\frac{R_3}{R_2+R_3}=0.101\cdot\frac{28}{63}=\boxed{0.045\text{ A}},\qquad I_3=I_1\frac{R_2}{R_2+R_3}=0.101\cdot\frac{35}{63}=\boxed{0.056\text{ A}}$$
 >
-> **E.** Electrons flow opposite to conventional current, so they leave through the $-$ terminal $N$ at the rate
-> $$\frac{I_1}{e}=\frac{0.101}{1.6\times10^{-19}}\approx\boxed{6.3\times10^{17}\ \text{electrons/s}}$$
+> **E.** $I=(\text{electrons per second})\times e$. Electrons flow opposite to conventional current, so they leave through the $-$ terminal $N$:
+> $$\frac{N}{t}=\frac{I_1}{e}=\frac{0.101}{1.6\times10^{-19}}=\boxed{6.3\times10^{17}\ \text{electrons/s}}$$
 >
-> **F.** $P=(2\mathcal E)I_1=3.0\times0.101\approx\boxed{0.30\text{ W}}$. Check: $I_1^2R_1+I_2^2R_2+I_3^2R_3\approx0.144+0.071+0.089=0.30$ W ✓.
+> **F.** Battery power $P=\mathcal EI$:
+> $$P=(2\mathcal E)I_1=3.0\times0.101=\boxed{0.30\text{ W}}$$
+> Check with $P=I^2R$: $0.101^2(14)+0.045^2(35)+0.056^2(28)\approx0.144+0.071+0.089=0.30$ W ✓.
 
 ---
 
@@ -1064,29 +1077,23 @@ mid/.default=0.5}
 > - **D.** Solve for the currents with $\mathcal E_A=6$ V, $\mathcal E_B=3$ V, and each $R=100\,\Omega$.
 
 > [!success]- Solution
-> **Spot the structure first.** There are only **three nodes**: top (T), middle (M), and bottom (Bot).
-> - $R_2$ and $\mathcal E_B$ are both connected between T and M, so they're **in parallel**: $V_T-V_M=\mathcal E_B$ exactly.
-> - $R_3$ and $R_4$ are both connected between M and Bot, so they're in parallel too.
+> **Structure:** only three nodes, top (T), middle (M), bottom (Bot). $R_2$ and $\mathcal E_B$ both join T and M (parallel, so $V_T-V_M=\mathcal E_B$); $R_3$ and $R_4$ both join M and Bot.
 >
-> **A.** Choose $I_1$ **up** through $R_1$ (out of $\mathcal E_A$'s $+$ terminal), and $I_2$, $I_3$, $I_4$ all **down**.
+> **A.** $I_1$ **up** through $R_1$ (out of $\mathcal E_A$'s $+$); $I_2$, $I_3$, $I_4$ all **down**.
 >
-> **B.** Everything that comes down through $R_3$ and $R_4$ must go back up the left branch:
-> $$\boxed{I_1=I_3+I_4}$$
+> **B.** Junction rule $\sum I_{\text{in}}=\sum I_{\text{out}}$ at the bottom node. Everything that comes down through $R_3$ and $R_4$ must go back up the left branch: $\boxed{I_1=I_3+I_4}$
 >
-> **C.**
-> - Big left loop (up the left branch, down $R_2$, down $R_3$): $\boxed{\mathcal E_A-I_1R_1-I_2R_2-I_3R_3=0}$
-> - $R_2$–$\mathcal E_B$ loop (down $R_2$, up through $\mathcal E_B$ from $-$ to $+$): $\boxed{\mathcal E_B-I_2R_2=0}$
+> **C.** Loop rule $\sum\Delta V=0$:
+> - Big left loop (up the left, down $R_2$, down $R_3$): $\boxed{\mathcal E_A-I_1R_1-I_2R_2-I_3R_3=0}$
+> - $R_2$–$\mathcal E_B$ loop (down $R_2$, up $\mathcal E_B$ $-\to+$): $\boxed{\mathcal E_B-I_2R_2=0}$
 > - $R_3$–$R_4$ loop (down $R_3$, up $R_4$ against $I_4$): $\boxed{-I_3R_3+I_4R_4=0}$
 >
-> **D.**
-> - From the second loop: $I_2=\mathcal E_B/R=3/100=\boxed{0.030\text{ A}}$.
-> - Equal resistors give $I_3=I_4$, so $I_1=2I_3$.
-> - The big loop becomes $\mathcal E_A-2I_3R-\mathcal E_B-I_3R=0$, so $I_3=\dfrac{\mathcal E_A-\mathcal E_B}{3R}=\dfrac{3}{300}=\boxed{0.010\text{ A}}=I_4$.
-> - Then $I_1=\boxed{0.020\text{ A}}$.
->
-> **Bonus:** at node T, $I_1$ comes in and $I_2$ goes down $R_2$. The rest goes down through $\mathcal E_B$: $I_1-I_2=-0.010$ A. The negative sign means $0.010$ A actually flows **up** through $\mathcal E_B$, out of its $+$ terminal.
->
-> **Check** with the big loop: $6-2-3-1=0$ ✓.
+> **D.** All $R=100\ \Omega$:
+> $$I_2=\frac{\mathcal E_B}{R_2}=\frac{3}{100}=\boxed{0.030\text{ A}}$$
+> Third loop with equal resistors: $I_3=I_4$, so the junction rule gives $I_1=2I_3$. Big loop:
+> $$\mathcal E_A-(2I_3)R-\mathcal E_B-I_3R=0\ \Rightarrow\ I_3=\frac{\mathcal E_A-\mathcal E_B}{3R}=\frac{6-3}{300}=\boxed{0.010\text{ A}}=I_4,\qquad I_1=2I_3=\boxed{0.020\text{ A}}$$
+> **Bonus:** at node T, $I_1$ comes in and $I_2$ goes down $R_2$; the rest goes down through $\mathcal E_B$: $I_1-I_2=0.020-0.030=-0.010$ A. The negative sign means $0.010$ A actually flows **up** through $\mathcal E_B$, out of its $+$ terminal.
+> **Check** (big loop): $6-2-3-1=0$ ✓.
 
 ---
 
@@ -1132,22 +1139,21 @@ mid/.default=0.5}
 > 4. Check that the power supplied equals the power dissipated.
 
 > [!success]- Solution
-> **1.**
-> - Node A: $\boxed{I_a=I_b+I_c}$
-> - Left pane, clockwise (up the left, down the middle): $+3\mathcal E-I_aR+\mathcal E=0$. Going down the middle you enter the $-$ terminal and exit the $+$, so it's $+\mathcal E$.
-> - Right pane, clockwise (down the right, up the middle): $-I_c(2R)-\mathcal E=0$. Going up the middle you go from $+$ to $-$, so it's $-\mathcal E$.
+> **1.** Junction rule at A: $\boxed{I_a=I_b+I_c}$. Loop rule $\sum\Delta V=0$:
+> - Left pane, clockwise (up the left, down the middle; down the middle is $-\to+$): $\boxed{3\mathcal E-I_aR+\mathcal E=0}$
+> - Right pane, clockwise (down the right, up the middle; up the middle is $+\to-$): $\boxed{-I_c(2R)-\mathcal E=0}$
 >
-> **2.**
-> $$I_a=\boxed{\frac{4\mathcal E}{R}},\qquad I_c=\boxed{-\frac{\mathcal E}{2R}},\qquad I_b=I_a-I_c=\boxed{\frac{9\mathcal E}{2R}}$$
-> $I_c<0$: the current through $2R$ actually flows **up**, from $B$ to $A$.
+> **2.** The left loop has only one unknown ($I_a$) and the right loop only one ($I_c$), so solve each directly; then the junction rule gives $I_b$:
+> $$I_a=\frac{3\mathcal E+\mathcal E}{R}=\boxed{\frac{4\mathcal E}{R}},\qquad I_c=-\frac{\mathcal E}{2R}=\boxed{-\frac{\mathcal E}{2R}},\qquad I_b=I_a-I_c=\frac{4\mathcal E}{R}+\frac{\mathcal E}{2R}=\boxed{\frac{9\mathcal E}{2R}}$$
+> $I_c<0$: the current through $2R$ actually flows **up**, B to A.
 >
-> **3.**
-> - Walking from $B$ up the middle ($+\to-$): $V_A-V_B=\boxed{-\mathcal E}$.
-> - Walking up the right branch against the assumed $I_c$: $+I_c(2R)=-\mathcal E$ ✓.
+> **3.** $V_A-V_B=\sum\Delta V$ from B to A:
+> - Up the middle ($+\to-$): $V_A-V_B=\boxed{-\mathcal E}$
+> - Up the right branch, against the assumed $I_c$: $V_A-V_B=+I_c(2R)=-\frac{\mathcal E}{2R}\cdot2R=-\mathcal E$ ✓
 >
-> **4.**
-> - Supplied: $3\mathcal E\cdot I_a=\dfrac{12\mathcal E^2}{R}$. The middle battery has $I_b$ entering its $-$ and leaving its $+$, so it also supplies: $\mathcal E\cdot I_b=\dfrac{9\mathcal E^2}{2R}$. Total $\dfrac{33\mathcal E^2}{2R}$.
-> - Dissipated: $I_a^2R+I_c^2(2R)=\dfrac{16\mathcal E^2}{R}+\dfrac{\mathcal E^2}{2R}=\dfrac{33\mathcal E^2}{2R}$ ✓.
+> **4.** Battery $P=\mathcal EI$; resistor $P=I^2R$.
+> - Supplied: $3\mathcal E\cdot I_a=\frac{12\mathcal E^2}{R}$, plus the middle battery ($I_b$ enters $-$, leaves $+$): $\mathcal E\cdot I_b=\frac{9\mathcal E^2}{2R}$. Total $\frac{33\mathcal E^2}{2R}$.
+> - Dissipated: $I_a^2R+I_c^2(2R)=\frac{16\mathcal E^2}{R}+\frac{\mathcal E^2}{2R}=\frac{33\mathcal E^2}{2R}$ ✓
 
 ---
 
@@ -1206,16 +1212,18 @@ mid/.default=0.5}
 > - **B.** Find the field magnitudes $E_a$ (in the gap), $E_b$ and $E_c$ (thick wire), and $E_d$ (thin wire).
 
 > [!success]- Solution
-> **A.** The belt piles electrons onto the **right** plate ($-$), leaving the left plate $+$. In the wires, conventional current flows from the $+$ (left) plate around the loop to the $-$ (right) plate. $\vec E$ in every wire points **along** that current. In the gap, $\vec E$ points from the left plate to the right plate. Surface charge goes from $+$ near the left plate, smoothly through zero, to $-$ near the right plate, with the steepest gradient along the thin wires (where $E$ is biggest).
+> **A.** The belt piles electrons on the **right** plate ($-$), leaving the left plate $+$. Conventional current flows from the $+$ plate around the wires to the $-$ plate, and $\vec E$ in every wire points along it. In the gap, $\vec E$ points left plate → right plate. Surface charge runs from $+$ near the left plate to $-$ near the right, changing fastest along the thin wires.
 >
 > **B.**
-> - **Gap:** each electron moves at steady speed with no friction, so $F$ balances the electric force: $eE_a=F$, giving $\boxed{E_a=F/e}$. The EMF is $\mathcal E=E_as=Fs/e$.
-> - **Same current everywhere** (series, steady state): $I=enAuE$, so $E\propto1/A$. Since $D_2=D_1/3$, $A_{\text{thin}}=A_{\text{thick}}/9$, so $E_{\text{thin}}=9E_{\text{thick}}$.
-> - **Loop rule:** the EMF equals the sum of $EL$ around the wires:
+> - **Gap:** steady speed, no friction, so the forces balance:
+> $$F=eE_a\ \Rightarrow\ \boxed{E_a=\frac Fe},\qquad\mathcal E=\frac{W}{q}=\frac{Fs}{e}\ (=E_as)$$
+> - **Same current everywhere** (series, steady state). Sheet formulas $I=|q|nA\bar v$ and $\bar v=uE$:
+> $$I=enAuE\ \Rightarrow\ E=\frac{I}{enuA}\propto\frac1A,\qquad\frac{A_{\text{thin}}}{A_{\text{thick}}}=\frac{\pi D_2^2/4}{\pi D_1^2/4}=\left(\frac13\right)^2=\frac19\ \Rightarrow\ E_{\text{thin}}=9E_{\text{thick}}$$
+> - **Loop rule:** each wire drops $\Delta V=EL$, and the drops add to the EMF:
 > $$E_{\text{thick}}(2L_1+L_3)+E_{\text{thin}}(2L_2)=\frac{Fs}{e}$$
-> With $L_2=L_3=L_1/3$: $E_{\text{thick}}\left(\tfrac73L_1\right)+9E_{\text{thick}}\left(\tfrac23L_1\right)=\tfrac{25}{3}L_1E_{\text{thick}}$. So
-> $$\boxed{E_b=E_c=\frac{3Fs}{25\,eL_1}},\qquad \boxed{E_d=\frac{27Fs}{25\,eL_1}}$$
-> $n$ and $u$ cancel out. You'd need them only to get the current: $I=enA_1uE_b$.
+> With $L_2=L_3=\frac{L_1}{3}$: $E_{\text{thick}}\cdot\frac73L_1+9E_{\text{thick}}\cdot\frac23L_1=\frac{25}{3}L_1E_{\text{thick}}=\frac{Fs}{e}$, so
+> $$\boxed{E_b=E_c=E_{\text{thick}}=\frac{3Fs}{25\,eL_1}},\qquad\boxed{E_d=9E_{\text{thick}}=\frac{27Fs}{25\,eL_1}}$$
+> $n$ and $u$ cancel; you'd need them only for the current, $I=enA_1uE_b$.
 
 ---
 

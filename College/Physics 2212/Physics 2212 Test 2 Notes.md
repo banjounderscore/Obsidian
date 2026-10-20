@@ -248,18 +248,18 @@ This is what the graders want to see written out, step by step. Practice-exam ru
 
 **Setup.** A rod of length $L$ and charge $Q$ (uniform, $\lambda=Q/L$) lies on the $x$-axis from $x=0$ to $x=L$. Find $\vec E$ at P $=(L+d,\,0)$, a distance $d$ past the right end.
 
-1. Piece at $(x,0)$ with $dq=\lambda\,dx$.
-2. $\vec r = \langle L+d,0\rangle-\langle x,0\rangle=\langle L+d-x,\ 0\rangle$, so $|\vec r|=L+d-x$ (positive, since $x\le L$).
+1. $dq=\lambda\,dx=\dfrac{Q}{L}\,dx$, at $(x,0)$.
+2. $\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle L+d,0\rangle-\langle x,0\rangle=\langle L+d-x,\ 0\rangle$, so $|\vec r|=\sqrt{r_x^2+r_y^2}=L+d-x$.
 3. Every piece pushes P in the $+x$ direction, so there are no components to cancel:
 $$
-dE_x = k\frac{\lambda\,dx}{(L+d-x)^3}(L+d-x)=k\frac{\lambda\,dx}{(L+d-x)^2}
+dE_x=\frac{k\,dq}{|\vec r|^3}\,r_x=k\frac{\lambda\,dx}{(L+d-x)^3}(L+d-x)=k\frac{\lambda\,dx}{(L+d-x)^2}
 $$
 4. Integrate over the rod, $x=0\to L$. **Antiderivative:** substitute $u=L+d-x$, so $du=-dx$ and $\int\frac{dx}{(L+d-x)^2}=\int\frac{-du}{u^2}=+\frac1u=\frac{1}{L+d-x}$. (The minus from $du=-dx$ cancels the minus from $\int u^{-2}du=-1/u$.) Then plug in the limits:
 $$
-E_x=k\lambda\int_0^L\frac{dx}{(L+d-x)^2}=k\lambda\left[\frac{1}{L+d-x}\right]_0^L=k\lambda\left(\frac1d-\frac1{L+d}\right)=k\lambda\frac{L}{d(L+d)}
+E_x=\int dE_x=k\lambda\int_0^L\frac{dx}{(L+d-x)^2}=k\lambda\left[\frac{1}{L+d-x}\right]_0^L=k\lambda\left(\frac1d-\frac1{L+d}\right)=k\lambda\frac{L}{d(L+d)}
 $$
 $$
-\boxed{\vec E=\frac{kQ}{d(L+d)}\,\hat x}
+\vec E=k\frac{Q}{L}\cdot\frac{L}{d(L+d)}\hat x=\boxed{\frac{kQ}{d(L+d)}\,\hat x}
 $$
 5. **Check.** Far away ($d\gg L$): $d(L+d)\approx d^2$, so $E\to kQ/d^2$ ✓ (far-field theorem).
 
@@ -298,19 +298,19 @@ mid/.default=0.5}
 
 **Setup.** A rod from $x=0$ to $x=L$ with uniform $\lambda=Q/L$. Find $\vec E$ at P $=(0,h)$, directly above the left end.
 
-1. $dq=\lambda\,dx$ at $(x,0)$.
-2. $\vec r=\langle0,h\rangle-\langle x,0\rangle=\langle -x,\ h\rangle$, and $|\vec r|=\sqrt{x^2+h^2}$.
+1. $dq=\lambda\,dx=\dfrac{Q}{L}\,dx$ at $(x,0)$.
+2. $\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle0,h\rangle-\langle x,0\rangle=\langle -x,\ h\rangle$, and $|\vec r|=\sqrt{r_x^2+r_y^2}=\sqrt{x^2+h^2}$.
 3. Write the field from one piece:
 $$
-d\vec E = k\frac{\lambda\,dx}{(x^2+h^2)^{3/2}}\langle -x,\ h\rangle
+d\vec E=\frac{k\,dq}{|\vec r|^3}\vec r=k\frac{\lambda\,dx}{(x^2+h^2)^{3/2}}\langle -x,\ h\rangle
 $$
-4. **$x$-component** (negative, because the rod is to the right of P and pushes it left):
+4. **$x$-component** (negative: the rod is to the right of P and pushes it left), with $\int\frac{x\,dx}{(x^2+a^2)^{3/2}}=-\frac{1}{\sqrt{x^2+a^2}}$, $a=h$:
 $$
-E_x=-k\lambda\int_0^L\frac{x\,dx}{(x^2+h^2)^{3/2}}=-k\lambda\left[-\frac{1}{\sqrt{x^2+h^2}}\right]_0^L=-k\lambda\left(\frac1h-\frac1{\sqrt{L^2+h^2}}\right)
+E_x=\int dE_x=-k\lambda\int_0^L\frac{x\,dx}{(x^2+h^2)^{3/2}}=-k\lambda\left[-\frac{1}{\sqrt{x^2+h^2}}\right]_0^L=-k\lambda\left(\frac1h-\frac1{\sqrt{L^2+h^2}}\right)
 $$
-5. **$y$-component**:
+5. **$y$-component**, with $\int\frac{dx}{(x^2+a^2)^{3/2}}=\frac{x}{a^2\sqrt{x^2+a^2}}$, $a=h$:
 $$
-E_y=k\lambda h\int_0^L\frac{dx}{(x^2+h^2)^{3/2}}=k\lambda h\left[\frac{x}{h^2\sqrt{x^2+h^2}}\right]_0^L=\frac{k\lambda L}{h\sqrt{L^2+h^2}}
+E_y=\int dE_y=k\lambda h\int_0^L\frac{dx}{(x^2+h^2)^{3/2}}=k\lambda h\left[\frac{x}{h^2\sqrt{x^2+h^2}}\right]_0^L=\frac{k\lambda L}{h\sqrt{L^2+h^2}}
 $$
 6. **Check.** As $h\gg L$: $\sqrt{L^2+h^2}\approx h$, so $E_y\to k\lambda L/h^2=kQ/h^2$ ✓. For $E_x$, factor out $h$ and use the binomial approximation: $\frac1h-\frac{1}{\sqrt{L^2+h^2}}=\frac1h\left[1-\left(1+\frac{L^2}{h^2}\right)^{-1/2}\right]\approx\frac1h\cdot\frac{L^2}{2h^2}$. So $E_x\approx-\frac{k\lambda L^2}{2h^3}$, which shrinks like $1/h^3$, faster than $E_y$. The field becomes purely "up", as it should when the rod looks like a point charge directly below.
 
@@ -349,19 +349,19 @@ mid/.default=0.5}
 
 **Setup.** A rod along the $y$-axis from $-L/2$ to $+L/2$, uniform $\lambda=Q/L$. P $=(x,0)$.
 
-1. $dq=\lambda\,dy$ at $(0,y)$. $\vec r=\langle x,-y\rangle$, $|\vec r|=\sqrt{x^2+y^2}$.
-2. $d\vec E=k\lambda\,dy\,\dfrac{\langle x,-y\rangle}{(x^2+y^2)^{3/2}}$.
+1. $dq=\lambda\,dy$ at $(0,y)$. $\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle x,0\rangle-\langle0,y\rangle=\langle x,-y\rangle$, $|\vec r|=\sqrt{x^2+y^2}$.
+2. $d\vec E=\dfrac{k\,dq}{|\vec r|^3}\vec r=k\lambda\,dy\,\dfrac{\langle x,-y\rangle}{(x^2+y^2)^{3/2}}$.
 3. **Symmetry:** the piece at $+y$ and the piece at $-y$ have equal $dE_x$ but opposite $dE_y$. Mathematically, the $E_y$ integrand $-y/(x^2+y^2)^{3/2}$ is an **odd function** integrated over symmetric limits, so $E_y=0$.
-4. Then integrate $E_x$:
+4. Then integrate $E_x$ with $\int\frac{dx}{(x^2+a^2)^{3/2}}=\frac{x}{a^2\sqrt{x^2+a^2}}$ (variable $y$, $a=x$):
 $$
-E_x=k\lambda x\int_{-L/2}^{L/2}\frac{dy}{(x^2+y^2)^{3/2}}=k\lambda x\left[\frac{y}{x^2\sqrt{x^2+y^2}}\right]_{-L/2}^{L/2}
+E_x=\int dE_x=k\lambda x\int_{-L/2}^{L/2}\frac{dy}{(x^2+y^2)^{3/2}}=k\lambda x\left[\frac{y}{x^2\sqrt{x^2+y^2}}\right]_{-L/2}^{L/2}
 $$
 Plugging in the limits: the top limit gives $\frac{L/2}{x^2\sqrt{x^2+L^2/4}}$, and subtracting the bottom limit subtracts $\frac{-L/2}{x^2\sqrt{x^2+L^2/4}}$, so the two halves add to $\frac{L}{x^2\sqrt{x^2+L^2/4}}$. Multiply by $k\lambda x$ (one $x$ cancels):
 $$
 E_x=\frac{k\lambda L}{x\sqrt{x^2+(L/2)^2}}
 $$
 $$
-\boxed{\vec E(x,0)=\frac{kQ}{x\sqrt{x^2+(L/2)^2}}\,\hat x}
+\vec E(x,0)=\frac{k(Q/L)L}{x\sqrt{x^2+(L/2)^2}}\hat x=\boxed{\frac{kQ}{x\sqrt{x^2+(L/2)^2}}\,\hat x}
 $$
 
 ```tikz
@@ -472,23 +472,23 @@ mid/.default=0.5}
 
 **Setup.** An arc of radius $R$ centered on the origin, from angle $\theta_1$ to $\theta_2$, total charge $Q$. The uniform density is $\lambda=\dfrac{Q}{R(\theta_2-\theta_1)}$ (charge ÷ arc length). Find $\vec E$ at the origin.
 
-1. $dq=\lambda R\,d\theta$ at $(R\cos\theta,\ R\sin\theta)$.
-2. $\vec r=\vec 0-\langle R\cos\theta,R\sin\theta\rangle=\langle-R\cos\theta,\,-R\sin\theta\rangle$, and $|\vec r|=R$ (constant, which is the nice part).
+1. $dq=\lambda\,dl=\lambda R\,d\theta$ at $(R\cos\theta,\ R\sin\theta)$.
+2. $\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\vec 0-\langle R\cos\theta,R\sin\theta\rangle=\langle-R\cos\theta,\,-R\sin\theta\rangle$, and $|\vec r|=R$ (constant, which is the nice part).
 3. Field from one piece:
 $$
-d\vec E=k\frac{\lambda R\,d\theta}{R^3}\langle -R\cos\theta,-R\sin\theta\rangle=\frac{k\lambda}{R}\langle-\cos\theta,\,-\sin\theta\rangle\,d\theta
+d\vec E=\frac{k\,dq}{|\vec r|^3}\vec r=k\frac{\lambda R\,d\theta}{R^3}\langle -R\cos\theta,-R\sin\theta\rangle=\frac{k\lambda}{R}\langle-\cos\theta,\,-\sin\theta\rangle\,d\theta
 $$
-4. Integrate each component:
+4. Integrate each component of $\vec E=\int d\vec E$, with $\int\cos\theta\,d\theta=\sin\theta$ and $\int\sin\theta\,d\theta=-\cos\theta$:
 $$
 E_x=-\frac{k\lambda}{R}\int_{\theta_1}^{\theta_2}\cos\theta\,d\theta=-\frac{k\lambda}{R}(\sin\theta_2-\sin\theta_1),\qquad E_y=-\frac{k\lambda}{R}\int_{\theta_1}^{\theta_2}\sin\theta\,d\theta=\frac{k\lambda}{R}(\cos\theta_2-\cos\theta_1)
 $$
 
-**Quarter circle** ($0\to\pi/2$, so $\lambda=2Q/\pi R$):
-$$E_x=-\frac{k\lambda}{R},\quad E_y=-\frac{k\lambda}{R}\quad\Longrightarrow\quad\vec E=-\frac{2kQ}{\pi R^2}(\hat x+\hat y)$$
+**Quarter circle** ($0\to\pi/2$, so $\lambda=\frac{Q}{R(\theta_2-\theta_1)}=\frac{Q}{R\pi/2}=\frac{2Q}{\pi R}$):
+$$E_x=-\frac{k\lambda}{R}\left(\sin\tfrac\pi2-\sin0\right)=-\frac{k\lambda}{R},\quad E_y=\frac{k\lambda}{R}\left(\cos\tfrac\pi2-\cos0\right)=-\frac{k\lambda}{R}\quad\Longrightarrow\quad\vec E=-\frac kR\cdot\frac{2Q}{\pi R}(\hat x+\hat y)=-\frac{2kQ}{\pi R^2}(\hat x+\hat y)$$
 That points toward the lower-left, i.e. away from the arc, as expected for $Q>0$.
 
-**Semicircle** ($0\to\pi$, so $\lambda=Q/\pi R$):
-$$E_x=0\ \text{(symmetry)},\qquad E_y=-\frac{2k\lambda}{R}=-\frac{2kQ}{\pi R^2}$$
+**Semicircle** ($0\to\pi$, so $\lambda=\frac{Q}{R\pi}$):
+$$E_x=-\frac{k\lambda}{R}(\sin\pi-\sin0)=0,\qquad E_y=\frac{k\lambda}{R}(\cos\pi-\cos0)=-\frac{2k\lambda}{R}=-\frac{2kQ}{\pi R^2}$$
 
 **Full ring** ($0\to2\pi$): $\vec E=0$ at the center ✓. Every piece is cancelled by the opposite piece.
 
@@ -532,8 +532,8 @@ mid/.default=0.5}
 
 **Setup.** A ring of radius $R$ and charge $Q$ in the $xy$-plane, centered on the origin. Find $\vec E$ at $(0,0,z)$.
 
-1. $dq=\lambda R\,d\phi$ with $\lambda=Q/2\pi R$, located at $(R\cos\phi,R\sin\phi,0)$.
-2. $\vec r=\langle-R\cos\phi,\,-R\sin\phi,\,z\rangle$, $|\vec r|=\sqrt{R^2+z^2}$ (the same for every piece).
+1. $\lambda=\dfrac{Q}{2\pi R}$, $dq=\lambda\,dl=\lambda R\,d\phi$, located at $(R\cos\phi,R\sin\phi,0)$.
+2. $\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle0,0,z\rangle-\langle R\cos\phi,R\sin\phi,0\rangle=\langle-R\cos\phi,\,-R\sin\phi,\,z\rangle$, $|\vec r|=\sqrt{R^2\cos^2\phi+R^2\sin^2\phi+z^2}=\sqrt{R^2+z^2}$ (same for every piece).
 3. The $x$- and $y$-components involve $\int_0^{2\pi}\cos\phi\,d\phi=\int_0^{2\pi}\sin\phi\,d\phi=0$. They cancel by symmetry: opposite sides of the ring push sideways in opposite directions.
 4. That leaves the $z$-component. From $d\vec E=k\,dq\,\vec r/|\vec r|^3$, the $z$-part uses $r_z=z$, so $dE_z=\dfrac{k\,dq\,z}{(R^2+z^2)^{3/2}}$. Everything except $dq$ is the same for every piece, so it comes outside the integral, and $\int dq=Q$ (adding up every piece's charge gives the total):
 $$
@@ -608,13 +608,13 @@ mid/.default=0.5}
 **Strategy:** you already know the field of a ring (§4.6). Treat the disk as nested rings of radius $r$ and width $dr$.
 
 1. The ring of radius $r$ has charge $dq=\sigma\,dA=\sigma\,2\pi r\,dr$.
-2. Use the ring result with $Q\to dq$ and $R\to r$:
+2. Ring result $E_z=\dfrac{kQz}{(z^2+R^2)^{3/2}}$ with $Q\to dq$ and $R\to r$:
 $$
 dE_z=\frac{k\,dq\,z}{(z^2+r^2)^{3/2}}=\frac{2\pi k\sigma z\,r\,dr}{(z^2+r^2)^{3/2}}
 $$
-3. Integrate $r=0\to R$ (substitute $u=z^2+r^2$, $du=2r\,dr$):
+3. Integrate $r=0\to R$ with $\int\frac{x\,dx}{(x^2+a^2)^{3/2}}=-\frac{1}{\sqrt{x^2+a^2}}$ (variable $r$, $a=z$):
 $$
-E_z=2\pi k\sigma z\int_0^R\frac{r\,dr}{(z^2+r^2)^{3/2}}=2\pi k\sigma z\left[-\frac{1}{\sqrt{z^2+r^2}}\right]_0^R
+E_z=\int dE_z=2\pi k\sigma z\int_0^R\frac{r\,dr}{(z^2+r^2)^{3/2}}=2\pi k\sigma z\left[-\frac{1}{\sqrt{z^2+r^2}}\right]_0^R
 $$
 $$
 \boxed{\ E_z=2\pi k\sigma\left(\frac{z}{|z|}-\frac{z}{\sqrt{z^2+R^2}}\right)\ }
@@ -726,7 +726,7 @@ mid/.default=0.5}
 ```
 
 Put sheet $+\sigma$ on the left and $-\sigma$ on the right. Each makes a field of magnitude $2\pi k\sigma$:
-- **Between** the sheets, both fields point from $+$ toward $-$, so they **add**: $E_{\text{in}}=4\pi k\sigma=\sigma/\epsilon_0$, uniform.
+- **Between** the sheets, both fields point from $+$ toward $-$, so they **add**: $E_{\text{in}}=E_++E_-=2\pi k\sigma+2\pi k\sigma=4\pi k\sigma=\sigma/\epsilon_0$, uniform.
 - **Outside** the sheets, the fields point in opposite directions and **cancel**: $E_{\text{out}}=0$.
 
 If both sheets have the **same** sign $+\sigma$: the fields cancel between them ($E=0$) and add outside ($4\pi k\sigma$, pointing outward).
@@ -836,19 +836,19 @@ $$Q_{\text{enc}}=\int_0^r\beta r'\cdot4\pi r'^2\,dr'=4\pi\beta\frac{r^4}{4}=\pi\
 
 **Setup.** A rod on the $x$-axis from $0$ to $L$ with $\lambda(x)=\alpha x$. Find $\vec E$ at P $=(-d,0)$, a distance $d$ to the left of the origin.
 
-1. $dq=\alpha x\,dx$ at $(x,0)$. $\vec r=\langle -d-x,\,0\rangle$, $|\vec r|=d+x$, so the direction is $-\hat x$.
+1. $dq=\lambda\,dx=\alpha x\,dx$ at $(x,0)$. $\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle-d,0\rangle-\langle x,0\rangle=\langle -(d+x),\,0\rangle$, $|\vec r|=d+x$.
 2. Field from one piece:
 $$
-dE_x=-k\frac{\alpha x\,dx}{(d+x)^2}
+dE_x=\frac{k\,dq}{|\vec r|^3}\,r_x=\frac{k\,\alpha x\,dx}{(d+x)^3}\big(-(d+x)\big)=-k\frac{\alpha x\,dx}{(d+x)^2}
 $$
-3. Integrate with $u=d+x$, $x=u-d$:
+3. $E_x=\int dE_x=-k\alpha\int_0^L\frac{x\,dx}{(d+x)^2}$. Substitute $u=d+x$, $x=u-d$, and use $\int\frac{du}{u}=\ln u$, $\int\frac{du}{u^2}=-\frac1u$:
 $$
 \int_0^L\frac{x\,dx}{(d+x)^2}=\int_d^{d+L}\left(\frac1u-\frac{d}{u^2}\right)du=\ln\frac{d+L}{d}-\frac{L}{d+L}
 $$
 $$
 \boxed{\ \vec E=-k\alpha\left[\ln\!\left(1+\frac Ld\right)-\frac{L}{L+d}\right]\hat x\ }
 $$
-4. **Check far away** with $\epsilon=L/d\ll1$: $\ln(1+\epsilon)-\dfrac{\epsilon}{1+\epsilon}\approx(\epsilon-\tfrac12\epsilon^2)-(\epsilon-\epsilon^2)=\tfrac12\epsilon^2$. So $E\approx k\alpha L^2/(2d^2)=kQ/d^2$ with $Q=\alpha L^2/2$ ✓.
+4. **Check far away** with $\epsilon=L/d\ll1$, using $\ln(1+\epsilon)\approx\epsilon-\frac12\epsilon^2$ and $\frac{1}{1+\epsilon}\approx1-\epsilon$: $\ln(1+\epsilon)-\dfrac{\epsilon}{1+\epsilon}\approx(\epsilon-\tfrac12\epsilon^2)-(\epsilon-\epsilon^2)=\tfrac12\epsilon^2$. So $E\approx k\alpha L^2/(2d^2)=kQ/d^2$ with $Q=\alpha L^2/2$ ✓.
 
 ### 4.12 A 3D surface: hemispherical shell, field at the center
 
@@ -857,14 +857,14 @@ $$
 **Setup.** A hemispherical shell of radius $R$ (the top half, $z\ge0$) with charge $Q$ spread uniformly, so $\sigma=Q/(2\pi R^2)$. Find $\vec E$ at the center.
 
 1. Slice it into rings at polar angle $\theta$ (measured from the $+z$ axis). A ring has radius $R\sin\theta$, sits at height $z=R\cos\theta$, and has width $R\,d\theta$. So
-$$dq=\sigma(2\pi R\sin\theta)(R\,d\theta)=2\pi\sigma R^2\sin\theta\,d\theta$$
-2. Each ring is a ring (§4.6). The center is on its axis at distance $R\cos\theta$ *below* it, and every point of the ring is a distance $R$ from the center. By symmetry only $z$-components survive, and they point in the $-z$ direction (away from the charge):
+$$dq=\sigma\,dA=\sigma(2\pi R\sin\theta)(R\,d\theta)=2\pi\sigma R^2\sin\theta\,d\theta$$
+2. Use the ring formula $E=\dfrac{kqz}{(z^2+a^2)^{3/2}}$ (§4.6) with $q\to dq$, axis distance $z=R\cos\theta$ (the center is *below* the ring), and ring radius $a=R\sin\theta$, so $z^2+a^2=R^2$. By symmetry only $z$-components survive, and they point in the $-z$ direction (away from the charge):
 $$
 dE_z=-\frac{k\,dq\,(R\cos\theta)}{R^3}=-2\pi k\sigma\sin\theta\cos\theta\,d\theta
 $$
-3. Integrate $\theta=0\to\pi/2$:
+3. Integrate $\theta=0\to\pi/2$ with $\int\sin\theta\cos\theta\,d\theta=\frac12\sin^2\theta$:
 $$
-E_z=-2\pi k\sigma\int_0^{\pi/2}\sin\theta\cos\theta\,d\theta=-2\pi k\sigma\cdot\frac12=-\pi k\sigma=\boxed{-\frac{kQ}{2R^2}}
+E_z=-2\pi k\sigma\int_0^{\pi/2}\sin\theta\cos\theta\,d\theta=-2\pi k\sigma\cdot\frac12=-\pi k\sigma=-\pi k\frac{Q}{2\pi R^2}=\boxed{-\frac{kQ}{2R^2}}
 $$
 
 > [!tip] The "reuse a known result" trick
@@ -1187,11 +1187,11 @@ For a straight move of distance $d$ along $\vec E$: $\Delta V=-Ed$.
 
 **Parallel plates** (separation $d$, field $E=4\pi k\sigma$ pointing from $+$ to $-$):
 $$
-V_+-V_-=+Ed=4\pi k\sigma d
+V_+-V_-=-\vec E\cdot\Delta\vec r=+Ed=4\pi k\sigma d
 $$
 The positive plate is at higher potential.
 
-**Diagonal path:** only the component along $\vec E$ matters. If $\vec E=E\hat x$ and you move $\Delta\vec r=\langle a,b\rangle$, then $\Delta V=-Ea$.
+**Diagonal path:** only the component along $\vec E$ matters. If $\vec E=E\hat x$ and you move $\Delta\vec r=\langle a,b\rangle$, then $\Delta V=-\vec E\cdot\Delta\vec r=-(E\hat x)\cdot\langle a,b\rangle=-Ea$.
 
 **Two sheets with the same sign:** $E=0$ between them, so $\Delta V=0$ between them (lecture clicker).
 
@@ -1201,7 +1201,7 @@ The positive plate is at higher potential.
 
 Take $\vec E=\dfrac{kq}{r^2}\hat r$ and a radial path from $r_1$ to $r_2$:
 $$
-V(r_2)-V(r_1)=-\int_{r_1}^{r_2}\frac{kq}{r^2}dr=kq\left[\frac1r\right]_{r_1}^{r_2}=\frac{kq}{r_2}-\frac{kq}{r_1}
+V(r_2)-V(r_1)=-\int\vec E\cdot d\vec l=-\int_{r_1}^{r_2}\frac{kq}{r^2}dr=kq\left[\frac1r\right]_{r_1}^{r_2}=\frac{kq}{r_2}-\frac{kq}{r_1}
 $$
 (The antiderivative of $r^{-2}$ is $-1/r$; that minus combines with the minus in front of the integral to give $+kq/r$.)
 Now set $V(\infty)=0$ (let $r_1\to\infty$):
@@ -1216,13 +1216,13 @@ Any path works, because any path can be broken into radial pieces (which contrib
 
 $\vec E=\dfrac{2k\lambda}{r}\hat r$. Integrate radially from $r_a$ to $r_b$:
 $$
-V(r_b)-V(r_a)=-\int_{r_a}^{r_b}\frac{2k\lambda}{r}dr=-2k\lambda\ln\frac{r_b}{r_a}
+V(r_b)-V(r_a)=-\int\vec E\cdot d\vec l=-\int_{r_a}^{r_b}\frac{2k\lambda}{r}dr=-2k\lambda\Big[\ln r\Big]_{r_a}^{r_b}=-2k\lambda\ln\frac{r_b}{r_a}
 $$
 You **cannot** set $V(\infty)=0$ here: $\ln\infty$ diverges, because the line has infinite total charge. Only differences make sense.
 
 **Coaxial cylinders** (inner radius $a$ carrying $+\lambda$, outer radius $b$ carrying $-\lambda$): between them only the inner charge produces a field (the outer cylinder contributes zero inside itself, like a shell), so $E=2k\lambda/r$. Then
 $$
-V_a-V_b=2k\lambda\ln\frac ba>0
+V_a-V_b=-\int_b^a\frac{2k\lambda}{r}dr=-2k\lambda\ln\frac ab=2k\lambda\ln\frac ba>0
 $$
 
 ### 10.4 Spherical shell
@@ -1237,10 +1237,10 @@ Note that $\vec E$ is discontinuous at the surface, but $V$ is **continuous**. $
 
 Start from the surface, where $V(R)=kQ/R$, and integrate inward using $E_{\text{in}}=kQr/R^3$:
 $$
-V(r)-V(R)=-\int_R^r\frac{kQr'}{R^3}dr'=-\frac{kQ}{2R^3}(r^2-R^2)
+V(r)-V(R)=-\int\vec E\cdot d\vec l=-\int_R^r\frac{kQr'}{R^3}dr'=-\frac{kQ}{R^3}\Big[\frac{r'^2}{2}\Big]_R^r=-\frac{kQ}{2R^3}(r^2-R^2)
 $$
 $$
-\boxed{\ V_{\text{in}}(r)=\frac{kQ}{2R^3}(3R^2-r^2)\ }
+V_{\text{in}}(r)=\frac{kQ}{R}-\frac{kQ}{2R^3}(r^2-R^2)=\boxed{\ \frac{kQ}{2R^3}(3R^2-r^2)\ }
 $$
 At the center, $V(0)=\tfrac32\dfrac{kQ}{R}$, which is higher than at the surface ✓ (you move against $\vec E$ going in).
 
@@ -1286,7 +1286,7 @@ mid/.default=0.5}
 
 **Step 2: integrate in from infinity**, with $V(\infty)=0$:
 
-Region III: $V(r)=-\int_\infty^r\dfrac{k(q_1+q_2)}{r'^2}dr'=\dfrac{k(q_1+q_2)}{r}$
+Region III: $V(r)=-\int\vec E\cdot d\vec l=-\int_\infty^r\dfrac{k(q_1+q_2)}{r'^2}dr'=\dfrac{k(q_1+q_2)}{r}$
 
 Region II:
 $$
@@ -1330,15 +1330,15 @@ Same $dq$ and $|\vec r|$ as Part I, just no vector components.
 
 Every $dq$ is the same distance $\sqrt{z^2+R^2}$ away, so
 $$
-V(z)=\frac{kQ}{\sqrt{z^2+R^2}}
+V(z)=k\int\frac{dq}{|\vec r|}=\frac{k}{\sqrt{z^2+R^2}}\int dq=\frac{kQ}{\sqrt{z^2+R^2}}
 $$
-**Check:** $E_z=-\dfrac{dV}{dz}=\dfrac{kQz}{(z^2+R^2)^{3/2}}$ ✓ (matches §4.6).
+**Check:** $E_z=-\dfrac{dV}{dz}=-\dfrac{d}{dz}\left[kQ(z^2+R^2)^{-1/2}\right]=\dfrac{kQz}{(z^2+R^2)^{3/2}}$ ✓ (matches §4.6).
 
 ### 11.2 Disk on axis
 
-Use rings with $dq=\sigma2\pi r\,dr$:
+Use rings with $dq=\sigma\,dA=\sigma2\pi r\,dr$, each a distance $\sqrt{z^2+r^2}$ from P, and $\int\frac{x\,dx}{\sqrt{x^2+a^2}}=\sqrt{x^2+a^2}$:
 $$
-V(z)=\int_0^R\frac{k\,\sigma2\pi r\,dr}{\sqrt{z^2+r^2}}=2\pi k\sigma\left[\sqrt{z^2+r^2}\right]_0^R=2\pi k\sigma\left(\sqrt{z^2+R^2}-|z|\right)
+V(z)=k\int\frac{dq}{|\vec r|}=\int_0^R\frac{k\,\sigma2\pi r\,dr}{\sqrt{z^2+r^2}}=2\pi k\sigma\left[\sqrt{z^2+r^2}\right]_0^R=2\pi k\sigma\left(\sqrt{z^2+R^2}-|z|\right)
 $$
 $V$ is **continuous** at $z=0$, while $E$ jumps there.
 
@@ -1350,7 +1350,7 @@ Limits:
 
 Same setup as §4.1:
 $$
-V=\int_0^L\frac{k\lambda\,dx}{L+d-x}=k\lambda\Big[-\ln(L+d-x)\Big]_0^L=k\lambda\big[-\ln d+\ln(L+d)\big]=k\lambda\ln\frac{L+d}{d}
+V=k\int\frac{dq}{|\vec r|}=\int_0^L\frac{k\lambda\,dx}{L+d-x}=k\lambda\Big[-\ln(L+d-x)\Big]_0^L=k\lambda\big[-\ln d+\ln(L+d)\big]=k\lambda\ln\frac{L+d}{d}
 $$
 (With $u=L+d-x$, $du=-dx$, so $\int\frac{dx}{L+d-x}=-\ln u$.) Each piece is a distance $L+d-x$ from P, and potential needs only that distance, not a direction.
 
@@ -1358,7 +1358,7 @@ $$
 
 Same setup as §4.3:
 $$
-V=k\lambda\int_{-L/2}^{L/2}\frac{dy}{\sqrt{x^2+y^2}}=k\lambda\Big[\ln\big(y+\sqrt{x^2+y^2}\big)\Big]_{-L/2}^{L/2}=k\lambda\ln\frac{L/2+\sqrt{x^2+L^2/4}}{-L/2+\sqrt{x^2+L^2/4}}
+V=k\int\frac{dq}{|\vec r|}=k\lambda\int_{-L/2}^{L/2}\frac{dy}{\sqrt{x^2+y^2}}=k\lambda\Big[\ln\big(y+\sqrt{x^2+y^2}\big)\Big]_{-L/2}^{L/2}=k\lambda\ln\frac{L/2+\sqrt{x^2+L^2/4}}{-L/2+\sqrt{x^2+L^2/4}}
 $$
 (The ✍️ integral $\int\frac{dy}{\sqrt{x^2+y^2}}=\ln(y+\sqrt{x^2+y^2})$ from §5; subtracting two logs gives the log of a ratio.)
 
@@ -1400,17 +1400,17 @@ $$
 
 > [!example] "The CRT" / particle in a capacitor (recommended practice)
 > An electron (mass $m$, charge $-e$) enters the gap between parallel plates (field magnitude $E=4\pi k\sigma$, separation $d$) at speed $v_0$, moving from the $-$ plate side toward the $+$ plate. Find its exit speed.
-> 1. The field points from $+$ to $-$, so the electron moves *against* $\vec E$: $\Delta V=V_+-V_-=+Ed$.
+> 1. The field points from $+$ to $-$, so the electron moves *against* $\vec E$: $\Delta V=-\vec E\cdot\Delta\vec r=+Ed$.
 > 2. $\Delta U=q\Delta V=(-e)(Ed)=-eEd$, so it loses potential energy.
-> 3. $\Delta K=+eEd$, so $\tfrac12mv_f^2=\tfrac12mv_0^2+eEd$, giving
-> $$v_f=\sqrt{v_0^2+\frac{2eEd}{m}}=\sqrt{v_0^2+\frac{8\pi k\sigma ed}{m}}$$
+> 3. $\Delta K=-\Delta U=+eEd$, so $\tfrac12mv_f^2=\tfrac12mv_0^2+eEd$, giving
+> $$v_f=\sqrt{v_0^2+\frac{2\Delta K}{m}}=\sqrt{v_0^2+\frac{2eEd}{m}}=\sqrt{v_0^2+\frac{8\pi k\sigma ed}{m}}$$
 > 4. **Sanity:** the force on the electron, $-e\vec E$, points toward the $+$ plate, i.e. along its motion. So it speeds up ✓.
 
 ### 13.3 Escape / closest-approach problems
 
 A charge $q_2$ (mass $m$) is fired straight at a **fixed** charge $q_1$ of the same sign, starting far away with speed $v_0$. Repulsion slows it until it momentarily stops at the closest distance $r_{\min}$. All the starting kinetic energy has become potential energy ($U=0$ far away, $K=0$ at the turning point), so
 $$
-\frac12mv_0^2=\frac{kq_1q_2}{r_{\min}}\qquad\text{(starting from far away)}
+K_i+U_i=K_f+U_f\ \Rightarrow\ \frac12mv_0^2+0=0+\frac{kq_1q_2}{r_{\min}}
 $$
 
 ---
@@ -1473,7 +1473,7 @@ $$
 
 Plug the drift speed into $I=enAv_d$:
 $$
-I=enA\frac{e\tau E}{m}=\underbrace{\frac{ne^2\tau}{m}}_{\sigma_c}AE
+I=enAv_d=enA\frac{e\tau E}{m}=\underbrace{\frac{ne^2\tau}{m}}_{\sigma_c}AE
 $$
 Here $\sigma_c=ne^2\tau/m$ is the **conductivity** (a material property). Its inverse $\rho_c=1/\sigma_c$ is the **resistivity**. (Don't confuse these with charge densities $\sigma$ and $\rho$; same letters, different meaning.)
 
@@ -1511,8 +1511,8 @@ $$
 The battery supplies power $P_{\text{bat}}=\mathcal EI$. By energy conservation, $\sum P_{\text{batteries}}=\sum I^2R$.
 
 > [!example] Two identical bulbs in series
-> A battery $\mathcal E$ drives two bulbs, each with resistance $R$, in series. $R_{\text{eq}}=2R$ and $I=\mathcal E/2R$. Each bulb dissipates $I^2R=\mathcal E^2/4R$, a quarter of what one bulb alone would ($\mathcal E^2/R$).
-> **In parallel:** each bulb gets the full $\mathcal E$, so each dissipates $\mathcal E^2/R$. Parallel bulbs are brighter.
+> A battery $\mathcal E$ drives two bulbs, each with resistance $R$, in series. $R_{\text{eq}}=R+R=2R$ and $I=\frac{\mathcal E}{R_{\text{eq}}}=\frac{\mathcal E}{2R}$. Each bulb dissipates $P=I^2R=\left(\frac{\mathcal E}{2R}\right)^2R=\frac{\mathcal E^2}{4R}$, a quarter of what one bulb alone would ($\mathcal E^2/R$).
+> **In parallel:** each bulb gets the full $\mathcal E$, so each dissipates $P=\frac{(\Delta V)^2}{R}=\frac{\mathcal E^2}{R}$. Parallel bulbs are brighter.
 
 ## 18. Kirchhoff's rules
 
