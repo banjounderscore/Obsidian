@@ -191,13 +191,14 @@ mid/.default=0.5}
 
 > [!success]- Solution
 > **A.** A piece at angle $\theta$ on a circle of radius $R$ sits at $\langle R\cos\theta,R\sin\theta,0\rangle$. The vector points from that piece to the observation point (the origin), and every piece is the same distance $R$ away:
-> $$\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle0,0,0\rangle-\langle R\cos\theta,R\sin\theta,0\rangle=\boxed{\langle-R\cos\theta,\,-R\sin\theta,\,0\rangle},\qquad|\vec r|=R$$
+> $$\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle0,0,0\rangle-\langle R\cos\theta,R\sin\theta,0\rangle=\boxed{\langle-R\cos\theta,\,-R\sin\theta,\,0\rangle}$$
+> $$|\vec r|=R,\qquad\hat r=\frac{\vec r}{|\vec r|}=\langle-\cos\theta,-\sin\theta,0\rangle$$
 >
 > **B.** The arc spans angle $\alpha$, so its length is $R\alpha$ (arc length = radius × angle in radians). The piece's charge is charge-per-length times its length $R\,d\theta$:
 > $$\lambda=\frac{Q_{\text{tot}}}{\text{arc length}}=\frac{-Q}{R\alpha},\qquad dQ=\lambda R\,d\theta=\frac{-Q}{R\alpha}R\,d\theta=\boxed{-\frac{Q}{\alpha}\,d\theta}$$
 >
-> **C.** Treat the piece as a point charge, using $\vec r$ from part A (with $|\vec r|=R$):
-> $$d\vec E=\frac{k\,dQ}{|\vec r|^3}\vec r=\frac{k\left(-\frac Q\alpha d\theta\right)}{R^3}\langle-R\cos\theta,-R\sin\theta,0\rangle=\boxed{\frac{kQ}{\alpha R^2}\langle\cos\theta,\sin\theta,0\rangle\,d\theta}$$
+> **C.** Treat the piece as a point charge, using $|\vec r|=R$ and $\hat r$ from part A:
+> $$d\vec E=\frac{k\,dQ}{|\vec r|^2}\hat r=\frac{k\left(-\frac Q\alpha d\theta\right)}{R^2}\langle-\cos\theta,-\sin\theta,0\rangle=\boxed{\frac{kQ}{\alpha R^2}\langle\cos\theta,\sin\theta,0\rangle\,d\theta}$$
 > It points from the origin **toward** the piece (negative charge).
 >
 > **D.** Add up all the pieces by integrating $\theta$ from $0$ to $\alpha$, one component at a time, with $\int\cos\theta\,d\theta=\sin\theta$ and $\int\sin\theta\,d\theta=-\cos\theta$:
@@ -256,12 +257,12 @@ mid/.default=0.5}
 >
 > **A.** $d\vec E_-$ points toward the negative piece at $(0,y)$ (up-left). $d\vec E_+$ points away from the positive piece at $(0,-y)$ (up-right). The $x$-parts cancel, so $d\vec E$ points **up**.
 >
-> **B.** Each piece uses $d\vec E=\dfrac{k\,dQ}{|\vec r|^3}\vec r$.
+> **B.** Each piece uses $d\vec E=\dfrac{k\,dQ}{|\vec r|^2}\hat r$. Both pieces are $|\vec r|=\sqrt{x^2+y^2}$ from the observation point.
 > - Negative piece: $dQ_-=\lambda_-dy=-\frac{2Q}{L}dy$ at $\langle0,y,0\rangle$
-> $$\vec r_-=\langle x,0,0\rangle-\langle0,y,0\rangle=\langle x,-y,0\rangle,\qquad d\vec E_-=\frac{k\left(-\frac{2Q}{L}dy\right)}{(x^2+y^2)^{3/2}}\langle x,-y,0\rangle$$
+> $$\vec r_-=\langle x,0,0\rangle-\langle0,y,0\rangle=\langle x,-y,0\rangle,\quad\hat r_-=\frac{\langle x,-y,0\rangle}{\sqrt{x^2+y^2}},\quad d\vec E_-=\frac{k\left(-\frac{2Q}{L}dy\right)}{x^2+y^2}\cdot\frac{\langle x,-y,0\rangle}{\sqrt{x^2+y^2}}$$
 > - Positive piece: $dQ_+=+\frac{2Q}{L}dy$ at $\langle0,-y,0\rangle$
-> $$\vec r_+=\langle x,0,0\rangle-\langle0,-y,0\rangle=\langle x,y,0\rangle,\qquad d\vec E_+=\frac{k\left(\frac{2Q}{L}dy\right)}{(x^2+y^2)^{3/2}}\langle x,y,0\rangle$$
-> Adding them, the $x$-parts cancel and the $y$-parts add:
+> $$\vec r_+=\langle x,0,0\rangle-\langle0,-y,0\rangle=\langle x,y,0\rangle,\quad\hat r_+=\frac{\langle x,y,0\rangle}{\sqrt{x^2+y^2}},\quad d\vec E_+=\frac{k\left(\frac{2Q}{L}dy\right)}{x^2+y^2}\cdot\frac{\langle x,y,0\rangle}{\sqrt{x^2+y^2}}$$
+> Adding them (with $\frac{1}{x^2+y^2}\cdot\frac{1}{\sqrt{x^2+y^2}}=\frac{1}{(x^2+y^2)^{3/2}}$), the $x$-parts cancel and the $y$-parts add:
 > $$d\vec E=d\vec E_-+d\vec E_+=\frac{2kQ\,dy}{L(x^2+y^2)^{3/2}}\langle -x+x,\ y+y,\ 0\rangle=\boxed{\frac{4kQ}{L}\frac{y\,dy}{(x^2+y^2)^{3/2}}\,\hat y}$$
 >
 > **C.** Integrate $y$ over one rod's length, $0\to L/2$ (each $y$ already pairs a negative piece with its matching positive piece). Sheet integral $\int\frac{x\,dx}{(x^2+a^2)^{3/2}}=-\frac{1}{\sqrt{x^2+a^2}}$ (variable $y$, $a=x$):
@@ -348,9 +349,9 @@ mid/.default=0.5}
 > $$dQ=\lambda\,dx=\alpha x\,dx,\qquad Q=\int dQ=\int_0^L\alpha x\,dx=\alpha\Big[\tfrac{x^2}{2}\Big]_0^L=\boxed{\tfrac12\alpha L^2}$$
 >
 > **B.** A piece at $\langle x,0,0\rangle$ is to the right of P, so $\vec r$ (piece → P) points in the $-x$ direction:
-> $$\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle-d,0,0\rangle-\langle x,0,0\rangle=\langle-(d+x),0,0\rangle,\qquad|\vec r|=d+x$$
+> $$\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle-d,0,0\rangle-\langle x,0,0\rangle=\langle-(d+x),0,0\rangle,\qquad|\vec r|=d+x,\qquad\hat r=\frac{\vec r}{|\vec r|}=-\hat x$$
 > Point-charge field of the piece (positive, so it points away from the rod, toward $-x$):
-> $$d\vec E=\frac{k\,dQ}{|\vec r|^3}\vec r=\frac{k\,\alpha x\,dx}{(d+x)^3}\langle-(d+x),0,0\rangle=\boxed{-\frac{k\alpha\,x\,dx}{(d+x)^2}\,\hat x}$$
+> $$d\vec E=\frac{k\,dQ}{|\vec r|^2}\hat r=\frac{k\,\alpha x\,dx}{(d+x)^2}(-\hat x)=\boxed{-\frac{k\alpha\,x\,dx}{(d+x)^2}\,\hat x}$$
 >
 > **C.** Integrate over the rod, $x=0\to L$. The integrand isn't directly on the sheet, so split $\frac{x}{(d+x)^2}=\frac{1}{d+x}-\frac{d}{(d+x)^2}$ and use the sheet integrals $\int\frac{dx}{x+a}=\ln(x+a)$, $\int\frac{dx}{(x+a)^2}=-\frac{1}{x+a}$:
 > $$\int_0^L\frac{x\,dx}{(d+x)^2}=\Big[\ln(d+x)\Big]_0^L+d\left[\frac{1}{d+x}\right]_0^L=\ln\frac{d+L}{d}+d\left(\frac{1}{d+L}-\frac1d\right)=\ln\frac{d+L}{d}-\frac{L}{d+L}$$
@@ -522,6 +523,7 @@ mid/.default=0.5}
 
 > [!success]- Solution
 > **Field in each region:** $E=\dfrac{kQ_{\text{enc}}}{r^2}$ (a shell gives zero inside itself; a conductor has $E=0$ inside).
+>
 > | Region | $Q_{\text{enc}}$ | $\vec E$ |
 > |---|---|---|
 > | $r<R_a$ (metal) | | $0$ |

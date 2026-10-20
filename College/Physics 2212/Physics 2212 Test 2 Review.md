@@ -21,7 +21,7 @@
 
 ### 1.1 Core equations
 $$
-d\vec E=k\frac{dq}{|\vec r|^3}\vec r,\qquad \vec r=\vec r_{\text{obs}}-\vec r_{\text{source}},\qquad k=\frac1{4\pi\epsilon_0}
+d\vec E=\frac{k\,dq}{|\vec r|^2}\hat r,\qquad \vec r=\vec r_{\text{obs}}-\vec r_{\text{source}},\qquad \hat r=\frac{\vec r}{|\vec r|},\qquad k=\frac1{4\pi\epsilon_0}
 $$
 Integrate **each component separately**.
 
@@ -44,8 +44,8 @@ Integrate **each component separately**.
 2. Choose a general $dq$ at a general location (coordinates in your integration variable).
 3. Write $dq$ using the density.
 4. Find $\vec r$ (obs − source) in components.
-5. Find $|\vec r|$.
-6. Write $d\vec E=k\,dq\,\vec r/|\vec r|^3$ and split it into components.
+5. Find $|\vec r|$ and $\hat r=\vec r/|\vec r|$.
+6. Write $d\vec E=\dfrac{k\,dq}{|\vec r|^2}\hat r$ and split it into components.
 7. Use symmetry to kill components, and **say why**.
 8. Set the limits.
 9. Integrate. Only source coordinates are variables; $h,z,d$ are constants.

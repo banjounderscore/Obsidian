@@ -161,8 +161,10 @@ Charles-Augustin de Coulomb (1736–1806) experimentally quantified the force be
 **Coulomb's Law:** the force that a point charge* $q_1$ located at $\vec r_1$ exerts on a point charge $q_2$ located at $\vec r_2$:
 
 $$
-\vec F_{21} = k\,q_1 q_2\, \frac{\vec r_2-\vec r_1}{|\vec r_2-\vec r_1|^3} = -\vec F_{12}
+\vec F_{21} = \frac{k\,q_1 q_2}{|\vec r|^2}\,\hat r = -\vec F_{12},\qquad \vec r=\vec r_2-\vec r_1,\quad \hat r=\frac{\vec r}{|\vec r|}
 $$
+
+Here $\vec r$ points from the charge exerting the force ($q_1$) to the charge feeling it ($q_2$).
 
 with Coulomb's constant
 
@@ -262,8 +264,8 @@ $$
 > This is **vector** addition, never scalar addition. You cannot add magnitudes and then "figure out" a direction afterward — you must add the $x$-components together and the $y$-components together separately (or draw the head-to-tail diagram), *then* take the magnitude of the result if you need it. A force of 5 N right plus a force of 5 N left is **0**, not 10 N.
 
 **Worked example (diagram above).** Positive $Q$ ("charge 2") feels $\vec F_2=\vec F_{21}+\vec F_{23}$:
-1. $\vec F_{21}=kQe\,\vec r/r^3$ with $\vec r=\vec r_Q-\vec r_{q_1}$: points away from $q_1$ (repulsion).
-2. $\vec F_{23}=kQ(-2e)\,\vec r'/r'^3$ with $\vec r'=\vec r_Q-\vec r_{q_3}$: the minus sign flips it toward $q_3$ (attraction).
+1. $\vec F_{21}=\dfrac{kQe}{r^2}\hat r$ with $\vec r=\vec r_Q-\vec r_{q_1}$: points away from $q_1$ (repulsion).
+2. $\vec F_{23}=\dfrac{kQ(-2e)}{r'^2}\hat r'$ with $\vec r'=\vec r_Q-\vec r_{q_3}$: the minus sign flips it toward $q_3$ (attraction).
 3. Add $x$-components and $y$-components separately; take the magnitude last.
 
 The net force points in neither individual direction, which is why you can't skip the vector addition.
@@ -291,7 +293,7 @@ where $\vec E(P)$ is the **electric field** at $P$ — produced by *every other*
 Rewrite Coulomb's law by simply factoring out the "victim" charge $Q$:
 
 $$
-\vec F_{Qq} = kQq\,\frac{\vec r_Q-\vec r_q}{|\vec r_Q-\vec r_q|^3} = Q\underbrace{\left[kq\,\frac{\vec r_Q-\vec r_q}{|\vec r_Q-\vec r_q|^3}\right]}_{\vec E_q(\vec r_Q-\vec r_q)}
+\vec F_{Qq} = \frac{kQq}{|\vec r|^2}\,\hat r = Q\underbrace{\left[\frac{kq}{|\vec r|^2}\,\hat r\right]}_{\vec E_q},\qquad \vec r=\vec r_Q-\vec r_q
 $$
 
 so that, for a charge $q$ sitting at the origin, the field it produces at position $\vec r$ is
@@ -888,7 +890,7 @@ Constants: $e = 1.602\times10^{-19}$ C, $k=1/(4\pi\epsilon_0) = 9\times10^9$ N·
 
 | Concept                   | Formula                                                                             |
 | ------------------------- | ----------------------------------------------------------------------------------- |
-| Coulomb's Law             | $\vec F_{21} = kq_1q_2\,\dfrac{\vec r_2-\vec r_1}{\lVert\vec r_2-\vec r_1\rVert^3}$ |
+| Coulomb's Law             | $\vec F_{21} = \dfrac{kq_1q_2}{r^2}\hat r$, $\ \vec r=\vec r_2-\vec r_1$, $\ \hat r=\vec r/r$ |
 | Field of a point charge   | $\vec E(\vec r) = \dfrac{kq}{r^2}\hat r$                                            |
 | Force from a field        | $\vec F = Q\vec E$                                                                  |
 | Far-field, net charge $Q$ | $\vec E \approx \dfrac{kQ}{r^2}\hat r$, for $r\gg s$                                |

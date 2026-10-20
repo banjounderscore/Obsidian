@@ -709,8 +709,8 @@ So reorienting the dipole to point directly at the sphere **doubles the magnitud
 | GPS 1 | P4 | $\vec E_{\text{net}} = \dfrac{24kqs}{d^3}\hat x$ |
 | GPS 2 | P1.C | $s = \dfrac{\pi\epsilon_0mgh^3}{2Qe}$ |
 | GPS 2 | P1.D | $\alpha = \dfrac{8\pi^2\epsilon_0^2mgh^5}{Q^2}$ |
-| GPS 2 | P2.A | $p_{\text{ind}} = \dfrac{2k\alpha|\vec p|_g}{d^3}$ |
-| GPS 2 | P2.B | $\lvert\vec F\rvert = \dfrac{12\alpha k^2|\vec p|_g^2}{d^7}$ |
+| GPS 2 | P2.A | $p_{\text{ind}} = \dfrac{2k\alpha\lvert\vec p\rvert_g}{d^3}$ |
+| GPS 2 | P2.B | $\lvert\vec F\rvert = \dfrac{12\alpha k^2\lvert\vec p\rvert_g^2}{d^7}$ |
 | GPS 2 | P2.C | $N \approx 8.6\times10^{10}$ dipoles |
 | GPS 2 | P3.B | $\vec E_{\text{net}}=0$ |
 | GPS 2 | P3.C | $\vec E_{\text{metal}} = \dfrac{kp}{4d^3}\langle-1,1,0\rangle$ |

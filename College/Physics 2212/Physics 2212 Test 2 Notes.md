@@ -21,7 +21,7 @@
 > They assume you know nothing. Read each part in order the first time. Every formula is derived, because on this exam **the derivation is the answer**. After a section, cover the worked example and redo it on blank paper. Then change one thing (a different observation point, a different geometry) and redo it again. That's exactly the practice the instructor recommends.
 
 > [!info] What the formula sheet gives you (and what it doesn't)
-> **Memorize (the sheet lists these as "things you must have memorized"):** $\vec F=q\vec E$; the point-charge field $\vec E=kq\vec r/r^3$; conservation of charge; superposition; Newton's 2nd law; conservation of energy.
+> **Memorize (the sheet lists these as "things you must have memorized"):** $\vec F=q\vec E$; the point-charge field $\vec E=\frac{kq}{r^2}\hat r$; conservation of charge; superposition; Newton's 2nd law; conservation of energy.
 >
 > **On the sheet (Test 2 relevant):**
 > - Potential: $U_E=qV$, $\ \Delta V=-\int_i^f\vec E\cdot d\vec l$, $\ \Delta V=\frac{q}{4\pi\epsilon_0}\left(\frac1{r_f}-\frac1{r_i}\right)$ (point charge)
@@ -31,7 +31,7 @@
 >
 > **NOT on the sheet, so you must derive or argue them:** shell and ball fields, arc fields, rod on its axis, potentials of continuous distributions (ring, disk, line, shell, ball), the loop and junction rules (from energy and charge conservation), series/parallel resistance, $\int dx/\sqrt{x^2+a^2}$, and trig integrals.
 >
-> **Official rule:** "Unless specifically asked to derive a result, you can start from the formulas given on the formula sheet… If a formula you need is not given, you must derive it." So when a problem says *derive*, you start from $d\vec E=k\,dq\,\vec r/r^3$ even if the result is on the sheet.
+> **Official rule:** "Unless specifically asked to derive a result, you can start from the formulas given on the formula sheet… If a formula you need is not given, you must derive it." So when a problem says *derive*, you start from $d\vec E=\frac{k\,dq}{r^2}\hat r$ even if the result is on the sheet.
 >
 > Gauss's law (flux) is printed on the sheet because the sheet is shared across all tests, but it wasn't taught in Weeks 4–7. Use the symmetry + far-field arguments in §4.10 instead.
 
@@ -72,10 +72,10 @@ $$
 The field is produced by the **source** charges and exists whether or not a test charge is there. For a single point charge $q$:
 
 $$
-\boxed{\ \vec E(\vec r) = k\frac{q}{r^2}\hat r = k\frac{q\,\vec r}{r^3}\ }
+\boxed{\ \vec E(\vec r) = \frac{kq}{r^2}\hat r,\qquad \hat r=\frac{\vec r}{r}\ }
 $$
 
-where $\vec r$ points **from the source to the observation point**. The second form, $kq\vec r/r^3$, is the one you will use most: it carries the direction automatically inside $\vec r$, so you never have to separately figure out $\hat r$. (Check: $\vec r/r^3 = (r\hat r)/r^3 = \hat r/r^2$.)
+where $\vec r$ points **from the source to the observation point**, $r=|\vec r|$, and $\hat r$ is its unit vector (magnitude × direction). You'll also see this written $kq\vec r/r^3$; it's identical, since $\vec r/r^3=(r\hat r)/r^3=\hat r/r^2$.
 
 - $\vec E$ points **away** from positive charges and **toward** negative charges.
 - Units: N/C, which equals V/m.
@@ -133,11 +133,11 @@ You use this to check answers: far from any charged object with net charge $Q$, 
 A real object (a rod, a plate, a ball) holds trillions of charges smeared out smoothly. You can't sum $kq_i\vec r_i/r_i^3$ over every electron, so instead:
 
 1. Chop the object into infinitesimally small pieces, each with charge $dq$.
-2. Each piece is so small it acts like a **point charge**, producing $d\vec E = k\,dq\,\vec r/r^3$.
+2. Each piece is so small it acts like a **point charge**, producing $d\vec E = \dfrac{k\,dq}{r^2}\hat r$.
 3. Add up (integrate) all the little $d\vec E$'s.
 
 $$
-\boxed{\ \vec E(\vec r_{\text{obs}}) = \int d\vec E = k\int\frac{\vec r_{\text{obs}}-\vec r_{\text{source}}}{|\vec r_{\text{obs}}-\vec r_{\text{source}}|^3}\,dq\ }
+\boxed{\ \vec E(\vec r_{\text{obs}}) = \int d\vec E = k\int\frac{dq}{|\vec r|^2}\,\hat r,\qquad \vec r=\vec r_{\text{obs}}-\vec r_{\text{source}},\quad \hat r=\frac{\vec r}{|\vec r|}\ }
 $$
 
 > [!warning] It's a vector integral
@@ -230,9 +230,9 @@ This is what the graders want to see written out, step by step. Practice-exam ru
 > 2. **Pick a tiny piece $dq$** at a *general* location (not a special one like an endpoint). Label its coordinates in terms of your integration variable, e.g. $(x,0,0)$ or $(R\cos\theta,R\sin\theta,0)$.
 > 3. **Write $dq$** using the density: $dq=\lambda\,dx$, $\lambda R\,d\theta$, $\sigma\,2\pi r\,dr$, …
 > 4. **Write the separation vector** $\vec r=\vec r_{\text{obs}}-\vec r_{\text{source}}$ in components.
-> 5. **Find its magnitude** $|\vec r|$.
+> 5. **Find its magnitude** $|\vec r|$ **and unit vector** $\hat r=\vec r/|\vec r|$.
 > 6. **Write $d\vec E$**:
->   $$d\vec E = k\frac{dq}{|\vec r|^3}\,\vec r$$
+>   $$d\vec E = \frac{k\,dq}{|\vec r|^2}\,\hat r$$
 >   and split it into components $dE_x, dE_y, dE_z$.
 > 7. **Use symmetry** to argue that some components integrate to zero. *Say why in words* ("for every $dq$ at $+y$ there's a matching one at $-y$ whose $dE_y$ cancels").
 > 8. **Set limits** from where the object starts and ends in your coordinate.
@@ -249,10 +249,10 @@ This is what the graders want to see written out, step by step. Practice-exam ru
 **Setup.** A rod of length $L$ and charge $Q$ (uniform, $\lambda=Q/L$) lies on the $x$-axis from $x=0$ to $x=L$. Find $\vec E$ at P $=(L+d,\,0)$, a distance $d$ past the right end.
 
 1. $dq=\lambda\,dx=\dfrac{Q}{L}\,dx$, at $(x,0)$.
-2. $\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle L+d,0\rangle-\langle x,0\rangle=\langle L+d-x,\ 0\rangle$, so $|\vec r|=\sqrt{r_x^2+r_y^2}=L+d-x$.
+2. $\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle L+d,0\rangle-\langle x,0\rangle=\langle L+d-x,\ 0\rangle$, so $|\vec r|=\sqrt{r_x^2+r_y^2}=L+d-x$ and $\hat r=\vec r/|\vec r|=\hat x$.
 3. Every piece pushes P in the $+x$ direction, so there are no components to cancel:
 $$
-dE_x=\frac{k\,dq}{|\vec r|^3}\,r_x=k\frac{\lambda\,dx}{(L+d-x)^3}(L+d-x)=k\frac{\lambda\,dx}{(L+d-x)^2}
+d\vec E=\frac{k\,dq}{|\vec r|^2}\hat r=k\frac{\lambda\,dx}{(L+d-x)^2}\hat x\quad\Rightarrow\quad dE_x=k\frac{\lambda\,dx}{(L+d-x)^2}
 $$
 4. Integrate over the rod, $x=0\to L$. **Antiderivative:** substitute $u=L+d-x$, so $du=-dx$ and $\int\frac{dx}{(L+d-x)^2}=\int\frac{-du}{u^2}=+\frac1u=\frac{1}{L+d-x}$. (The minus from $du=-dx$ cancels the minus from $\int u^{-2}du=-1/u$.) Then plug in the limits:
 $$
@@ -299,10 +299,10 @@ mid/.default=0.5}
 **Setup.** A rod from $x=0$ to $x=L$ with uniform $\lambda=Q/L$. Find $\vec E$ at P $=(0,h)$, directly above the left end.
 
 1. $dq=\lambda\,dx=\dfrac{Q}{L}\,dx$ at $(x,0)$.
-2. $\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle0,h\rangle-\langle x,0\rangle=\langle -x,\ h\rangle$, and $|\vec r|=\sqrt{r_x^2+r_y^2}=\sqrt{x^2+h^2}$.
+2. $\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle0,h\rangle-\langle x,0\rangle=\langle -x,\ h\rangle$, $|\vec r|=\sqrt{r_x^2+r_y^2}=\sqrt{x^2+h^2}$, and $\hat r=\dfrac{\vec r}{|\vec r|}=\dfrac{\langle -x,h\rangle}{\sqrt{x^2+h^2}}$.
 3. Write the field from one piece:
 $$
-d\vec E=\frac{k\,dq}{|\vec r|^3}\vec r=k\frac{\lambda\,dx}{(x^2+h^2)^{3/2}}\langle -x,\ h\rangle
+d\vec E=\frac{k\,dq}{|\vec r|^2}\hat r=\frac{k\lambda\,dx}{x^2+h^2}\cdot\frac{\langle -x,h\rangle}{\sqrt{x^2+h^2}}=k\frac{\lambda\,dx}{(x^2+h^2)^{3/2}}\langle -x,\ h\rangle
 $$
 4. **$x$-component** (negative: the rod is to the right of P and pushes it left), with $\int\frac{x\,dx}{(x^2+a^2)^{3/2}}=-\frac{1}{\sqrt{x^2+a^2}}$, $a=h$:
 $$
@@ -349,8 +349,8 @@ mid/.default=0.5}
 
 **Setup.** A rod along the $y$-axis from $-L/2$ to $+L/2$, uniform $\lambda=Q/L$. P $=(x,0)$.
 
-1. $dq=\lambda\,dy$ at $(0,y)$. $\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle x,0\rangle-\langle0,y\rangle=\langle x,-y\rangle$, $|\vec r|=\sqrt{x^2+y^2}$.
-2. $d\vec E=\dfrac{k\,dq}{|\vec r|^3}\vec r=k\lambda\,dy\,\dfrac{\langle x,-y\rangle}{(x^2+y^2)^{3/2}}$.
+1. $dq=\lambda\,dy$ at $(0,y)$. $\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle x,0\rangle-\langle0,y\rangle=\langle x,-y\rangle$, $|\vec r|=\sqrt{x^2+y^2}$, $\hat r=\dfrac{\langle x,-y\rangle}{\sqrt{x^2+y^2}}$.
+2. $d\vec E=\dfrac{k\,dq}{|\vec r|^2}\hat r=\dfrac{k\lambda\,dy}{x^2+y^2}\cdot\dfrac{\langle x,-y\rangle}{\sqrt{x^2+y^2}}=k\lambda\,dy\,\dfrac{\langle x,-y\rangle}{(x^2+y^2)^{3/2}}$.
 3. **Symmetry:** the piece at $+y$ and the piece at $-y$ have equal $dE_x$ but opposite $dE_y$. Mathematically, the $E_y$ integrand $-y/(x^2+y^2)^{3/2}$ is an **odd function** integrated over symmetric limits, so $E_y=0$.
 4. Then integrate $E_x$ with $\int\frac{dx}{(x^2+a^2)^{3/2}}=\frac{x}{a^2\sqrt{x^2+a^2}}$ (variable $y$, $a=x$):
 $$
@@ -473,10 +473,10 @@ mid/.default=0.5}
 **Setup.** An arc of radius $R$ centered on the origin, from angle $\theta_1$ to $\theta_2$, total charge $Q$. The uniform density is $\lambda=\dfrac{Q}{R(\theta_2-\theta_1)}$ (charge ÷ arc length). Find $\vec E$ at the origin.
 
 1. $dq=\lambda\,dl=\lambda R\,d\theta$ at $(R\cos\theta,\ R\sin\theta)$.
-2. $\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\vec 0-\langle R\cos\theta,R\sin\theta\rangle=\langle-R\cos\theta,\,-R\sin\theta\rangle$, and $|\vec r|=R$ (constant, which is the nice part).
+2. $\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\vec 0-\langle R\cos\theta,R\sin\theta\rangle=\langle-R\cos\theta,\,-R\sin\theta\rangle$, and $|\vec r|=R$ (constant, which is the nice part), so $\hat r=\dfrac{\vec r}{|\vec r|}=\langle-\cos\theta,-\sin\theta\rangle$.
 3. Field from one piece:
 $$
-d\vec E=\frac{k\,dq}{|\vec r|^3}\vec r=k\frac{\lambda R\,d\theta}{R^3}\langle -R\cos\theta,-R\sin\theta\rangle=\frac{k\lambda}{R}\langle-\cos\theta,\,-\sin\theta\rangle\,d\theta
+d\vec E=\frac{k\,dq}{|\vec r|^2}\hat r=k\frac{\lambda R\,d\theta}{R^2}\langle -\cos\theta,-\sin\theta\rangle=\frac{k\lambda}{R}\langle-\cos\theta,\,-\sin\theta\rangle\,d\theta
 $$
 4. Integrate each component of $\vec E=\int d\vec E$, with $\int\cos\theta\,d\theta=\sin\theta$ and $\int\sin\theta\,d\theta=-\cos\theta$:
 $$
@@ -535,7 +535,7 @@ mid/.default=0.5}
 1. $\lambda=\dfrac{Q}{2\pi R}$, $dq=\lambda\,dl=\lambda R\,d\phi$, located at $(R\cos\phi,R\sin\phi,0)$.
 2. $\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle0,0,z\rangle-\langle R\cos\phi,R\sin\phi,0\rangle=\langle-R\cos\phi,\,-R\sin\phi,\,z\rangle$, $|\vec r|=\sqrt{R^2\cos^2\phi+R^2\sin^2\phi+z^2}=\sqrt{R^2+z^2}$ (same for every piece).
 3. The $x$- and $y$-components involve $\int_0^{2\pi}\cos\phi\,d\phi=\int_0^{2\pi}\sin\phi\,d\phi=0$. They cancel by symmetry: opposite sides of the ring push sideways in opposite directions.
-4. That leaves the $z$-component. From $d\vec E=k\,dq\,\vec r/|\vec r|^3$, the $z$-part uses $r_z=z$, so $dE_z=\dfrac{k\,dq\,z}{(R^2+z^2)^{3/2}}$. Everything except $dq$ is the same for every piece, so it comes outside the integral, and $\int dq=Q$ (adding up every piece's charge gives the total):
+4. That leaves the $z$-component. From $d\vec E=\dfrac{k\,dq}{|\vec r|^2}\hat r$, the $z$-part of $\hat r=\vec r/|\vec r|$ is $\dfrac{z}{\sqrt{R^2+z^2}}$, so $dE_z=\dfrac{k\,dq}{R^2+z^2}\cdot\dfrac{z}{\sqrt{R^2+z^2}}=\dfrac{k\,dq\,z}{(R^2+z^2)^{3/2}}$. Everything except $dq$ is the same for every piece, so it comes outside the integral, and $\int dq=Q$ (adding up every piece's charge gives the total):
 $$
 E_z=k\frac{z}{(R^2+z^2)^{3/2}}\int dq=\boxed{\ \frac{kQz}{(z^2+R^2)^{3/2}}\ }
 $$
@@ -836,10 +836,10 @@ $$Q_{\text{enc}}=\int_0^r\beta r'\cdot4\pi r'^2\,dr'=4\pi\beta\frac{r^4}{4}=\pi\
 
 **Setup.** A rod on the $x$-axis from $0$ to $L$ with $\lambda(x)=\alpha x$. Find $\vec E$ at P $=(-d,0)$, a distance $d$ to the left of the origin.
 
-1. $dq=\lambda\,dx=\alpha x\,dx$ at $(x,0)$. $\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle-d,0\rangle-\langle x,0\rangle=\langle -(d+x),\,0\rangle$, $|\vec r|=d+x$.
+1. $dq=\lambda\,dx=\alpha x\,dx$ at $(x,0)$. $\vec r=\vec r_{\text{obs}}-\vec r_{\text{src}}=\langle-d,0\rangle-\langle x,0\rangle=\langle -(d+x),\,0\rangle$, $|\vec r|=d+x$, $\hat r=\vec r/|\vec r|=-\hat x$.
 2. Field from one piece:
 $$
-dE_x=\frac{k\,dq}{|\vec r|^3}\,r_x=\frac{k\,\alpha x\,dx}{(d+x)^3}\big(-(d+x)\big)=-k\frac{\alpha x\,dx}{(d+x)^2}
+d\vec E=\frac{k\,dq}{|\vec r|^2}\hat r=\frac{k\,\alpha x\,dx}{(d+x)^2}(-\hat x)\quad\Rightarrow\quad dE_x=-k\frac{\alpha x\,dx}{(d+x)^2}
 $$
 3. $E_x=\int dE_x=-k\alpha\int_0^L\frac{x\,dx}{(d+x)^2}$. Substitute $u=d+x$, $x=u-d$, and use $\int\frac{du}{u}=\ln u$, $\int\frac{du}{u^2}=-\frac1u$:
 $$
@@ -1566,6 +1566,7 @@ mid/.default=0.5}
 ```
 
 > [!important] Sign conventions (pick a traversal direction, then apply)
+>
 > | You walk through… | $\Delta V$ |
 > |---|---|
 > | a battery from **− to +** | $+\mathcal E$ |
@@ -1819,8 +1820,8 @@ In §19.4: walking from B up the middle branch to A, you cross $R_3$ *against* $
 | | | |
 |---|---|---|
 | Force | $\vec F=q\vec E$ | 🧠 |
-| Point charge | $\vec E=kq\vec r/r^3$, $\ \vec r=\vec r_{\text{obs}}-\vec r_{\text{source}}$ | 🧠 |
-| Continuous | $\vec E=k\int dq\,\vec r/\lvert\vec r\rvert^3$; $\ dq=\lambda\,dl,\ \sigma\,dA,\ \rho\,dV$ | ✍️ (superposition) |
+| Point charge | $\vec E=\frac{kq}{r^2}\hat r$, $\ \vec r=\vec r_{\text{obs}}-\vec r_{\text{source}}$, $\ \hat r=\vec r/r$ | 🧠 |
+| Continuous | $\vec E=k\int\frac{dq}{\lvert\vec r\rvert^2}\hat r$; $\ dq=\lambda\,dl,\ \sigma\,dA,\ \rho\,dV$ | ✍️ (superposition) |
 | Rod, on axis, distance $d$ past the end | $kQ/[d(L+d)]$ | ✍️ |
 | Rod, perpendicular bisector | $kQ/[x\sqrt{x^2+(L/2)^2}]$ | ✅ |
 | Rod close-up / infinite line | $2k\lambda/s$ | ✅ |
