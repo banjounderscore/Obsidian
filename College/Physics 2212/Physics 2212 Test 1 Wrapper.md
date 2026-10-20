@@ -8,7 +8,35 @@ $q_1 = +2q$ at $\vec r_1 = \langle 0,0\rangle$, $q_2 = -3q$ at $\vec r_2 = \lang
 2. Find the $x$ and $y$ components of the net force on $q_1$.
 3. Find the net electric field at $P = \langle 4a, 3a\rangle$ due to all three charges.
 
-![[30_three_charges_sketch.svg]]
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[->,cgry] (-0.6,0)--(6.2,0) node[right]{$x$};
+\draw[->,cgry] (0,-0.6)--(0,4.6) node[above]{$y$};
+\draw[dashed,cgry] (0,3.6)--(4.8,3.6)--(4.8,0) (0,0)--(4.8,3.6);
+\node[below] at (2.4,0) {$4a$};
+\node[left] at (0,1.8) {$3a$};
+\node[above left] at (2.4,1.8) {$5a$};
+\node[pc,label=below left:{$q_1=+2q$}] at (0,0) {$+$};
+\node[nc,label=below:{$q_2=-3q$}] at (4.8,0) {$-$};
+\node[pc,label=above right:{$q_3=+4q$}] at (0,3.6) {$+$};
+\fill (4.8,3.6) circle (2.5pt) node[right]{$P=(4a,3a)$};
+\end{tikzpicture}
+\end{document}
+```
 
 ---
 

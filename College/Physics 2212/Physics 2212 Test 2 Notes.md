@@ -142,7 +142,43 @@ $$
 
 You can't integrate "$dq$" directly. You have to write it as (density) × (a small length, area, or volume) expressed in coordinates.
 
-![Types of charge density](images/14_charge_density_types.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\fill[cneg,fill opacity=0.12] (0,0) rectangle (2.5,2.5);
+\draw (0,0) rectangle (2.5,2.5);
+\foreach \p in {(0.67,0.38),(1.02,0.49),(0.30,1.03),(2.17,1.91),(1.83,0.64),(1.33,0.76),(0.53,0.38),(0.62,2.19),(1.97,1.92),(1.91,0.58),(0.83,1.53),(1.76,2.03),(2.09,0.34),(1.48,1.63),(1.26,0.54),(1.19,0.35),(2.21,2.05),(1.35,0.81),(2.15,1.41),(2.09,2.02),(1.27,1.06),(1.47,1.10),(0.50,0.82),(1.94,0.25),(0.25,1.53),(0.77,1.33),(1.19,0.90),(2.34,0.58),(1.06,0.60),(1.54,0.76)} \fill[cneg] \p circle (1.5pt);
+\node at (1.25,3) {volume};
+\node at (1.25,-0.6) {$\rho=\Delta q/\Delta V$};
+\begin{scope}[xshift=5.5cm,yshift=1.25cm]
+\fill[corg,fill opacity=0.15] (0,0) ellipse (1.5 and 0.85);
+\draw (0,0) ellipse (1.5 and 0.85);
+\foreach \p in {(-0.43,0.42),(-0.54,0.10),(0.80,0.20),(-0.79,-0.29),(-0.97,-0.07),(-0.27,0.75),(0.36,0.54),(-0.62,-0.52),(-0.17,-0.62),(0.85,-0.23),(-0.63,-0.68),(0.53,-0.60),(-1.38,-0.02),(-1.13,0.05),(0.82,-0.15),(-0.77,-0.15),(0.99,-0.00),(-0.77,-0.50),(-0.81,0.63),(1.28,0.11),(1.20,0.26),(0.87,0.42)} \fill[corg] \p circle (1.5pt);
+\node at (0,1.75) {surface};
+\node at (0,-1.85) {$\sigma=\Delta q/\Delta A$};
+\end{scope}
+\begin{scope}[xshift=8.5cm,yshift=1.25cm]
+\draw[line width=3pt,cacc] (0,0)--(3,0);
+\foreach \x in {0.15,0.45,...,2.9} \fill (\x,0) circle (1.5pt);
+\node at (1.5,1.75) {line};
+\node at (1.5,-1.85) {$\lambda=\Delta q/\Delta\ell$};
+\end{scope}
+\end{tikzpicture}
+\end{document}
+```
 
 | Dimension | Density | Definition | $dq=$ | Uniform case |
 |---|---|---|---|---|
@@ -226,7 +262,34 @@ $$
 
 This is the "no symmetry" version. Both components survive, and you have to do both integrals.
 
-![General rod setup](images/31_rod_general_setup.svg)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[->,cgry] (-0.6,0)--(6.4,0) node[right]{$x$};
+\draw[->,cgry] (0,-0.6)--(0,4) node[above]{$y$};
+\draw[line width=4pt,corg] (0,0)--(5,0);
+\node[below] at (5,-0.15) {$L$};
+\node[below left] at (0,0) {$0$};
+\fill[cpos] (2.85,-0.13) rectangle (3.15,0.13);
+\node[below] at (3,-0.2) {$dq=\lambda\,dx$ at $(x,0)$};
+\draw[vec,cneg] (3,0)--(0,3) node[pos=0.45,above right]{$\vec r=\langle -x,h\rangle$};
+\fill (0,3) circle (2.5pt) node[left]{$P=(0,h)$};
+\end{tikzpicture}
+\end{document}
+```
 
 **Setup.** A rod from $x=0$ to $x=L$ with uniform $\lambda=Q/L$. Find $\vec E$ at P $=(0,h)$, directly above the left end.
 
@@ -248,7 +311,36 @@ $$
 
 ### 4.3 Finite rod, observation point on its perpendicular bisector
 
-![Rod geometry](images/15_rod_geometry.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[->,cgry] (-1.2,0)--(6.3,0) node[right]{$x$};
+\draw[->,cgry] (0,-3)--(0,3.4) node[above]{$y$};
+\draw[line width=4pt,corg] (0,-2.5)--(0,2.5);
+\draw[vec,cneg] (0,1.5)--(4,0) node[pos=0.45,above right]{$\vec r=\langle x,-y\rangle$};
+\draw[vec,cacc] (4,0)--(5.5,-0.56) node[right]{$d\vec E$};
+\draw[vec,cacc,dashed,opacity=0.55] (4,0)--(5.5,0.56) node[right]{\small from the piece at $-y$};
+\fill[cpos] (-0.13,1.35) rectangle (0.13,1.65);
+\node[left] at (-0.2,1.5) {$dq=\lambda\,dy$};
+\fill[cpos,opacity=0.5] (-0.13,-1.65) rectangle (0.13,-1.35);
+\fill (4,0) circle (2.5pt) node[below]{$P=(x,0)$};
+\draw[dim] (-0.9,0)--(-0.9,-2.5) node[midway,left]{$L/2$};
+\end{tikzpicture}
+\end{document}
+```
 
 **Setup.** A rod along the $y$-axis from $-L/2$ to $+L/2$, uniform $\lambda=Q/L$. P $=(x,0)$.
 
@@ -263,7 +355,35 @@ $$
 \boxed{\vec E(x,0)=\frac{kQ}{x\sqrt{x^2+(L/2)^2}}\,\hat x}
 $$
 
-![Rod field plot](images/16_rod_field_plot.png)
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\begin{axis}[width=9cm,height=6cm,axis lines=left,xmin=0,xmax=2.5,ymin=0,ymax=15,
+xlabel={$x$ (units of $L$)},ylabel={$E_x$ (units of $kq/L^2$)},
+legend style={draw=none,fill=none,font=\small},legend pos=north east]
+\addplot[very thick,domain=0.066:2.5,samples=160]{1/(x*sqrt(x^2+0.25))};
+\addlegendentry{exact: $\frac{kq}{x\sqrt{x^2+(L/2)^2}}$}
+\addplot[very thick,dashed,cacc,domain=0.259:2.5,samples=120]{1/x^2};
+\addlegendentry{far field: $kq/x^2$}
+\end{axis}
+\end{tikzpicture}
+\end{document}
+```
 
 **Limits:**
 - Far ($x\gg L$): $E\to kQ/x^2$ ✓.
@@ -271,7 +391,34 @@ $$
 
 ### 4.4 Infinite line of charge
 
-![Infinite line](images/17_infinite_line_field.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\node at (0,2.9) {side view};
+\draw[line width=4pt,corg] (0,-2.2)--(0,2.2);
+\foreach \y in {-1.6,-0.8,0,0.8,1.6} {\draw[-{Stealth[length=2.5mm]},thick,cgry] (0.25,\y)--(1.9,\y); \draw[-{Stealth[length=2.5mm]},thick,cgry] (-0.25,\y)--(-1.9,\y);}
+\begin{scope}[xshift=6cm]
+\node at (0,2.9) {end view (line out of page)};
+\foreach \a in {0,30,...,330} \draw[-{Stealth[length=2.5mm]},thick,cgry] (\a:0.35)--(\a:1.9);
+\fill[corg] (0,0) circle (0.18);
+\end{scope}
+\node at (3,-2.9) {$\vec E=\frac{2k\lambda}{s}\,\hat s$ (points straight away from the line)};
+\end{tikzpicture}
+\end{document}
+```
 
 $$
 \boxed{\ \vec E=\frac{2k\lambda}{s}\,\hat s\ }
@@ -283,7 +430,36 @@ Here $s$ is the perpendicular distance from the line and $\hat s$ points radiall
 
 This is a favorite exam geometry: quarter circles, semicircles, arbitrary arcs.
 
-![Arc setup](images/32_arc_polar_setup.svg)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[->,cgry] (-0.6,0)--(4.4,0) node[right]{$x$};
+\draw[->,cgry] (0,-0.6)--(0,4.2) node[above]{$y$};
+\draw[line width=4pt,corg] (3.5,0) arc (0:90:3.5);
+\draw[dashed,cgry] (0,0)--(50:3.5);
+\draw[vec,cneg] (50:3.5)--(50:0.2) node[pos=0.4,above left]{$\vec r=\langle-R\cos\theta,-R\sin\theta\rangle$};
+\fill[cpos] (50:3.5) circle (4pt);
+\node[right] at (50:3.65) {$dq=\lambda R\,d\theta$};
+\draw (1,0) arc (0:50:1);
+\node at (25:1.35) {$\theta$};
+\fill (0,0) circle (2.5pt) node[below left]{P};
+\node[below] at (3.5,-0.1) {$R$};
+\end{tikzpicture}
+\end{document}
+```
 
 **Setup.** An arc of radius $R$ centered on the origin, from angle $\theta_1$ to $\theta_2$, total charge $Q$. The uniform density is $\lambda=\dfrac{Q}{R(\theta_2-\theta_1)}$ (charge ÷ arc length). Find $\vec E$ at the origin.
 
@@ -314,7 +490,36 @@ $$E_x=0\ \text{(symmetry)},\qquad E_y=-\frac{2k\lambda}{R}=-\frac{2kQ}{\pi R^2}$
 
 ### 4.6 Ring of charge, on its axis
 
-![Ring geometry](images/18_ring_geometry.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[dashed,cgry] (0,-1.2)--(0,0);
+\draw[->,cgry] (0,0)--(0,5) node[above]{$z$};
+\draw[corg,line width=2.5pt] (0,0) ellipse (2.6 and 0.8);
+\draw[dim] (0,0)--(2.6,0) node[midway,above]{$R$};
+\draw[dim] (-0.5,0)--(-0.5,3.6) node[midway,left]{$z$};
+\draw[vec,cneg] (2.252,-0.4)--(0,3.6) node[pos=0.45,right]{$\vec r$};
+\fill[cpos] (2.252,-0.4) circle (3.5pt) node[below right]{$dq=\lambda R\,d\phi$};
+\draw[vec,cacc] (0,3.6)--(-0.64,4.73) node[left]{$d\vec E$};
+\draw[dashed,cacc] (-0.64,4.73)--(0,4.73);
+\fill (0,3.6) circle (2.5pt) node[right]{P};
+\node[font=\small,align=left] at (4.3,3.4) {sideways parts cancel\\with the opposite piece;\\only $dE_z$ survives};
+\end{tikzpicture}
+\end{document}
+```
 
 **Setup.** A ring of radius $R$ and charge $Q$ in the $xy$-plane, centered on the origin. Find $\vec E$ at $(0,0,z)$.
 
@@ -326,7 +531,32 @@ $$
 E_z=k\frac{z}{(R^2+z^2)^{3/2}}\int dq=\boxed{\ \frac{kQz}{(z^2+R^2)^{3/2}}\ }
 $$
 
-![Ring field plot](images/19_ring_field_plot.png)
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\begin{axis}[width=9cm,height=6cm,axis lines=left,xmin=-6.5,xmax=6.5,ymin=-0.45,ymax=0.45,
+xlabel={$z$ (units of $R$)},ylabel={$E_z$ (units of $kq/R^2$)},ytick={-0.4,-0.2,0,0.2,0.4}]
+\addplot[cgry,domain=-6.5:6.5] {0};
+\addplot[very thick,domain=-6:6,samples=200]{x/(x^2+1)^1.5};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+```
 
 - $E=0$ at the center ($z=0$) ✓.
 - Far away: $E\to kQ/z^2$ ✓.
@@ -334,7 +564,35 @@ $$
 
 ### 4.7 Disk of charge, on its axis (build from rings)
 
-![Disk from rings](images/20_disk_geometry.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\foreach \r in {0.5,1,1.5,2.5} \draw[corg,opacity=0.55] (0,0) ellipse ({\r} and {0.3*\r});
+\draw[corg,line width=2pt] (0,0) ellipse (3 and 0.9);
+\fill[corg,fill opacity=0.35,even odd rule] (0,0) ellipse (2.25 and 0.675) (0,0) ellipse (1.95 and 0.585);
+\draw[corg!70!black,thick] (0,0) ellipse (2.25 and 0.675) (0,0) ellipse (1.95 and 0.585);
+\draw[->,cgry] (0,0)--(0,4.2) node[above]{$z$};
+\fill (0,3.5) circle (2.5pt) node[right]{P};
+\draw[dim] (0,0)--(2.1,0) node[midway,above]{$r$};
+\draw[dim] (0,-1.15)--(3,-1.15) node[midway,below]{$R$};
+\draw[dashed,cgry] (3,0)--(3,-1.2);
+\node[right,font=\small] at (3.1,0.3) {ring: width $dr$, $dq=\sigma\,2\pi r\,dr$};
+\end{tikzpicture}
+\end{document}
+```
 
 **Setup.** A disk of radius $R$ with uniform $\sigma=Q/\pi R^2$. Find $\vec E$ at $(0,0,z)$.
 
@@ -354,7 +612,38 @@ $$
 $$
 (For $z>0$ this is $2\pi k\sigma\left(1-\dfrac{z}{\sqrt{z^2+R^2}}\right)$.)
 
-![Disk E and V](images/21_disk_E_and_V_plot.png)
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\begin{axis}[name=E,width=7.5cm,height=6cm,axis lines=left,xmin=-4.3,xmax=4.3,ymin=-1.25,ymax=1.25,
+xlabel={$z/R$},ylabel={$E_z\ (2\pi k\sigma)$},title={$E_z$ jumps at $z=0$}]
+\addplot[cgry,domain=-4.3:4.3] {0};
+\addplot[very thick,domain=0.002:4,samples=120]{1-x/sqrt(x^2+1)};
+\addplot[very thick,domain=-4:-0.002,samples=120]{-1-x/sqrt(x^2+1)};
+\addplot[only marks,mark=o,mark size=2.5pt,thick] coordinates {(0,1) (0,-1)};
+\end{axis}
+\begin{axis}[at={(E.outer east)},anchor=outer west,xshift=0.6cm,width=7.5cm,height=6cm,axis lines=left,xmin=-4.3,xmax=4.3,ymin=0,ymax=1.15,
+xlabel={$z/R$},ylabel={$V\ (2\pi k\sigma R)$},title={$V$ is continuous (kinked)}]
+\addplot[very thick,cacc,domain=-4:4,samples=201]{sqrt(x^2+1)-abs(x)};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+```
 
 - **$E$ jumps** from $-2\pi k\sigma$ to $+2\pi k\sigma$ as you pass through the disk. $E$ is always discontinuous across an infinitely thin charged surface.
 - Far away, use the binomial expansion: $\dfrac{z}{\sqrt{z^2+R^2}}=\left(1+\dfrac{R^2}{z^2}\right)^{-1/2}\approx1-\dfrac{R^2}{2z^2}$. So $E\approx2\pi k\sigma\dfrac{R^2}{2z^2}=\dfrac{k(\sigma\pi R^2)}{z^2}=\dfrac{kQ}{z^2}$ ✓.
@@ -364,7 +653,30 @@ $$E_z=2\pi k\sigma z\left(\frac1{\sqrt{z^2+a^2}}-\frac1{\sqrt{z^2+R^2}}\right)$$
 
 ### 4.8 Infinite sheet (the $R\to\infty$ limit of the disk)
 
-![Infinite sheet](images/22_infinite_sheet_field.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[line width=4pt,corg] (-3,0)--(3,0);
+\node[cpos,right] at (3.1,0) {$+\sigma$};
+\foreach \x in {-2.5,-1.5,...,2.5} {\draw[-{Stealth[length=2.5mm]},thick,cgry] (\x,0.2)--(\x,1.8); \draw[-{Stealth[length=2.5mm]},thick,cgry] (\x,-0.2)--(\x,-1.8);}
+\node at (0,2.3) {$E=2\pi k\sigma$ (same at every distance)};
+\node at (0,-2.3) {$E=2\pi k\sigma$};
+\end{tikzpicture}
+\end{document}
+```
 
 Let $R\to\infty$ in the disk result. The second term vanishes:
 $$
@@ -375,7 +687,34 @@ $$
 
 ### 4.9 Two parallel sheets / parallel-plate capacitor
 
-![Parallel plates](images/23_parallel_plate_capacitor.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\fill[cpos] (-0.12,0) rectangle (0.12,4);
+\fill[cneg] (2.88,0) rectangle (3.12,4);
+\node[cpos] at (0,4.45) {$+\sigma$};
+\node[cneg] at (3,4.45) {$-\sigma$};
+\foreach \y in {0.5,1.25,...,3.5} \draw[-{Stealth[length=2.5mm]},thick] (0.3,\y)--(2.7,\y);
+\node[cgry] at (-1.3,2) {$E=0$};
+\node[cgry] at (4.3,2) {$E=0$};
+\draw[dim] (0,-0.4)--(3,-0.4) node[midway,below]{$d$};
+\node at (1.5,-1.3) {$E_{\rm in}=4\pi k\sigma=\sigma/\epsilon_0$ (uniform)};
+\end{tikzpicture}
+\end{document}
+```
 
 Put sheet $+\sigma$ on the left and $-\sigma$ on the right. Each makes a field of magnitude $2\pi k\sigma$:
 - **Between** the sheets, both fields point from $+$ toward $-$, so they **add**: $E_{\text{in}}=4\pi k\sigma=\sigma/\epsilon_0$, uniform.
@@ -397,7 +736,41 @@ $$
 $$
 Outside, the shell acts like a point charge at its center. Inside, the field is exactly zero.
 
-![Shell](images/24_shell_E_V_plot.png)
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\begin{axis}[name=E,width=7.5cm,height=5.5cm,axis lines=left,xmin=0,xmax=4.2,ymin=0,ymax=1.15,
+xlabel={$r/R$},ylabel={$E\ (kQ/R^2)$},title={$E$: jumps at $r=R$},xtick={1,2,3,4},ytick={0.5,1}]
+\addplot[very thick,domain=0:1]{0};
+\addplot[very thick,domain=1:4,samples=80]{1/x^2};
+\addplot[dotted,cgry] coordinates {(1,0) (1,1.1)};
+\addplot[only marks,mark=*,mark size=2.5pt] coordinates {(1,1)};
+\addplot[only marks,mark=o,mark size=2.5pt,thick] coordinates {(1,0)};
+\end{axis}
+\begin{axis}[at={(E.outer east)},anchor=outer west,xshift=1.2cm,width=7.5cm,height=5.5cm,axis lines=left,xmin=0,xmax=4.2,ymin=0,ymax=1.15,
+xlabel={$r/R$},ylabel={$V\ (kQ/R)$},title={$V$: continuous, kinked at $r=R$},xtick={1,2,3,4},ytick={0.5,1}]
+\addplot[very thick,cacc,domain=0:1]{1};
+\addplot[very thick,cacc,domain=1:4,samples=80]{1/x};
+\addplot[dotted,cgry] coordinates {(1,0) (1,1.1)};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+```
 
 **Uniform solid ball** (radius $R$, charge $Q$):
 $$
@@ -405,7 +778,39 @@ $$
 $$
 Why: inside, only the charge closer to the center than you counts, $Q_{\text{enc}}=Q\,r^3/R^3$. All the outer shells contribute zero (shell theorem), so $E_{\text{in}}=kQ_{\text{enc}}/r^2=kQr/R^3$.
 
-![Ball](images/25_ball_E_V_plot.png)
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\begin{axis}[name=E,width=7.5cm,height=5.5cm,axis lines=left,xmin=0,xmax=4.2,ymin=0,ymax=1.15,
+xlabel={$r/R$},ylabel={$E\ (kQ/R^2)$},title={$E$: no jump},xtick={1,2,3,4},ytick={0.5,1}]
+\addplot[very thick,domain=0:1]{x};
+\addplot[very thick,domain=1:4,samples=80]{1/x^2};
+\addplot[dotted,cgry] coordinates {(1,0) (1,1.1)};
+\end{axis}
+\begin{axis}[at={(E.outer east)},anchor=outer west,xshift=1.2cm,width=7.5cm,height=5.5cm,axis lines=left,xmin=0,xmax=4.2,ymin=0,ymax=1.65,
+xlabel={$r/R$},ylabel={$V\ (kQ/R)$},title={$V$: smooth everywhere},xtick={1,2,3,4},ytick={0.5,1,1.5}]
+\addplot[very thick,cacc,domain=0:1,samples=40]{(3-x^2)/2};
+\addplot[very thick,cacc,domain=1:4,samples=80]{1/x};
+\addplot[dotted,cgry] coordinates {(1,0) (1,1.6)};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+```
 
 **Non-uniform ball** ($\rho(r)$ given): same logic, but you integrate to get the enclosed charge:
 $$
@@ -486,7 +891,41 @@ The recommended practice list groups conductors and polarization under the distr
 Polarization: put an object in an external field $\vec E_{\text{ext}}$ and its charges shift, creating their own field $\vec E_{\text{pol}}$. The total field is
 $$\vec E_{\text{tot}}=\vec E_{\text{ext}}+\vec E_{\text{pol}}$$
 
-![Insulator vs conductor fields](images/12_field_inside_insulator_conductor.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\node at (1.5,3.6) {Insulator};
+\fill[cneg,fill opacity=0.08] (0,0) rectangle (3,3);
+\draw (0,0) rectangle (3,3);
+\foreach \y in {0.5,1.5,2.5} \draw[-{Stealth[length=2.5mm]},thick,cgry] (-1.7,\y)--(-0.4,\y);
+\foreach \y in {0.9,2.1} {\node[nc,minimum size=4mm] at (0,\y) {\tiny$-$}; \node[pc,minimum size=4mm] at (3,\y) {\tiny$+$};}
+\draw[-{Stealth[length=2.5mm]},thick,dashed,cacc] (2.3,1.5)--(0.7,1.5) node[midway,above]{\small$\vec E_{\rm pol}$};
+\node at (1.5,-0.6) {$E_{\rm tot}<E_{\rm ext}$};
+\begin{scope}[xshift=6.5cm]
+\node at (1.5,3.6) {Conductor};
+\fill[corg,fill opacity=0.15] (0,0) rectangle (3,3);
+\draw (0,0) rectangle (3,3);
+\foreach \y in {0.5,1.5,2.5} \draw[-{Stealth[length=2.5mm]},thick,cgry] (-1.7,\y)--(-0.4,\y);
+\foreach \y in {0.45,1.15,1.85,2.55} {\node[nc,minimum size=4mm] at (0,\y) {\tiny$-$}; \node[pc,minimum size=4mm] at (3,\y) {\tiny$+$};}
+\node[cpos] at (1.5,1.5) {$\vec E_{\rm tot}=0$};
+\node at (1.5,-0.6) {$E_{\rm pol}=E_{\rm ext}$ exactly};
+\end{scope}
+\end{tikzpicture}
+\end{document}
+```
 
 | | Conductor (in equilibrium) | Insulator |
 |---|---|---|
@@ -503,7 +942,33 @@ $$\vec E_{\text{tot}}=\vec E_{\text{ext}}+\vec E_{\text{pol}}$$
 4. Just outside the surface, $\vec E$ is perpendicular to the surface. (A sideways component would push surface charges along, which isn't equilibrium.)
 5. **Empty cavity inside a conductor:** $\vec E=0$ in the cavity too (shielding / Faraday cage). Proof: take any path through the cavity that starts and ends on the cavity wall. Both endpoints are at the same potential, so $\int\vec E\cdot d\vec l=0$ for *every* path, which forces $\vec E_{\text{cavity}}=0$.
 
-![Shielding](images/13_shielding_cavity.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\fill[corg,fill opacity=0.2,even odd rule] (0,0) circle (2.4) (0,0) circle (1.2);
+\draw (0,0) circle (2.4) (0,0) circle (1.2);
+\foreach \y in {-1.6,-0.8,0,0.8,1.6} {\draw[-{Stealth[length=2.5mm]},thick,cgry] (-4.4,\y)--(-2.9,\y); \draw[-{Stealth[length=2.5mm]},thick,cgry] (2.9,\y)--(4.4,\y);}
+\node at (-3.65,2.2) {$\vec E_{\rm ext}$};
+\foreach \a in {140,165,195,220} \node[cneg] at (\a:2.65) {$-$};
+\foreach \a in {40,15,-15,-40} \node[cpos] at (\a:2.65) {$+$};
+\node at (0,0) {\begin{tabular}{c}$\vec E=0$\\(cavity)\end{tabular}};
+\node at (0,1.8) {\small$\vec E=0$ (metal)};
+\end{tikzpicture}
+\end{document}
+```
 
 ### 6.2 Charge inside a hollow conductor
 
@@ -534,7 +999,31 @@ A neutral insulator near a charge gets polarized, with the opposite-sign end clo
 
 ## 8. Work and potential energy (the mechanics foundation)
 
-![Work line integral](images/26_work_line_integral.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[thick,cgry,postaction={decorate},decoration={markings,mark=at position 0.2 with {\arrow{Stealth[length=2.5mm]}},mark=at position 0.42 with {\arrow{Stealth[length=2.5mm]}},mark=at position 0.8 with {\arrow{Stealth[length=2.5mm]}}}] (0,0) .. controls (2,0.3) and (5,1.5) .. (6,4);
+\fill (0,0) circle (2.5pt) node[below left]{$\vec r_i$};
+\fill (6,4) circle (2.5pt) node[above right]{$\vec r_f$};
+\draw[vec,cpos] (3.708,1.378)--(5.507,1.308) node[right]{$\vec F$};
+\draw[vec] (3.708,1.378)--(4.465,1.865) node[above left]{$d\vec r$};
+\node at (3,4.6) {$W_F=\displaystyle\int_{\vec r_i}^{\vec r_f}\vec F\cdot d\vec r$};
+\end{tikzpicture}
+\end{document}
+```
 
 **Work** done by a force along a path:
 $$
@@ -590,7 +1079,30 @@ $$
 
 **Equipotential surfaces** are surfaces of constant $V$. $\vec E$ is always **perpendicular** to them and points toward lower $V$. For a point charge, they are concentric spheres. For a uniform field, they are flat planes perpendicular to $\vec E$.
 
-![Point charge equipotentials](images/27_point_charge_equipotentials.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\foreach \r in {0.8,1.4,2.0,2.6} \draw[dashed,thick,cacc] (0,0) circle (\r);
+\foreach \a in {0,30,...,330} \draw[-{Stealth[length=2.5mm]},thick,cgry] (\a:0.4)--(\a:2.95);
+\node[pc] at (0,0) {$+$};
+\node[cacc,right] at (2.8,1.9) {equipotentials (dashed)};
+\node[cgry,right] at (2.8,1.3) {field lines (arrows)};
+\end{tikzpicture}
+\end{document}
+```
 
 ### 9.3 Path independence and closed loops
 
@@ -598,7 +1110,36 @@ The electric field from static charges is **conservative**: $\Delta V$ between t
 - **Pick the easiest path.** Break it into segments along $\vec E$ (where $\vec E\cdot d\vec l=E\,dl$) and segments perpendicular to $\vec E$ (where it is 0).
 - **Closed loops:** $\oint\vec E\cdot d\vec l=0$. Around any closed path, the potential differences sum to zero. **This is the physics behind Kirchhoff's loop rule** in Part IV.
 
-![Radial and circular path segments](images/28_radial_circular_path.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[cgry,dotted] (0,0) circle (1.5) (0,0) circle (3);
+\draw[vec,cneg] (20:1.5)--(20:3);
+\draw[vec,cneg] (20:3) arc (20:75:3);
+\draw[vec,cacc,dashed] (20:1.5) arc (20:75:1.5);
+\draw[vec,cacc,dashed] (75:1.5)--(75:3);
+\fill (20:1.5) circle (2.5pt) node[below right]{$\vec r_1$};
+\fill (75:3) circle (2.5pt) node[above]{$\vec r_2$};
+\node[pc] at (0,0) {$+$};
+\node[cneg,right,font=\small,align=left] at (3.3,1.2) {solid: radial out, then arc};
+\node[cacc,right,font=\small,align=left] at (3.3,0.6) {dashed: arc, then radial out};
+\node[right,font=\small,align=left] at (3.3,-0.2) {arcs: $\vec E\perp d\vec l$, so $\Delta V=0$\\both paths give the same $\Delta V$};
+\end{tikzpicture}
+\end{document}
+```
 
 ## 10. Computing $\Delta V=-\int\vec E\cdot d\vec l$: the procedure
 
@@ -683,7 +1224,34 @@ At the center, $V(0)=\tfrac32\dfrac{kQ}{R}$, which is higher than at the surface
 
 This is "The charged shells" problem from the recommended list.
 
-![Concentric shells](images/33_concentric_shells.svg)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[cneg,line width=2.5pt] (0,0) circle (2.8);
+\draw[cpos,line width=2.5pt] (0,0) circle (1.3);
+\draw[vec,cpos,thick] (0,0)--(-40:1.3) node[midway,below left]{$R_1$};
+\draw[vec,cneg,thick] (0,0)--(65:2.8) node[pos=0.75,left]{$R_2$};
+\node[cpos] at (0,1.65) {$q_1$};
+\node[cneg] at (0,3.2) {$q_2$};
+\node at (-0.45,-0.35) {I};
+\node at (1.9,-0.6) {II};
+\node at (3.2,-1.9) {III};
+\end{tikzpicture}
+\end{document}
+```
 
 **Setup.** An inner shell of radius $R_1$ with charge $q_1$, and an outer shell of radius $R_2$ with charge $q_2$.
 
@@ -932,7 +1500,40 @@ $$
 $$
 **Why:** potential is path-independent (§9.3). Walk around any loop and come back to where you started, and you end at the same $V$. It's energy conservation for a charge going around.
 
-![Loop rule conventions](images/34_loop_rule_conventions.svg)
+```tikz
+\usepackage{circuitikz}
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{circuitikz}[american,font=\large]
+\draw (0,0) to[battery1,invert] (3,0);
+\node[cneg] at (0.15,0.4) {$-$}; \node[cpos] at (2.85,0.4) {$+$};
+\draw[->,thick,cneg] (0.5,-0.7)--(2.5,-0.7) node[midway,below]{walk};
+\node at (1.5,1.1) {(a) $-\to+$: $\;+\mathcal{E}$};
+\draw (5,0) to[battery1] (8,0);
+\node[cpos] at (5.15,0.4) {$+$}; \node[cneg] at (7.85,0.4) {$-$};
+\draw[->,thick,cneg] (5.5,-0.7)--(7.5,-0.7) node[midway,below]{walk};
+\node at (6.5,1.1) {(b) $+\to-$: $\;-\mathcal{E}$};
+\draw (0,-3) to[R,i>^=$I$] (3,-3);
+\draw[->,thick,cneg] (0.5,-3.7)--(2.5,-3.7) node[midway,below]{walk};
+\node at (1.5,-1.9) {(c) with $I$: $\;-IR$};
+\draw (8,-3) to[R,i>^=$I$] (5,-3);
+\draw[->,thick,cneg] (5.5,-3.7)--(7.5,-3.7) node[midway,below]{walk};
+\node at (6.5,-1.9) {(d) against $I$: $\;+IR$};
+\end{circuitikz}
+\end{document}
+```
 
 > [!important] Sign conventions (pick a traversal direction, then apply)
 > | You walk through… | $\Delta V$ |
@@ -960,7 +1561,35 @@ Sign convention: write $+I$ for currents entering and $-I$ for currents leaving,
 
 ### 18.4 Series and parallel (derived from Kirchhoff)
 
-![Series and parallel](images/36_series_parallel.svg)
+```tikz
+\usepackage{circuitikz}
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{circuitikz}[american,font=\large]
+\node at (2.5,4) {Series: same $I$, $\Delta V$s add};
+\draw (0,0) to[battery1,invert,l=$\mathcal{E}$] (0,3) to[R,l=$R_1$,i>^=$I$] (2.5,3) to[R,l=$R_2$] (5,3) -- (5,0) -- (0,0);
+\node at (2.5,-0.8) {$R_{\rm series}=R_1+R_2$};
+\begin{scope}[xshift=7.5cm]
+\node at (2.5,4) {Parallel: same $\Delta V$, $I$s add};
+\draw (0,0) to[battery1,invert,l=$\mathcal{E}$] (0,3) -- (2.5,3) to[R,l=$R_1$,*-*] (2.5,0) -- (0,0);
+\draw (2.5,3) -- (5,3) to[R,l=$R_2$] (5,0) -- (2.5,0);
+\node at (2.5,-0.8) {$\frac{1}{R_{\rm par}}=\frac{1}{R_1}+\frac{1}{R_2}$};
+\end{scope}
+\end{circuitikz}
+\end{document}
+```
 
 **Series** (one after another, same current): the loop rule gives $\mathcal E-IR_1-IR_2=0$, so
 $$
@@ -1018,7 +1647,36 @@ Loop through the series branch: $\mathcal E-IR-IR-IR=0$, so $I=\mathcal E/3R$ an
 
 ### 19.4 Example: two batteries, two loops (the classic exam circuit)
 
-![Two-loop circuit](images/35_two_loop_circuit.svg)
+```tikz
+\usepackage{circuitikz}
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{circuitikz}[american,font=\large]
+\draw (0,0) to[battery1,invert,l=$\mathcal{E}_1$] (0,2) to[R,l=$R_1$,i>_=$I_1$] (0,4)
+-- (3,4) to[short,*-] (6,4) to[R,l=$R_2$,i<^=$I_2$] (6,2) to[battery1,invert,l=$\mathcal{E}_2$,invert] (6,0)
+-- (3,0) to[short,*-] (0,0);
+\draw (3,4) to[R,l=$R_3$,i>^=$I_3$] (3,0);
+\node[above] at (3,4) {A};
+\node[below] at (3,0) {B};
+\draw[->,cgry,thick] (1.9,2.8) arc (90:-200:0.6);
+\node[cgry,font=\small] at (1.5,0.7) {loop 1};
+\draw[->,cgry,thick] (4.1,2.8) arc (90:380:0.6);
+\node[cgry,font=\small] at (4.5,0.7) {loop 2};
+\end{circuitikz}
+\end{document}
+```
 
 **Setup.** Three branches run between node A (top) and node B (bottom). Left branch: $\mathcal E_1$ ($+$ on top) with $R_1$. Middle branch: $R_3$. Right branch: $\mathcal E_2$ ($+$ on top) with $R_2$. Assumed currents: $I_1$ up the left branch, $I_2$ up the right branch, $I_3$ down the middle.
 

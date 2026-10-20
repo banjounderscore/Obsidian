@@ -13,7 +13,33 @@ Everything in E&M is a vector field or a scalar field, so before touching a sing
 
 A **vector** is any quantity defined by a magnitude *and* a direction (contrast a **scalar**, which is just a number: temperature, mass, charge).
 
-![Vector components](images/01_vector_components.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[->,cgry] (-0.8,0)--(6,0) node[right]{$x$};
+\draw[->,cgry] (0,-0.8)--(0,4) node[above]{$y$};
+\draw[dashed,cgry] (0,3)--(5,3);
+\draw[vec,cneg] (0,0)--(5,0) node[midway,below]{$r_x=r\cos\theta$};
+\draw[vec,cacc] (5,0)--(5,3) node[midway,right]{$r_y=r\sin\theta$};
+\draw[vec] (0,0)--(5,3) node[midway,above left]{$\vec r$};
+\draw (1.3,0) arc (0:30.96:1.3);
+\node at (1.75,0.48) {$\theta$};
+\end{tikzpicture}
+\end{document}
+```
 
 For a position vector $\vec r$ making angle $\theta$ with the x-axis:
 
@@ -30,7 +56,28 @@ $$
 
 ### 1.2 Vector addition
 
-![Head-to-tail vector addition](images/02_vector_addition.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[vec,cneg] (0,0)--(4,1) node[midway,below right]{$\vec A$};
+\draw[vec,cacc] (4,1)--(6,4) node[midway,right]{$\vec B$};
+\draw[vec] (0,0)--(6,4) node[midway,above left]{$\vec A+\vec B$};
+\end{tikzpicture}
+\end{document}
+```
 
 Vectors add component-by-component:
 
@@ -139,7 +186,37 @@ This is an **inverse-square law** — structurally identical to Newton's law of 
 
 ### 3.3 Direction: attraction and repulsion
 
-![Like charges repel; opposite charges attract](images/03_coulomb_repel_attract.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\node at (1.5,1.7) {Like charges repel};
+\draw[vec] (-0.35,0.75)--(-1.35,0.75);
+\draw[vec] (3.35,0.75)--(4.35,0.75);
+\node[pc,label=below:$q_1$] at (0,0) {$+$};
+\node[pc,label=below:$q_2$] at (3,0) {$+$};
+\begin{scope}[xshift=7.5cm]
+\node at (1.5,1.7) {Opposite charges attract};
+\draw[vec] (0.35,0.75)--(1.25,0.75);
+\draw[vec] (2.65,0.75)--(1.75,0.75);
+\node[pc,label=below:$q_1$] at (0,0) {$+$};
+\node[nc,label=below:$q_2$] at (3,0) {$-$};
+\end{scope}
+\end{tikzpicture}
+\end{document}
+```
 
 - **Like charges repel.**
 - **Opposite charges attract.**
@@ -148,7 +225,32 @@ Coulomb's law automatically satisfies **Newton's third law** ($\vec F_{21}=-\vec
 
 ### 3.4 Superposition: forces add as vectors
 
-![Superposition of forces](images/04_superposition_forces.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[dashed,cgry] (5.44,4.08)--(6.01,1.80)--(4.57,0.72);
+\draw[vec,cneg] (4,3)--(5.44,4.08) node[above]{$\vec F_{21}$};
+\draw[vec,cacc] (4,3)--(4.57,0.72) node[below left]{$\vec F_{23}$};
+\draw[vec,line width=1.6pt] (4,3)--(6.01,1.80) node[right]{$\vec F_2=\vec F_{21}+\vec F_{23}$};
+\node[pc,label=below:{$q_1=+e$}] at (0,0) {$+$};
+\node[pc,label=left:{$Q$}] at (4,3) {$+$};
+\node[nc,label=below:{$q_3=-2e$}] at (5.5,-3) {$-$};
+\end{tikzpicture}
+\end{document}
+```
 
 When several charges $1,2,\ldots,N$ simultaneously act on a charge $Q$, the **net force is the vector sum** of the individual Coulomb forces:
 
@@ -195,7 +297,33 @@ $$
 
 ### 4.3 Two equivalent pictures of a field
 
-![Field of a positive/negative point charge](images/05_point_charge_field_lines.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\node at (0,2.6) {Positive charge};
+\foreach \a in {0,30,...,330} \draw[-{Stealth[length=2.5mm]},thick,cgry] (\a:0.45)--(\a:2);
+\node[pc] at (0,0) {$+$};
+\begin{scope}[xshift=5.5cm]
+\node at (0,2.6) {Negative charge};
+\foreach \a in {0,30,...,330} \draw[-{Stealth[length=2.5mm]},thick,cgry] (\a:2)--(\a:0.45);
+\node[nc] at (0,0) {$-$};
+\end{scope}
+\end{tikzpicture}
+\end{document}
+```
 
 - The **length of the $\vec E$-vector** drawn at a point is proportional to the field's magnitude there, *or*
 - The **density of field lines** through a region is proportional to the field's magnitude there.
@@ -263,7 +391,32 @@ $$
 
 ### 5.2 On-axis field $\vec E_\parallel$: full derivation
 
-![On-axis dipole geometry|588](images/07_dipole_on_axis_geometry.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[cgry] (-2,0)--(7,0);
+\draw[dim] (0,1)--(6,1) node[midway,above]{$x$};
+\draw[dashed,cgry] (0,0.15)--(0,1.1);
+\draw[dim] (-0.45,-0.7)--(0.45,-0.7) node[midway,below]{$s$};
+\node[nc] at (-0.45,0) {$-$};
+\node[pc] at (0.45,0) {$+$};
+\fill (6,0) circle (2.5pt) node[below=2pt]{observation point $(x,0,0)$};
+\end{tikzpicture}
+\end{document}
+```
 
 Restrict to points on the symmetry axis, i.e. points $(x,0,0)$. Call this field $\vec E_\parallel(x)$. **Strategy: superpose the two point-charge fields.**
 
@@ -285,7 +438,31 @@ $$
 
 ### 5.3 Perpendicular-bisector field $\vec E_\perp$: full derivation
 
-![Perpendicular-bisector dipole geometry|460](images/08_dipole_perp_geometry.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[cgry] (0,0.7)--(5,0) (0,-0.7)--(5,0);
+\draw[dashed,cgry] (0,0)--(5,0) node[midway,below]{$r$};
+\draw[dim] (-0.7,0.7)--(-0.7,-0.7) node[midway,left]{$s$};
+\node[pc] at (0,0.7) {$+$};
+\node[nc] at (0,-0.7) {$-$};
+\fill (5,0) circle (2.5pt) node[right]{P};
+\end{tikzpicture}
+\end{document}
+```
 
 Now restrict to observation points on the axis *perpendicular* to the dipole's symmetry axis. By the geometry, the $x$-components of the two point-charge fields cancel ($E_x = -E_x'$) while the $y$-components add ($E_y=E_y'=-E_y\hat y$ each), giving $\vec E_\perp = \vec E + \vec E' = -2E_y\,\hat y$. Writing $E=kq/(r^2+(s/2)^2)$ and $\sin\theta = (s/2)/\sqrt{r^2+(s/2)^2}$:
 
@@ -314,7 +491,33 @@ $$
 
 ### 5.5 General dipole field at any point
 
-![General dipole field-point geometry|445](images/09_dipole_general_geometry.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[dashed,cgry] (0.8,0)--(4,0);
+\draw[vec] (0,0)--(40:4) node[above right]{$\hat r$};
+\draw (1.4,0) arc (0:40:1.4);
+\node at (1.75,0.6) {$\theta$};
+\draw[vec,cacc] (-0.6,-0.8)--(0.6,-0.8) node[right]{$\vec p$};
+\node[nc] at (-0.5,0) {$-$};
+\node[pc] at (0.5,0) {$+$};
+\node at (1.5,-2) {$\vec E(\vec r)=k\,\frac{3(\vec p\cdot\hat r)\,\hat r-\vec p}{r^3}$};
+\end{tikzpicture}
+\end{document}
+```
 
 There is a single formula valid at *any* angle between $\vec p$ and $\hat r$ (not just on-axis or perpendicular):
 
@@ -326,7 +529,55 @@ $$
 - $\hat r\perp\vec p$: then $\vec p\cdot\hat r=0$, so $\vec E(\vec r)=-k\vec p/r^3=\vec E_\perp$. ✓
 - $\hat r\parallel\vec p$: then $\vec p\cdot\hat r = p$, so $\vec E(\vec r)=k(3\vec p-\vec p)/r^3=2k\vec p/r^3=\vec E_\parallel$. ✓
 
-![Qualitative dipole field-line pattern|544](images/06_dipole_field_lines.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\begin{scope}
+\clip (-4.2,-3) rectangle (4.2,3);
+\draw[thick,cgry,mid=0.35] plot coordinates {(0.755,0.041) (0.870,0.073) (0.986,0.106) (1.101,0.140) (1.215,0.175) (1.330,0.212) (1.444,0.249) (1.557,0.288) (1.670,0.328) (1.783,0.369) (1.895,0.412) (2.007,0.455) (2.119,0.500) (2.230,0.545) (2.340,0.592) (2.450,0.640) (2.560,0.689) (2.669,0.738) (2.778,0.789) (2.886,0.841) (2.994,0.894) (3.101,0.947) (3.208,1.002) (3.314,1.058) (3.420,1.114) (3.526,1.171) (3.631,1.229) (3.735,1.288) (3.839,1.348) (3.943,1.409) (4.046,1.470) (4.149,1.532) (4.225,1.579)};
+\draw[thick,cgry,mid=0.35] plot coordinates {(0.739,0.080) (0.842,0.141) (0.944,0.205) (1.044,0.270) (1.144,0.337) (1.241,0.407) (1.337,0.479) (1.432,0.553) (1.524,0.629) (1.615,0.708) (1.704,0.788) (1.792,0.870) (1.877,0.955) (1.960,1.041) (2.042,1.129) (2.122,1.219) (2.199,1.310) (2.275,1.404) (2.348,1.498) (2.420,1.595) (2.489,1.693) (2.557,1.792) (2.622,1.893) (2.685,1.995) (2.746,2.098) (2.805,2.203) (2.861,2.309) (2.915,2.416) (2.968,2.524) (3.017,2.633) (3.065,2.743) (3.110,2.854) (3.153,2.966) (3.174,3.023)};
+\draw[thick,cgry,mid=0.35] plot coordinates {(0.713,0.113) (0.796,0.200) (0.877,0.289) (0.955,0.380) (1.029,0.474) (1.100,0.571) (1.167,0.670) (1.230,0.772) (1.289,0.877) (1.344,0.984) (1.394,1.093) (1.439,1.204) (1.480,1.317) (1.516,1.431) (1.547,1.547) (1.573,1.664) (1.594,1.782) (1.609,1.901) (1.619,2.021) (1.623,2.141) (1.621,2.261) (1.614,2.381) (1.600,2.500) (1.581,2.618) (1.555,2.736) (1.523,2.851) (1.485,2.965) (1.464,3.021)};
+\draw[thick,cgry,mid=0.5] plot coordinates {(0.680,0.139) (0.737,0.244) (0.790,0.352) (0.838,0.462) (0.880,0.574) (0.915,0.689) (0.944,0.805) (0.964,0.924) (0.977,1.043) (0.981,1.163) (0.976,1.283) (0.962,1.402) (0.938,1.519) (0.904,1.634) (0.860,1.746) (0.805,1.853) (0.740,1.953) (0.664,2.046) (0.578,2.130) (0.483,2.203) (0.379,2.263) (0.269,2.309) (0.153,2.339) (0.033,2.352) (-0.086,2.348) (-0.205,2.328) (-0.319,2.290) (-0.426,2.238) (-0.527,2.172) (-0.618,2.094) (-0.699,2.006) (-0.770,1.910) (-0.831,1.806) (-0.881,1.697) (-0.921,1.584) (-0.950,1.468) (-0.969,1.349) (-0.979,1.230) (-0.980,1.110) (-0.972,0.990) (-0.956,0.871) (-0.932,0.754) (-0.900,0.638) (-0.862,0.524) (-0.817,0.413) (-0.767,0.304) (-0.712,0.197) (-0.669,0.118)};
+\draw[thick,cgry,mid=0.5] plot coordinates {(0.641,0.155) (0.668,0.271) (0.689,0.390) (0.703,0.509) (0.707,0.629) (0.701,0.749) (0.683,0.867) (0.652,0.983) (0.608,1.095) (0.550,1.200) (0.478,1.295) (0.392,1.378) (0.292,1.445) (0.182,1.493) (0.065,1.518) (-0.055,1.519) (-0.172,1.496) (-0.283,1.450) (-0.383,1.385) (-0.471,1.303) (-0.544,1.209) (-0.604,1.104) (-0.649,0.993) (-0.681,0.878) (-0.699,0.759) (-0.707,0.639) (-0.704,0.519) (-0.691,0.400) (-0.671,0.282) (-0.644,0.165)};
+\draw[thick,cgry,mid=0.5] plot coordinates {(0.600,0.160) (0.595,0.280) (0.583,0.399) (0.560,0.517) (0.524,0.631) (0.474,0.740) (0.408,0.840) (0.325,0.927) (0.226,0.994) (0.114,1.037) (-0.005,1.051) (-0.123,1.035) (-0.234,0.990) (-0.332,0.920) (-0.413,0.833) (-0.478,0.732) (-0.527,0.622) (-0.562,0.508) (-0.584,0.390) (-0.596,0.270) (-0.600,0.150)};
+\draw[thick,cgry,mid=0.5] plot coordinates {(0.559,0.155) (0.522,0.269) (0.477,0.380) (0.420,0.486) (0.348,0.581) (0.259,0.662) (0.155,0.720) (0.038,0.748) (-0.081,0.741) (-0.194,0.702) (-0.293,0.635) (-0.376,0.548) (-0.442,0.448) (-0.495,0.341) (-0.536,0.228) (-0.562,0.142)};
+\draw[thick,cgry,mid=0.5] plot coordinates {(0.520,0.139) (0.455,0.240) (0.382,0.335) (0.297,0.419) (0.197,0.486) (0.085,0.526) (-0.034,0.534) (-0.151,0.507) (-0.256,0.450) (-0.348,0.372) (-0.425,0.281) (-0.493,0.182) (-0.525,0.131)};
+\draw[thick,cgry,mid=0.5] plot coordinates {(0.487,0.113) (0.398,0.194) (0.303,0.267) (0.199,0.326) (0.085,0.362) (-0.035,0.369) (-0.152,0.345) (-0.261,0.294) (-0.359,0.226) (-0.450,0.148) (-0.494,0.107)};
+\draw[thick,cgry,mid=0.5] plot coordinates {(0.461,0.080) (0.356,0.136) (0.246,0.185) (0.131,0.220) (0.012,0.234) (-0.107,0.224) (-0.223,0.193) (-0.334,0.147) (-0.440,0.092)};
+\draw[thick,cgry,mid=0.5] plot coordinates {(0.445,0.041) (0.329,0.070) (0.211,0.094) (0.092,0.110) (-0.027,0.113) (-0.147,0.104) (-0.265,0.084) (-0.382,0.057) (-0.470,0.035)};
+\draw[thick,cgry,mid=0.5] plot coordinates {(0.445,-0.041) (0.329,-0.070) (0.211,-0.094) (0.092,-0.110) (-0.027,-0.113) (-0.147,-0.104) (-0.265,-0.084) (-0.382,-0.057) (-0.470,-0.035)};
+\draw[thick,cgry,mid=0.5] plot coordinates {(0.461,-0.080) (0.356,-0.136) (0.246,-0.185) (0.131,-0.220) (0.012,-0.234) (-0.107,-0.224) (-0.223,-0.193) (-0.334,-0.147) (-0.440,-0.092)};
+\draw[thick,cgry,mid=0.5] plot coordinates {(0.487,-0.113) (0.398,-0.194) (0.303,-0.267) (0.199,-0.326) (0.085,-0.362) (-0.035,-0.369) (-0.152,-0.345) (-0.261,-0.294) (-0.359,-0.226) (-0.450,-0.148) (-0.494,-0.107)};
+\draw[thick,cgry,mid=0.5] plot coordinates {(0.520,-0.139) (0.455,-0.240) (0.382,-0.335) (0.297,-0.419) (0.197,-0.486) (0.085,-0.526) (-0.034,-0.534) (-0.151,-0.507) (-0.256,-0.450) (-0.348,-0.372) (-0.425,-0.281) (-0.493,-0.182) (-0.525,-0.131)};
+\draw[thick,cgry,mid=0.5] plot coordinates {(0.559,-0.155) (0.522,-0.269) (0.477,-0.380) (0.420,-0.486) (0.348,-0.581) (0.259,-0.662) (0.155,-0.720) (0.038,-0.748) (-0.081,-0.741) (-0.194,-0.702) (-0.293,-0.635) (-0.376,-0.548) (-0.442,-0.448) (-0.495,-0.341) (-0.536,-0.228) (-0.562,-0.142)};
+\draw[thick,cgry,mid=0.5] plot coordinates {(0.600,-0.160) (0.595,-0.280) (0.583,-0.399) (0.560,-0.517) (0.524,-0.631) (0.474,-0.740) (0.408,-0.840) (0.325,-0.927) (0.226,-0.994) (0.114,-1.037) (-0.005,-1.051) (-0.123,-1.035) (-0.234,-0.990) (-0.332,-0.920) (-0.413,-0.833) (-0.478,-0.732) (-0.527,-0.622) (-0.562,-0.508) (-0.584,-0.390) (-0.596,-0.270) (-0.600,-0.150)};
+\draw[thick,cgry,mid=0.5] plot coordinates {(0.641,-0.155) (0.668,-0.271) (0.689,-0.390) (0.703,-0.509) (0.707,-0.629) (0.701,-0.749) (0.683,-0.867) (0.652,-0.983) (0.608,-1.095) (0.550,-1.200) (0.478,-1.295) (0.392,-1.378) (0.292,-1.445) (0.182,-1.493) (0.065,-1.518) (-0.055,-1.519) (-0.172,-1.496) (-0.283,-1.450) (-0.383,-1.385) (-0.471,-1.303) (-0.544,-1.209) (-0.604,-1.104) (-0.649,-0.993) (-0.681,-0.878) (-0.699,-0.759) (-0.707,-0.639) (-0.704,-0.519) (-0.691,-0.400) (-0.671,-0.282) (-0.644,-0.165)};
+\draw[thick,cgry,mid=0.5] plot coordinates {(0.680,-0.139) (0.737,-0.244) (0.790,-0.352) (0.838,-0.462) (0.880,-0.574) (0.915,-0.689) (0.944,-0.805) (0.964,-0.924) (0.977,-1.043) (0.981,-1.163) (0.976,-1.283) (0.962,-1.402) (0.938,-1.519) (0.904,-1.634) (0.860,-1.746) (0.805,-1.853) (0.740,-1.953) (0.664,-2.046) (0.578,-2.130) (0.483,-2.203) (0.379,-2.263) (0.269,-2.309) (0.153,-2.339) (0.033,-2.352) (-0.086,-2.348) (-0.205,-2.328) (-0.319,-2.290) (-0.426,-2.238) (-0.527,-2.172) (-0.618,-2.094) (-0.699,-2.006) (-0.770,-1.910) (-0.831,-1.806) (-0.881,-1.697) (-0.921,-1.584) (-0.950,-1.468) (-0.969,-1.349) (-0.979,-1.230) (-0.980,-1.110) (-0.972,-0.990) (-0.956,-0.871) (-0.932,-0.754) (-0.900,-0.638) (-0.862,-0.524) (-0.817,-0.413) (-0.767,-0.304) (-0.712,-0.197) (-0.669,-0.118)};
+\draw[thick,cgry,mid=0.35] plot coordinates {(0.713,-0.113) (0.796,-0.200) (0.877,-0.289) (0.955,-0.380) (1.029,-0.474) (1.100,-0.571) (1.167,-0.670) (1.230,-0.772) (1.289,-0.877) (1.344,-0.984) (1.394,-1.093) (1.439,-1.204) (1.480,-1.317) (1.516,-1.431) (1.547,-1.547) (1.573,-1.664) (1.594,-1.782) (1.609,-1.901) (1.619,-2.021) (1.623,-2.141) (1.621,-2.261) (1.614,-2.381) (1.600,-2.500) (1.581,-2.618) (1.555,-2.736) (1.523,-2.851) (1.485,-2.965) (1.464,-3.021)};
+\draw[thick,cgry,mid=0.35] plot coordinates {(0.739,-0.080) (0.842,-0.141) (0.944,-0.205) (1.044,-0.270) (1.144,-0.337) (1.241,-0.407) (1.337,-0.479) (1.432,-0.553) (1.524,-0.629) (1.615,-0.708) (1.704,-0.788) (1.792,-0.870) (1.877,-0.955) (1.960,-1.041) (2.042,-1.129) (2.122,-1.219) (2.199,-1.310) (2.275,-1.404) (2.348,-1.498) (2.420,-1.595) (2.489,-1.693) (2.557,-1.792) (2.622,-1.893) (2.685,-1.995) (2.746,-2.098) (2.805,-2.203) (2.861,-2.309) (2.915,-2.416) (2.968,-2.524) (3.017,-2.633) (3.065,-2.743) (3.110,-2.854) (3.153,-2.966) (3.174,-3.023)};
+\draw[thick,cgry,mid=0.35] plot coordinates {(0.755,-0.041) (0.870,-0.073) (0.986,-0.106) (1.101,-0.140) (1.215,-0.175) (1.330,-0.212) (1.444,-0.249) (1.557,-0.288) (1.670,-0.328) (1.783,-0.369) (1.895,-0.412) (2.007,-0.455) (2.119,-0.500) (2.230,-0.545) (2.340,-0.592) (2.450,-0.640) (2.560,-0.689) (2.669,-0.738) (2.778,-0.789) (2.886,-0.841) (2.994,-0.894) (3.101,-0.947) (3.208,-1.002) (3.314,-1.058) (3.420,-1.114) (3.526,-1.171) (3.631,-1.229) (3.735,-1.288) (3.839,-1.348) (3.943,-1.409) (4.046,-1.470) (4.149,-1.532) (4.225,-1.579)};
+\draw[thick,cgry,mid=0.5] (0.85,0)--(4.2,0);
+\draw[thick,cgry,mid=0.5] (-4.2,0)--(-0.85,0);
+\draw[thick,cgry,mid=0.6] (0.35,0)--(-0.35,0);
+\end{scope}
+\node[nc] at (-0.6,0) {$-$};
+\node[pc] at (0.6,0) {$+$};
+\end{tikzpicture}
+\end{document}
+```
 
 ### 5.6 The far-field theorem for *any* neutral object
 
@@ -343,7 +594,38 @@ This is precisely why a neutral water molecule still produces a nonzero field fa
 
 ### 6.1 Induced polarization (nonpolar atoms and molecules)
 
-![Atom polarization: induced dipole|700](images/10_atom_polarization.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\node at (0,2.3) {No external field};
+\fill[cneg,fill opacity=0.25] (0,0) circle (1.2);
+\draw[cneg] (0,0) circle (1.2);
+\node[pc,minimum size=4mm] at (0,0) {\small$+$};
+\node at (0,-1.9) {$\vec p=0$};
+\begin{scope}[xshift=6cm]
+\node at (0,2.3) {External field $\vec E_{\rm ext}$};
+\foreach \y in {-1.6,-0.8,0,0.8,1.6} \draw[-{Stealth[length=2.5mm]},cgry] (-2.2,\y)--(2.2,\y);
+\fill[cneg,fill opacity=0.25] (-0.35,0) circle (1.2);
+\draw[cneg] (-0.35,0) circle (1.2);
+\node[pc,minimum size=4mm] at (0.35,0) {\small$+$};
+\draw[vec,cacc] (-0.6,-2.1)--(0.6,-2.1) node[right]{$\vec p=\alpha\vec E_{\rm ext}$};
+\end{scope}
+\end{tikzpicture}
+\end{document}
+```
 
 An external field $\vec E_{ext}$ pushes positive and negative charge within a neutral atom (or a nonpolar molecule, e.g. N₂) in *opposite* directions, since $\vec F = q\vec E_{ext}$ has opposite sign for $+$ and $-$ charge. The result is a small **induced dipole moment**:
 
@@ -377,7 +659,34 @@ This is an **attractive** force falling off as $1/d^5$ — a full three powers s
 
 ### 6.5 How a bulk insulator polarizes
 
-![How a bulk insulator polarizes|524](images/11_bulk_insulator_polarization.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw (0,0) rectangle (7,3.2);
+\foreach \x in {0.7,1.8,...,6.3} \foreach \y in {0.6,1.6,2.6} {
+\node[nc,minimum size=3.6mm] at (\x-0.19,\y) {\tiny$-$};
+\node[pc,minimum size=3.6mm] at (\x+0.19,\y) {\tiny$+$};}
+\foreach \y in {0.4,1.2,2,2.8} \draw[-{Stealth[length=2.5mm]},thick,cgry] (-1.9,\y)--(-0.4,\y);
+\node at (-1.15,3.5) {$\vec E_{\rm ext}$};
+\node[cneg] at (0,-0.45) {$-Q$ on left face};
+\node[cpos] at (7,-0.45) {$+Q$ on right face};
+\node[font=\normalsize] at (3.5,-1.2) {interior $+$ and $-$ cancel; only the faces keep net charge};
+\end{tikzpicture}
+\end{document}
+```
 
 Every atom in the material acquires $\vec p_{\text{atom}}=\alpha\vec E_{ext}$. Picture the material as a lattice of tiny aligned dipoles: the $+$ end of one atom sits right next to the $-$ end of its neighbor, and these touching charges **cancel** throughout the interior. Only the outermost front and back faces are left with uncancelled net charge $\pm Q$. The whole body's dipole moment is therefore
 
@@ -389,7 +698,41 @@ i.e., equivalent to two point charges $\pm Q$ separated by the body's own thickn
 
 ### 6.6 Field inside a polarized insulator
 
-![Field inside insulator vs. conductor](images/12_field_inside_insulator_conductor.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\node at (1.5,3.6) {Insulator};
+\fill[cneg,fill opacity=0.08] (0,0) rectangle (3,3);
+\draw (0,0) rectangle (3,3);
+\foreach \y in {0.5,1.5,2.5} \draw[-{Stealth[length=2.5mm]},thick,cgry] (-1.7,\y)--(-0.4,\y);
+\foreach \y in {0.9,2.1} {\node[nc,minimum size=4mm] at (0,\y) {\tiny$-$}; \node[pc,minimum size=4mm] at (3,\y) {\tiny$+$};}
+\draw[-{Stealth[length=2.5mm]},thick,dashed,cacc] (2.3,1.5)--(0.7,1.5) node[midway,above]{\small$\vec E_{\rm pol}$};
+\node at (1.5,-0.6) {$E_{\rm tot}<E_{\rm ext}$};
+\begin{scope}[xshift=6.5cm]
+\node at (1.5,3.6) {Conductor};
+\fill[corg,fill opacity=0.15] (0,0) rectangle (3,3);
+\draw (0,0) rectangle (3,3);
+\foreach \y in {0.5,1.5,2.5} \draw[-{Stealth[length=2.5mm]},thick,cgry] (-1.7,\y)--(-0.4,\y);
+\foreach \y in {0.45,1.15,1.85,2.55} {\node[nc,minimum size=4mm] at (0,\y) {\tiny$-$}; \node[pc,minimum size=4mm] at (3,\y) {\tiny$+$};}
+\node[cpos] at (1.5,1.5) {$\vec E_{\rm tot}=0$};
+\node at (1.5,-0.6) {$E_{\rm pol}=E_{\rm ext}$ exactly};
+\end{scope}
+\end{tikzpicture}
+\end{document}
+```
 
 The surface polarization charges create their own field $\vec E_{pol}$ that points **opposite** to $\vec E_{ext}$ and *partially* cancels it:
 
@@ -419,7 +762,41 @@ This one microscopic fact is the root of every macroscopic difference between th
 
 ### 7.3 The conductor's "superpower": $\vec E=0$ inside, always
 
-![Field inside insulator vs. conductor](images/12_field_inside_insulator_conductor.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\node at (1.5,3.6) {Insulator};
+\fill[cneg,fill opacity=0.08] (0,0) rectangle (3,3);
+\draw (0,0) rectangle (3,3);
+\foreach \y in {0.5,1.5,2.5} \draw[-{Stealth[length=2.5mm]},thick,cgry] (-1.7,\y)--(-0.4,\y);
+\foreach \y in {0.9,2.1} {\node[nc,minimum size=4mm] at (0,\y) {\tiny$-$}; \node[pc,minimum size=4mm] at (3,\y) {\tiny$+$};}
+\draw[-{Stealth[length=2.5mm]},thick,dashed,cacc] (2.3,1.5)--(0.7,1.5) node[midway,above]{\small$\vec E_{\rm pol}$};
+\node at (1.5,-0.6) {$E_{\rm tot}<E_{\rm ext}$};
+\begin{scope}[xshift=6.5cm]
+\node at (1.5,3.6) {Conductor};
+\fill[corg,fill opacity=0.15] (0,0) rectangle (3,3);
+\draw (0,0) rectangle (3,3);
+\foreach \y in {0.5,1.5,2.5} \draw[-{Stealth[length=2.5mm]},thick,cgry] (-1.7,\y)--(-0.4,\y);
+\foreach \y in {0.45,1.15,1.85,2.55} {\node[nc,minimum size=4mm] at (0,\y) {\tiny$-$}; \node[pc,minimum size=4mm] at (3,\y) {\tiny$+$};}
+\node[cpos] at (1.5,1.5) {$\vec E_{\rm tot}=0$};
+\node at (1.5,-0.6) {$E_{\rm pol}=E_{\rm ext}$ exactly};
+\end{scope}
+\end{tikzpicture}
+\end{document}
+```
 
 In electrostatic equilibrium, $\vec E=0$ at **every** point inside a conductor's material — regardless of the conductor's shape, regardless of what charges sit outside it or in a cavity within it. Mobile charges physically rearrange themselves on the surface(s) until the field *they* create exactly cancels any external field throughout the entire interior:
 
@@ -434,7 +811,33 @@ $$
 
 ### 7.4 Shielding: the Faraday-cage effect
 
-![Shielding by a conducting shell](images/13_shielding_cavity.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\fill[corg,fill opacity=0.2,even odd rule] (0,0) circle (2.4) (0,0) circle (1.2);
+\draw (0,0) circle (2.4) (0,0) circle (1.2);
+\foreach \y in {-1.6,-0.8,0,0.8,1.6} {\draw[-{Stealth[length=2.5mm]},thick,cgry] (-4.4,\y)--(-2.9,\y); \draw[-{Stealth[length=2.5mm]},thick,cgry] (2.9,\y)--(4.4,\y);}
+\node at (-3.65,2.2) {$\vec E_{\rm ext}$};
+\foreach \a in {140,165,195,220} \node[cneg] at (\a:2.65) {$-$};
+\foreach \a in {40,15,-15,-40} \node[cpos] at (\a:2.65) {$+$};
+\node at (0,0) {\begin{tabular}{c}$\vec E=0$\\(cavity)\end{tabular}};
+\node at (0,1.8) {\small$\vec E=0$ (metal)};
+\end{tikzpicture}
+\end{document}
+```
 
 If you scoop a cavity out of a conductor, the surface charge still rearranges so that $\vec E=0$ throughout the solid conductor material — and, remarkably, $\vec E=0$ throughout the *empty cavity* too, as long as no charge sits inside the cavity itself. This is exactly why a conducting shell shields its interior from any external field — the working principle behind a Faraday cage.
 

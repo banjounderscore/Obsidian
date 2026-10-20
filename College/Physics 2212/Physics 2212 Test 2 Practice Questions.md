@@ -1,7 +1,7 @@
 # Physics 2212 — Test 2 Practice Questions
 
 > [!abstract] How to use this
-> Problems are grouped by the three exam problem types. Each one shows the **original diagram** (or a clean redraw) and the full problem. **Solutions are folded.** Try the problem on blank paper first, then click the "Solution" bar to open it.
+> Problems are grouped by the three exam problem types. Each one shows the problem's diagram (redrawn in TikZ from the original) and the full problem. **Solutions are folded.** Try the problem on blank paper first, then click the "Solution" bar to open it.
 >
 > **Sources:** Fall 2021 Test 1 and Test 2 keys, Fall 2020 Test 1 key, the 2020 "remote" Test 2 key, the Fall 2015 and Fall 2014 Test 2 keys, and GPS 3, 4, 5 (no official key; solved here from scratch). A few problems marked *(original)* fill gaps. Nothing here uses magnetism or capacitors in circuits.
 >
@@ -28,7 +28,35 @@
 ## 1.1 Charged rod and the "T"
 *Fall 2021 Test 1, Problem 2*
 
-![Rod and T](images/pq_rod_T.svg)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[->,cgry] (-3,0)--(3,0) node[right]{$x$};
+\draw[->,cgry] (0,-2.8)--(0,5.2) node[above]{$y$};
+\fill[cneg] (-0.12,0) rectangle (0.12,3.6);
+\node[cneg,right] at (0.2,1.8) {$-Q$};
+\filldraw[fill=cneg,fill opacity=0.3,draw=cneg,dashed] (-1.8,3.6) rectangle (1.8,3.85);
+\node[cneg,right,font=\small] at (1.9,3.73) {$-Q$, length $L$ (part 3)};
+\draw[dim] (-0.7,0)--(-0.7,3.6) node[midway,left]{$L$};
+\draw[dim] (-0.7,0)--(-0.7,-2) node[midway,left]{$h$};
+\node at (0,-2) {$\times$};
+\node[right] at (0.1,-2) {$P=\langle0,-h,0\rangle$};
+\end{tikzpicture}
+\end{document}
+```
 
 > [!question] Problem
 > An insulating rod of length $L$ is uniformly charged with negative charge $-Q$. It lies on the $y$-axis with one end at the origin, running from $y=0$ to $y=L$.
@@ -61,7 +89,33 @@
 ## 1.2 Quarter-circle arc
 *Fall 2020 Test 1, "Quarter"*
 
-![Quarter arc](images/pq_quarter_arc.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[->,cgry] (-1,0)--(4.4,0) node[right]{$x$};
+\draw[->,cgry] (0,-1)--(0,4.2) node[above]{$y$};
+\draw[line width=4pt,cneg] (3.2,0) arc (0:90:3.2);
+\node[cneg] at (45:3.75) {$-Q$};
+\draw[cgry] (0,0)--(60:3.2) node[pos=0.6,left]{$R$};
+\draw (0.8,0) arc (0:60:0.8);
+\node at (30:1.1) {$\theta$};
+\fill (0,0) circle (2.5pt);
+\end{tikzpicture}
+\end{document}
+```
 
 > [!question] Problem
 > A thin glass arc of radius $R$ subtends $90°$ in the first quadrant, centered on the origin, and carries uniform charge $-Q$.
@@ -94,7 +148,33 @@
 ## 1.3 Arc of any angle α
 *GPS 3, Problem 1*
 
-![Arc of angle alpha](images/pq_arc_alpha.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[->,cgry] (-0.5,0)--(4.4,0) node[right]{$x$};
+\draw[->,cgry] (0,-0.5)--(0,4.2) node[above]{$y$};
+\draw[line width=4pt,cneg] (3.4,0) arc (0:70:3.4);
+\node[cneg] at (35:3.95) {$-Q$};
+\draw[vec,cgry] (0,0)--(70:3.4) node[pos=0.55,left]{$R$};
+\draw (0.9,0) arc (0:70:0.9);
+\node at (35:1.2) {$\alpha$};
+\fill (0,0) circle (2.5pt);
+\end{tikzpicture}
+\end{document}
+```
 
 > [!question] Problem
 > A thin plastic rod is bent into a circular arc of radius $R$ centered on the origin, running from the $+x$ axis ($\theta=0$) to angle $\alpha$. It carries uniform charge $-Q$. Angles are in radians.
@@ -128,7 +208,37 @@
 ## 1.4 Two oppositely charged rods
 *GPS 3, Problem 2*
 
-![Two rods](images/pq_two_rods.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[->,cgry] (-1.5,0)--(5,0) node[right]{$x$};
+\draw[->,cgry] (0,-3)--(0,3.1) node[above]{$y$};
+\draw[line width=5pt,cneg] (0,0)--(0,2.4);
+\draw[line width=5pt,cpos] (0,0)--(0,-2.4);
+\node[cneg,right] at (0.2,2.2) {$-Q$};
+\node[cpos,right] at (0.2,-2.2) {$+Q$};
+\fill[cgry] (-0.13,1.2) rectangle (0.13,1.45);
+\node[right] at (0.2,1.33) {$dy$};
+\draw[dim] (-0.6,0)--(-0.6,2.4) node[midway,left]{$L/2$};
+\draw[dim] (-0.6,0)--(-0.6,-2.4) node[midway,left]{$L/2$};
+\node at (3.8,0) {$\times$};
+\node[above] at (3.8,0.1) {$\langle x,0,0\rangle$};
+\end{tikzpicture}
+\end{document}
+```
 
 > [!question] Problem
 > Two thin rods, each of length $L/2$, lie end to end on the $y$-axis, centered on the origin. The top rod ($0<y<L/2$) has charge $-Q$; the bottom rod ($-L/2<y<0$) has $+Q$. The observation point is $\langle x,0,0\rangle$.
@@ -166,7 +276,34 @@
 ## 1.5 Charged annulus
 *GPS 3, Problem 3*
 
-![Annulus](images/pq_annulus.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\fill[cpos,fill opacity=0.2,even odd rule] (0,0) ellipse (3 and 1) (0,0) ellipse (1.5 and 0.5);
+\draw (0,0) ellipse (3 and 1) (0,0) ellipse (1.5 and 0.5);
+\draw[cpos,line width=2pt] (0,0) ellipse (2.2 and 0.733);
+\draw[->,cgry] (0,0)--(0,4) node[above]{$z$};
+\fill (0,3.2) circle (2.5pt) node[right]{$A=\langle0,0,z\rangle$};
+\draw[dim] (0,0)--(-3,0) node[pos=0.8,above]{$R$};
+\draw[dim] (0,0)--(1.5,0) node[pos=0.6,above]{$\frac{R}{2}$};
+\draw[cpos,thick] (1.9,-0.4)--(3.1,-1.2) node[right]{ring: radius $r$, width $dr$};
+\node at (-2.6,1.25) {$+Q$};
+\end{tikzpicture}
+\end{document}
+```
 
 > [!question] Problem
 > A thin plastic annulus (outer radius $R$, inner radius $R/2$) is centered on the origin in the $xy$-plane and carries uniform charge $+Q$. The observation point is $A=\langle0,0,z\rangle$.
@@ -224,7 +361,37 @@
 ## 1.7 Metal Mario
 *Fall 2020 Test 1 (on the instructor's recommended list)*
 
-![Metal Mario](images/pq_metal_mario.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[->,cgry] (-6,0)--(4,0) node[right]{$x$};
+\draw[->,cgry] (0,-1.6)--(0,2) node[above]{$y$};
+\draw[dim] (-4.8,1.1)--(0,1.1) node[midway,above]{$2d$};
+\draw[dim] (0,1.1)--(2.4,1.1) node[midway,above]{$d$};
+\node[pc,label=below:{$+Q$}] at (-4.8,0) {$+$};
+\node[pc,label=below:{$+Q$}] at (2.4,0) {$+$};
+\filldraw[fill=cgry!60,draw=black,rounded corners=2pt] (-0.3,-0.45) rectangle (0.3,0.45);
+\node[below] at (0,-0.5) {\small Mario (metal)};
+\begin{scope}[xshift=7cm]
+\foreach \i/\a in {1/90,2/45,3/0,4/-45,5/-90,6/-135,7/180,8/135} {\draw[->,thick,corg] (0,0)--(\a:1); \node[font=\small] at (\a:1.3) {\i};}
+\node[font=\small,align=left] at (0,-2.1) {9 = zero\\10 = need more info};
+\end{scope}
+\end{tikzpicture}
+\end{document}
+```
 
 > [!question] Problem
 > A neutral metal Mario sits at the origin. Two insulating balls, each $+Q$, are at $\vec r_1=\langle d,0,0\rangle$ and $\vec r_2=\langle-2d,0,0\rangle$, with $d$ much larger than Mario. Mario is in equilibrium.
@@ -258,7 +425,36 @@
 ## 1.8 Metal block between a ball and a dipole
 *Fall 2021 Test 1, Problem 3*
 
-![Ball, block, dipole](images/pq_ball_block_dipole.svg)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\filldraw[fill=cneg,fill opacity=0.3,draw=cneg] (0,0) circle (0.55);
+\node at (0,0) {$-Q$};
+\node[above] at (0,0.6) {\small glass ball};
+\filldraw[fill=cgry,fill opacity=0.3,draw=black] (3,-0.5) rectangle (6,0.5);
+\fill (4.5,0) circle (2pt);
+\node[above] at (4.5,0.55) {\small neutral metal block};
+\node[nc] at (9,0.45) {$-$};
+\node[pc] at (9,-0.45) {$+$};
+\node[right,font=\small] at (9.3,0) {dipole, $|\vec p|=Qs$};
+\draw[dim] (0,-1.2)--(4.5,-1.2) node[midway,below]{$d/2$};
+\draw[dim] (4.5,-1.2)--(9,-1.2) node[midway,below]{$d/2$};
+\end{tikzpicture}
+\end{document}
+```
 
 > [!question] Problem
 > A small glass ball has uniform charge $-Q$. A distance $d$ to its right is a permanent dipole with moment $|\vec p|=Qs$, oriented vertically with its $-$ end on top ($d\gg s$). A **neutral metal block** is placed so its center is at the midpoint ($d/2$ from each).
@@ -286,7 +482,33 @@
 ## 2.1 The charged shells
 *2020 Test 2 (on the recommended list)*
 
-![Charged shells](images/pq_charged_shells.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[cneg,line width=2.5pt] (0,0) circle (2.6);
+\filldraw[fill=cgry,fill opacity=0.4,draw=black] (0,0) circle (1.1);
+\node at (0,0.45) {$+2Q$};
+\draw[vec,thick] (0,0)--(200:1.1);
+\node[above] at (200:0.6) {$R_a$};
+\draw[vec,thick,cneg] (0,0)--(-20:2.6) node[pos=0.75,above]{$R_b$};
+\node[cneg] at (0,3) {$-Q$ (plastic shell)};
+\node at (0,-1.5) {\small metal sphere};
+\end{tikzpicture}
+\end{document}
+```
 
 > [!question] Problem
 > A solid **metal** sphere of radius $R_a$ carries $+2Q$ ($Q>0$). It sits at the center of a thin **plastic** shell of radius $R_b>R_a$ carrying $-Q$ spread uniformly.
@@ -318,7 +540,40 @@
 ## 2.2 The CRT
 *2020 Test 2 / GPS 4, Problem 1 (on the recommended list)*
 
-![CRT](images/pq_crt.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\fill[cgry] (-0.08,-2.6) rectangle (0.08,-0.15);
+\fill[cgry] (-0.08,0.15) rectangle (0.08,2.6);
+\fill[cgry] (0.72,-2.6) rectangle (0.88,2.6);
+\node at (0,2.95) {$-Q$};
+\node at (0.8,2.95) {$+Q$};
+\draw[dim] (0,2.3)--(0.8,2.3);
+\node at (0.4,2.55) {\small$s$};
+\draw[line width=3pt,cgry] (1.300,-0.150)--(5.995,0.848) node[right]{$-3Q$};
+\draw[line width=3pt,cgry] (1.154,0.535)--(5.850,1.533) node[right]{$+3Q$};
+\draw[dim] (1.394,-0.590)--(6.089,0.408) node[midway,below]{$2R$};
+\draw[dotted,thick,cpos] (1.154,1.735) arc (90:12:1.2);
+\node at (1.704,1.285) {$\theta$};
+\node[nc] (e) at (-1.6,0) {$-$};
+\draw[dashed,thick,cneg,-{Stealth}] (e)--(0.85,0) .. controls (2.8,0.3) and (4.6,0.85) .. (5.450,1.333);
+\node[below,font=\small] at (-1.6,-0.35) {$\vec v_i=\langle v_0,0,0\rangle$};
+\end{tikzpicture}
+\end{document}
+```
 
 > [!question] Problem
 > An electron (mass $m_e$, charge $-e$) moves with $\vec v_i=\langle v_0,0,0\rangle$ through two parallel-plate capacitors (circular plates of radius $R$, separation $s\ll R$). The first has plates $-Q$ (left) and $+Q$ (right). The second is tilted by $\theta$ and has plates $\pm3Q$.
@@ -345,7 +600,35 @@
 ## 2.3 Dipole potential difference and a released electron
 *Fall 2021 Test 2, Problem 2 (on the recommended list)*
 
-![Dipole with points A, B, C](images/pq_dipole_ABC.svg)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[->,cgry] (-1.2,0)--(7.2,0) node[right]{$x$};
+\draw[->,cgry] (0,-1)--(0,4) node[above]{$y$};
+\node[pc,minimum size=4.5mm] at (-0.28,0) {\small$+$};
+\node[nc,minimum size=4.5mm] at (0.28,0) {\small$-$};
+\node at (3,0) {$\times$}; \node[above] at (3,0.1) {A};
+\node at (6,0) {$\times$}; \node[above] at (6,0.1) {B};
+\node at (0,3) {$\times$}; \node[right] at (0.1,3) {C};
+\draw[dim] (0,-0.6)--(3,-0.6) node[midway,below]{$d$};
+\draw[dim] (3,-0.6)--(6,-0.6) node[midway,below]{$d$};
+\draw[dim] (-0.6,0)--(-0.6,3) node[midway,left]{$d$};
+\end{tikzpicture}
+\end{document}
+```
 
 > [!question] Problem
 > A dipole of charges $\pm q$ separated by $s$ lies along the $x$-axis at the origin, with $+q$ on the **left** and $-q$ on the right. Points: $A=\langle d,0,0\rangle$, $B=\langle2d,0,0\rangle$, $C=\langle0,d,0\rangle$, with $d\gg s$.
@@ -378,7 +661,35 @@
 ## 2.4 HF molecule
 *Fall 2015 Test 2, Problem 2 (on the recommended list)*
 
-![HF molecule](images/pq_hf_molecule.svg)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[cgry] (-1.2,0)--(7.4,0);
+\draw[dashed,cgry] (0,-0.5)--(0,4.5);
+\node[nc,minimum size=4.5mm,label=below:{\small F$^-$}] at (-0.28,0) {\small$-$};
+\node[pc,minimum size=4.5mm,label=below:{\small H$^+$}] at (0.28,0) {\small$+$};
+\node at (3.5,0) {$\times$}; \node[above] at (3.5,0.1) {1};
+\node at (6.6,0) {$\times$}; \node[above] at (6.6,0.1) {2};
+\node at (0,2) {$\times$}; \node[right] at (0.1,2) {4};
+\node at (0,4) {$\times$}; \node[right] at (0.1,4) {3};
+\draw[dim] (0,-1.1)--(3.5,-1.1) node[midway,below]{$d_1$};
+\draw[dim] (0,-1.9)--(6.6,-1.9) node[midway,below]{$d_2$};
+\end{tikzpicture}
+\end{document}
+```
 
 > [!question] Problem
 > An HF molecule is modeled as $F^-$ ($-e$, left) and $H^+$ ($+e$, right) separated by $s$. Points 1 and 2 are on the molecular axis at distances $d_1<d_2$ (both $\gg s$). Points 3 and 4 lie on the line through the molecule's midpoint perpendicular to the axis.
@@ -407,7 +718,33 @@
 ## 2.5 Wire inside a metal tube
 *Fall 2014 Test 2, Problem 2 (on the recommended list)*
 
-![Coax](images/pq_coax.svg)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[cneg,line width=3pt] (0,0) circle (2.4);
+\filldraw[fill=cpos,fill opacity=0.5,draw=cpos] (0,0) circle (0.28);
+\draw[vec,thick,cneg] (0,0)--(45:2.4) node[pos=0.65,above left]{$R$};
+\draw[vec,thick,cpos] (0,0)--(-80:0.28);
+\node[cpos] at (-0.15,-0.6) {$r$};
+\node[cneg,right] at (2.6,1.4) {tube: $-Q$};
+\node[cpos,right] at (2.6,0.4) {wire: $+Q$};
+\node[right,font=\small] at (2.6,-0.8) {both length $L$ (into page)};
+\end{tikzpicture}
+\end{document}
+```
 
 > [!question] Problem
 > A long thin metal wire (radius $r$, length $L$) sits on the axis of a concentric long metal tube (radius $R$). A power supply keeps $+Q$ on the wire and $-Q$ on the tube. Like a spherical shell, the tube produces zero field everywhere inside itself. Find $V_{\text{tube}}-V_{\text{wire}}$, and check the sign.
@@ -428,7 +765,38 @@
 ## 2.6 Two charged shells
 *GPS 4, Problem 2*
 
-![Two shells](images/pq_two_shells.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[->,cgry] (-4.3,0)--(4.4,0) node[right]{$x$};
+\draw[->,cgry] (0,-3.2)--(0,1.8) node[above]{$y$};
+\draw[cneg,line width=2.5pt] (-2.6,0) circle (1);
+\draw[cpos,line width=2.5pt] (2.6,0) circle (1);
+\node[cneg] at (-2.6,-1.4) {$-Q$};
+\node[cpos] at (2.6,-1.4) {$+Q$};
+\draw[dim] (-2.6,1.4)--(0,1.4) node[midway,above]{$L/2$};
+\draw[dim] (0,1.4)--(2.6,1.4) node[midway,above]{$L/2$};
+\draw[dim] (-0.5,0)--(-0.5,-2.6) node[midway,left]{$L/2$};
+\node at (0,0) {$\times$}; \node[above right] at (0,0) {2};
+\node at (2.6,0) {$\times$}; \node[above right] at (2.6,0) {3};
+\node at (0,-2.6) {$\times$}; \node[right] at (0.1,-2.6) {1};
+\node[cgry,font=\small] at (3.95,0.85) {radius $R$};
+\end{tikzpicture}
+\end{document}
+```
 
 > [!question] Problem
 > Two plastic spherical shells of radius $R$ have centers at $\langle-L/2,0,0\rangle$ (charge $-Q$) and $\langle+L/2,0,0\rangle$ (charge $+Q$), with $R<L/2$. Points: $1=\langle0,-L/2,0\rangle$, $2=\langle0,0,0\rangle$, $3=\langle L/2,0,0\rangle$ (the center of the $+$ shell).
@@ -459,7 +827,36 @@
 ## 2.7 Dipole on a circle
 *GPS 4, Problem 3*
 
-![Dipole on circle](images/pq_dipole_circle.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\draw[->,cgry] (-1.2,0)--(5,0) node[right]{$x$};
+\draw[->,cgry] (0,-1)--(0,4.8) node[above]{$y$};
+\draw[dashed,thick,cgry] (0,4) arc (90:0:4);
+\draw[->,cgry] (0,0)--(60:4) node[pos=0.6,right]{$R$};
+\draw (0,1.2) arc (90:60:1.2);
+\node at (75:1.5) {$\theta$};
+\node[nc,minimum size=4.5mm] at (-0.28,0) {\small$-$};
+\node[pc,minimum size=4.5mm] at (0.28,0) {\small$+$};
+\node at (0,4) {$\times$}; \node[left] at (-0.15,4) {A};
+\node at (4,0) {$\times$}; \node[below] at (4,-0.15) {B};
+\node[right] at (60:4.05) {$P_\theta$};
+\end{tikzpicture}
+\end{document}
+```
 
 > [!question] Problem
 > A dipole $\vec p=p\hat x$ sits at the origin. $A$ is on the $y$-axis and $B$ is on the $x$-axis, each a distance $R$ from the center (far from the dipole).
@@ -512,7 +909,31 @@
 ## 3.1 Single loop, opposing batteries
 *(original; same skills as Fall 2014 Test 3 Problem 2)*
 
-![Single loop](images/pq_single_loop.svg)
+```tikz
+\usepackage{circuitikz}
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{circuitikz}[american,font=\large]
+\draw (0,0) to[battery1,invert,l=$\mathcal{E}_1$] (0,3) to[R,l=$R_1$] (4,3);
+\draw (4,0) to[battery1,invert,l_=$\mathcal{E}_2$] (4,3);
+\draw (0,0) to[R,l_=$R_2$] (4,0);
+\fill (4,3) circle (2.5pt) node[above right]{a};
+\fill (0,0) circle (2.5pt) node[below left]{b};
+\end{circuitikz}
+\end{document}
+```
 
 > [!question] Problem
 > A single loop contains $\mathcal E_1$ (left side, $+$ on top), $R_1$ (top), $\mathcal E_2$ (right side, $+$ on top), and $R_2$ (bottom). Point $a$ is the top-right corner and point $b$ is the bottom-left corner. Assume $\mathcal E_1>\mathcal E_2$.
@@ -541,7 +962,36 @@
 ## 3.2 Two batteries and three bulbs
 *GPS 5, Problem 2*
 
-![Bulbs circuit](images/pq_bulbs.png)
+```tikz
+\usepackage{circuitikz}
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{circuitikz}[american,font=\large]
+\draw (0,3) to[battery1,l=1.5 V] (1.8,3) to[battery1,l=1.5 V] (3.6,3)
+to[short] (4,3) to[lamp,l=Bulb 1] (6,3) -- (6.6,3);
+\draw (6.6,3) to[short,*-] (6.6,4.1) to[lamp,l=Bulb 2] (9,4.1) -- (9,3);
+\draw (6.6,3) -- (6.6,1.9) to[lamp,l_=Bulb 3] (9,1.9) to[short,-*] (9,3);
+\draw (9,3) -- (9.8,3) -- (9.8,0) -- (5.6,0) to[nos] (4,0) -- (-0.8,0) -- (-0.8,3) -- (0,3);
+\node[above left] at (0,3) {A}; \node[above] at (3.7,3.1) {N};
+\node[below] at (4.1,2.9) {M}; \node[below] at (5.9,2.9) {L};
+\node[above left] at (6.6,3) {K}; \node[above right] at (9,3) {D};
+\node[below] at (5.6,-0.1) {C}; \node[below] at (4,-0.1) {B};
+\node[cpos] at (-0.15,3.5) {$+$}; \node[cneg] at (3.75,3.5) {$-$};
+\end{circuitikz}
+\end{document}
+```
 
 > [!question] Problem
 > Two batteries, each with EMF $\mathcal E$ (1.5 V), are in series ($A$ is the $+$ end, $N$ the $-$ end). They drive bulb 1 ($R_1$) in series with bulbs 2 and 3 ($R_2$, $R_3$) in parallel. A switch sits between $B$ and $C$. The wires are ideal. Original values: $R_1=14\,\Omega$, $R_2=35\,\Omega$, $R_3=28\,\Omega$.
@@ -580,7 +1030,31 @@
 ## 3.3 Four resistors, two batteries
 *GPS 5, Problem 3*
 
-![Four resistors](images/pq_four_resistors.png)
+```tikz
+\usepackage{circuitikz}
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{circuitikz}[american,font=\large]
+\draw (0,0) to[R,l=$R_1$] (0,2.6) to[battery1,invert,l=$\mathcal{E}_A$] (0,5) -- (0,6) -- (5.5,6);
+\draw (3,6) to[R,l=$R_2$,*-*] (3,3) to[R,l=$R_3$] (3,0);
+\draw (5.5,3) to[battery1,invert,l_=$\mathcal{E}_B$] (5.5,6);
+\draw (3,3) to[short,-*] (5.5,3) to[R,l_=$R_4$] (5.5,0);
+\draw (0,0) -- (3,0) to[short,*-] (5.5,0);
+\end{circuitikz}
+\end{document}
+```
 
 > [!question] Problem
 > Four identical resistors and two batteries are connected as shown. $\mathcal E_A$ and $R_1$ form the left branch. $R_2$ and $\mathcal E_B$ each connect the top wire to a middle wire. $R_3$ and $R_4$ each connect the middle wire to the bottom wire.
@@ -619,7 +1093,31 @@
 ## 3.4 Three branches, two batteries
 *Adapted from Fall 2021 Test 2, Problem 3 (on the recommended list), with the capacitor replaced by a wire*
 
-![Three branches](images/pq_three_branch.svg)
+```tikz
+\usepackage{circuitikz}
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{circuitikz}[american,font=\large]
+\draw (0,0) to[battery1,invert,l=$3\mathcal{E}$] (0,2) to[R,l=$R$,i>_=$I_a$] (0,4) -- (3,4) to[short,*-] (6,4);
+\draw (3,4) to[battery1,invert,l=$\mathcal{E}$,i>^=$I_b$] (3,0);
+\draw (6,4) to[R,l=$2R$,i>^=$I_c$] (6,0) -- (3,0) to[short,*-] (0,0);
+\node[above] at (3,4) {A};
+\node[below] at (3,0) {B};
+\end{circuitikz}
+\end{document}
+```
 
 > [!question] Problem
 > Three branches connect node $A$ (top) to node $B$ (bottom):
@@ -656,7 +1154,46 @@
 ## 3.5 Conveyor belt and wires of different thickness
 *GPS 5, Problem 1 (uses the formula sheet's mobility notation)*
 
-![Conveyor](images/pq_conveyor.png)
+```tikz
+\usetikzlibrary{arrows.meta,decorations.markings,calc}
+\definecolor{cpos}{RGB}{214,39,40}
+\definecolor{cneg}{RGB}{31,119,180}
+\definecolor{cacc}{RGB}{39,158,85}
+\definecolor{corg}{RGB}{230,126,34}
+\definecolor{cgry}{RGB}{140,140,140}
+\tikzset{
+pc/.style={circle,fill=cpos,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+nc/.style={circle,fill=cneg,draw=black,text=white,inner sep=0pt,minimum size=5.5mm},
+vec/.style={-{Stealth[length=3mm]},very thick},
+dim/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},cgry},
+mid/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth[length=2.5mm]}}}},
+mid/.default=0.5}
+\begin{document}
+\begin{tikzpicture}[font=\large]
+\fill[cgry] (-0.75,-1.2) rectangle (-0.6,1.9);
+\fill[cgry] (0.6,-1.2) rectangle (0.75,1.9);
+\node at (-0.68,2.25) {$+$}; \node at (0.68,2.25) {$-$};
+\draw[dim] (-0.6,1.6)--(0.6,1.6) node[midway,above]{\small$s$};
+\draw[thick,rounded corners=6pt] (-0.45,0.3) rectangle (0.45,0.75);
+\node[nc,minimum size=3.5mm] at (-0.15,1.05) {\tiny$-$};
+\draw[-{Stealth},thick] (0.05,1.05)--(0.45,1.05) node[above]{\small$F$};
+\node at (0,-0.5) {\small$\times\,a$};
+\draw[line width=6pt,cgry] (-0.75,1.2)--(-4,1.2) arc (90:270:1.6) -- (-2.2,-2);
+\draw[line width=2pt,cgry] (-2.2,-2)--(-1.4,-2);
+\draw[line width=6pt,cgry] (-1.4,-2)--(1.4,-2);
+\draw[line width=2pt,cgry] (1.4,-2)--(2.2,-2);
+\draw[line width=6pt,cgry] (2.2,-2)--(4,-2) arc (-90:90:1.6) -- (0.75,1.2);
+\node at (-2.4,1.7) {\small$\times\,b$};
+\node at (-6,-0.4) {\small$c\times$};
+\node at (-1.8,-2.5) {\small$\times\,d$};
+\node[above,font=\small] at (-2.4,2.05) {thick: $L_1$, $D_1$};
+\node[above,font=\small] at (2.4,2.05) {thick: $L_1$, $D_1$};
+\node[below,font=\small] at (0,-2.4) {thick $L_3$};
+\node[below,font=\small] at (1.8,-2.4) {thin $L_2$};
+\node[font=\small,align=left] at (0,-3.6) {thin wires: length $L_2$, diameter $D_2$;\quad $3L_2=3L_3=L_1$, $3D_2=D_1$};
+\end{tikzpicture}
+\end{document}
+```
 
 > [!question] Problem
 > A frictionless conveyor belt carries electrons left to right across a gap $s$ between two large metal plates, applying a constant force $F$ to each electron. Wires connect the plates around a loop:
