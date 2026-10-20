@@ -45,7 +45,7 @@
 
 ---
 
-# Part 0 — Prerequisite Recap (from Test 1)
+# Part 0 — Prerequisite Recap (from Test 1) b
 
 ## 0.1 Charge, Coulomb's law, and $k$
 
