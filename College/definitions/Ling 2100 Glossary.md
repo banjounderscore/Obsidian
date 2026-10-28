@@ -1,7 +1,3 @@
----
-def-type: consolidated
----
-
 # Phonetics
 
 How speech sounds are physically produced and perceived (e.g. *bet* vs. *beet*).

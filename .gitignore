@@ -1,1 +1,4 @@
-.obsidian/
+# Obsidian: track settings and plugins, not UI state
+College/.obsidian/workspace*.json
+College/.obsidian/switcher.json
+College/.obsidian/plugins/obsidian-quiet-outline/markdown-states.json

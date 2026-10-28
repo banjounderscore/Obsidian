@@ -6,7 +6,7 @@ tags:
 ### Morphology → Syntax → Semantics → Pragmatics
 
 > [!abstract] How to use
-> Read in order; each unit builds on the last (word parts → sentence structure → literal meaning → meaning in context). Covers all four decks, including the appendix slides and the image-only slides. **⚠️ = on the practice exam but not in the slides.** Answer key at the end. Exam 1 material: [[Ling 2100 Notes]].
+> Read in order; each unit builds on the last (word parts → sentence structure → literal meaning → meaning in context). Covers all four decks, including the appendix slides and the image-only slides. **⚠️ = on the practice exam but not in the slides.** Answer key at the end. Exam 1 material: [[Ling 2100 Exam 1 Notes]].
 
 ## Table of Contents
 - [[#Unit 5 — Morphology]]

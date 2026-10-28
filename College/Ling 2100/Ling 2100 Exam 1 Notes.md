@@ -1,5 +1,5 @@
 ---
-tags: [linguistics, ling2100, exam-prep]
+tags:
 ---
 
 # LING 2100 — Exam 1 Notes
