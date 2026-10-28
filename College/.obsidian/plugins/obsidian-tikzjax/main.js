@@ -18510,6 +18510,13 @@ var TikzjaxPlugin = class extends import_obsidian2.Plugin {
   }
   registerTikzCodeBlock() {
     this.registerMarkdownCodeBlockProcessor("tikz", (source, el2, ctx) => {
+      // Local patch: handle the finish event on the block itself. Reading view can
+      // detach sections while TikZJax compiles, so the event never reaches document
+      // and dark-mode recoloring was skipped (default text/lines stayed black).
+      el2.addEventListener("tikzjax-load-finished", (e) => {
+        e.stopPropagation();
+        this.postProcessSvg(e);
+      });
       const script = el2.createEl("script");
       script.setAttribute("type", "text/tikz");
       script.setAttribute("data-show-console", "true");

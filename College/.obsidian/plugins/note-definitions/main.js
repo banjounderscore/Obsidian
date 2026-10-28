@@ -2927,6 +2927,26 @@ var NoteDefinition = class extends import_obsidian13.Plugin {
     );
     this.registerMarkdownPostProcessor(postProcessor);
     this.fileExplorerDeco.run();
+    // Local patch: the initial load runs before the vault is indexed and never
+    // refreshes notes already open. Reload once the layout is ready, then redraw.
+    this.app.workspace.onLayoutReady(() => {
+      this.defManager.loadDefinitions().then(() => this.refreshOpenNotes());
+    });
+  }
+  refreshOpenNotes() {
+    this.app.workspace.getLeavesOfType("markdown").forEach((leaf) => {
+      var _a, _b, _c;
+      const view = leaf.view;
+      const cm = (_a = view.editor) == null ? void 0 : _a.cm;
+      const marker = cm == null ? void 0 : cm.plugin(definitionMarker);
+      if (marker) {
+        marker.forceUpdate();
+        cm.dispatch({});
+      }
+      if (((_b = view.getMode) == null ? void 0 : _b.call(view)) === "preview") {
+        (_c = view.previewMode) == null ? void 0 : _c.rerender(true);
+      }
+    });
   }
   async saveSettings() {
     await this.saveData(window.NoteDefinition.settings);
