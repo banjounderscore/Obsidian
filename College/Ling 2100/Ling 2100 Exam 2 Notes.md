@@ -38,11 +38,11 @@ A word's **part of speech** (POS) determines **where it can go in a sentence** a
 
 **Verb transitivity** = number of **arguments** (participant nouns):
 
-| Type | Args | Example |
-|---|---|---|
-| Intransitive | 1 | *I swam. / The window broke.* |
-| Transitive | 2 | *I threw the ball. / I broke the window.* |
-| Ditransitive | 3 | *I gave her the book.* |
+| Type         | Args | Example                                   |
+| ------------ | ---- | ----------------------------------------- |
+| Intransitive | 1    | *I swam. / The window broke.*             |
+| Transitive   | 2    | *I threw the ball. / I broke the window.* |
+| Ditransitive | 3    | *I gave her the book.*                    |
 
 **Case** = the form that shows a noun's **grammatical role**. In English, **only pronouns** show it:
 
