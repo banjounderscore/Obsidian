@@ -12,7 +12,7 @@ tags: [linguistics, ling2100, exam-prep]
 
 ---
 
-## 1. Morphology
+## Unit 5 — Morphology
 
 ### Parts of speech
 
@@ -28,6 +28,7 @@ tags: [linguistics, ling2100, exam-prep]
 | Modal | *can/would/might*: hypothetical states of affairs |
 
 - **Transitivity**: intransitive = 1 argument (*I swam*) · transitive = 2 (*I threw the ball*) · **ditransitive = 3** (*I gave her the book*).
+- POS is diagnosed by syntactic behavior and determines available morphology. **Automatic POS tagging** (spaCy displaCy) labels every word's POS; it's the first step of NLP.
 - **Content (open class)** = N, V, Adj, Adv: easy to paraphrase, coined constantly. **Function (closed class)** = pronouns, determiners, conjunctions, prepositions, modals: hard to paraphrase, rarely new (*slash*), most frequent. Words that straddle the line: *want, cause, take a bath*.
 
 ### Inflection vs. derivation
@@ -57,8 +58,9 @@ tags: [linguistics, ling2100, exam-prep]
 ### Morphemes and word structure
 - **Morpheme** = smallest meaningful unit. **Free** (*car, I*) vs. **bound** (*-ing, un-, -s*).
 - **Cranberry morphemes** (*cran-, rasp-*) occur in only one word. *-ceive* (*re/de/perceive*) recurs as a form with no clear meaning. *Under+stand* isn't compositional. *Pulver-* is a bound root.
+- **Unpaired words** (Jack Winter, *New Yorker*): *chalant, gruntled, kempt, shevelled* are funny because the base never exists alone (a cranberry-like bound root).
 - **Word** = root + derivational affixes + inflectional affixes (outermost). *nation+al+ize+s*.
-- **Affixes**: prefix *repay* · suffix *paying* · **circumfix** ***en**light**en*** · infix (English only *abso-effing-lutely*).
+- **Affixes**: prefix *repay* · suffix *paying* · **circumfix** ***en**light**en*** · infix (English only *abso-effing-lutely*). WALS maps case (51A), prefixing vs. suffixing (26A), and reduplication (27A).
 - **Words are hierarchical** (trees), not beads on a string: *-al* needs a N, *-ize* an Adj/N, *-ation* a V → \**nationation*, \**nationizeal*; ?*nationize*.
 - **Ambiguity from structure**:
   - *unlockable* = `[[un-lock]V -able]` "can be unlocked" / `[un- [lock-able]Adj]` "can't be locked"
@@ -84,7 +86,7 @@ tags: [linguistics, ling2100, exam-prep]
 ### Zipf and corpora
 - **Frequency Law**: a few very frequent (function) words, very many rare (content) words → **power law**, not normal.
 - **Brevity Law**: **frequent words are shorter** (language is efficient).
-- **Word-type length ≈ bell curve, peak = 7 characters.**
+- **Word-type length ≈ bell curve, peak = 7 characters.** (Counting tokens gives shorter lengths, since frequent words are short.)
 - Log axis because frequencies span orders of magnitude. *The* is #1 (Brown 7%, Reddit 3%); Reddit ranks *i/my/you* high.
 
 ### Typology
@@ -105,7 +107,7 @@ tags: [linguistics, ling2100, exam-prep]
 
 ---
 
-## 2. Syntax
+## Unit 6 — Syntax
 
 - **Syntax** = word order; grammatical vs. \*ungrammatical; finite rules → infinite sentences.
 - **Independent of semantics** (Chomsky): *Colorless green ideas sleep furiously* = **grammatical, meaningless**; ***Me eat cookie*** = **ungrammatical, somewhat meaningful**. The line is fuzzy (*?The toothbrush is pregnant*).
@@ -117,6 +119,7 @@ tags: [linguistics, ling2100, exam-prep]
   - negation uses do-support
   - subject/object relative clauses; subject/object/multiple wh-questions
 - **Long-distance dependency** = related words separated (*What did you eat ___?*; *the book that I read ___*). ⚠️ Agreement counts too: ***key** ... **is*** in *The key to the cabinets is on the table*.
+- Watch for gender stereotypes in constructed example sentences.
 
 ### Constituents
 - Language is **produced linearly but mentally organized hierarchically**.
@@ -124,6 +127,7 @@ tags: [linguistics, ling2100, exam-prep]
   1. it can answer a question
   2. it sticks together when reordered
   3. it can be conjoined
+- *The history of linguistics begins with the Indian grammarian Panini*: ✓ *the history of linguistics, of linguistics, the Indian grammarian Panini, begins with...Panini* · ✗ *linguistics begins with the, begins with the Indian*.
 - Constituent = **subtree**. *The athlete tossed the ball*: ✓ *the athlete, the ball, tossed the ball* · ✗ *athlete tossed the, tossed the*.
 - **Lexical categories** (Det, N, TransV...) vs. **phrasal categories** (NP, VP, AdjP); swap within a category ("Mad Libs").
 
@@ -132,14 +136,14 @@ tags: [linguistics, ling2100, exam-prep]
 S -> NP VP     NP -> (Det)(Adj*) N     NP -> NP (PP)     NP -> Pronoun
 PP -> Prep NP  VP -> TransV NP         VP -> IntransV    VP -> VP PP
 ```
-- Rules = **non-terminals**; **lexicon** = terminals (words). `()` optional, `*` = 0 or more.
+- Rules = **non-terminals**; **lexicon** = terminals (words). `()` optional, `*` = 0 or more. Draw trees with mshang.ca/syntree, LaTeX/Overleaf, or by hand.
 - Correct tree for *The author wrote the book*: **[S [NP the author] [VP wrote [NP the book]]]** (a flat tree, or a split *the / book*, is wrong).
 
 | PS rules ARE | PS rules are NOT |
 |---|---|
 | **generative**, **recursive** (NP→NP PP, PP→P NP), **one-to-many** (**VP→V NP; VP→V**), **language-specific** | language-general · binary/asymmetric/typed (that's dependency) · cancelable (implicature) · inflectional |
 
-- **Transformations/movement** = extra rules for long-distance dependencies (a metaphor, not literal).
+- **Transformations/movement** = extra rules for long-distance dependencies (a metaphor, not literal): *what* moves from object position to the front, into a CP layer above S.
 
 ### Dependency grammar
 - **Tesnière**; inspired by free-word-order **Latin/Slavic** (*Puella canem amat* in any order; case marks roles; given before new).
@@ -174,9 +178,10 @@ PP -> Prep NP  VP -> TransV NP         VP -> IntransV    VP -> VP PP
 
 ---
 
-## 3. Semantics
+## Unit 7 — Semantics
 
 - **Semantics** = meaning of words and sentences; **pragmatics** = inferences from utterances in context. Lewis: ask what meaning *does*.
+- Word meaning = referent (if any; *unicorn* has none but is still meaningful) + relations (*cat* ⊂ *animal*) + use in sentences.
 - Sentence meaning = **truth conditions**, **entailment** (*cat → pet*), **contradiction** (*cat* vs. *no pets*).
 - **Lexical** (content words) vs. **compositional** (function words; combining meanings).
 
@@ -222,7 +227,7 @@ PP -> Prep NP  VP -> TransV NP         VP -> IntransV    VP -> VP PP
 ### Metaphor (Lakoff & Johnson 1980)
 - **Fundamental to thought**, not decoration: abstract via concrete.
 - TIME IS MONEY · TIME IS SPACE · GOOD IS UP · UNDERSTANDING IS VISION · ARGUMENTS ARE WARS · PROJECTS ARE MEALS / BUILDINGS.
-- History runs concrete → abstract (*stands*).
+- History runs concrete → abstract (*stands*); see the Database of Semantic Shifts (datsemshift.ru).
 - ⚠️ *heavy topic* = **metaphor** (simile uses *like*; allegory = extended story). *Morale is **low**... **wasting** time **battling**...* = **all of these**.
 
 ### Composition
@@ -231,11 +236,11 @@ PP -> Prep NP  VP -> TransV NP         VP -> IntransV    VP -> VP PP
 
 ---
 
-## 4. Pragmatics
+## Unit 8 — Pragmatics
 
 - Linguists **have tried to identify general rules** of conversation.
 - **Speech acts (Austin)**: **performatives** make themselves true when said by the right person in the right context; marked by ***hereby*** (*I now pronounce you...*, *You're fired*).
-- **Common Ground** = info **mutually taken for granted** (Stalnaker, Grice); requires Theory of Mind. **Assertions = proposals** to update it; they can be rejected (*No, it's due Wednesday*).
+- **Common Ground** = info **mutually taken for granted** (Stalnaker, Grice), e.g. we're at Georgia Tech, speaking English. It requires Theory of Mind. **Assertions = proposals** to update it: *I'm from Maryland* gets accepted and added; *No, it's due Wednesday* rejects one.
 
 ### Presupposition
 - Assumed to be in the CG; if false, the sentence is **nonsensical** (Strawson's *King of France*: you have to "rewind").
@@ -243,7 +248,7 @@ PP -> Prep NP  VP -> TransV NP         VP -> IntransV    VP -> VP PP
 - Triggers: *the*, *stop* (*Phil stopped smoking* → he used to smoke), ⚠️ **factive *know*** (*Sam knows it's raining* → it's raining).
 
 ### Grice
-- **Maxims**: **Quality** (truth) · **Quantity** (as informative as needed) · **Manner** (clarity) · **Relevance**. ⚠️ **Politeness is NOT one.**
+- **Maxims**: **Quality** (truth) · **Quantity** (as informative as needed) · **Manner** (clarity) · **Relevance**. ⚠️ **Politeness is NOT one.** They're phrased as commands but are descriptive (the assumptions listeners use). Critique: they may be Eurocentric.
 - By assuming cooperation, we **infer beyond what's said** (the same point as Levinson's Rembrandt sketch, and ⚠️ **Searle's hamburger**: listeners share unstated assumptions).
 - **Examples**:
   - garage around the corner → it's open
@@ -253,7 +258,7 @@ PP -> Prep NP  VP -> TransV NP         VP -> IntransV    VP -> VP PP
   - *South of France* → doesn't know exactly
   - *I speak Portuguese* / ⚠️ *I have a pen* → not Spanish / no pencil
   - $10 tickets, *I have $9* → not $10 (but no such inference with $9 tickets)
-- **Implicatures** = ⚠️ **context-dependent, cancelable, calculable, reinforceable**. Benefits: efficiency and **plausible deniability** (politeness).
+- **Implicatures** = ⚠️ **context-dependent, cancelable** (*South of France, oh, Marseille!*), **calculable, reinforceable**. Benefits: efficiency and **plausible deniability** (politeness).
 - **Bronston**: a literally true but misleading answer isn't perjury.
 
 ### Conversation structure
