@@ -742,19 +742,19 @@ tags: [linguistics, ling2100, exam-prep]
 > **C.** It's an **expressive**: both sentences are true in exactly the same situations.
 
 **7.20** *She shot down every point I made* reflects which conceptual metaphor?
-- A. TIME IS MONEY
-- B. GOOD IS UP
-- C. UNDERSTANDING IS VISION
-- D. ARGUMENTS ARE WARS
+- A. Time is money
+- B. Good is up
+- C. Understanding is vision
+- D. Arguments are wars
 
 > [!success]- Answer
 > **D.**
 
 **7.21** *I need to budget my time better* reflects...
-- A. TIME IS SPACE
-- B. TIME IS MONEY
-- C. PROJECTS ARE BUILDINGS
-- D. GOOD IS UP
+- A. Time is space
+- B. Time is money
+- C. Projects are buildings
+- D. Good is up
 
 > [!success]- Answer
 > **B.**
@@ -766,7 +766,7 @@ tags: [linguistics, ling2100, exam-prep]
 - D. homonym
 
 > [!success]- Answer
-> **A.** PROJECTS/IDEAS ARE MEALS, with no "like" (that would make it a simile).
+> **A.** The metaphor *ideas are meals*, with no "like" (that would make it a simile).
 
 **7.23** According to Lakoff & Johnson, metaphors are...
 - A. mostly literary decoration

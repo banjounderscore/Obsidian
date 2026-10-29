@@ -179,7 +179,7 @@ A typical word = **root** (usually free) + **derivational affixes** + **inflecti
   child {node[cat] {N} child {node[wd] {nation}}}
   child {node[cat] {AFF} child {node[wd] {-al}}}
   child {node[cat] {AFF} child {node[wd] {-ize}}};
-\node[cred] at (0,-4.3) {flat: WRONG};
+\node[cred] at (0,-4.3) {flat: wrong};
 \node[font=\small, align=center] at (0,-5) {says nothing about which\\affix attaches to what};
 \end{scope}
 \begin{scope}[level 1/.style={sibling distance=3.2cm}, level 2/.style={sibling distance=1.8cm}]
@@ -188,7 +188,7 @@ A typical word = **root** (usually free) + **derivational affixes** + **inflecti
     child {node[cat] {N} child {node[wd] {nation}}}
     child {node[cat] {AFF} child {node[wd] {-al}}}}
   child {node[cat] {AFF} child {node[wd] {-ize}}};
-\node[cgrn] at (7,-4.9) {hierarchical: RIGHT};
+\node[cgrn] at (7,-4.9) {hierarchical: right};
 \node[font=\small, align=center] at (7,-5.6) {N + -al = Adj; \ Adj + -ize = Verb};
 \end{scope}
 \end{tikzpicture}
@@ -257,7 +257,7 @@ The rules: *-al* needs a **noun** (→ Adj); *-ize* needs an **adjective or noun
   child {node[cat] {Adj}
     child {node[cat] {Verb} child {node[wd] {flame}}}
     child {node[cat] {AFF} child {node[wd] {-able}}}};
-\node[align=center] at (7.5,-4.8) {(b) [in- [flamm-able]$_{Adj}$]\\``\textbf{NOT flammable}''};
+\node[align=center] at (7.5,-4.8) {(b) [in- [flamm-able]$_{Adj}$]\\``\textbf{not} flammable''};
 \end{tikzpicture}
 \end{document}
 ```
@@ -458,7 +458,7 @@ The practice-exam word *ev-imiz-de* "in our house" works the same way: three pie
 - **Compounds (Glass's research)**: a compound doesn't state how its **head** (main noun, usually last) and **modifier** relate. *water jug* = holds water; *water spinach* = grows in wet conditions (not really compositional).
   - **Artifact** heads (made by humans for a purpose, like *jug*) take modifiers about their **use/creation**.
   - **Natural-kind** heads (exist without humans, like *spinach*) take modifiers about **appearance, habitat, origin**, or borrowed ones (an attempt to capture the kind's "essence").
-- **Pumpkin spice latte**: spice FOR pumpkin (pie), or spice OF pumpkin? The compound doesn't say. Starbucks added real pumpkin after "shaming by the Food Babe," who missed the **morphological ambiguity**.
+- **Pumpkin spice latte**: spice *for* pumpkin (pie), or spice *of* pumpkin? The compound doesn't say. Starbucks added real pumpkin after "shaming by the Food Babe," who missed the **morphological ambiguity**.
 - **Adjectives as nouns (Glass's research)**: *The old are happier* (plural = **old people**) vs. *The old is never ordinary* (singular/mass = **oldness, old stuff**). The construction is very productive. Two readings, because a property can be construed as a **predicate of individuals** or as **the abstract thing those individuals share**.
 
 ---
@@ -504,7 +504,7 @@ A **long-distance (non-local) dependency** = two words that belong together (e.g
 ## Constituents
 Words are **produced linearly** (one after another) but **mentally organized hierarchically** into chunks called **constituents**. In a tree, a constituent is any **subtree** (a set of words sharing a parent node).
 
-**Constituency tests** (YES to any → it's a constituent):
+**Constituency tests** (yes to any → it's a constituent):
 
 | Test | Example |
 |---|---|
@@ -627,7 +627,7 @@ Notation: `( )` = optional, `*` = zero or more. Draw trees with mshang.ca/syntre
   child {node[cat] {NP} child {node[cat] {Det} child {node[wd] {The}}} child {node[cat] {N} child {node[wd] {author}}}}
   child {node[cat] {VP} child {node[cat] {V} child {node[wd] {wrote}}}
     child {node[cat] {NP} child {node[cat] {Det} child {node[wd] {the}}} child {node[cat] {N} child {node[wd] {book}}}}};
-\node[cgrn] at (9,-10.4) {Tree D: \textbf{RIGHT} (S $\to$ NP VP; VP $\to$ V NP)};
+\node[cgrn] at (9,-10.4) {Tree D: \textbf{right} (S $\to$ NP VP; VP $\to$ V NP)};
 \end{scope}
 \end{tikzpicture}
 \end{document}
@@ -845,7 +845,7 @@ Elicit these from a speaker of another language: *Sam ate a sandwich. / Sam did 
 > | English | French | Word-by-word |
 > |---|---|---|
 > | Sam ate a sandwich. | *Sam a mangé un sandwich* | Sam · has · eaten · a · sandwich |
-> | Sam did not eat a sandwich. | *Sam n'a pas mangé un sandwich* | Sam · NEG-has · NOT · eaten · a · sandwich |
+> | Sam did not eat a sandwich. | *Sam n'a pas mangé un sandwich* | Sam · NEG-has · not · eaten · a · sandwich |
 > | Sam ate a delicious sandwich. | *Sam a mangé un sandwich délicieux* | Sam · has · eaten · a · sandwich · delicious |
 > | Did Sam eat a sandwich? | *Est-ce que Sam a mangé un sandwich?* | is-it · that · Sam · has · eaten · a · sandwich |
 > | What did Sam eat? | *Qu'est-ce que Sam a mangé?* | what-is-it · that · Sam · has · eaten |
@@ -1037,7 +1037,7 @@ Test for subjectivity: A: *The box is {red / plastic / heavy / beautiful}.* B: *
 \draw[thick] (0,0) circle (1.2) (2.3,0) circle (0.8);
 \node at (0,1.5) {musicians};
 \node[font=\small] at (2.3,1.1) {former m.};
-\node[align=center,font=\small] at (1,-2) {\textbf{privative}: \emph{former musician}\\is NOT a musician};
+\node[align=center,font=\small] at (1,-2) {\textbf{privative}: \emph{former musician}\\is \textbf{not} a musician};
 \end{scope}
 \end{tikzpicture}
 \end{document}
@@ -1059,17 +1059,17 @@ Test for subjectivity: A: *The box is {red / plastic / heavy / beautiful}.* B: *
 | **Slurs** | same descriptive content, plus a **derogatory attitude toward the group** | *Hermione is a **mudblood*** vs. *Hermione is from a non-wizard family* |
 
 ## Metaphor (Lakoff & Johnson 1980)
-*Metaphors We Live By*: metaphors are **not decorative flourishes** (and not mainly literary); they're **fundamental to how we think**. We understand the **abstract** through the **concrete**. Conceptual metaphors are written in caps as TARGET IS SOURCE.
+*Metaphors We Live By*: metaphors are **not decorative flourishes** (and not mainly literary); they're **fundamental to how we think**. We understand the **abstract** through the **concrete**. Each conceptual metaphor is named in the form *target is source*.
 
 | Conceptual metaphor | Everyday expressions |
 |---|---|
-| TIME IS MONEY | ***spent** an hour, **wasted** time* |
-| TIME IS SPACE | *move the meeting **up**, **back-to-back** meetings* |
-| GOOD IS UP | ***higher**-level class, **raise** morale, **elevate** your style* |
-| UNDERSTANDING IS VISION | ***crystal-clear** speaker, I **see** your point, still **murky*** |
-| ARGUMENTS ARE WARS | ***cede/defend** a claim, **win** the argument* |
-| PROJECTS ARE MEALS/COOKING | ***meaty** paper, **half-baked** idea, **back burner*** |
-| PROJECTS/IDEAS ARE BUILDINGS | ***laying the foundation, buttressing, supporting** a claim* |
+| Time is money | ***spent** an hour, **wasted** time* |
+| Time is space | *move the meeting **up**, **back-to-back** meetings* |
+| Good is up | ***higher**-level class, **raise** morale, **elevate** your style* |
+| Understanding is vision | ***crystal-clear** speaker, I **see** your point, still **murky*** |
+| Arguments are wars | ***cede/defend** a claim, **win** the argument* |
+| Projects are meals/cooking | ***meaty** paper, **half-baked** idea, **back burner*** |
+| Projects/ideas are buildings | ***laying the foundation, buttressing, supporting** a claim* |
 
 **Language change runs concrete → abstract**: *You are **standing** on the floor* (concrete) → *What I said still **stands*** (abstract). The **Database of Semantic Shifts** (datsemshift.ru) catalogs many such shifts.
 
@@ -1078,9 +1078,9 @@ Test for subjectivity: A: *The box is {red / plastic / heavy / beautiful}.* B: *
 > |---|---|---|
 > | **Metaphor** | understanding X **as** Y, with no "like" | *This is a **heavy** topic* (physical weight = seriousness) |
 > | **Simile** | an explicit comparison **with "like" or "as"** | *a topic like a heavy rock* |
-> | **Allegory** | a whole story whose parts stand for abstract ideas | |
+> | **Allegory** | a whole story whose parts stand for abstract ideas | *Animal Farm*: a story about farm animals overthrowing their farmer stands for the Russian Revolution |
 >
-> *"Morale is **low** because we've been **wasting** time **battling** silly problems"* uses **all of these**: GOOD IS UP, TIME IS MONEY, ARGUMENTS ARE WARS.
+> *"Morale is **low** because we've been **wasting** time **battling** silly problems"* uses **all of these**: *good is up*, *time is money*, *arguments are wars*.
 
 ## Compositional semantics
 **Typed lambda calculus** treats word meanings as **functions** (machines that take an input and give an output).
@@ -1088,7 +1088,7 @@ Test for subjectivity: A: *The box is {red / plastic / heavy / beautiful}.* B: *
 | Type | Meaning | Example |
 |---|---|---|
 | ***e*** | an individual (entity) | *Lelia* |
-| ***t*** | a truth value (TRUE or FALSE) | a whole sentence |
+| ***t*** | a truth value (true or false) | a whole sentence |
 | ⟨*e,t*⟩ | a function from individuals to truth values | an intransitive verb like *swims* |
 
 ```tikz
@@ -1102,10 +1102,10 @@ Test for subjectivity: A: *The box is {red / plastic / heavy / beautiful}.* B: *
   child {node[align=center] {\textbf{NP} (PropN)\\\textcolor{cgrn}{\textbf{Lelia}} : $e$}}
   child {node[align=center] {\textbf{VP} (V)\\\textcolor{cgrn}{$\lambda x\,[\mathrm{swim}(x)]$} : $\langle e,t\rangle$}};
 \node[align=left,font=\normalsize] at (0,-4.2) {
-1. $[\![\mathit{swim}]\!] = \lambda x[\mathrm{swim}(x)]$: takes an individual $x$, gives TRUE if $x$ swims, FALSE otherwise\\
+1. $[\![\mathit{swim}]\!] = \lambda x[\mathrm{swim}(x)]$: takes an individual $x$, gives true if $x$ swims, false otherwise\\
 2. $[\![\mathit{Lelia}]\!] = \textbf{Lelia}$: an individual\\
 3. Combine (apply the function to the argument): $\lambda x[\mathrm{swim}(x)](\textbf{Lelia})$\\
-4. Result: $\mathrm{swim}(\textbf{Lelia})$ = TRUE if Lelia swims, FALSE otherwise};
+4. Result: $\mathrm{swim}(\textbf{Lelia})$ = true if Lelia swims, false otherwise};
 \end{tikzpicture}
 \end{document}
 ```
@@ -1175,7 +1175,7 @@ Same with *Phil stopped smoking / Did Phil stop smoking? / Phil didn't stop smok
 | **Manner** | be **understood**: organized, clear, audible, familiar words | rambling, mumbling, jargon |
 | **Relevance** | stay **relevant** to the conversation's current purpose | randomly changing topic |
 
-⚠️ **Politeness is NOT a maxim.**
+⚠️ **Politeness is not a maxim.**
 
 Discussion questions from the lecture:
 - **Descriptive or prescriptive?** They're phrased as commands, but they **describe** the assumptions listeners use to interpret speakers.
@@ -1255,10 +1255,10 @@ Compliments are socially fraught even though they're "positive": accepting can s
   a/.style={draw,very thick,rounded corners,align=center,minimum width=4.4cm,minimum height=1.3cm},
   arr/.style={-{Stealth[length=3mm]},thick}]
 \node[q] (q1) at (0,0) {Can the inference be \textbf{cancelled}\\without contradiction?};
-\node[a,fill=corg!15] (imp) at (6.5,0) {\textbf{IMPLICATURE}\\``It's late'' $\to$ ``I want to go home''\\(``...but I don't'' is fine)};
+\node[a,fill=corg!15] (imp) at (6.5,0) {\textbf{Implicature}\\``It's late'' $\to$ ``I want to go home''\\(``...but I don't'' is fine)};
 \node[q] (q2) at (0,-3) {Does it \textbf{project} (survive)\\under negation?};
-\node[a,fill=cpur!15] (pre) at (6.5,-3) {\textbf{PRESUPPOSITION}\\``The King is (not) bald''\\$\to$ ``There's a King''};
-\node[a,fill=cgrn!15] (ent) at (0,-6) {\textbf{ENTAILMENT}\\``I ran'' $\Rightarrow$ ``I exercised''\\``I didn't run'' $\not\Rightarrow$ ``I exercised''};
+\node[a,fill=cpur!15] (pre) at (6.5,-3) {\textbf{Presupposition}\\``The King is (not) bald''\\$\to$ ``There's a King''};
+\node[a,fill=cgrn!15] (ent) at (0,-6) {\textbf{Entailment}\\``I ran'' $\Rightarrow$ ``I exercised''\\``I didn't run'' $\not\Rightarrow$ ``I exercised''};
 \draw[arr] (q1) -- node[above]{yes} (imp);
 \draw[arr] (q1) -- node[left]{no} (q2);
 \draw[arr] (q2) -- node[above]{yes} (pre);
@@ -1326,7 +1326,7 @@ Compliments are socially fraught even though they're "positive": accepting can s
 | 38 | "Roller coasters are fun." | subjective → faultless disagreement |
 | 39 | beautiful | not context-pointing |
 | 40 | American | American ∩ N |
-| 41 | all of these ⚠️ | UP IS GOOD, TIME IS MONEY, WARS |
+| 41 | all of these ⚠️ | good is up, time is money, arguments are wars |
 | 42 | fundamental to our thinking | |
 | 43 | "hereby" | performatives |
 | 44 | information we all mutually take for granted | |

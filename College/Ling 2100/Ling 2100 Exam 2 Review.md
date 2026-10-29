@@ -6,7 +6,7 @@ tags: [linguistics, ling2100, exam-prep]
 
 > [!abstract] Exam at a glance
 > **Units:** 5 Morphology · 6 Syntax · 7 Semantics · 8 Pragmatics.
-> **Format (practice exam):** multiple choice, heavy on definitions, classifying examples, and "which one is NOT..."
+> **Format (practice exam):** multiple choice, heavy on definitions, classifying examples, and "which one is *not*..."
 > **⚠️** = on the practice exam but not in the slides.
 > Full explanations and diagrams: [[Ling 2100 Exam 2 Notes]].
 
@@ -146,7 +146,7 @@ The dictionary follows usage; it isn't the authority.
 ### Appendix bits
 - **Reduplication**: *salad salad*; iconic ("more is more"); Sapir 1921.
 - **Compounds**: artifact heads → use relations (*water jug*); natural-kind heads → appearance/habitat (*water spinach*).
-- **Pumpkin spice**: FOR vs. OF pumpkin is ambiguous (the Food Babe missed this).
+- **Pumpkin spice**: spice *for* vs. *of* pumpkin is ambiguous (the Food Babe missed this).
 - **"The old"**: plural = old people / mass = oldness.
 
 ---
@@ -175,7 +175,7 @@ More long-distance dependencies:
 ### Constituents
 Language is **produced linearly but mentally organized hierarchically**. Constituent = **subtree**.
 
-Tests (any YES = constituent):
+Tests (any yes = constituent):
 1. can answer a question
 2. sticks together when reordered
 3. can be conjoined
@@ -204,7 +204,7 @@ Tests (any YES = constituent):
 - Drawing tools: mshang.ca/syntree, LaTeX/Overleaf, by hand.
 - **Transformations/movement** = extra rules for long-distance dependencies (a metaphor): *what* moves from object position to the front, into a CP layer above S.
 
-| PS rules ARE | PS rules are NOT |
+| PS rules are | PS rules are not |
 |---|---|
 | **generative**, **recursive** (NP→NP PP, PP→P NP), **one-to-many** (**VP→V NP; VP→V**), **language-specific** | language-general · binary/asymmetric/typed (that's dependency) · cancelable (implicature) · inflectional |
 
@@ -312,11 +312,11 @@ Tests (any YES = constituent):
 |---|---|
 | **Deixis** (context-pointing) | *I, me, you, here, now, today, tomorrow*. **Not** *beautiful* |
 | **Expressives** (*damn*) and **slurs** | add attitude without changing truth conditions |
-| ⚠️ **Metaphor** vs. **simile** vs. **allegory** | *heavy topic* (no "like") vs. uses *like/as* vs. an extended story |
+| ⚠️ **Metaphor** vs. **simile** vs. **allegory** | *a heavy topic* (no "like") vs. *a topic like a heavy rock* (uses *like/as*) vs. a whole story standing for ideas (*Animal Farm* = the Russian Revolution) |
 
 ### Metaphor (Lakoff & Johnson 1980)
 - **Fundamental to thought**, not decoration: abstract via concrete.
-- TIME IS MONEY · TIME IS SPACE · GOOD IS UP · UNDERSTANDING IS VISION · ARGUMENTS ARE WARS · PROJECTS ARE MEALS / BUILDINGS.
+- Time is money · Time is space · Good is up · Understanding is vision · Arguments are wars · Projects are meals / buildings.
 - History runs concrete → abstract (*stands*); see the Database of Semantic Shifts (datsemshift.ru).
 - ⚠️ *Morale is **low**... **wasting** time **battling**...* = **all of these**.
 
@@ -356,7 +356,7 @@ Linguists **have tried to identify general rules** of conversation.
 | **Quantity** | as informative as needed |
 | **Manner** | clarity |
 | **Relevance** | stay on topic |
-| ⚠️ ~~Politeness~~ | **NOT a maxim** |
+| ⚠️ ~~Politeness~~ | **not a maxim** |
 
 - The maxims are phrased as commands but are descriptive (the assumptions listeners use); critique: they may be Eurocentric.
 - By assuming cooperation, we **infer beyond what's said**. Same point as Levinson's Rembrandt sketch, and ⚠️ **Searle's hamburger** (listeners share unstated assumptions).

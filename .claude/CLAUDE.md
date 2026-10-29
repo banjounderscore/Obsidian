@@ -23,6 +23,8 @@ This repo is my Obsidian vault of college notes. The Obsidian vault root is `Col
 - **Unit numbering matches the course** (e.g. Exam 2 covers Units 5–8, so headings start at "Unit 5", not "1").
 - **Define every term exactly once, at its first use.** Never use a term before it's defined, and never restate a definition right after giving it. If there's a useful hint or mnemonic (an etymology, an image), fold it into the first definition instead of adding a separate "memory hook" line.
 - **Examples must be clear and obvious.** Don't cram long examples into a table cell where they wrap mid-line. Language-data examples (interlinear glosses) go in their own small aligned table: top row = original, middle row = morpheme-by-morpheme gloss, bottom row = plain English, one column per word or morpheme.
+- **No all caps for ordinary words**; it reads as aggressive. Emphasize with bold (**not**), and write conceptual metaphors in sentence case ("Time is money", or *time is money* mid-sentence), not TIME IS MONEY. All caps is only for real abbreviations and labels (NP, SVO, NLP, gloss labels like ACC/1SG, dependency tags like NSUBJ). This applies to diagram labels too.
+- Every example column/cell should actually have an example (e.g. allegory: *Animal Farm*); don't leave one blank.
 - Don't add things I didn't ask for (e.g. a legend or an extra section). If something seems useful, ask first.
 
 ## Tables vs. lists

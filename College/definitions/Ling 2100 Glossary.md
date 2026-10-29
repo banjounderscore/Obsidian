@@ -34,6 +34,14 @@ The study of inferences drawn from utterances by people in context (meaning beyo
 
 ---
 
+# Utterance
+
+*utterances*
+
+A sentence actually spoken by a particular person in a particular context. Pragmatics studies inferences from utterances.
+
+---
+
 # Sociolinguistics
 
 The study of the social meaning of language variation (e.g. what an accent leads listeners to infer about a speaker).
@@ -65,6 +73,28 @@ Rules about how people *should* talk ("Don't say *ain't*"). Subjective. Reportin
 *descriptivism*
 
 Describing how people actually talk, without judging it. Objective; the linguist's stance.
+
+---
+
+# Grammar
+
+In linguistics: the largely implicit knowledge of how your language works (sounds, words, sentences), not school rules.
+
+---
+
+# Universals
+
+*universal, language universals*
+
+Properties shared by all (or nearly all) languages, despite their diversity. A language with no nouns would be astonishing.
+
+---
+
+# Language acquisition
+
+*acquisition, acquire, acquired*
+
+How children learn their language(s) without explicit teaching. More common sounds are acquired earlier (stops before fricatives).
 
 ---
 
@@ -104,11 +134,25 @@ Ohala: high pitch ~ small, low pitch ~ large. Explains why diminutive suffixes (
 
 ---
 
+# Tongue Pull Hypothesis
+
+A high tongue position pulls the larynx up, raising pitch. One explanation for links between high vowels and smallness.
+
+---
+
+# Diminutive
+
+*diminutives, diminutive suffix, diminutive suffixes*
+
+A form meaning "small" or "cute" (*-ito*, *-y* as in *doggy*). Diminutive suffixes favor high vowels (Frequency Code).
+
+---
+
 # Hockett's Design Features
 
 *design features*
 
-Features distinguishing human language from animal communication: displacement, productivity, arbitrariness, duality of patterning, prevarication, reflexiveness, etc. "Languages change over time" is NOT one.
+Features distinguishing human language from animal communication: displacement, productivity, arbitrariness, duality of patterning, prevarication, reflexiveness, etc. "Languages change over time" is **not** one.
 
 ---
 
@@ -164,6 +208,14 @@ One string with two different structures/trees (*unlockable*; *Pope's Baby Steps
 
 ---
 
+# Event participation ambiguity
+
+*event participation*
+
+One structure and one sense per word, but different ways to take part in the event: *Kids make nutritious snacks* (prepare them / are them).
+
+---
+
 # Synchronic
 
 Variation across speakers at one point in time (e.g. regional accents today).
@@ -213,6 +265,28 @@ Airflow out of the mouth. Pulmonic egressive (lungs push air out) is the default
 # Pulmonic
 
 Airstream driven by the lungs; pulmonic egressive is the default for speech.
+
+---
+
+# Non-pulmonic
+
+Airstreams not driven by the lungs: clicks, implosives, ejectives. None are used in English.
+
+---
+
+# Larynx
+
+*voice box*
+
+The structure in the throat that houses the vocal folds.
+
+---
+
+# Vocal folds
+
+*vocal cords*
+
+The folds in the larynx whose vibration makes a sound voiced.
 
 ---
 
@@ -444,6 +518,34 @@ A single steady vowel.
 
 ---
 
+# Vowel height
+
+How high the tongue is raised: high (*beet* [i]), mid, low (*bot* [ɑ]).
+
+---
+
+# Backness
+
+How far forward or back the tongue is: front (*beet* [i]), central, back (*boot* [u]).
+
+---
+
+# Rounding
+
+*rounded, unrounded*
+
+Whether the lips are rounded (*boot* [u]) or spread (*beet* [i]) during a vowel.
+
+---
+
+# Stress
+
+*stressed, unstressed*
+
+Extra emphasis on a syllable: louder, longer, and/or higher pitch (*PENcil*). Unstressed syllables often reduce to schwa.
+
+---
+
 # Lax vowel
 
 *lax vowels, lax*
@@ -469,6 +571,14 @@ A syllable ending in its vowel, with no coda (*bee*).
 # Closed syllable
 
 A syllable ending in a coda consonant (*cat*).
+
+---
+
+# Stop-final syllable
+
+*stop-final syllables*
+
+A syllable whose coda is a stop (p t k b d g): *cat* is stop-final, *car* is not.
 
 ---
 
@@ -522,7 +632,7 @@ A distinct sound category in the mind, written /slashes/. Contrastive: swapping 
 
 *allophones*
 
-A predictable variant of one phoneme, written [brackets]. In complementary distribution AND phonetically similar (e.g. [p]/[pʰ]).
+A predictable variant of one phoneme, written [brackets]. In complementary distribution **and** phonetically similar (e.g. [p]/[pʰ]).
 
 ---
 
@@ -590,6 +700,14 @@ A set of sounds sharing features, so one rule covers them all (aspiration applie
 
 ---
 
+# Distinctive feature
+
+*distinctive features*
+
+A binary property that groups sounds: [±voice], [±nasal], [±continuant], [±sonorant].
+
+---
+
 # Allomorph
 
 *allomorphs*
@@ -617,6 +735,14 @@ Two or more consonants in a row with no vowel between (*str-* in *strengths*).
 *tokens*
 
 Counting every occurrence of a word, repeats included. "I came, I saw, I conquered" = 6 tokens (but 4 types).
+
+---
+
+# Word type
+
+*word types*
+
+Each distinct word counted once. "I came, I saw, I conquered" = 4 types (but 6 tokens). The most common type length in English is 7 characters.
 
 ---
 
@@ -664,6 +790,54 @@ Three lines: original language → morpheme-by-morpheme translation (with labels
 
 ---
 
+# Aspect
+
+*ASP*
+
+How an action unfolds in time (completed vs. ongoing), as opposed to when it happens (tense). Mandarin marks aspect with *le*, not tense.
+
+---
+
+# Imperfective
+
+*IMP*
+
+Aspect for an ongoing or habitual action: French *était* "was (being)".
+
+---
+
+# Aorist
+
+*AOR*
+
+Aspect for a completed or habitual action (Turkish *yap-ar* "makes, habitually").
+
+---
+
+# Classifier
+
+*classifiers, CL*
+
+A word required between a number and a noun: Mandarin *yí-gè sāmíngzhì* "one-CL sandwich".
+
+---
+
+# Demonstrative
+
+*demonstratives, DEM*
+
+A "pointing" word like *this* or *that*.
+
+---
+
+# Locative
+
+*LOC*
+
+Case or affix meaning "in/at": Turkish *ev-de* "in the house".
+
+---
+
 # WALS
 
 World Atlas of Language Structures: a database of structural features across languages.
@@ -676,6 +850,14 @@ Subject–Verb–Object word order, English's basic order (*I threw the ball*).
 
 ---
 
+# Word order
+
+*basic word order, OVS, SOV*
+
+The usual order of subject, verb, and object in a declarative sentence. English, Mandarin, and French are SVO; some languages are OVS or SOV.
+
+---
+
 # Part of speech
 
 *parts of speech, POS*
@@ -684,11 +866,43 @@ A word's category (noun, verb, adjective...). Determines where it goes and what 
 
 ---
 
+# Lexical
+
+*lexically*
+
+Having to do with individual words (the lexicon) rather than structure: lexical category, lexical semantics, lexical ambiguity.
+
+---
+
 # Determiner
 
 *determiners*
 
 Combines with a noun to pick out its referent: new/familiar (*a/the*), near/far (*this/that*), possession (*my*), quantity (*every, five*).
+
+---
+
+# Proper noun
+
+*proper nouns*
+
+A name for a specific individual: *Alice*. Contrast: common noun.
+
+---
+
+# Proximal
+
+*distal, proximal/distal*
+
+Near vs. far from the speaker: *this book* (proximal) vs. *that house* (distal).
+
+---
+
+# Common noun
+
+*common nouns*
+
+A noun for a kind of thing (*cat*); takes determiners (*the cat, every cat*).
 
 ---
 
@@ -703,6 +917,30 @@ A determiner expressing quantity: *every, some, all, five*.
 # Copula
 
 The linking verb *be* that joins a subject to a predicate (*the dress **is** red*).
+
+---
+
+# Comparative
+
+*comparatives*
+
+The "more" form of an adjective: *taller*, *more beautiful*. An inflection.
+
+---
+
+# Superlative
+
+*superlatives*
+
+The "most" form of an adjective: *tallest*, *most beautiful*. An inflection.
+
+---
+
+# Predicate
+
+*predicates, predicative*
+
+What's said about the subject. Adjectives can be predicates with a copula: *the dress is **red***.
 
 ---
 
@@ -742,17 +980,23 @@ A participant noun a verb requires (*I* and *the ball* in *I threw the ball*). N
 
 # Nominative
 
+*NOM*
+
 Subject case: *she, he, I*.
 
 ---
 
 # Accusative
 
+*ACC*
+
 Object case: *her, him, me*.
 
 ---
 
 # Genitive
+
+*POSS*
 
 Possessive case: *her, his, my*.
 
@@ -952,6 +1196,14 @@ Two whole words combined: *desk chair, sunglasses, brainrot*. The relation betwe
 
 ---
 
+# Modifier
+
+*modifiers*
+
+The part that restricts the head: in *water jug*, *water* modifies *jug*.
+
+---
+
 # Reduplication
 
 Repeating a root to change meaning (*salad salad*). Iconic: "more is more."
@@ -963,6 +1215,12 @@ Repeating a root to change meaning (*salad salad*). Iconic: "more is more."
 *corpora*
 
 A large body of real text used for analysis (Brown Corpus, Reddit comments).
+
+---
+
+# Brown Corpus
+
+One million words of edited American English; the lecture's main word-frequency corpus (*the* = about 7% of all words).
 
 ---
 
@@ -987,6 +1245,14 @@ More frequent words are shorter. Evidence that language is efficient.
 *power-law*
 
 A long-tail distribution (frequency ∝ ~1/rank), unlike a bell curve.
+
+---
+
+# Normal distribution
+
+*bell curve*
+
+A symmetric, bell-shaped distribution (word lengths roughly follow one). Word frequencies do **not**; they follow a power law.
 
 ---
 
@@ -1017,6 +1283,14 @@ One affix fuses several meanings (French *était*: be + 3rd person + singular + 
 # Analytic
 
 Grammatical info carried mostly by separate words, not affixes. English is between isolating and agglutinating.
+
+---
+
+# Typology
+
+*typological, typologically*
+
+Classifying languages by their structure (e.g. word-to-morpheme ratio: isolating, agglutinating, fusional, polysynthetic). Typologically rare = rare across languages.
 
 ---
 
@@ -1053,6 +1327,14 @@ Not allowed by the syntax (\**Student the read book the*). Can still be meaningf
 # Do-support
 
 Inserting *do/did* when there's no other auxiliary: questions (*Did she read it?*) and negation (*She did not read it*).
+
+---
+
+# Object fronting
+
+*fronting*
+
+Moving the object to the front for contrast: *The book, the student read. The paper, she didn't.*
 
 ---
 
@@ -1096,9 +1378,25 @@ Two words that belong together but are separated in the string (*What did you ea
 
 ---
 
+# Hierarchical structure
+
+*hierarchical, hierarchically*
+
+Words grouped into nested constituents (a tree), even though they're spoken one after another.
+
+---
+
+# Linear order
+
+*linearly*
+
+The left-to-right order in which words are spoken or written.
+
+---
+
 # Constituent
 
-*constituents, constituency*
+*constituents, constituency, subtree, subtrees*
 
 A group of words acting as a unit; a subtree in the tree. Shown by constituency tests.
 
@@ -1108,7 +1406,7 @@ A group of words acting as a unit; a subtree in the tree. Shown by constituency 
 
 *constituency tests*
 
-YES to any → a constituent: (1) can answer a question, (2) sticks together when reordered, (3) can be conjoined.
+Yes to any → a constituent: (1) can answer a question, (2) sticks together when reordered, (3) can be conjoined.
 
 ---
 
@@ -1149,6 +1447,12 @@ A phrase built around a verb, possibly containing an NP: *ran, threw the ball*.
 *phrase structure, PS rules, phrase structure rules, phrase structure rule*
 
 Chomsky's rule system (S → NP VP...) that captures hierarchy, word order, and grammaticality. Generative, recursive, one-to-many, language-specific.
+
+---
+
+# Grammar fragment
+
+A small toy grammar (a few rules + a mini lexicon) used to illustrate how phrase structure rules generate sentences.
 
 ---
 
@@ -1194,6 +1498,12 @@ One left-hand side with several right-hand expansions (VP → V NP and VP → V)
 
 ---
 
+# Language-specific
+
+Differs from language to language. Phrase structure rules must be, because they encode word order.
+
+---
+
 # Transformation
 
 *transformations, movement*
@@ -1210,9 +1520,29 @@ Tesnière's framework: binary, asymmetric, typed head→dependent relations betw
 
 ---
 
+# Free word order
+
+Word order not fixed by grammar, with roles marked by case instead (Latin *Puella canem amat* in any order).
+
+---
+
+# Given before new
+
+Discourse tendency to put already-known information before new information; it guides word order in free-word-order languages.
+
+---
+
 # Dependency length
 
 How many words a dependency arc spans. Corpora favor short ones (37 languages): language is efficient.
+
+---
+
+# Dependent
+
+*dependents*
+
+In dependency grammar, the word that attaches to a head (the governing word). Arrows point from head to dependent.
 
 ---
 
@@ -1241,6 +1571,22 @@ Automatically labeling each word's part of speech (DT, NN, VBD...).
 # Truth conditions
 
 What the world must be like for a sentence to be true.
+
+---
+
+# Proposition
+
+*propositions*
+
+The meaning of a declarative sentence: a claim that can be true or false. The Common Ground is a set of propositions.
+
+---
+
+# Truth value
+
+*truth values*
+
+True or false. In lambda calculus, type *t*.
 
 ---
 
@@ -1364,7 +1710,15 @@ A verb describing a state, with no change (*Alice loved movies*). Contrast: dyna
 
 ---
 
+# Dynamic
+
+A verb describing change or something happening (*Alice threw the ball*). Contrast: stative.
+
+---
+
 # Agentive
+
+*non-agentive*
 
 The subject acts deliberately (*Alice ran*). Non-agentive: *Alice fell*.
 
@@ -1390,19 +1744,23 @@ How many arguments a verb takes and what roles they play (*The submarine sank th
 
 # Causative
 
+*non-causative*
+
 A verb entailing its object changes state (*broke*: → *The fence broke*). Non-causative: *hit*.
 
 ---
 
 # Gradable
 
-*gradable adjectives*
+*gradable adjectives, non-gradable*
 
 Allows degrees: *very tall, taller*. Non-gradable: *?very dead*.
 
 ---
 
 # Vagueness
+
+*vague*
 
 What counts as *tall/expensive* depends on the comparison class (tall man vs. tall building).
 
@@ -1411,6 +1769,22 @@ What counts as *tall/expensive* depends on the comparison class (tall man vs. ta
 # Faultless disagreement
 
 Two people disagree and neither is wrong: the mark of subjective predicates (*Roller coasters are fun*).
+
+---
+
+# Subjective
+
+*subjective adjective, subjective adjectives*
+
+A matter of opinion (*beautiful, cute, fun, tasty*): two people can disagree with neither wrong. Subjective adjectives go further from the noun.
+
+---
+
+# Objective
+
+*objective adjective, objective adjectives*
+
+A matter of fact (*red, plastic, heavy*): if two people disagree, someone is wrong.
 
 ---
 
@@ -1434,7 +1808,7 @@ Adj N is a subset of N but not just "Adj things": a *skillful musician* isn't ne
 
 *privative adjective*
 
-Adj N is NOT an N: *former musician, fake gun*.
+Adj N is **not** an N: *former musician, fake gun*.
 
 ---
 
@@ -1466,19 +1840,19 @@ Same descriptive content as a neutral term plus a derogatory attitude toward a g
 
 *metaphor, metaphors*
 
-Understanding the abstract via the concrete (TIME IS MONEY, GOOD IS UP). Lakoff & Johnson: fundamental to thought, not decoration. No "like/as."
+Understanding the abstract via the concrete (*time is money*, *good is up*). Lakoff & Johnson: fundamental to thought, not decoration. No "like/as."
 
 ---
 
 # Simile
 
-A comparison using "like" or "as."
+A comparison using "like" or "as": *a topic like a heavy rock*. Contrast: metaphor (*a heavy topic*).
 
 ---
 
 # Allegory
 
-An extended story whose parts stand for abstract ideas.
+An extended story whose parts stand for abstract ideas: *Animal Farm*, where farm animals overthrowing their farmer stands for the Russian Revolution.
 
 ---
 
@@ -1524,6 +1898,8 @@ Austin: an utterance that makes itself true when said by the right person in the
 
 # Common Ground
 
+*CG*
+
 The propositions all participants mutually (know they) take for granted (Grice, Stalnaker).
 
 ---
@@ -1554,7 +1930,13 @@ Info assumed to already be in the Common Ground (*The King of France is bald* �
 
 *project*
 
-A presupposition survives under negation, modals, and questions (*The King is NOT bald* → still a King).
+A presupposition survives under negation, modals, and questions (*The King is not bald* → still a King).
+
+---
+
+# Presupposition failure
+
+When a presupposition is false, so the sentence is nonsensical rather than just false (*The King of France is bald*).
 
 ---
 
@@ -1570,7 +1952,7 @@ A verb presupposing its complement is true: *know, realize, regret* (*Sam knows 
 
 *maxims, maxim, Cooperative Principle*
 
-Quality (be truthful), Quantity (as informative as needed), Manner (be clear), Relevance (be relevant). Politeness is NOT a maxim.
+Quality (be truthful), Quantity (as informative as needed), Manner (be clear), Relevance (be relevant). Politeness is **not** a maxim.
 
 ---
 
@@ -1611,6 +1993,12 @@ Be relevant to the current purpose of the conversation.
 *implicature, implicatures, implicate, implicated*
 
 An inference beyond what's said, from assuming speakers follow the maxims. Context-dependent, cancelable, calculable, reinforceable.
+
+---
+
+# Context-dependent
+
+Property of implicatures: the same sentence implicates different things in different contexts (*I have $9* with $10 vs. $9 tickets).
 
 ---
 
