@@ -22,13 +22,13 @@ tags:
 **Morphology** = the study of words and their parts: their structure, meaning, and rules of realization in context.
 
 ## Parts of speech
-A word's **part of speech** (POS) determines **where it can go in a sentence** and **which inflectional/derivational morphology it can take**. It's diagnosed by **syntactic behavior**, but it also has a **non-random relationship to meaning**.
+A word's **part of speech** (POS) determines **where it can go in a sentence** and **which inflectional/derivational morphology it can take**. It's diagnosed by **syntactic behavior** (where the word can appear), but it also has a **non-random relationship to meaning**.
 
 | POS | Examples | Key facts |
 |---|---|---|
 | **Noun** | *cat, Alice* | subject/object; **common** (*cat*) vs. **proper** (*Alice*); inflect for **number** (*cats*); common nouns take determiners (*the/every/two cats*); often "people, places, things"; usually **time-stable entities**. Exceptions: ***explosion, earthquake*** (events) |
 | **Pronoun** | *he, she, it, they, we* | stand in for **discourse-prominent nouns** (meaning depends on context); in English, inflect for **case** (below) |
-| **Verb** | *run, swim, throw* | inflect for **tense** (*walk/walked*), **agree** in number with the subject (*she walks / they walk*); describe the main action; usually **dynamic** = **change over time involving their arguments** (*I broke the window*). Exception: *I love movies* (a state) |
+| **Verb** | *run, swim, throw* | inflect for **tense** (*walk/walked*), **agree** in number with the subject (*she walks / they walk*); describe the main action; usually **dynamic** = **change over time involving their arguments** (the participants the verb needs: *I broke the window*). Exception: *I love movies* (a state) |
 | **Adjective** | *red, cute, heavy* | **modify** a noun (*red dress*) or are the **predicate** with copula *is* (*the dress is red*); **gradable** (*tall*); **comparative/superlative** (*tall, taller, tallest*; *more/most beautiful*); can be **subjective** / emotional (*beautiful, horrible*) |
 | **Adverb** | *quickly, very, really* | modify a **verb** (*ran quickly*) or **adjective** (*really tall*); often adjective + derivational ***-ly*** |
 | **Determiner** | *the, a, some, all, every* | combine with a noun to pick out its referent: **new vs. familiar** (*a person / the cat*), **proximal/distal** (*this/that*), **possession** (*my*); includes **quantifiers** (*every, some, five*) |
@@ -36,13 +36,13 @@ A word's **part of speech** (POS) determines **where it can go in a sentence** a
 | **Preposition** | *of, for, with, to* | introduce a noun that **isn't a main argument** of the verb (*I saw him **at the party***) |
 | **Modal auxiliary** | *can, may, would, should, might, will* | combine with a verb; describe **hypothetical** states of affairs (*I would go*) |
 
-**Verb transitivity** = number of **arguments** (participant nouns):
+**Verb transitivity** = how many arguments a verb takes:
 
-| Type         | Args | Example                                   |
-| ------------ | ---- | ----------------------------------------- |
-| Intransitive | 1    | *I swam. / The window broke.*             |
-| Transitive   | 2    | *I threw the ball. / I broke the window.* |
-| Ditransitive | 3    | *I gave her the book.*                    |
+| Type | Args | Example |
+|---|---|---|
+| Intransitive | 1 | *I swam. / The window broke.* |
+| Transitive | 2 | *I threw the ball. / I broke the window.* |
+| Ditransitive | 3 | *I gave her the book.* (giver, recipient, thing given) |
 
 **Case** = the form that shows a noun's **grammatical role**. In English, **only pronouns** show it:
 
@@ -52,7 +52,8 @@ A word's **part of speech** (POS) determines **where it can go in a sentence** a
 | Accusative | object | *her, him, **me*** |
 | Genitive | possessor | *her, his, my* |
 
-In **Latin** and **Russian**, *all* nouns inflect for case (WALS feature 51A). **Automatic POS tagging** (e.g. spaCy's displaCy demo) labels every word's POS; it's the first step of most NLP.
+- In **Latin** and **Russian**, *all* nouns inflect for case (WALS feature 51A; WALS = World Atlas of Language Structures).
+- **Automatic POS tagging** (e.g. spaCy's displaCy demo) labels every word's POS; it's the first step of most NLP.
 
 ## Content vs. function words
 
@@ -61,20 +62,36 @@ In **Latin** and **Russian**, *all* nouns inflect for case (WALS feature 51A). *
 | Categories | nouns, verbs, adjectives, adverbs | pronouns, determiners, conjunctions, prepositions, modals |
 | Paraphrase meaning? | easy (*cat*) | very hard (*the, every, would*) |
 | New ones? | all the time (*monoamorous*, *DM*) | rare, but it happens: conjunction ***slash*** ("You slash I will do it") |
+| Frequency | mostly rare | the most frequent words (*the* is #1) |
 
-*The* is the most common English word. Some words **straddle** the line: *want, cause, take (a bath)*.
+Some words **straddle** the line: *want, cause, take (a bath)*.
 
 ## Inflection
-**Inflection** = a word changes form to fit its **grammatical context** but **stays the same POS**: *dog→dogs* (plural), *walk→walked* (past), *walk→walks* (3rd-person singular present), *she→her* (accusative; inflection of nouns/pronouns for case is also called **declension**).
+**Inflection** = a word changes form to fit its **grammatical context** but **stays the same word and POS** (the same word in a different outfit):
+
+| Form | Base | What changed |
+|---|---|---|
+| *dogs* | *dog* | plural |
+| *walked* | *walk* | past tense |
+| *walks* | *walk* | 3rd-person singular present |
+| *her* | *she* | accusative case (case inflection is also called **declension**) |
 
 | Kind | How | Examples |
 |---|---|---|
-| **Concatenative** (most common) | **add an affix** | *cat→cats*, *walk→walked*. **English plurals = concatenative suffix** |
+| **Concatenative** (most common) | **add an affix** (a piece attached to the word, like *-s* or *-ed*): "chain it on" | *cat→cats*, *walk→walked*. **English plurals = concatenative suffix** |
 | **Ablaut** (non-concatenative) | **change the vowel** | *man/men, woman/women; sing/sang, eat/ate* |
-| **Suppletion** (non-concatenative) | **replace the whole root** | ***good/better/best***; *be/am/was* |
+| **Suppletion** (non-concatenative) | **replace the whole root** with a substitute form | ***good/better/best***; *be/am/was* |
 
-- Irregular forms cluster on **frequent words** (*to be* = most common verb; *good*). Maybe you must **hear a form often enough to preserve it**: old ablaut pasts **vanished on rare verbs** (the past of *help* was ***holp***). Ongoing: *dived* vs. *dove*.
-- **French inflects more**: determiners match noun gender/number (*le chat* the.MASC cat, *la maison* the.FEM house, *les chats* the.PL cat.PL); verbs mark person, number, tense, conditionality (*J'aimerais* like.1SG.COND); adjectives agree (*le beau chat*, *la belle maison*).
+- **Irregulars cluster on frequent words** (*to be* = most common verb; *good*): maybe you must **hear a form often enough to preserve it**.
+- Old ablaut pasts **vanished on rare verbs**: the past of *help* used to be ***holp***. Still varying today: *dived* vs. *dove*.
+
+**French inflects more than English:**
+
+| Part of speech | Inflects for | Example |
+|---|---|---|
+| Determiner | the noun's gender + number | *le chat* (the.MASC cat), *la maison* (the.FEM house), *les chats* (the.PL cat.PL) |
+| Verb | person, number, tense, conditionality | *J'aimerais* (like.1SG.COND = "I would like") |
+| Adjective | the noun's gender + number | *le beau chat*, *la belle maison* |
 
 ## Derivation
 **Derivation** = make a **new word** by changing a root's **meaning or POS**.
@@ -87,13 +104,16 @@ In **Latin** and **Russian**, *all* nouns inflect for case (WALS feature 51A). *
 | *-ness* | Adj → N | *silly → silliness* |
 | *-ly* | Adj → Adv | *quick → quickly* |
 
-Practice (root, POS, affix → result):
-- *winterize*: *winter* (N) + *-ize* → V
-- *clarify*: *clear* (Adj) + *-ify* → V (root changes to *clar-*)
-- *I will **box** the supplies*: *box* (N) → V with **no affix**
-- *a guitar **pick***: *pick* (V) → N with **no affix**
-- *antiqueness*: *antique* (Adj) + *-ness* → N
-- *antiquity*: *antique* (Adj) + *-ity* → N
+Practice (find the root, its POS, the affix, and the result):
+
+| Word | Root (POS) | Affix | Result | Note |
+|---|---|---|---|---|
+| *winterize* | *winter* (N) | *-ize* | V | |
+| *clarify* | *clear* (Adj) | *-ify* | V | root changes to *clar-* |
+| *I will **box** the supplies* | *box* (N) | none | V | POS change with **no affix** |
+| *a guitar **pick*** | *pick* (V) | none | N | POS change with **no affix** |
+| *antiqueness* | *antique* (Adj) | *-ness* | N | |
+| *antiquity* | *antique* (Adj) | *-ity* | N | root changes to *antiqu-* |
 
 | | Inflectional | Derivational |
 |---|---|---|
@@ -102,36 +122,47 @@ Practice (root, POS, affix → result):
 | Position | **outermost** | closer to the root |
 
 ## Morphemes
-**Morpheme** = smallest piece of a word with a (somewhat consistent) meaning/function; **can't be divided further**.
-- **Free**: can stand alone (*car, tall, motion, wish, do, I*).
-- **Bound**: can't stand alone (*-ing, un-, -s, -ed, re-, de-, -ize, -n't*).
+**Morpheme** = smallest piece of a word with a (somewhat consistent) meaning or function; it **can't be divided further**.
+
+| Type | Definition | Examples |
+|---|---|---|
+| **Free** | can stand alone as a word | *car, tall, motion, wish, do, I* |
+| **Bound** | can't stand alone | *-ing, un-, -s, -ed, re-, de-, -ize, -n't* |
+
+Practice exam: *-es* in *cranberries* is **bound + inflectional**; *-ness* is **bound + derivational**.
 
 **How meaningful are morphemes?** The slides' edge cases:
-- *blue+berry, black+berry*: both parts meaningful.
-- *goose+berry, straw+berry*: the first part is a free word but adds no clear meaning.
-- *rasp+berry, **cran**+berry*: the first part never occurs alone. These are **cranberry morphemes**: bound pieces found in only one word.
-- *under+stand*: two free morphemes, but the meaning isn't "stand under."
-- *re+pay* (transparent) vs. *re+pair* (not "pair again") vs. *re+ceive, de+ceive, per+ceive*: *-ceive* recurs as a form, but has no statable meaning.
-- Clean splits (note spelling changes): *puffin+s, notic+ing, lazi+ness, silli+ness, walk+ed, nation+al+it+ies, natur+al+iz+ation, pulver+ize+s* (*pulver* = bound root).
+
+| Example | What it shows |
+|---|---|
+| *blue+berry, black+berry* | both parts free and meaningful |
+| *goose+berry, straw+berry* | first part is a free word but adds no clear meaning |
+| *rasp+berry, **cran**+berry* | first part never occurs alone: **cranberry morphemes** (bound, found in only one word) |
+| *under+stand* | two free morphemes, but the meaning isn't "stand under" |
+| *re+pay* vs. *re+pair* | transparent "pay again" vs. not "pair again" |
+| *re+ceive, de+ceive, per+ceive* | *-ceive* recurs as a form, but has no statable meaning |
+| *puffin+s, notic+ing, lazi+ness, silli+ness, walk+ed, nation+al+it+ies, natur+al+iz+ation, pulver+ize+s* | clean splits (note spelling changes); *pulver* = a bound root |
 
 > [!example]- Bonus: "unpaired words" story (Jack Winter, *The New Yorker*, 1994)
 > Built from words whose negative exists but the positive doesn't: *I was very **chalant**... appear **gruntled** and **consolate**... hair **kempt**, clothing **shevelled**, moved in a **gainly** way... manners couldn't be **peccable**... she was **committal**... she **requited** it.* The joke works because *dis-/un-/in-* are obviously separate morphemes, so we "expect" a base form that doesn't exist (a cranberry-like bound root).
 
 ## Word structure
-A typical word = **root** (usually free) + **derivational affixes** (bound) + **inflectional affixes** (bound, **outermost**).
-*nationalizes* = *nation* (free root, N) + *-al* (derivational → Adj) + *-ize* (derivational → V) + *-s* (inflectional, 3sg).
+A typical word = **root** (usually free) + **derivational affixes** + **inflectional affixes** (outermost):
+
+*nation* (root, N) → *nation**al*** (derivational, → Adj) → *national**ize*** (derivational, → V) → *nationalize**s*** (inflectional, 3sg)
+
 
 | Affix | Position | Example |
 |---|---|---|
-| Prefix | before | ***re**pay* |
-| Suffix | after | *pay**ing*** |
-| Circumfix | both sides at once | ***en**light**en*** |
-| Infix | inside | none in English except *abso-**effing**-lutely* |
+| **Prefix** | before the root | ***re**pay* |
+| **Suffix** | after the root | *pay**ing*** |
+| **Circumfix** | both sides at once | ***en**light**en*** |
+| **Infix** | inside the root | none in English except *abso-**effing**-lutely* |
 
 (WALS feature 26A maps prefixing vs. suffixing across languages.)
 
 ### Words have tree structure
-**Key idea:** morphemes aren't "beads on a string"; they're **hierarchically structured** (trees). Each affix combines with a unit of a specific category.
+**Key idea:** morphemes aren't "beads on a string"; they're **hierarchically structured** (trees). Each affix combines with a unit of a specific category. In the trees, **AFF** = affix.
 
 ```tikz
 \usetikzlibrary{arrows.meta}
@@ -164,7 +195,7 @@ A typical word = **root** (usually free) + **derivational affixes** (bound) + **
 \end{document}
 ```
 
-Rules: *-al* needs a **noun** (→ Adj); *-ize* needs an **adjective or noun** (→ V); *-ation* needs a **verb** (→ N). So:
+The rules: *-al* needs a **noun** (→ Adj); *-ize* needs an **adjective or noun** (→ V); *-ation* needs a **verb** (→ N). So:
 - ✓ *nationalize*, *nationalization* (*-ation* attaches to the verb *nationalize*)
 - ✗ \**nationation*, \**nationational*: *-ation* can't attach to the noun *nation*
 - ✗ \**nationizeal*: *-al* can't attach to a verb
@@ -233,12 +264,16 @@ Rules: *-al* needs a **noun** (→ Adj); *-ize* needs an **adjective or noun** (
 
 (a) is the real meaning (= catches fire). Because people misread it as (b), English **switched to *flammable***. "Can easily become inflamed" = tree **(a)**, where *inflame* is a Verb node.
 
-| Ambiguity type | Example |
-|---|---|
-| **Lexical** (one word, two meanings) | *bank* (river / financial) |
-| **Structural, in a word** | *unlockable* |
-| **Structural, in a phrase** | *American art teacher*: [[American art] teacher] = teaches American art; [American [art teacher]] = an art teacher who is American |
-| **Structural, in a sentence** | *Pope's Baby Steps on Gays* (see [[#Ambiguity headlines]]) |
+Ambiguity happens at every level:
+
+| Type | Example | Meaning 1 | Meaning 2 |
+|---|---|---|---|
+| **Lexical** (one word, two meanings) | *bank* | side of a river | financial institution |
+| **Structural, inside a word** | *unlockable* | `[[un-lock] -able]` can be unlocked | `[un- [lock-able]]` can't be locked |
+| **Structural, inside a phrase** | *American art teacher* | `[[American art] teacher]` teaches American art | `[American [art teacher]]` an art teacher who is American |
+| **Structural, inside a sentence** | *Pope's Baby Steps on Gays* | the Pope's baby **steps on** gays | the Pope's **baby steps** (small progress) on gays |
+
+(More sentence examples in [[#Ambiguity headlines]].)
 
 ## New words (neologisms)
 New words appear constantly, mostly **content words** (*monoamorous*), rarely function words (*slash*). **The dictionary isn't the authority** on what's a word; it follows what people do (*deadass, eyebleach, yeet, ragebait, doomscroll, enshittification*).
@@ -258,38 +293,47 @@ New words appear constantly, mostly **content words** (*monoamorous*), rarely fu
 **Tiffany lawsuit**: Costco sold "Tiffany" rings, arguing the name had been genericized to mean a pronged, raised stone setting. Tiffany said this cheapened its brand. Tiffany won one round, Costco appealed, and they settled.
 
 > [!warning] ⚠️ Classifying the slang words (the slides list them but don't classify them)
-> - **Compound** (2 whole words): ***brainrot***, *doomscroll*, *ragebait*, *rawdog*, *babygirl*, *girl math*, *short king*, *dumpster fire*, *fancam*, *zoom bomb*, *hashtag*, *nepo baby*
-> - **Derivation**: ***enshittification*** (*en-…-ify-cation*), *unserious*, *yassify*, *unfriend*, *-splaining*, *-shaming*
-> - **Blend** (parts of 2 words): ***Brexit*** (Britain+exit), *covidiot*, *mansplain*, *cronut*, *techlash*, *humblebrag*, *refudiate*, *hacktivist*
-> - **Clipping** (1 word cut down): ***rizz*** (cha**ris**ma), *sus*, *vax*, *nepo*, *fam*
-> - **Acronym**: *NFT, FOMO, YOLO, MOOC, WAP*
-> - **POS change with no affix**: ***clock*** (N→V), *ghost* (N→V)
-> - **Old word, new meaning**: *slop, brat, hallucination, tweet, cloud*
-> - **Phrases, not word-formation**: *hold space, locked in, let someone cook, it's giving, 6-7*
+> | Process | Words |
+> |---|---|
+> | **Compound** (2 whole words) | ***brainrot***, *doomscroll*, *ragebait*, *rawdog*, *babygirl*, *girl math*, *short king*, *dumpster fire*, *fancam*, *zoom bomb*, *hashtag*, *nepo baby* |
+> | **Derivation** | ***enshittification*** (*en-…-ify-cation*), *unserious*, *yassify*, *unfriend*, *-splaining*, *-shaming* |
+> | **Blend** (parts of 2 words) | ***Brexit*** (Britain+exit), *covidiot*, *mansplain*, *cronut*, *techlash*, *humblebrag*, *refudiate*, *hacktivist* |
+> | **Clipping** (1 word cut down) | ***rizz*** (cha**ris**ma), *sus*, *vax*, *nepo*, *fam* |
+> | **Acronym** | *NFT, FOMO, YOLO, MOOC, WAP* |
+> | **POS change, no affix** | ***clock*** (N→V), *ghost* (N→V) |
+> | **Old word, new meaning** | *slop, brat, hallucination, tweet, cloud* |
+> | **Phrases, not word-formation** | *hold space, locked in, let someone cook, it's giving, 6-7* |
 
 > [!example]- American Dialect Society Words of the Year (full slide lists)
-> - **2025** *slop* (ragebait, clock [verb], that's AI, chopped, 6-7, reheat nachos)
-> - **2024** *rawdog* (locked in, unserious, brainrot, brat, hold space)
-> - **2023** *enshittification* (ceasefire, babygirl, let someone cook, (derogatory), era, girl [dinner/math], millennial pause, hallucination)
-> - **2022** *-ussy* (Dark Brandon, quiet quitting, long-termism, nepo baby, it's giving, short king, -verse, chronically online, rizz)
-> - **2021** *insurrection* (antiwork, Big Lie, Great Resignation, Long Covid, Omicron, variant, vax, boosted, NFT, bussin', tone indicator, vibe, the ___ urge to, stonk, supply chain, yassify)
-> - **2020** *covid* (abolish/defund, dissent collar, freedumb, doomscrolling, fancam, sus, zoom fatigue, zoom bomb, covidiot, contact tracing, WAP, essential worker)
-> - **2019** *(my) pronouns* (ok boomer, plant-based, stan, Zoomer, Nobody:/Me:, quid pro quo, hot girl summer, VSCO girl, the squad)
-> - **2018** *tender-age shelter* (yeet, blue wave, nationalist, Individual 1, techlash, #nottheonion)
-> - **2017** *fake news* (alternative facts, #MeToo, persisterhood, take a knee, emergency podcast, shitpost, shooketh, unicorn, askhole, avocado toast)
-> - **2016** *dumpster fire* (woke, normalize, post-truth, deplorables, nasty woman, fam, -exit (Brexit), bigly, #blackgirlmagic, gaslight, slay, #OscarsSoWhite)
-> - **2015** *singular they* (ghost, mic drop, microaggression, shade, adulting, squad, yass, ammosexual, dadbod, trigger warning, AF, lit, Netflix & chill, swipe right/left, on fleek)
-> - **2014** *#BlackLivesMatter* (bae, columbusing, even ["I can't even"], ebola, basic, bye Felicia, salty, selfie stick, normcore, thirsty, manspreading)
-> - **2013** *because* [preposition: "because linguistics"] (slash, twerk, Obamacare, selfie, struggle bus, catfish, sharknado, underbutt, binge-watch, drone, -shaming, -splaining, cronut)
-> - **2012** *hashtag* (YOLO, fiscal cliff, Gangnam style, -pocalypse, hatewatching, mansplain, feels, ratchet, MOOC, cray-cray, binders full of women, meggings)
-> - **2011** *occupy* (FOMO, humblebrag, the 99%, tablet, kardash, put a bird on it, planking, job creator, cloud, tiger mother, brony)
-> - **2010** *app* (nom, Wikileaks, trending, prehab, refudiate, hacktivist, Obamacare, corn sugar, ironic mustache)
-> - **2009** *tweet* (H1N1, birther, blog, public option, rogue, un- [unfriend, unfollow], sea kitten, charging station, fail, sexting, death panel)
+> | Year | Word of the Year | Runners-up |
+> |---|---|---|
+> | 2025 | *slop* | ragebait, clock [verb], that's AI, chopped, 6-7, reheat nachos |
+> | 2024 | *rawdog* | locked in, unserious, brainrot, brat, hold space |
+> | 2023 | *enshittification* | ceasefire, babygirl, let someone cook, (derogatory), era, girl [dinner/math], millennial pause, hallucination |
+> | 2022 | *-ussy* | Dark Brandon, quiet quitting, long-termism, nepo baby, it's giving, short king, -verse, chronically online, rizz |
+> | 2021 | *insurrection* | antiwork, Big Lie, Great Resignation, Long Covid, Omicron, variant, vax, boosted, NFT, bussin', tone indicator, vibe, the ___ urge to, stonk, supply chain, yassify |
+> | 2020 | *covid* | abolish/defund, dissent collar, freedumb, doomscrolling, fancam, sus, zoom fatigue, zoom bomb, covidiot, contact tracing, WAP, essential worker |
+> | 2019 | *(my) pronouns* | ok boomer, plant-based, stan, Zoomer, Nobody:/Me:, quid pro quo, hot girl summer, VSCO girl, the squad |
+> | 2018 | *tender-age shelter* | yeet, blue wave, nationalist, Individual 1, techlash, #nottheonion |
+> | 2017 | *fake news* | alternative facts, #MeToo, persisterhood, take a knee, emergency podcast, shitpost, shooketh, unicorn, askhole, avocado toast |
+> | 2016 | *dumpster fire* | woke, normalize, post-truth, deplorables, nasty woman, fam, -exit (Brexit), bigly, #blackgirlmagic, gaslight, slay, #OscarsSoWhite |
+> | 2015 | *singular they* | ghost, mic drop, microaggression, shade, adulting, squad, yass, ammosexual, dadbod, trigger warning, AF, lit, Netflix & chill, swipe right/left, on fleek |
+> | 2014 | *#BlackLivesMatter* | bae, columbusing, even ["I can't even"], ebola, basic, bye Felicia, salty, selfie stick, normcore, thirsty, manspreading |
+> | 2013 | *because* [preposition: "because linguistics"] | slash, twerk, Obamacare, selfie, struggle bus, catfish, sharknado, underbutt, binge-watch, drone, -shaming, -splaining, cronut |
+> | 2012 | *hashtag* | YOLO, fiscal cliff, Gangnam style, -pocalypse, hatewatching, mansplain, feels, ratchet, MOOC, cray-cray, binders full of women, meggings |
+> | 2011 | *occupy* | FOMO, humblebrag, the 99%, tablet, kardash, put a bird on it, planking, job creator, cloud, tiger mother, brony |
+> | 2010 | *app* | nom, Wikileaks, trending, prehab, refudiate, hacktivist, Obamacare, corn sugar, ironic mustache |
+> | 2009 | *tweet* | H1N1, birther, blog, public option, rogue, un- [unfriend, unfollow], sea kitten, charging station, fail, sexting, death panel |
 
 ## Word frequency and length (corpus data)
-A **corpus** = a large body of real text. Examples: the **Brown Corpus** (1M words of edited American English) and 1M words of Reddit comments.
+A **corpus** = a large body of real text. The lecture used the **Brown Corpus** (1M words of edited American English) and 1M words of Reddit comments.
 
-**Zipf's Frequency Law**: there are **a few very frequent words** (function words) and **very many infrequent words** (content words). It's a **power law** (long tail), not a bell curve.
+
+| Pattern | Statement | Shape |
+|---|---|---|
+| **Zipf's Frequency Law** | **a few very frequent words** (function words), **very many infrequent words** (content words) | **power law**: frequency plunges after the top few words, then flattens into a long tail. **Not** a bell curve |
+| **Zipf's Brevity Law** | **more frequent words are shorter** (*the, of, a* vs. *oversimplification, mirthless*). **Language is efficient**: the words used most cost the least effort | negative frequency–length relationship |
+| **Word length** | the most common length of an English word **type** (distinct word) is **7 characters** | roughly a **bell curve** |
 
 ```tikz
 \definecolor{cblu}{RGB}{31,90,200}
@@ -309,10 +353,13 @@ A **corpus** = a large body of real text. Examples: the **Brown Corpus** (1M wor
 \end{document}
 ```
 
-- Brown corpus top 5: *the* (6.97%), *of, and, to, a*. Reddit top 5: *the* (3.34%), *i, to, a, and*.
-- Reddit ranks *i, my, you* high; Brown ranks *he, his, was* high. **Genre matters.**
+| Rank | Brown (edited prose) | Reddit (comments) |
+|---|---|---|
+| 1 | *the* (6.97%) | *the* (3.34%) |
+| 2–5 | *of, and, to, a* | *i, to, a, and* |
+| Notable high ranks | *he, his, was* | *i, my, you* |
 
-**Word length roughly follows a bell curve.** Length of word **types** (distinct words) in Brown:
+Genre matters: conversation puts *I/my/you* near the top.
 
 ```tikz
 \definecolor{cgrn}{RGB}{60,170,80}
@@ -331,50 +378,113 @@ A **corpus** = a large body of real text. Examples: the **Brown Corpus** (1M wor
 \end{document}
 ```
 
-- **Most common length of an English word type ≈ 7 characters.** (Counting tokens instead gives shorter lengths, because the frequent words are short.)
-
-**Zipf's Brevity Law**: **more frequent words are shorter** (*the, of, a* top the chart; *oversimplification, mirthless* sit at the bottom). **Language is efficient.**
-- **Why log-scale the frequency axis?** Frequencies span orders of magnitude (*the* ≈ 70,000 per million; *mirthless* ≈ 1). On a linear axis, almost every word would be squashed at zero.
+- **Types vs. tokens**: counting tokens (every occurrence) gives **shorter** typical lengths, because the frequent words are short.
+- **Why log-scale the frequency axis** (on the slide's brevity-law plot)? Frequencies span orders of magnitude (*the* ≈ 70,000 per million; *mirthless* ≈ 1). On a linear axis almost every word would be squashed at zero.
 
 ## Morphological typology (word-to-morpheme ratio)
+Languages differ in **how many morphemes are packed into a word** and **how many meanings each morpheme carries**.
 
-| Type | Definition | Example |
+**Reading glosses.** In the example tables below, the top row is the original, the middle row is the morpheme-by-morpheme gloss, and the bottom row is plain English. Grammatical labels used in glosses:
+
+| Label | Meaning |
+|---|---|
+| **1SG / 3SG / 1PL** | 1st person singular / 3rd person singular / 1st person plural |
+| **NOM / ACC** | nominative (subject) / accusative (object) |
+| **LOC** | locative ("in/at") |
+| **POSS** | possessive |
+| **NEG** | negation |
+| **DEM** | demonstrative ("this/that") |
+| **PL** | plural |
+| **MASC / FEM** | masculine / feminine |
+| **ASP** | aspect: how an action unfolds (completed vs. ongoing) |
+| **AOR** | aorist: completed/habitual action |
+| **IMP** | imperfective: ongoing action |
+| **COND** | conditional |
+| **PRES** | present |
+| **CL** | classifier: a word required between a number and a noun |
+| **IND.INTR** | indicative intransitive |
+
+| Type | Language | Key idea |
 |---|---|---|
-| **Isolating**: Yoruba (Nigeria) | little inflection; **~1 morpheme per word** | *mo wò èyí, wò èyí, mo kò rí ìyá mi* = 1SG look DEM, look DEM, 1SG NEG see mother 1SG.POSS ("I looked here, I looked there, but I did not see my mother") |
-| **Agglutinating**: Turkish | root + **string of affixes, each = one meaning** | *ev-de* house-LOC; *çay-ı* tea-ACC; *yap-ar* make-AOR (AOR = completed/habitual action). ***ev-imiz-de*** = house-our-in "in our house" |
-| **Polysynthetic** ("incorporating"): Yupik (Alaska) | **very long words**, root + many bound morphemes (each may carry several meanings); **a whole sentence can be one word** | *Mangtegha-ghlla-ngllagh-yug-tu-kut* = house-big-make-want-IND.INTR.1PL ("We want to make a big house") |
-| **Fusional** ("synthetic"): French | one affix **fuses several meanings** | *était* = "be" + 3rd person + singular + imperfective in one form |
-| **English** ("analytic") | **between isolating and agglutinating**: a little affixing (*kids, walked*), but much is carried by **free words** (prepositions) | *in our house* = 3 words vs. Turkish *ev-imiz-de* = 1 word |
+| **Isolating** | Yoruba (Nigeria) | each word stands alone: **~1 morpheme per word**, little inflection |
+| **Agglutinating** | Turkish | root + affixes glued on like beads, **one meaning per affix** |
+| **Polysynthetic** ("incorporating"; *poly* = many) | Yupik (Alaska) | **very long words**: root + many bound morphemes; **a whole sentence can be one word** |
+| **Fusional** ("synthetic") | French | **several meanings fused into one affix**, so they can't be pulled apart |
+| **Analytic** | English | **between isolating and agglutinating**: a little affixing (*kids, walked*), but much is carried by **free words** (prepositions) |
 
-Agglutinating vs. fusional: in Turkish you can point to the "our" piece and the "in" piece separately. In French *-ait*, person, number, and aspect can't be pulled apart.
+**Isolating (Yoruba)**: "I looked here, I looked there, but I did not see my mother." Every word is a single morpheme.
+
+| mo | wò | èyí, | wò | èyí, | mo | kò | rí | ìyá | mi |
+|---|---|---|---|---|---|---|---|---|---|
+| 1SG | look | DEM | look | DEM | 1SG | NEG | see | mother | 1SG.POSS |
+| I | looked | here | looked | there | I | not | see | mother | my |
+
+**Agglutinating (Turkish)**: "Aytül always makes the tea in our family." Each hyphen marks a separate affix with one job.
+
+| Bizim | ev-de | çay-ı | her zaman | Aytül | yap-ar |
+|---|---|---|---|---|---|
+| our | house-LOC | tea-ACC | always | Aytül | make-AOR |
+| our | in the house | the tea (object) | always | Aytül | makes (habitually) |
+
+The practice-exam word *ev-imiz-de* "in our house" works the same way: three pieces, three meanings.
+
+| ev | -imiz | -de |
+|---|---|---|
+| house | our | in |
+
+**Polysynthetic (Yupik)**: "We want to make a big house." The whole sentence is **one word**.
+
+| Mangtegha | -ghlla | -ngllagh | -yug | -tu-kut |
+|---|---|---|---|---|
+| house | big | to make | to want | IND.INTR.1PL |
+| house | big | make | want | we (statement) |
+
+**Fusional (French)**: *était* "was" (from *Le sandwich que Sam a mangé était délicieux*, "The sandwich that Sam ate was delicious").
+
+| ét- | -ait |
+|---|---|
+| be | 3SG.IMP |
+| be | 3rd person + singular + imperfective, all fused into one ending |
+
+**Analytic (English) vs. agglutinating (Turkish)**:
+
+| Language | Form | Pieces |
+|---|---|---|
+| English | *in our house* | **3 separate words** |
+| Turkish | *ev-imiz-de* | **1 word** (house + our + in) |
 
 ## Appendix topics
-- **Reduplication**: repeat a root to change meaning. Often marks "distribution, plurality, repetition, customary activity, increase of size, added intensity, continuance" (Sapir 1921). Limited in English (*a red red rose*; "I'll bring the **salad salad**" = the prototypical salad). Productive in other languages (WALS feature 27A). **Iconic: "more is more."**
-- **Compounds (Glass's research)**: a compound doesn't state how **head** and **modifier** relate. *water jug* = holds water; *water spinach* = grows in wet conditions (not really compositional).
-  - **Artifacts** (made by humans for a purpose, e.g. *jug*) take modifiers about their **use/creation**.
-  - **Natural kinds** (exist without humans, e.g. *spinach*) take modifiers about **appearance, habitat, origin**, or borrowed modifiers (an attempt to capture the kind's "essence").
-- **Pumpkin spice latte**: spice FOR pumpkin (pie) or spice OF pumpkin? The compound doesn't say. Starbucks added real pumpkin after "shaming by the Food Babe," who missed the **morphological ambiguity**.
-- **Adjectives as nouns (Glass's research)**: *The old are happier* (plural = **old people**) vs. *The old is never ordinary* (singular/mass = **oldness, old stuff**). The construction is very productive. The two readings come from properties being construable as **predicates of individuals** or as **the abstract thing those individuals share**.
+- **Reduplication**: repeat a root to change meaning. Often marks "distribution, plurality, repetition, customary activity, increase of size, added intensity, continuance" (Sapir 1921). Limited in English (*a red red rose*; "I'll bring the **salad salad**" = the prototypical salad), productive elsewhere (WALS feature 27A). **Iconic: "more is more."**
+- **Compounds (Glass's research)**: a compound doesn't state how its **head** (main noun, usually last) and **modifier** relate. *water jug* = holds water; *water spinach* = grows in wet conditions (not really compositional).
+  - **Artifact** heads (made by humans for a purpose, like *jug*) take modifiers about their **use/creation**.
+  - **Natural-kind** heads (exist without humans, like *spinach*) take modifiers about **appearance, habitat, origin**, or borrowed ones (an attempt to capture the kind's "essence").
+- **Pumpkin spice latte**: spice FOR pumpkin (pie), or spice OF pumpkin? The compound doesn't say. Starbucks added real pumpkin after "shaming by the Food Babe," who missed the **morphological ambiguity**.
+- **Adjectives as nouns (Glass's research)**: *The old are happier* (plural = **old people**) vs. *The old is never ordinary* (singular/mass = **oldness, old stuff**). The construction is very productive. Two readings, because a property can be construed as a **predicate of individuals** or as **the abstract thing those individuals share**.
 
 ---
 
 # Unit 6 — Syntax
 
-**Syntax** = the study of **word order**: which combinations of words are **grammatical** (possible) vs. **ungrammatical** (\*, impossible). Its rules let a **finite** set of words express **infinitely** many ideas.
-- *The student read the book.* ✓ / \**Student the read book the.*
-- *I threw the ball.* ✓ / \**The ball threw I.* / \**Her saw it.* (wrong case)
+**Syntax** = the study of **word order**: which combinations of words are **grammatical** (possible) vs. **ungrammatical** (marked \*). Its rules let a **finite** set of words express **infinitely** many ideas.
+- ✓ *The student read the book.* / ✗ \**Student the read book the.*
+- ✓ *I threw the ball.* / ✗ \**The ball threw I.* / ✗ \**Her saw it.* (wrong case)
 
 ## Syntax vs. semantics
-- *Colorless green ideas sleep furiously* (Chomsky): **grammatical but meaningless**.
-- *Me love dog* / *Me eat cookie*: **ungrammatical but (somewhat) meaningful**.
-- So Chomsky argued **syntax and semantics are independent**.
-- But where is the line between **ungrammatical** and **nonsensical**? *?The toothbrush is pregnant. ?The shoe poured the chair.* There's no clear answer; it's as much theoretical as empirical.
+
+| Sentence | Grammatical? | Meaningful? |
+|---|---|---|
+| *Colorless green ideas sleep furiously* (Chomsky) | ✓ | ✗ |
+| *Me love dog* / *Me eat cookie* | ✗ | ✓ (somewhat) |
+| *?The toothbrush is pregnant* / *?The shoe poured the chair* | unclear | unclear |
+
+So Chomsky argued **syntax and semantics are independent**. But where is the line between **ungrammatical** and **nonsensical**? There's no clear answer; it's as much theoretical as empirical.
 
 ## Syntactic facts about English (other languages differ!)
+A **long-distance (non-local) dependency** = two words that belong together (e.g. a verb and its object) but are **separated** in the string. "___" marks the gap where the object "belongs."
 
 | Sentence | Phenomenon |
 |---|---|
-| *The student read the book.* | declarative = **SVO** |
+| *The student read the book.* | declarative = **SVO** (Subject–Verb–Object) |
 | *The book, the student read. The paper, she didn't.* | **object fronting**, only in **contrastive** contexts |
 | *The clever student read the interesting book.* | **adjective before noun** |
 | *Did the student read the book?* | **yes/no (polar) question**: **do-support** (*did* appears) + **inversion** (it goes to the front) |
@@ -386,51 +496,66 @@ Agglutinating vs. fusional: in Turkish you can point to the "our" piece and the 
 | *What book did the student read ___?* | **object wh-question**: long-distance dependency *read* ↔ *what book* |
 | *Which book did which student read ___?* | **multiple wh-question**: only one wh-phrase moves |
 
-- **Long-distance (non-local) dependency** = two words that belong together (verb + its object) but are **separated** in the string. "___" marks the gap.
 - Side note from the lecture: watch for **gender stereotypes in constructed example sentences**.
 
 > [!warning] ⚠️ Agreement as a long-distance dependency
 > *The **key** to the cabinets **is** on the table.* The verb agrees with the head noun ***key*** (singular), not the nearer *cabinets*, so ***key–is*** is a long-distance dependency across *to the cabinets*. Slips like "*...cabinets are*" show the dependency is non-local.
 
 ## Constituents
-Words are **produced linearly** (one after another) but **mentally organized hierarchically** into chunks called **constituents**.
+Words are **produced linearly** (one after another) but **mentally organized hierarchically** into chunks called **constituents**. In a tree, a constituent is any **subtree** (a set of words sharing a parent node).
 
-**Constituency tests** (YES to any → constituent):
-1. **Answers a question**: *Who begins the history of linguistics?* → "The Indian grammarian Panini."
-2. **Sticks together when reordered**: "*The Indian grammarian Panini* begins *the history of linguistics*."
-3. **Can be conjoined**: "*The history of linguistics*, and *scholarship on Sanskrit*, begins with..."
+**Constituency tests** (YES to any → it's a constituent):
 
-*The history of linguistics begins with the Indian grammarian Panini*:
-- ✓ *The history of linguistics*, *of linguistics*, *linguistics*, *The Indian grammarian Panini*, *begins with the Indian grammarian Panini*
-- ✗ *Linguistics begins with the*, *of linguistics begins with*, *begins with the Indian*
+| Test | Example |
+|---|---|
+| 1. **Can it answer a question?** | *Who begins the history of linguistics?* → "The Indian grammarian Panini." |
+| 2. **Does it stick together when you reorder the sentence?** | "*The Indian grammarian Panini* begins *the history of linguistics*." |
+| 3. **Can it be conjoined** with something else? | "*The history of linguistics*, and *scholarship on Sanskrit*, begins with..." |
 
-*The athlete tossed the ball*:
-- ✓ *the athlete*, *the ball*, *tossed the ball*
-- ✗ *the athlete tossed*, *athlete tossed the*, *tossed the*
-
-**Constituents share a parent in the tree: every subtree is a constituent.**
+| Sentence | ✓ Constituents | ✗ Not constituents |
+|---|---|---|
+| *The history of linguistics begins with the Indian grammarian Panini* | *the history of linguistics*, *of linguistics*, *linguistics*, *the Indian grammarian Panini*, *begins with the Indian grammarian Panini* | *linguistics begins with the*, *of linguistics begins with*, *begins with the Indian* |
+| *The athlete tossed the ball* | *the athlete*, *the ball*, *tossed the ball* | *the athlete tossed*, *athlete tossed the*, *tossed the* |
 
 ## Lexical vs. phrasal categories
-- **Lexical** (word-level: Det, N, Adj, TransV, IntransV, Prep) determine a **word's** distribution. Swap within a category, "Mad Libs" style: another noun for *student*, another transitive verb for *read*.
-- **Phrasal** determine a **phrase's** distribution: **NP** (*every book, the red ball, two people*), **VP** (*ran, threw the ball*; may contain an NP), **AdjP** (*very tall, oddly funny*). Swap one NP for another, one VP for another.
+
+| | Lexical | Phrasal |
+|---|---|---|
+| Level | single word | phrase |
+| Examples | Det, N, Adj, TransV, IntransV, Prep | **NP** = noun phrase (*every book, the red ball, two people*), **VP** = verb phrase (*ran, threw the ball*; may contain an NP), **AdjP** (*very tall, oddly funny*) |
+| Determines | a **word's** distribution | a **phrase's** distribution |
+| "Mad Libs" swap | another noun for *student*, another transitive verb for *read* | another NP for *the student*, another VP for *read the book* |
 
 ## Phrase Structure Grammar (Chomsky, ~1950s)
-**Goals:** (1) capture the implicit **generative rules** for making/understanding new sentences; (2) capture both **hierarchical structure** and **linear order**; (3) capture **grammaticality judgments**. Illustrated with a **grammar fragment** (a small toy model).
+Goals:
+1. capture the implicit **generative rules** that let us make and understand brand-new sentences
+2. capture both **hierarchical structure** and **linear word order**
+3. capture **grammaticality judgments** (which sentences are/aren't allowed)
 
-```
-Phrase structure rules (non-terminal nodes)   Lexicon (terminal nodes = words)
-S  -> NP VP                                    Det      -> the, every, a, some
-NP -> (Det) (Adj*) N                           N        -> student, book, forest, reindeer,
-NP -> NP (PP)                                              lunch, evening, game
-PP -> Prep NP                                  TransV   -> throw, want, love, kick, eat, play
-NP -> Pronoun                                  IntransV -> swim, run, laugh, eat, dance
-VP -> TransV NP                                Adj      -> red, blue, beautiful, interesting, tall
-VP -> IntransV                                 Pronoun  -> you, she, he, I, we, they
-VP -> VP PP                                    Prep     -> in, from, of
-```
-- `X -> Y Z` = "an X can be a Y followed by a Z." `( )` = optional. `*` = zero or more.
-- *eat* is both TransV and IntransV.
-- To draw trees: mshang.ca/syntree, LaTeX/Overleaf, or by hand.
+Illustrated with a **grammar fragment** (a small toy model). **Rules** build the category nodes (**non-terminal** nodes); the **lexicon** supplies the words at the bottom (**terminal** nodes).
+
+| Rule | Reads as |
+|---|---|
+| `S -> NP VP` | a sentence = noun phrase + verb phrase |
+| `NP -> (Det) (Adj*) N` | optional determiner, any number of adjectives, then a noun |
+| `NP -> NP (PP)` | a noun phrase, optionally followed by a prepositional phrase (recursive) |
+| `PP -> Prep NP` | preposition + noun phrase |
+| `NP -> Pronoun` | a pronoun alone |
+| `VP -> TransV NP` | transitive verb + its object |
+| `VP -> IntransV` | intransitive verb alone |
+| `VP -> VP PP` | a verb phrase plus a prepositional phrase (recursive) |
+
+| Lexicon category | Words |
+|---|---|
+| Det | *the, every, a, some* |
+| N | *student, book, forest, reindeer, lunch, evening, game* |
+| TransV | *throw, want, love, kick, eat, play* |
+| IntransV | *swim, run, laugh, eat, dance* (*eat* is in both verb lists) |
+| Adj | *red, blue, beautiful, interesting, tall* |
+| Pronoun | *you, she, he, I, we, they* |
+| Prep | *in, from, of* |
+
+Notation: `( )` = optional, `*` = zero or more. Draw trees with mshang.ca/syntree, LaTeX/Overleaf, or by hand.
 
 **Practice:**
 - *Some reindeer eat lunch* = [S [NP [Det some] [N reindeer]] [VP [TransV eat] [NP [N lunch]]]]
@@ -508,7 +633,7 @@ VP -> VP PP                                    Prep     -> in, from, of
 \end{document}
 ```
 
-Check a tree by asking: does every real constituent (*the author, the book, wrote the book*) get its own node? Only **D** passes.
+To check a tree, ask: does every real constituent (*the author, the book, wrote the book*) get its own node? Only **D** passes.
 
 ### Properties of PS rules
 
@@ -523,7 +648,7 @@ Check a tree by asking: does every real constituent (*the author, the book, wrot
 
 ## Transformations / movement
 PS rules only build local structure, so **long-distance dependencies** need extra rules: **transformations** or **movement** (a metaphor; it needn't be taken literally).
-- *What did you eat ___?*: *what* is at the front, but it's conceptually the **direct object of *eat***.
+- *What did you eat ___?*: *what* sits at the front but is conceptually the **direct object of *eat***.
 - *The book that I read ___ is on the table*: *the book* is the **subject** of *is* but also the **object of *read***.
 
 ```tikz
@@ -558,8 +683,9 @@ PS rules only build local structure, so **long-distance dependencies** need extr
 
 ## Dependency grammar
 Used in **NLP** (natural language processing); demos: Stanford CoreNLP (corenlp.run), spaCy displaCy.
-- **Origin**: French linguist **Lucien Tesnière**, inspired by **Latin and Slavic**, which have **free word order** and mark roles with **case**. *Puella canem amat / Canem puella amat / Amat puella canem* all mean "The girl loves the dog" (*puella* = girl.NOM, *canem* = dog.ACC, *amat* = loves). The order is chosen by discourse factors (**given before new**). These languages need a framework that allows that flexibility.
-- **Definition**: syntax as **binary, asymmetric, typed** relations between pairs of **POS-tagged** words: a **head** → a **dependent**.
+- **Origin**: French linguist **Lucien Tesnière**, inspired by **Latin and Slavic**, which have **free word order** and mark each noun's role with **case**.
+- **Example**: *Puella canem amat / Canem puella amat / Amat puella canem* all mean "The girl loves the dog" (*puella* = girl.NOM, *canem* = dog.ACC, *amat* = loves). The order is chosen by discourse factors (**given before new**), so these languages need a framework that allows that flexibility.
+- **Definition**: syntax as **binary, asymmetric, typed** relations between pairs of **POS-tagged** words. In each relation, the **head** is the word that governs, and the **dependent** is the word that attaches to it (an arrow points from head to dependent).
 
 ```tikz
 \usetikzlibrary{arrows.meta}
@@ -589,10 +715,10 @@ Used in **NLP** (natural language processing); demos: Stanford CoreNLP (corenlp.
 | **Asymmetric** | arrows have direction: *reindeer* is NSUBJ of *played*, not vice versa |
 | **Typed** | each arc has a type: NSUBJ (subject) ≠ OBJ/DOBJ (object) |
 
-The **verb is the root** (depends on nothing). Syntactically, it determines **how many nouns** the sentence has; semantically, it describes the **main event** the nouns take part in.
+The **verb is the root**: it depends on nothing. Syntactically, it determines **how many nouns** the sentence has; semantically, it describes the **main event** the nouns take part in.
 
 ### Advantages
-1. **Works for any language and any word order**: the same relations hold, only the arc directions change. That's why it's used for **consistent cross-linguistic representations**: NLP tools for many languages, comparative syntax, and **Universal Dependencies** (Stanford; treebanks in **100+ languages**).
+1. **Works for any language and any word order**: the same relations hold; only the arc directions change. That's why it's used for **consistent cross-linguistic representations**: NLP tools for many languages, comparative syntax, and **Universal Dependencies** (Stanford; treebanks in **100+ languages**).
 
 ```tikz
 \usetikzlibrary{arrows.meta}
@@ -635,7 +761,7 @@ The **verb is the root** (depends on nothing). Syntactically, it determines **ho
 \end{document}
 ```
 
-**Dependency length** = how many words an arc spans. In parsed corpora (newspapers, etc.) across **37 languages**, **short dependencies are more common than random word order would predict**. That's another way language is efficient.
+4. **Shows that language is efficient.** **Dependency length** = how many words an arc spans. In parsed corpora (newspapers, etc.) across **37 languages**, **short dependencies are more common than random word order would predict**.
 
 ```tikz
 \usetikzlibrary{arrows.meta}
@@ -662,73 +788,80 @@ The **verb is the root** (depends on nothing). Syntactically, it determines **ho
 \end{document}
 ```
 
-### Disadvantages
-Dependency grammar does **not** capture a specific language's **word order**, its **grammaticality judgments**, or its **rules** for building grammatical sentences.
+### Phrase structure vs. dependency grammar
 
 | | Phrase Structure | Dependency |
 |---|---|---|
 | Who | Chomsky | Tesnière |
 | Units | phrases (abstract NP/VP nodes) | words + labeled arcs |
-| Word order / grammaticality | **captured** (language-specific) | **not captured** (works for any language) |
+| Word order of a specific language | **captured** (language-specific rules) | **not captured** (works for any language) |
+| Grammaticality judgments / rules for building sentences | **captured** | **not captured** |
 | Long-distance dependencies | need **movement** | just a **longer arc** |
 | Main use | theoretical syntax | **NLP**, cross-linguistic corpora |
 
 ## Ambiguity headlines
-**Structural** (two trees):
-- *Pope's Baby Steps on Gays*: [Pope's baby] **steps on** gays / [Pope's **baby steps**] on gays
-- *MBA Studies Mushroom*: MBA studies **grow fast** / an MBA **studies a mushroom**
-- *Complaints about referees growing ugly*: the **complaints** grow ugly / the **referees** grow ugly
-- *Lawyers give poor free legal advice*: advice to **poor people** / **low-quality** advice
-- *Hospital sued by 7 foot doctors*: 7 **podiatrists** / doctors who are **7 feet tall**
-- *Time for football and meatball stew*: football, and meatball stew / a **football-and-meatball** stew
 
-**Lexical** (word senses): *Iraqi **Head** Seeks **Arms*** (leader seeks weapons / a head seeks limbs).
-
-**Underspecified participation** (one structure, one sense per word, but several ways to take part in the event):
-- *Pillars replaced by alumni*: alumni **funded** the replacement / alumni **are** the new pillars
-- *Include your children when baking cookies*: as helpers / as **ingredients**
-- *Kids make nutritious snacks*: kids **prepare** snacks / kids **are** snacks
-- *Stolen painting found by tree*: found **near** a tree / a tree **found** it
+| Type | Headline | Reading 1 | Reading 2 |
+|---|---|---|---|
+| **Structural** (two trees) | *Pope's Baby Steps on Gays* | [Pope's baby] **steps on** gays | [Pope's **baby steps**] on gays |
+| Structural | *MBA Studies Mushroom* | MBA studies **grow fast** | an MBA **studies a mushroom** |
+| Structural | *Complaints about referees growing ugly* | the **complaints** grow ugly | the **referees** grow ugly |
+| Structural | *Lawyers give poor free legal advice* | advice to **poor people** | **low-quality** advice |
+| Structural | *Hospital sued by 7 foot doctors* | 7 **podiatrists** | doctors who are **7 feet tall** |
+| Structural | *Time for football and meatball stew* | football, and meatball stew | a **football-and-meatball** stew |
+| **Lexical** (word senses) | *Iraqi **Head** Seeks **Arms*** | leader seeks weapons | a head seeks limbs |
+| **Event participation** (one structure, one sense per word) | *Pillars replaced by alumni* | alumni **funded** the replacement | alumni **are** the new pillars |
+| Event participation | *Include your children when baking cookies* | as helpers | as **ingredients** |
+| Event participation | *Kids make nutritious snacks* | kids **prepare** snacks | kids **are** snacks |
+| Event participation | *Stolen painting found by tree* | found **near** a tree | a tree **found** it |
 
 ## Syntactic fieldwork
-Elicit: *Sam ate a sandwich. / Sam did not eat a sandwich. / Sam ate a delicious sandwich. / Did Sam eat a sandwich? / What did Sam eat? / The sandwich that Sam ate was delicious.*
+Elicit these from a speaker of another language: *Sam ate a sandwich. / Sam did not eat a sandwich. / Sam ate a delicious sandwich. / Did Sam eat a sandwich? / What did Sam eat? / The sandwich that Sam ate was delicious.*
 
-Then ask: basic word order? Adj–N order? How are negation and past tense expressed? Are there determiners? What's the word order of polar questions, wh-questions, and relative clauses?
-
-| | Mandarin | French |
+| Question to answer | Mandarin | French |
 |---|---|---|
-| Word order | SVO | SVO (auxiliary + participle: *a mangé*) |
-| Adj–N | Adj **before** N, with *de* (*hǎo-chī de sāmíngzhì*) | Adj **after** N (*sandwich délicieux*) |
+| Basic word order | SVO | SVO (auxiliary + participle: *a mangé*) |
+| Adj–N order | Adj **before** N, with *de* (*hǎo-chī de sāmíngzhì*) | Adj **after** N (*sandwich délicieux*) |
 | Negation | *méi-yǒu* before the verb | *ne…pas* around the auxiliary |
 | Past | **no tense**: aspect marker *le* | *avoir* + participle; *était* (imperfective "was") |
-| Determiners | **none**; *yí-gè* "one-CL" (CL = classifier) | yes: *un, le* (gendered) |
+| Determiners | **none**; *yí-gè* "one-CL" | yes: *un, le* (gendered) |
 | Polar question | particle ***ma*** at the end, no reordering | ***est-ce que*** at the front |
 | Wh-question | *shénme* "what" **stays in place** | wh-word **fronted** (*qu'est-ce que*) |
 | Relative clause | **before** the noun, with *de* | **after** the noun, with *que* |
 
-> [!example]- Full glossed data
-> **Mandarin** (ASP = aspect, CL = classifier, DE = linker)
-> 1. *Sàmǔ chī le yí-gè sāmíngzhì* — Sam eat ASP one-CL sandwich
-> 2. *Sàmǔ méi-yǒu chī yí-gè sāmíngzhì* — Sam not-have eat one-CL sandwich
-> 3. *Sàmǔ chī le yí-gè hǎo-chī de sāmíngzhì* — Sam eat ASP one-CL good-eat DE sandwich
-> 4. *Sàmǔ chī le yí-gè sāmíngzhì ma?* — ... sandwich QUESTION
-> 5. *Sàmǔ chī le shénme?* — Sam eat ASP what
-> 6. *Sàmǔ chī le de sāmíngzhì shì hǎo-chī de* — Sam eat ASP DE sandwich is good-eat DE
+> [!example]- Full glossed data: Mandarin
+> DE = a linking particle (other labels: see the gloss table under Morphological typology).
 >
-> **French**
-> 1. *Sam a mangé un sandwich* — Sam has eaten a sandwich
-> 2. *Sam n'a pas mangé un sandwich* — Sam NEG-has NOT eaten a sandwich
-> 3. *Sam a mangé un sandwich délicieux* — Sam has eaten a sandwich delicious
-> 4. *Est-ce que Sam a mangé un sandwich?* — Is-it that Sam has eaten a sandwich?
-> 5. *Qu'est-ce que Sam a mangé?* — What-is-it that Sam has eaten?
-> 6. *Le sandwich que Sam a mangé était délicieux* — The.MASC.SG sandwich which Sam have.3SG.PRES eaten be.3SG.IMP delicious.MASC.SG
+> | English | Mandarin | Word-by-word |
+> |---|---|---|
+> | Sam ate a sandwich. | *Sàmǔ chī le yí-gè sāmíngzhì* | Sam · eat · ASP · one-CL · sandwich |
+> | Sam did not eat a sandwich. | *Sàmǔ méi-yǒu chī yí-gè sāmíngzhì* | Sam · not-have · eat · one-CL · sandwich |
+> | Sam ate a delicious sandwich. | *Sàmǔ chī le yí-gè hǎo-chī de sāmíngzhì* | Sam · eat · ASP · one-CL · good-eat · DE · sandwich |
+> | Did Sam eat a sandwich? | *Sàmǔ chī le yí-gè sāmíngzhì ma?* | Sam · eat · ASP · one-CL · sandwich · QUESTION |
+> | What did Sam eat? | *Sàmǔ chī le shénme?* | Sam · eat · ASP · what |
+> | The sandwich that Sam ate was delicious. | *Sàmǔ chī le de sāmíngzhì shì hǎo-chī de* | Sam · eat · ASP · DE · sandwich · is · good-eat · DE |
 
-**Methodological questions**: How many examples per phenomenon? Should the speaker help analyze, or only give data? Spoken, written (in which writing system?), or glossed? What language are the questions asked in? How do you know the speaker understood the question as intended?
+> [!example]- Full glossed data: French
+> | English | French | Word-by-word |
+> |---|---|---|
+> | Sam ate a sandwich. | *Sam a mangé un sandwich* | Sam · has · eaten · a · sandwich |
+> | Sam did not eat a sandwich. | *Sam n'a pas mangé un sandwich* | Sam · NEG-has · NOT · eaten · a · sandwich |
+> | Sam ate a delicious sandwich. | *Sam a mangé un sandwich délicieux* | Sam · has · eaten · a · sandwich · delicious |
+> | Did Sam eat a sandwich? | *Est-ce que Sam a mangé un sandwich?* | is-it · that · Sam · has · eaten · a · sandwich |
+> | What did Sam eat? | *Qu'est-ce que Sam a mangé?* | what-is-it · that · Sam · has · eaten |
+> | The sandwich that Sam ate was delicious. | *Le sandwich que Sam a mangé était délicieux* | the.MASC.SG · sandwich · which · Sam · have.3SG.PRES · eaten · be.3SG.IMP · delicious.MASC.SG |
 
-**Ethics, "giving back"**: this matters especially when taking data from **minoritized communities** and then publishing in **paywalled journals** for tenure. Options:
-- Partner with the community on **children's books, educational materials, accessible archives, writing systems, dictionaries**
-- **Documentaries** in the community's own voice (*Talking Black in America*, NC State)
-- Widen access to community-engaged linguistics (**MIT Indigenous Language program**)
+**Methods questions:**
+- How many examples should be elicited per phenomenon?
+- Should the speaker help with the analysis, or only provide data?
+- Spoken, written (in which writing system?), or glossed?
+- What language are the questions asked in?
+- How do you know the speaker is answering the question the way the researcher intends?
+
+**Ethics: "giving back."** This matters especially when a researcher takes data from a **minoritized community**, then publishes in **paywalled journals** for tenure. Ways to give back:
+- partner with the community on **children's books, educational materials, accessible digital archives, writing systems, dictionaries**
+- **documentaries** in the community's own voice (*Talking Black in America*, NC State)
+- widen access to community-engaged linguistics (**MIT Indigenous Language program**)
 
 **Unit review list**: English syntactic phenomena (cross-linguistically) · constituency tests · PS rules · dependency grammar · fieldwork (methods + ethics) · glossed examples · syntax vs. semantics.
 
@@ -736,99 +869,145 @@ Then ask: basic word order? Adj–N order? How are negation and past tense expre
 
 # Unit 7 — Semantics
 
-- **Semantics** = meaning/inferences from morphemes, words, sentences, discourses (mostly **words and sentences**).
-- **Pragmatics** = inferences from **utterances** by **people in context** (next unit).
-- David Lewis (1972): to say what a meaning *is*, first ask what a meaning *does*.
+| Field | Studies |
+|---|---|
+| **Semantics** | meaning and the inferences drawn from morphemes, words, sentences, discourses (mostly **words and sentences**) |
+| **Pragmatics** (next unit) | inferences drawn from **utterances** by **people in context** |
 
-**Knowing a word's meaning** lets you:
-1. identify its **referent** (*cat* → furry feline; *unicorn* → a fictional horned horse)
-2. reason about its **relations** to other words (a cat is an **animal**; a cat is **not** a dog)
-3. use it in a sentence
+David Lewis (1972): to say what a meaning *is*, first ask what a meaning *does*.
 
-**Knowing a sentence's meaning** lets you:
-1. know its **truth conditions** (what the world must be like for it to be true: *Alice has a cat / a unicorn*)
-2. reason about relations: *Alice has a cat* **entails** *Alice has a pet* and **contradicts** *Alice has no pets*
+If you know a **word's** meaning, you can:
+1. identify its **referent** (the thing it picks out): *cat* → a furry feline; *unicorn* → a fictional horned horse (no real referent, still meaningful)
+2. reason about its **relations** to other words: a cat is an **animal**; a cat is **not** a dog
+3. use it in a sentence and know what it contributes
+
+If you know a **sentence's** meaning, you can:
+1. know its **truth conditions**: what the world must be like for it to be true (*Alice has a cat / a unicorn*)
+2. reason about its relations to other sentences: *Alice has a cat* **entails** *Alice has a pet* (if the first is true, the second must be) and **contradicts** *Alice has no pets* (both can't be true)
 3. know what it contributes to a discourse
 
-| **Lexical semantics** | **Compositional semantics** |
-|---|---|
-| meaning of **open-class content words** (*cat, smile, beautiful*): how nouns/verbs/adjectives differ in grammar and in the inferences they license | meaning of **closed-class function words** (*the, a, every, for, with, can, should, must*); how word meanings **combine into sentence meanings** |
+| Branch | Studies | Examples |
+|---|---|---|
+| **Lexical semantics** | meaning of **open-class content words**; how nouns/verbs/adjectives differ in grammar and in the inferences they license | *cat, smile, beautiful* |
+| **Compositional semantics** | meaning of **closed-class function words**; how word meanings **combine into sentence meanings** | *the, a, every, for, with, can, should, must* |
 
 ## Relations between words
 
 | Relation | Meaning | Examples |
 |---|---|---|
 | **Synonyms** | same meaning | *couch/sofa, pretty/beautiful* |
-| **Antonyms** | opposites | *beautiful/ugly, tall/short* |
+| **Antonyms** | opposites; **mostly adjectives** (gradable scales have two ends) | *beautiful/ugly, tall/short* |
 | **Homonyms** | **unrelated** meanings, **accidentally** same form; **not** expected to recur in other languages | *bank/bank*, *for/four* |
-| **Polysemy** | **related** meanings; **potentially systematic**, **may recur** across languages | *my head / head of the school*; *the dinner was delicious / took two hours* (food/event); *the book is heavy / interesting* (object/content); *the White House is in DC / knew about the meeting* (building/staff); *computer mouse / Mickey mouse* |
+| **Polysemy** | **related** meanings; **potentially systematic**, **may recur** across languages | *head*, *dinner*, *book* (see below) |
 
-- **Antonyms are mostly adjectives**, because adjectives sit on **gradable scales** with two ends.
-- **Marked vs. unmarked**: *How **tall** is she?* is neutral; *How **short** is she?* assumes she's short. *5 ft tall* ✓ vs. *?5 ft short*. The unmarked member (*tall*) names the whole scale.
-- ⚠️ ***lamb*** (animal/meat) is **systematic polysemy**: the pattern recurs (*chicken, fish*) and across languages.
+Polysemy examples (one word, two related senses):
+
+| Word | Sense 1 | Sense 2 |
+|---|---|---|
+| *head* | *my head* (body part) | *the head of the school* (leader) |
+| *dinner* | *the dinner was delicious* (food) | *the dinner took two hours* (event) |
+| *book* | *the book is heavy* (physical object) | *the book is interesting* (content) |
+| *White House* | *the White House is in DC* (building) | *the White House knew about the meeting* (staff) |
+| *mouse* | *Mickey mouse* (animal) | *computer mouse* (device) |
+| ⚠️ *lamb* | the living animal | the meat (the same pattern recurs with *chicken, fish*, and in other languages) |
+
+**Marked vs. unmarked antonyms:**
+
+| Member | Examples | Effect |
+|---|---|---|
+| **Unmarked** (*tall*) | *How tall is she?*; *5 ft tall* ✓ | neutral; names the whole scale |
+| **Marked** (*short*) | *How short is she?*; *?5 ft short* | carries extra meaning: assumes she's short |
 
 ## Lexical categories, semantically
-- Do all languages have nouns, verbs, adjectives? How would we know (by syntax/morphology)?
-- **Few adjectives** in some languages: *I am hungry* (Adj) vs. French *J'ai faim* "I have hunger" (N). Some languages do this for nearly all adjective-type concepts.
-- **Few verbs** in Persian: **light verb** + noun ("I did a shower / did a run / did a laugh").
-- Which concepts become N/V/Adj? Is there a language where *rice* or *joy* is a verb/adjective, or *throw* is a noun?
+- Do all languages have nouns, verbs, adjectives? How would we know (by syntax and morphology)?
+- Some languages have **few adjectives**: English *I am hungry* (Adj) vs. French *J'ai faim* "I have hunger" (noun). Some languages do this for nearly all adjective-type concepts.
+- Some languages (**Persian**) have **few verbs**: they use a **light verb** + a noun ("I did a shower / did a run / did a laugh").
+- Which concepts become nouns, verbs, adjectives? Is there a language where *rice* or *joy* is a verb/adjective, or where *throw* is a noun?
 
 ⚠️ **The most astonishing gap would be a language without nouns.** Lacking tense (Mandarin), a word for "the" (Mandarin), or "purple" is common.
 
 ## Who decides what words mean?
-- **Defer to experts**: *quark* (is an electron one? no), *carbohydrate* (is butter one? no), *whale* (orcas?), ⚠️ *polygon*: straight connected sides by definition, so a spiral is **not** a polygon (True).
-- **Everyone debates**: *soup* (is cereal soup?), *sandwich*, *champagne* (any sparkling white wine?), *woman* (who counts? why is this asked less of *man*?), *person* (is a fetus a person?).
-- **Meaning changes**: *planet* once covered all celestial bodies, including the sun and moon; astrophysics changed it.
-- **Burrito case** (the slide cites *Quintana v. Fort Wayne Plan Commission*): Panera's mall lease banned rival **sandwich** shops; Panera argued Qdoba (burritos) couldn't open. Is a burrito a sandwich?
-- **Words are tools to pick out meaningful categories**, which can **change over time** and be **socially contentious**.
-- Discussion prompt: find a political debate that hinges on a word's meaning. Do the people involved realize that? How would reframing it change the debate?
 
-**Wittgenstein on *game***: board games, card games, ball games, the Olympic games share no single common feature, only **"family resemblances"** (overlapping similarities, like a family's build, eyes, gait). So **words don't all have strict boundaries**. That's related to, but distinct from, "who decides." Problem: law and policy need boundaries. Is a **borderline ovarian tumor** "cancer" (life-insurance eligibility, public benefits)? Even **oncologists disagree** (work by **Jessica Rett**).
+| Word | Debated question | Who decides |
+|---|---|---|
+| *quark* | Is an electron a quark? (no) | **experts** |
+| *carbohydrate* | Is butter a carb? (no) | **experts** |
+| *whale* | Are orcas whales? | **experts** |
+| ⚠️ *polygon* | Is a spiral a polygon? (no: polygons have straight, connected sides by definition) | **experts** |
+| *soup* | Is cereal soup? | **everyone** |
+| *sandwich* | Is a burrito a sandwich? | **everyone**, and courts (below) |
+| *champagne* | Is all sparkling white wine champagne? | **everyone** |
+| *woman* | Who counts? (Why is this asked less of *man*?) | **everyone** |
+| *person* | Is a fetus a person? | **everyone** |
+| *planet* | Used to cover all celestial bodies, including the sun and moon | changed with astrophysics |
+
+**Burrito court case** (the slide cites *Quintana v. Fort Wayne Plan Commission*): Panera's mall lease banned rival **sandwich** shops, and Panera argued that Qdoba (burritos) couldn't open there.
+
+**Words are tools to pick out meaningful categories**, and those categories can **change over time** and be **socially contentious**.
+- Discussion prompt: find a social/political debate that hinges on a word's meaning. Do the people involved realize they're arguing about word meaning? How would reframing it change the debate?
+
+**Wittgenstein on *game***: board games, card games, ball games, the Olympic games share no single common feature, only **"family resemblances"**: overlapping similarities, like how family members share build, eyes, or gait in criss-crossing ways. So **words don't all have strict boundaries**. This is related to, but distinct from, "who decides."
+- Problem for law and policy: is a **borderline ovarian tumor** "cancer"? That can decide **life-insurance eligibility** or **public benefits**. Even **oncologists disagree** (work by **Jessica Rett**).
 
 **Labov's cups**: people named drawings of containers that varied gradually in width, height, handles, and stems (cup / mug / bowl / vase...). Category **boundaries are fuzzy and gradient**.
 
 ## Distinctions among nouns
-- **Relational vs. sortal**: relational nouns need a relatum (*sister* = someone's sister); sortal nouns just name a kind (*sheep*). Tests: *the sister of my friend* ✓ / *?the sheep of my friend*; *A man walked in. His {sister / ?sheep} was with him.*
-- **Mass vs. count**:
-  - count: *so many books, two books, so many letters, so many apples*
-  - mass: *so much water, ?two waters, so much mail, so much apple*
-  - The same stuff can be either: *letters* vs. *mail*.
-  - ***Furniture* is mass** (\**two furnitures*). Who has "more furniture," 2 big pieces or 3 little stools? People typically say **3 stools**: they count individual pieces.
-- **Artifact vs. natural kind**:
+
+| Term | Definition | Examples / tests |
+|---|---|---|
+| **Relational** noun | needs a relatum (someone it's related to) | *sister*; *the sister of my friend* ✓; *A man walked in. His sister was with him* ✓ |
+| **Sortal** noun | just names a kind | *sheep*; *?the sheep of my friend*; *?His sheep was with him* |
+| **Count** noun | countable units | *so many books, two books, so many letters, so many apples* |
+| **Mass** noun | stuff, not counted | *so much water, ?two waters, so much mail, so much apple* |
+
+- The same stuff can be either: *letters* (count) vs. *mail* (mass).
+- ***Furniture* is mass** (\**two furnitures*). Who has "more furniture," a table + a sofa or 3 little stools? People usually say **3 stools**: they count **pieces**, not volume.
 
 | | Artifact | Natural kind |
 |---|---|---|
 | Definition | made by humans **for a purpose** | exists **independently of humans** |
-| Membership | by **function** (anything that staples = stapler) | by **essence** (genetics = bear) |
+| What makes something one? | its **function** (anything that staples = a stapler) | its **essence** (genetics makes a bear) |
 | *start a ___* | *start a book* = start reading/writing it | *start a bear* = ?? |
 | *my ___* | *my book* = the one I'm reading/writing | *my bear* = pet? study subject? |
 
 So ***finish a sandwich*** = finish **making/eating** it: a sandwich is an **artifact**, so we infer the conventional ways of interacting with it. (No hidden *make/eat* sits in the tree or dependency graph.)
 
 ## Distinctions among verbs
-- **Dynamic vs. stative**: *Alice threw the ball* (change) / *Alice loved movies* (state).
-- **Agentive vs. non-agentive**: *Alice ran*, *Alice sat on the chair* (deliberate) / *Alice fell*, *The book sat on the table* (no intention).
-- **Telic vs. atelic**:
-  - **Telic** = has a **built-in endpoint**: *ate **the** pizza **in** ten minutes*.
-  - **Atelic** = no endpoint: *ate pizza **for** ten minutes*; ***I watched TV***.
-  - *I did my homework **in** half an hour* = finished it; ***for** half an hour* = worked on it.
-- **Aspect orders events in a story**:
-  - *Alice walked in. The book sat on the table.*: the book was **already there** (stative).
-  - *Alice walked in. The president sat down.*: he sat down **afterward** (event).
-- **Argument structure** (how many arguments, and their roles):
-  - *The submarine sank the ship* / *The ship sank*: the ship **changes** in both.
-  - *The athlete lifted the weight* / *The athlete lifted*: the athlete is still the **lifter**; the object is just left implicit.
-  - Same surface pattern, different roles.
-- **Causative vs. not**: *The child **broke** the fence* (fence changes) → *The fence broke* ✓. *The child **hit** the fence* (no change) → *?The fence hit*.
 
-**Verbs typically describe changes involving their arguments.**
+| Term | Definition | Example |
+|---|---|---|
+| **Dynamic** | something happens/changes | *Alice threw the ball* |
+| **Stative** | a state holds, no change | *Alice loved movies* |
+| **Agentive** | the subject acts deliberately | *Alice ran*; *Alice sat on the chair* |
+| **Non-agentive** | no intention | *Alice fell*; *The book sat on the table* |
+| **Telic** | has a **built-in endpoint** (Greek *telos* = goal); takes "**in** X time" | *Alice ate **the** pizza **in** ten minutes* (done when the pizza is gone) |
+| **Atelic** | no natural endpoint; takes "**for** X time" | *Alice ate pizza **for** ten minutes*; ***I watched TV*** |
+| **Causative** | entails the object changes state | *The child **broke** the fence* → *The fence broke* ✓ |
+| **Non-causative** | no change entailed | *The child **hit** the fence* → *?The fence hit* |
+
+- *I did my homework **in** half an hour* = finished it; ***for** half an hour* = worked on it, maybe not finished.
+- **Aspect orders events in a story**:
+  - *Alice walked in. The book sat on the table.* → the book was **already there** (stative, overlaps in time).
+  - *Alice walked in. The president sat down.* → he sat down **afterward** (event, in sequence).
+- **Argument structure** = how many arguments a verb takes, and what role each plays:
+  - *The submarine sank the ship* / *The ship sank*: the ship is the thing that **changes** in both.
+  - *The athlete lifted the weight* / *The athlete lifted*: the athlete is still the **lifter**; the object is just left implicit.
+  - Same "drop the object" surface pattern, different roles.
 
 ## Distinctions among adjectives
-- **Gradable** (*very tall, taller*) vs. **non-gradable** (*?very dead, ?deader*).
-- **Vagueness**: what counts as *expensive* coffee vs. car, a *tall* man vs. building depends on the comparison class.
-- **Subjective vs. objective**: A: *The box is {red / plastic / heavy / beautiful}.* B: *No it's not.* For *red / plastic / heavy*, someone is wrong. For *beautiful*, neither is: that's **faultless disagreement**, the mark of **subjective** adjectives. Prototype: ***"Roller coasters are fun."***
-- **Adjective ordering (Scontras et al. 2017)**: **more subjective adjectives go further from the noun**: *heavy red box* (not *?red heavy*), *beautiful wooden chair*, *cute red dress*. This was confirmed in **corpora**, using human subjectivity ratings. Subjective adjectives are also more often **predicative** (Glass 2025): *The red dress is cute*, not *The cute dress is red*.
-- **Intersective / subsective / privative**:
+
+| Term | Definition | Examples |
+|---|---|---|
+| **Gradable** | allows degrees | *very tall, taller* |
+| **Non-gradable** | either is or isn't | *?very dead, ?deader* |
+| **Vague** | what counts depends on the comparison class | *expensive* coffee vs. car; *tall* man vs. building |
+| **Objective** | if two people disagree, someone is wrong | *red, plastic, heavy* |
+| **Subjective** | two people can disagree with neither wrong: **faultless disagreement** | *beautiful, cute, fun*. Prototype: ***"Roller coasters are fun."*** |
+
+Test for subjectivity: A: *The box is {red / plastic / heavy / beautiful}.* B: *No it's not.* Is someone wrong?
+
+- **Adjective ordering (Scontras et al. 2017)**: **more subjective adjectives go further from the noun**: *heavy red box* (not *?red heavy*), *beautiful wooden chair*, *cute red dress*. Confirmed in **corpora**, using human ratings of how subjective each adjective is.
+- **Subjective adjectives prefer predicate position (Glass 2025)**: *The red dress is cute*, not *The cute dress is red*.
 
 ```tikz
 \definecolor{cblu}{RGB}{31,90,200}
@@ -872,14 +1051,17 @@ So ***finish a sandwich*** = finish **making/eating** it: a sandwich is an **art
 | **Plastic** (??) | depends on the noun: *plastic chair* is a chair; *plastic flower* isn't a real flower | |
 
 ## Other word types
-- **Deixis** ("pointing," like the index finger): *I, you, me, today, tomorrow, yesterday, here, now*. The referent depends on **who/when/where** the speaker is. *Beautiful* is **not** deictic.
-- **Expressives**: *I lost my **damn** keys* has the **same truth conditions** as *I lost my keys*, plus the speaker's **emotional attitude**.
-- **Slurs**: *Hermione is a **mudblood*** carries the same descriptive content as *...from a non-wizard family*, plus a **derogatory attitude toward the group**.
+
+| Type | What it does | Examples |
+|---|---|---|
+| **Deixis** ("pointing," like the index finger) | referent depends on **who is speaking, when, and where** | *I, you, me, today, tomorrow, yesterday, here, now*. **Not** deictic: *beautiful* |
+| **Expressives** | **same truth conditions**, plus the speaker's **emotional attitude** | *I lost my **damn** keys* vs. *I lost my keys* |
+| **Slurs** | same descriptive content, plus a **derogatory attitude toward the group** | *Hermione is a **mudblood*** vs. *Hermione is from a non-wizard family* |
 
 ## Metaphor (Lakoff & Johnson 1980)
-*Metaphors We Live By*: metaphors are **not decorative flourishes**; they're **fundamental to how we think**. We understand the **abstract** through the **concrete**.
+*Metaphors We Live By*: metaphors are **not decorative flourishes** (and not mainly literary); they're **fundamental to how we think**. We understand the **abstract** through the **concrete**. Conceptual metaphors are written in caps as TARGET IS SOURCE.
 
-| Conceptual metaphor | Expressions |
+| Conceptual metaphor | Everyday expressions |
 |---|---|
 | TIME IS MONEY | ***spent** an hour, **wasted** time* |
 | TIME IS SPACE | *move the meeting **up**, **back-to-back** meetings* |
@@ -889,16 +1071,25 @@ So ***finish a sandwich*** = finish **making/eating** it: a sandwich is an **art
 | PROJECTS ARE MEALS/COOKING | ***meaty** paper, **half-baked** idea, **back burner*** |
 | PROJECTS/IDEAS ARE BUILDINGS | ***laying the foundation, buttressing, supporting** a claim* |
 
-- **Language change runs concrete → abstract**: *standing on the floor* → *what I said still **stands***. The **Database of Semantic Shifts** (datsemshift.ru) catalogs many such shifts.
+**Language change runs concrete → abstract**: *You are **standing** on the floor* (concrete) → *What I said still **stands*** (abstract). The **Database of Semantic Shifts** (datsemshift.ru) catalogs many such shifts.
 
 > [!warning] ⚠️ Metaphor vs. simile vs. allegory
-> - **Metaphor** = understanding X **as** Y, with no "like": *a **heavy** topic* (weight = seriousness).
-> - **Simile** = explicit comparison **with "like/as"**.
-> - **Allegory** = a whole story whose parts stand for abstract ideas.
-> - *"Morale is **low** because we've been **wasting** time **battling** silly problems"* uses **all of these**: GOOD IS UP, TIME IS MONEY, ARGUMENTS ARE WARS.
+> | Term | Definition | Example |
+> |---|---|---|
+> | **Metaphor** | understanding X **as** Y, with no "like" | *This is a **heavy** topic* (physical weight = seriousness) |
+> | **Simile** | an explicit comparison **with "like" or "as"** | *a topic like a heavy rock* |
+> | **Allegory** | a whole story whose parts stand for abstract ideas | |
+>
+> *"Morale is **low** because we've been **wasting** time **battling** silly problems"* uses **all of these**: GOOD IS UP, TIME IS MONEY, ARGUMENTS ARE WARS.
 
 ## Compositional semantics
-**Typed lambda calculus** treats word meanings as **functions**. Types: ***e*** = individuals, ***t*** = truth values, plus mappings between them (⟨*e,t*⟩ = a function from individuals to truth values).
+**Typed lambda calculus** treats word meanings as **functions** (machines that take an input and give an output).
+
+| Type | Meaning | Example |
+|---|---|---|
+| ***e*** | an individual (entity) | *Lelia* |
+| ***t*** | a truth value (TRUE or FALSE) | a whole sentence |
+| ⟨*e,t*⟩ | a function from individuals to truth values | an intransitive verb like *swims* |
 
 ```tikz
 \definecolor{cblu}{RGB}{31,90,200}
@@ -919,39 +1110,49 @@ So ***finish a sandwich*** = finish **making/eating** it: a sandwich is an **art
 \end{document}
 ```
 
-**What *a* and *the* mean (Irene Heim)**: ***a*** = "**add a new referent**," ***the*** = "**find an established referent**."
-- *A student walked in. **The** student sat down.* → the same student.
-- *A student walked in. **A** student sat down.* → a different student.
-- But *the* often introduces new referents:
-  - *I was in a car. **The seat** was comfortable.*: a **bridging inference** (cars have seats).
-  - *The idea of a technology school in Georgia was introduced in 1865 during **the Reconstruction period**.*: familiar from context or **general knowledge**.
+**What *a* and *the* mean (Irene Heim)**: ***a*** = "**add a new referent**"; ***the*** = "**find an established referent**."
+
+| Example | Interpretation |
+|---|---|
+| *A student walked in. **The** student sat down.* | the same student |
+| *A student walked in. **A** student sat down.* | a different student |
+| *I was in a car. **The seat** was comfortable.* | *the* for a new referent: no seat was mentioned, but cars have seats (a **bridging inference**) |
+| *...introduced in 1865 during **the Reconstruction period**.* | *the* for a new referent: familiar from **general knowledge** of U.S. history |
 
 ---
 
 # Unit 8 — Pragmatics
 
-**Pragmatics** = inferences drawn from **utterances by people in context**. It makes explicit our **implicit knowledge of how conversations work**. Linguists **have tried to identify general "rules" of conversation**.
+**Pragmatics** = the inferences drawn from **utterances by people in context**. It makes explicit our **implicit knowledge of how conversations work**. Linguists **have tried to identify general "rules"** of how conversations work.
 
 ## Speech acts (Austin 1962)
-**J. L. Austin**, *How to Do Things with Words*: some utterances aren't true or false; they **make themselves true** when said **by the right person in the right context**. *"I **hereby** pronounce you a married couple." "You are fired."*
-- These **performatives** (marked by ***hereby***) **change** the world rather than describe it.
-- They need the right **authority** (an officiant, your boss), **circumstances**, and **procedure**. A stranger saying "You're fired" does nothing.
+**J. L. Austin**, *How to Do Things with Words*: some utterances aren't true or false; they **make themselves true** when said **by the right person in the right context**.
+- *"I **hereby** pronounce you a married couple."* · *"You are fired."*
+- These are **performatives** (often marked with ***hereby***): they **change** the world rather than describe it.
+- They only work with the right **authority** (an officiant, your boss), **circumstances**, and **procedure**. A stranger saying "You're fired" does nothing.
 
 ## Common Ground
-- **All** utterances "do something": they add to the **Common Ground (CG)** = the propositions we **mutually (know we) take for granted** (Grice, **Stalnaker**).
-- Mutual knowledge requires **Theory of Mind**: modeling what's in others' minds, and how it differs from yours.
-- Example of our class's CG: we're at Georgia Tech, in the USA, speaking English, in a linguistics class, and the instructor is Lelia.
-- **Assertions = proposals to update the CG.**
-  - *I'm from Maryland*: I publicly commit to it; I'm an authority on it, so you accept it, and it's added. Now we all know it, **and know that we all know it**. The CG grows as we talk.
-  - Assertions can be **rejected**: A: *The homework is due today.* B: *No, I think it's due Wednesday.* Nothing is added until A and B resolve it.
-- ⚠️ CG ≠ all true facts, ≠ all entailments, ≠ only presuppositions.
+**All** utterances "do something": they add to the **Common Ground (CG)** = the information (set of propositions) that we **mutually take for granted**, and know that we all take for granted (Paul Grice, Robert **Stalnaker**).
+- Shared information requires **Theory of Mind**: your model of what's in other people's minds, and how it's similar to or different from yours.
+- Our class's CG includes: we're at Georgia Tech, in the USA, speaking English, in a linguistics class, and the instructor's name is Lelia.
+- ⚠️ CG ≠ all true facts in the world, ≠ all entailments of what's been said, ≠ only the presuppositions.
+
+**Assertions are proposals to update the CG:**
+- *I'm from Maryland*: I publicly commit to it, and I'm an authority on where I'm from, so you'll likely **accept** it. It's added: now we all know it, **and know that we all know it**. The CG grows as we talk.
+- Assertions can be **rejected**: A: *The homework is due today.* B: *No, I think it's due Wednesday.* Nothing is added until they resolve it.
 
 ## Presupposition
-**Presupposition** = info **assumed to already be in the CG** for an utterance to make sense. If it's false, the sentence is **not just false but nonsensical (undefined)**.
-- **Strawson**: *The King of France is (not) bald*. There's no King of France, so "No he's not!" misses the problem. You must **rewind**: *"Wait a minute, there **is** no King of France!"*
-- Triggers on the slides: *the* (there is one), *stop* (*Phil stopped smoking* → he used to smoke). ⚠️ **Factive verbs** like ***know*** (also *realize, regret*): *Sam knows it's raining* → it's raining.
+**Presupposition** = information **assumed to already be in the CG** for an utterance to make sense. If a presupposition is false, the sentence isn't just false; it's **nonsensical (undefined)**.
 
-**Projection** = presuppositions **survive** under entailment-canceling operators (negation, *might*, questions). That's how you identify them:
+**Strawson's example**: *The King of France is bald* (or *is not bald*). There's no King of France, so neither sentence is simply false. Replying "No he's not!" misses the real problem. You have to **"rewind"**: *"Hey, wait a minute, there **is** no King of France!"*
+
+| Trigger | Example | Presupposes |
+|---|---|---|
+| *the* | *The King of France is bald* | there is a King of France |
+| *stop* (change of state) | *Phil stopped smoking* | Phil used to smoke |
+| ⚠️ **factive verbs** (*know, realize, regret*) | *Sam knows it's raining* | it's raining |
+
+**Projection**: presuppositions are identified by the fact that they **project** = they **still hold when the sentence is embedded** under operators that cancel ordinary entailments (negation, *might*, questions):
 
 | | There's a King? | He's bald? |
 |---|---|---|
@@ -960,27 +1161,27 @@ So ***finish a sandwich*** = finish **making/eating** it: a sandwich is an **art
 | *...**might** be bald.* | ✓ | ✗ |
 | ***Is** the King of France bald?* | ✓ | ✗ |
 
-*Phil stopped smoking / Did Phil stop smoking? / Phil didn't stop smoking*: all still mean **he used to smoke**.
+Same with *Phil stopped smoking / Did Phil stop smoking? / Phil didn't stop smoking*: all still imply **he used to smoke**.
 
 ## Grice's Maxims
-**H. Paul Grice** (1913–1988; Oxford, then Berkeley). **Communication is efficient**: we quickly and subconsciously infer **more than is said**.
+**H. Paul Grice** (1913–1988; Oxford, then Berkeley). Key idea: **communication is efficient**. We quickly and subconsciously infer **more than is said**.
 - **Levinson's Rembrandt sketch**: from a few squiggly lines, viewers see a whole scene. An utterance is "just as sketchy," and listeners fill in the rest.
 - **Point shared by Grice and Levinson**: we infer **lots of information beyond what's strictly said**.
 
-| Maxim | Rule |
-|---|---|
-| **Quality** | say only what you know is **true** (don't lie; don't say unsupported things) |
-| **Quantity** | be **as informative as required, no more, no less** |
-| **Manner** | be **understood** (organized, clear, audible, familiar words) |
-| **Relevance** | stay **relevant** to the conversation's current purpose |
+| Maxim | Rule | Breaking it looks like |
+|---|---|---|
+| **Quality** | say only what you know is **true** | lying; unsupported claims |
+| **Quantity** | be **as informative as required, no more, no less** | too much or too little info |
+| **Manner** | be **understood**: organized, clear, audible, familiar words | rambling, mumbling, jargon |
+| **Relevance** | stay **relevant** to the conversation's current purpose | randomly changing topic |
 
 ⚠️ **Politeness is NOT a maxim.**
 
-Discussion questions:
-- **Descriptive or prescriptive?** Phrased as commands, but they **describe** the assumptions listeners use.
+Discussion questions from the lecture:
+- **Descriptive or prescriptive?** They're phrased as commands, but they **describe** the assumptions listeners use to interpret speakers.
 - **Eurocentric?** A real critique: norms of directness and informativeness vary by culture.
 
-**Grice's key claim**: because we **assume everyone follows the maxims**, we draw inferences beyond what's said.
+**Grice's key claim**: because we **assume everyone follows the maxims**, we can draw inferences beyond what was said.
 
 | Exchange | Inference | Maxims |
 |---|---|---|
@@ -996,33 +1197,49 @@ Discussion questions:
 **Scalar implicature**: asserting a **weaker** claim implies the **stronger** one is false, because otherwise the speaker would have said it (*some → not all*).
 
 ## Conversational implicatures
-These inferences are **conversational implicatures**. They're **cancelable**: retractable without contradiction. *Somewhere in the South of France, oh right, in **Marseille**!* (now we don't infer B doesn't know).
+These inferences are called **conversational implicatures**. ⚠️ The slides only name "cancelable"; the practice exam tests all four properties:
 
-⚠️ Full list of properties: **context-dependent** ($9 vs. $10), **cancelable**, **calculable** (you can work them out from the maxims), **reinforceable** (saying them outright isn't redundant: *some, but not all*). They do **not** project through negation.
+| Property | Meaning | Example |
+|---|---|---|
+| **Context-dependent** | same sentence, different implicature in a different context | $10 vs. $9 tickets |
+| **Cancelable** | can be retracted without contradiction | *Somewhere in the South of France, oh right, in **Marseille**!* (now B clearly knows) |
+| **Calculable** | the listener can work it out from what was said + the maxims | |
+| **Reinforceable** | stating it outright isn't redundant | *some, but not all* |
 
-**Why they matter**:
-1. They explain **efficiency**: we don't spell everything out.
-2. **Plausible deniability**: it's more polite to implicate "I don't want to come," and more diplomatic to implicate "he's a bad philosopher."
+They do **not** project through negation (that's presuppositions).
 
-⚠️ **Searle's hamburger**: order a hamburger and you expect it cooked, on a plate, not raw in plastic. We expect listeners to **share our unstated background assumptions** and **infer beyond what's said**.
+**Why they matter:**
+- **Efficiency**: we don't have to spell everything out.
+- **Plausible deniability**: it's more polite to implicate "I don't want to come," and more diplomatic to implicate "he's a bad philosopher," than to say either outright.
 
-**Appendix, *Bronston v. United States***:
-> *Do you have any Swiss bank accounts?* — *No, sir.* — *Have you ever?* — *The **company** had an account for about six months in Zurich.*
+⚠️ **Searle's hamburger**: order a hamburger at a restaurant and you expect it cooked, on a plate, not raw and wrapped in plastic, even though you never said so. We expect listeners to **share our unstated background assumptions** and **infer beyond what's said**.
 
-- Implicature: Bronston **personally** never had one. In fact he did.
+**Appendix: language and law (*Bronston v. United States*)**
+> *Do you have any bank accounts in Swiss banks, Mr. Bronston?* — *No, sir.* — *Have you ever?* — *The **company** had an account for about six months in Zurich.*
+- The implicature: Bronston **personally** never had one. In fact he did.
 - The answer was **literally true**, and the Supreme Court held that **literally true but misleading testimony isn't perjury**. The law tracks what's **said**, not what's implicated.
 
 ## How conversations are organized
-**Questions Under Discussion (QUD; Roberts 2012)**: conversations address implicit questions, and these define what's "relevant" and "enough info."
-- *Tickets cost $10* → *I have $9* implicitly answers **"No"** to the QUD "Can you afford it?" (If B had $10, B would have said so.)
-- *Tickets cost $9* → *I have $9* answers **"Yes"**. Having more is irrelevant to the QUD, so we don't infer B has only $9.
+**Questions Under Discussion (QUD; Roberts 2012)**: a conversation is organized around implicit questions, which define what counts as "relevant" and "enough info."
 
-**Adjacency pairs** = **conventional pairings of discourse moves** (a first move scripts the reply):
-- greeting/greeting · question/answer · invitation/acceptance or refusal · farewell/farewell
-- **Cross-cultural variation**:
-  - compliment → accept? return? reject? (Compliments are socially fraught because accepting can seem immodest and rejecting can seem rude.)
-  - apology → reciprocal apology? acceptance? rejection?
-  - thanks → "you're welcome"? downplay ("it was nothing")?
+| A says | B: *I have $9* answers the QUD "Can you afford it?" with... | So we infer |
+|---|---|---|
+| *Tickets cost $10.* | **No** | B has **only** $9 (with $10, B would have said so) |
+| *Tickets cost $9.* | **Yes** | nothing more (having more than $9 is irrelevant to the QUD) |
+
+**Adjacency pairs** = **conventional pairings of discourse moves**: a first move "scripts" the expected reply.
+
+| First move | Expected reply |
+|---|---|
+| greeting | greeting |
+| question | answer |
+| invitation | acceptance, or refusal (a dispreferred reply) |
+| farewell | farewell |
+| compliment | varies by culture: accept? return the compliment? reject it? |
+| apology | varies by culture: apologize back? accept? reject? |
+| thanks | varies by culture: "you're welcome"? downplay ("it was nothing")? |
+
+Compliments are socially fraught even though they're "positive": accepting can seem immodest, and rejecting can seem rude.
 
 ## Entailment vs. presupposition vs. implicature
 
@@ -1057,7 +1274,10 @@ These inferences are **conversational implicatures**. They're **cancelable**: re
 | Survives negation? | ✗ | ✓ | — |
 | Source | literal meaning | assumed in the CG | inferred via the maxims |
 
-**Language is efficient** (all three): we infer beyond what's said (Grice), corpora favor **short dependencies**, and frequent words are **short** (Zipf).
+**Language is efficient**, three ways across the units (practice exam: "all of these"):
+- we infer more than is said (Grice), so we don't have to spell everything out
+- corpus sentences favor **short dependencies** (syntax)
+- frequent words are **short** (Zipf's Brevity Law)
 
 ---
 
@@ -1117,12 +1337,18 @@ These inferences are **conversational implicatures**. They're **cancelable**: re
 | 49 | all of these | inference, short dependencies, short frequent words |
 | 50 | server shares our unstated assumptions ⚠️ | Searle |
 
-**Distractor decoder**
-- **Binary/asymmetric/typed** = dependency grammar.
-- **Cancelable** = implicature.
-- **Projects through negation** = presupposition.
-- **Time-stable** = nouns · **change** = verbs · **gradable/subjective** = adjectives.
-- **Ablaut** = vowel change · **suppletion** = root swap · **concatenative** = affix.
-- **Isolating** ≈ 1 morpheme/word · **agglutinating** = 1 meaning per affix · **fusional** = many meanings per affix · **polysynthetic** = sentence-words.
-- **Homonymy** = accidental · **polysemy** = systematic · **metaphor** = abstract via concrete.
-- **Ditransitive** = 3 arguments · **iterative** = repeated action (not a lecture term).
+**Distractor decoder** (what the wrong options actually belong to):
+
+| Option wording | Belongs to |
+|---|---|
+| binary / asymmetric / typed | dependency grammar |
+| cancelable | implicature |
+| projects through negation | presupposition |
+| time-stable entities | nouns |
+| changes involving arguments | verbs |
+| gradable / subjective properties | adjectives |
+| vowel change · root swap · added affix | ablaut · suppletion · concatenative |
+| ≈1 morpheme per word · 1 meaning per affix · many meanings per affix · sentence-length words | isolating · agglutinating · fusional · polysynthetic |
+| accidental · systematic · abstract-via-concrete | homonymy · polysemy · metaphor |
+| 3 arguments | ditransitive |
+| repeated action | iterative (not a lecture term) |
