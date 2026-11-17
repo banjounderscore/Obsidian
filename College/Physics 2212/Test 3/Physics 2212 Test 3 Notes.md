@@ -53,10 +53,25 @@ $$\vec A\times\vec B=(A_yB_z-A_zB_y)\,\hat x+(A_zB_x-A_xB_z)\,\hat y+(A_xB_y-A_y
 
 **Drawing 3D on paper:** $\odot$ is a vector **out of the page** (toward you), $\otimes$ is **into the page**. With $\hat x$ right and $\hat y$ up, $\hat z$ is out of the page.
 
+> [!example]- Example 1 (unit vectors)
+> Find $\hat x\times(-\hat z)$. Pull the minus sign out, then use the reversed-order rule:
+> $$\hat x\times(-\hat z)=-(\hat x\times\hat z)=-(-\hat y)=+\hat y$$
+> Check with your hand: fingers right ($\hat x$), curl into the page ($-\hat z$), and your thumb points up ($+\hat y$) ✓.
+
+> [!example]- Example 2 (components)
+> $\vec A=\langle 2,1,0\rangle$, $\vec B=\langle 0,3,0\rangle$. Using the component formula:
+> $$\vec A\times\vec B=\langle(1)(0)-(0)(3),\ (0)(0)-(2)(0),\ (2)(3)-(1)(0)\rangle=\langle0,0,6\rangle$$
+> It points along $\hat z$, perpendicular to both (which lie in the $xy$-plane) ✓. Check the size with $AB\sin\theta$: only $A_x=2$ is perpendicular to $\vec B$, so $|\vec A\times\vec B|=2\cdot3=6$ ✓.
+
 ## 0.2 Two things carried over from electricity
 
 - **Separation vector** $\vec r=\vec r_{\text{obs}}-\vec r_{\text{source}}$ (observation point minus source), $r=|\vec r|$, $\hat r=\vec r/r$.
 - **Superposition:** fields from several sources add as vectors (add components, not magnitudes).
+
+> [!example]- Example (separation vector and adding fields)
+> A charge sits at $\langle 0,d,0\rangle$ and you want the field at $\langle 2d,0,0\rangle$:
+> $$\vec r=\vec r_{\text{obs}}-\vec r_{\text{source}}=\langle2d,0,0\rangle-\langle0,d,0\rangle=\langle2d,-d,0\rangle,\qquad r=\sqrt{4d^2+d^2}=\sqrt5\,d$$
+> And if two sources give $B_0\hat x$ and $B_0\hat y$ at a point, the total is $B_0(\hat x+\hat y)$ with size $\sqrt2\,B_0$, not $2B_0$.
 
 ## 0.3 The magnetic constant $\mu_0$ (and $k_m$)
 
@@ -71,8 +86,11 @@ Since it almost always shows up as $\mu_0/4\pi$, the slides give that combinatio
 $$
 k_m=\frac{\mu_0}{4\pi}=10^{-7}\ \text{T·m/A}\qquad\left(\mu_0=4\pi k_m\right)
 $$
- notes write $k_m$. To switch between forms, replace $\mu_0$ with $4\pi k_m$: e.g. $\dfrac{\mu_0I}{2\pi r}=\dfrac{4\pi k_mI}{2\pi r}=\dfrac{2k_mI}{r}$.
-✅ Both are in the sheet's constants table. $k_m$ plays the role in magnetism that $k$ plays in electricity: compare $\vec E=\dfrac{kq}{r^2}\hat r$ with $\vec B=\dfrac{k_mq\,\vec v\times\hat r}{r^2}$. The sheet writes $\dfrac{\mu_0}{4\pi}$ everywhere these
+✅ Both are in the sheet's constants table. $k_m$ plays the role in magnetism that $k$ plays in electricity: compare $\vec E=\dfrac{kq}{r^2}\hat r$ with $\vec B=\dfrac{k_mq\,\vec v\times\hat r}{r^2}$. The sheet writes $\dfrac{\mu_0}{4\pi}$ everywhere these notes write $k_m$.
+
+> [!example]- Example (switching forms)
+> To rewrite a field given with $\mu_0$, substitute $\mu_0=4\pi k_m$ and cancel:
+> $$\frac{\mu_0I}{2\pi r}=\frac{4\pi k_mI}{2\pi r}=\frac{2k_mI}{r}\qquad\qquad\frac{\mu_0NI}{L}=\frac{4\pi k_mNI}{L}$$
 
 Magnetic field $B$ is measured in **tesla** (T); $1\ \text{T}=1\ \text{N/(A·m)}$.
 
@@ -153,10 +171,20 @@ crossin/.pic={\draw[thick,cacc] (0,0) circle (0.17); \draw[thick,cacc] (-0.12,-0
 \end{document}
 ```
 
-**Example.** A proton ($+e$) passes the origin with velocity $v\hat x$. Find $\vec B$ at $(d,d,0)$.
-1. $\vec r=\langle d,d,0\rangle$, $\ r=\sqrt2\,d$, so $r^3=2\sqrt2\,d^3$.
-2. $\vec v\times\vec r=v\hat x\times(d\hat x+d\hat y)=vd\,\hat z$.
-3. $\vec B=\boxed{\dfrac{k_mev}{2\sqrt2\,d^2}\,\hat z}$ (out of the page, matching the picture: the point is above the line of motion).
+> [!example]- Example 1
+> A proton ($+e$) passes the origin with velocity $v\hat x$. Find $\vec B$ at $(d,d,0)$.
+> 1. $\vec r=\langle d,d,0\rangle$, $\ r=\sqrt2\,d$, so $r^3=2\sqrt2\,d^3$.
+> 2. $\vec v\times\vec r=v\hat x\times(d\hat x+d\hat y)=vd\,\hat z$.
+> 3. $\vec B=k_m\dfrac{q\,\vec v\times\vec r}{r^3}=\boxed{\dfrac{k_mev}{2\sqrt2\,d^2}\,\hat z}$ (out of the page, matching the picture: the point is above the line of motion).
+
+> [!example]- Example 2 (negative charge, point straight to the side)
+> An electron ($-e$) at the origin moves with velocity $v\hat y$. Find $\vec B$ at $(d,0,0)$.
+> 1. $\vec r=\langle d,0,0\rangle$, $r=d$.
+> 2. $\vec v\times\vec r=v\hat y\times d\hat x=vd\,(\hat y\times\hat x)=-vd\,\hat z$.
+> 3. $\vec B=k_m\dfrac{(-e)(-vd\,\hat z)}{d^3}=\boxed{+\dfrac{k_mev}{d^2}\,\hat z}$. The two minus signs (from the charge and from the cross product) cancel: out of the page.
+
+> [!example]- Example 3 (point on the line of motion)
+> Same electron, but the point is $(0,2d,0)$, straight ahead. $\vec r=2d\,\hat y\parallel\vec v$, so $\vec v\times\vec r=0$ and $\vec B=0$.
 
 **Facts that show up as conceptual questions:**
 - $\vec E$ (along $\hat r$) and $\vec B$ (perpendicular to $\vec r$) of a moving charge are **never parallel**.
@@ -175,6 +203,12 @@ where $I$ is the current in the wire, $d\vec\ell$ the small piece of wire (lengt
 ✅ On the sheet as $\Delta\vec B=\dfrac{\mu_0}{4\pi}\dfrac{I\Delta\vec\ell\times\hat r}{r^2}$ ("short wire").
 
 Every wire result below comes from adding up these pieces. You only need the results, but this explains two quick rules: a point **along the line of a straight piece** gets no field from it ($d\vec\ell\parallel\vec r$), and **the field always circles the current**.
+
+> [!example]- Example (field of one short piece of wire)
+> A short piece of wire of length $\Delta\ell$ at the origin carries current $I$ in the $+\hat x$ direction. Find its field at $\langle0,d,0\rangle$.
+> 1. $\Delta\vec\ell=\Delta\ell\,\hat x$, $\ \vec r=\langle0,d,0\rangle$, $\ \hat r=\hat y$, $\ r=d$.
+> 2. $\Delta\vec\ell\times\hat r=\Delta\ell\,(\hat x\times\hat y)=\Delta\ell\,\hat z$.
+> 3. $\Delta\vec B=k_m\dfrac{I\Delta\vec\ell\times\hat r}{r^2}=\boxed{\dfrac{k_mI\Delta\ell}{d^2}\,\hat z}$, out of the page. At $\langle 3d,0,0\rangle$ instead (on the piece's own line), $\Delta\vec\ell\parallel\hat r$ and the field is $0$.
 
 ## 3. Straight wires
 
@@ -225,6 +259,26 @@ In the any-segment formula, $\theta_1$ and $\theta_2$ are the angles from the pe
 
 **Limits of the finite wire:** close up ($s\ll L$) it looks infinite, $2k_mI/s$; far away ($s\gg L$) it looks like one moving point charge, $k_mIL/s^2$.
 
+> [!example]- Example 1 (infinite wire, size and direction)
+> A long wire along the $z$-axis carries $I$ in the $+\hat z$ direction (out of the page). Find $\vec B$ at $\langle d,0,0\rangle$.
+> 1. Size: $B=\dfrac{2k_mI}{s}$ with $s=d$, so $B=\dfrac{2k_mI}{d}$.
+> 2. Direction: thumb out of the page, fingers curl counterclockwise; at a point to the right of the wire, counterclockwise means **up**. (Same as $d\vec\ell\times\hat r=\hat z\times\hat x=\hat y$.)
+> 3. $\vec B=\boxed{\dfrac{2k_mI}{d}\,\hat y}$.
+
+> [!example]- Example 2 (finite wire on its bisector)
+> A wire of length $L=2s$ with the point a distance $s$ from its middle:
+> $$B=\frac{k_mIL}{s\sqrt{s^2+(L/2)^2}}=\frac{k_mI(2s)}{s\sqrt{s^2+s^2}}=\frac{2k_mI}{\sqrt2\,s}=\frac{\sqrt2\,k_mI}{s}$$
+> That's about 71% of the infinite wire's $2k_mI/s$: the missing ends would have added the rest.
+
+> [!example]- Example 3 (two wires, point outside them)
+> Two long wires along $z$, both carrying $I$ out of the page, sit at $x=0$ and $x=d$. Find $\vec B$ at $x=2d$ (on the $x$-axis).
+> - Wire at $x=0$ (distance $2d$): $\dfrac{2k_mI}{2d}=\dfrac{k_mI}{d}$, pointing $+\hat y$ (counterclockwise, point to the right).
+> - Wire at $x=d$ (distance $d$): $\dfrac{2k_mI}{d}$, also $+\hat y$.
+> - Total: $\vec B=\boxed{\dfrac{3k_mI}{d}\,\hat y}$. (Midway between them the two would cancel.)
+
+> [!example]- Example 4 (semi-infinite wire)
+> A wire comes in from $x=-\infty$ along the $x$-axis and **ends** at the origin. At $\langle0,d,0\rangle$ (beside its end), $B=\dfrac{k_mI}{d}$, half of an infinite wire. At $\langle d,0,0\rangle$ (on its own line, past the end), $B=0$.
+
 **Two parallel wires** with equal currents a distance $d$ apart, on the line midway between them:
 - currents in the **same** direction: the fields point opposite ways and cancel, $\vec B=0$;
 - currents in **opposite** directions: the fields add, $B=2\cdot\dfrac{2k_mI}{d/2}=\dfrac{8k_mI}{d}$.
@@ -246,6 +300,12 @@ where $I$ is the ring's current, $R$ its radius, and $z$ the distance from the r
 - **Far away** ($z\gg R$): $B\approx 2k_m\dfrac{I\pi R^2}{z^3}$, a dipole field (§7).
 - $N$ turns: multiply by $N$.
 
+> [!example]- Example (ring on its axis)
+> A ring of radius $R$ lies in the $xy$-plane, current counterclockwise seen from above. Find $\vec B$ at height $z=R$.
+> 1. Ring formula with $z=R$: $B=\dfrac{2\pi k_mIR^2}{(R^2+R^2)^{3/2}}=\dfrac{2\pi k_mIR^2}{2\sqrt2\,R^3}=\dfrac{\pi k_mI}{\sqrt2\,R}$.
+> 2. Direction: fingers counterclockwise (seen from above), thumb points up: $+\hat z$.
+> 3. $\vec B=\boxed{\dfrac{\pi k_mI}{\sqrt2\,R}\,\hat z}$, about 35% of the center value $2\pi k_mI/R$.
+
 **Arc of angle $\theta$ (radians), at its center** ⚠️ ✍️ (not on the sheet: write this derivation). In the sheet's short-wire formula, every piece is the same distance $R$ away and perpendicular to $\hat r$, so $|\Delta\vec\ell\times\hat r|=\Delta\ell$ and all the pieces point the same way. Adding them up gives total length $R\theta$:
 
 $$
@@ -254,7 +314,11 @@ $$
 
 where $\theta$ is the angle the arc covers **in radians** (a semicircle is $\pi$, a quarter circle $\pi/2$) and $R$ its radius. Same direction rule as the ring. Straight leads pointing **straight at** the center add nothing.
 
-**Example: a hairpin.** A long wire comes in from the left along $y=+R$, turns around a semicircle of radius $R$ centered at O, and goes back out along $y=-R$. Find $\vec B$ at O.
+> [!example]- Example (pie slice)
+> A loop is made of a quarter circle of radius $R$ plus the two radii that close it (like a pizza slice), current counterclockwise. At the center:
+> - The two radii point straight at the center: $0$.
+> - The quarter arc: $\theta=\pi/2$, so $B=\dfrac{k_mI(\pi/2)}{R}=\dfrac{\pi k_mI}{2R}$, out of the page (counterclockwise).
+> - Total: $\boxed{\dfrac{\pi k_mI}{2R}}$ out of the page.
 
 ```tikz
 \usetikzlibrary{arrows.meta,decorations.markings,calc}
@@ -284,10 +348,12 @@ crossin/.pic={\draw[thick,cacc] (0,0) circle (0.17); \draw[thick,cacc] (-0.12,-0
 \end{document}
 ```
 
-1. **Top wire:** semi-infinite and O is beside its end, so $B=k_mI/R$. Current to the right, O below it: into the page.
-2. **Bottom wire:** same size $k_mI/R$. Current to the left, O above it: also into the page.
-3. **Semicircle:** $\theta=\pi$, so $B=k_mI\pi/R$. The current goes clockwise around O: into the page.
-4. All three point the same way: $\vec B_O=\boxed{\dfrac{k_mI}{R}(2+\pi)}$ into the page.
+> [!example]- Example: a hairpin
+> A long wire comes in from the left along $y=+R$, turns around a semicircle of radius $R$ centered at O, and goes back out along $y=-R$. Find $\vec B$ at O.
+> 1. **Top wire:** semi-infinite and O is beside its end, so $B=k_mI/R$. Current to the right, O below it: into the page.
+> 2. **Bottom wire:** same size $k_mI/R$. Current to the left, O above it: also into the page.
+> 3. **Semicircle:** $\theta=\pi$, so $B=k_mI\pi/R$. The current goes clockwise around O: into the page.
+> 4. All three point the same way: $\vec B_O=\boxed{\dfrac{k_mI}{R}(2+\pi)}$ into the page.
 
 ## 5. The solenoid
 
@@ -297,6 +363,12 @@ A **solenoid** is a coil of $N$ turns over a length $L$ carrying current $I$. It
 $$\boxed{\ B=\frac{4\pi k_mNI}{L}=\mu_0\frac NLI\ }$$
 where $N$ is the number of turns, $L$ the solenoid's length (so $N/L$ is turns per meter), and $I$ the current in the wire. It doesn't depend on the radius or on where you are inside. ✅ on the sheet ($\mu_0NI/L$); direction by the ring rule (fingers along the current in the turns, thumb along $\vec B$).
 - **Outside:** the field of a single dipole with moment $M=NIA$ (§6–§7).
+
+> [!example]- Example (solenoid inside and outside)
+> A solenoid has $N$ turns of radius $R$ over length $L$, current $I$, axis along $\hat x$, with the current going counterclockwise as seen from the $+x$ end.
+> - Inside: $\vec B=\dfrac{4\pi k_mNI}{L}\hat x$ (fingers counterclockwise as seen from $+x$, thumb toward you, i.e. along $+\hat x$).
+> - Squeeze the same $N$ turns into half the length: $N/L$ doubles, so $B$ doubles.
+> - Far outside on its axis, a distance $r\gg L$: it's a dipole with $M=NI\pi R^2$, so $B=\dfrac{2k_mNI\pi R^2}{r^3}$ along $+\hat x$.
 
 ---
 
@@ -315,6 +387,16 @@ where $I$ is the loop's current and $A$ the flat area it encloses ($\pi R^2$ for
 **Bar magnets** have moments too, even with no current: each electron is a tiny dipole (its **spin**), and in iron, cobalt, and nickel the spins line up so their moments add. A bar magnet behaves exactly like a current loop with the same $\vec m$, pointing from its S end to its N end.
 
 **Reading $\vec m$ off a loop** (common question): if the current goes counterclockwise as you look at the loop, $\vec m$ points toward you; clockwise, away from you.
+
+> [!example]- Example 1 (rectangle)
+> An $a\times b$ rectangle lies flat in the $xy$-plane with current $I$ going clockwise as seen from above. Area $A=ab$; clockwise from above means $\vec m$ points down:
+> $$\vec m=\boxed{-Iab\,\hat z}$$
+
+> [!example]- Example 2 (coil)
+> A coil of 50 turns of radius $R$ in the $yz$-plane, current counterclockwise as seen from $+x$: $\vec m=50\,I\pi R^2\,\hat x$.
+
+> [!example]- Example 3 (bar magnet)
+> A bar magnet lying along the $y$-axis with its N end at the top has $\vec m$ pointing $+\hat y$ (from S to N).
 
 ## 7. The field of a dipole
 
@@ -368,10 +450,20 @@ This is exactly the electric dipole field ($k\,2\vec p/r^3$ on the axis, $-k\vec
 
 **Working backward:** if you're shown far-away field arrows, the arrows on the axis point along $\vec m$ (and the ones on the equator point against it). Then use the right-hand rule to get the current's direction.
 
-**Example: two bar magnets.** Two magnets, each with moment $M$ pointing up ($+\hat y$). The point P is a distance $d$ directly above magnet 2 (on its axis) and a distance $d$ to the right of magnet 1 (on its equator).
-- Magnet 2 (axis): $+\dfrac{2k_mM}{d^3}\hat y$.
-- Magnet 1 (equator): $-\dfrac{k_mM}{d^3}\hat y$.
-- Total: $\vec B=\boxed{\dfrac{k_mM}{d^3}\hat y}$.
+> [!example]- Example 1 (axis vs. equator)
+> A loop at the origin has $\vec m=m\hat z$. At a distance $r$:
+> - On the axis, at $\langle0,0,r\rangle$ **or** $\langle0,0,-r\rangle$: $\vec B=\dfrac{2k_mm}{r^3}\hat z$ (same direction above and below).
+> - On the equator, at $\langle r,0,0\rangle$: $\vec B=-\dfrac{k_mm}{r^3}\hat z$ (points down, half the size).
+> - Doubling the distance makes the field $2^3=8$ times weaker.
+
+> [!example]- Example 2 (working backward)
+> Far from a small loop in the $xz$-plane, the field on the $+y$ and $-y$ axis points along $-\hat y$, and on the $x$-axis it points along $+\hat y$. The axis arrows give $\vec m=-m\hat y$ (the equator arrows point against it ✓). Looking down from $+y$, $\vec m$ points away from you, so the current is **clockwise** as seen from $+y$.
+
+> [!example]- Example 3: two bar magnets
+> Two magnets, each with moment $M$ pointing up ($+\hat y$). The point P is a distance $d$ directly above magnet 2 (on its axis) and a distance $d$ to the right of magnet 1 (on its equator).
+> - Magnet 2 (axis): $+\dfrac{2k_mM}{d^3}\hat y$.
+> - Magnet 1 (equator): $-\dfrac{k_mM}{d^3}\hat y$.
+> - Total: $\vec B=\boxed{\dfrac{k_mM}{d^3}\hat y}$.
 
 ## 8. Adding dipole moments
 
@@ -385,6 +477,14 @@ Moments add as vectors, $\vec M=\vec m_1+\vec m_2+\cdots$, and far away the whol
 | Two stacked rings, same current direction | $2\vec m$ |
 | Two stacked rings, opposite currents | $0$, but the far field is **not** zero (it's weaker, falling faster than $1/r^3$) |
 | A charge $q$ circling with period $T$ | a loop with current $I=q/T$, so $m=\dfrac qT\cdot\pi R^2$ |
+
+> [!example]- Example 1 (orbiting charge)
+> A charge $q$ moves in a circle of radius $R$ at speed $v$. One trip takes $T=\dfrac{2\pi R}{v}$, so the loop's current and moment are
+> $$I=\frac qT=\frac{qv}{2\pi R},\qquad m=IA=\frac{qv}{2\pi R}\cdot\pi R^2=\boxed{\frac{qvR}{2}}$$
+> (For an electron, $\vec m$ points opposite to what the right-hand rule gives for its motion, since its current runs backward.)
+
+> [!example]- Example 2 (two loops)
+> Loop 1 has $\vec m_1=m\hat z$ and loop 2, close by, has $\vec m_2=m\hat x$. Far away they act like one dipole with $\vec M=m(\hat x+\hat z)$, size $\sqrt2\,m$, pointing at $45°$ between $\hat x$ and $\hat z$.
 
 ---
 
@@ -406,7 +506,22 @@ where $q$ is the particle's charge (with its sign), $\vec v$ its velocity, and $
 - $\vec F$ is perpendicular to both $\vec v$ and $\vec B$. Flip the direction for a negative charge.
 - **It does no work**, because it's always perpendicular to the motion. So the **speed never changes**; only the direction does. Energy conservation ($K+qV=$ constant) is unaffected by $\vec B$.
 
-**Example.** An electron moves right ($+\hat x$) into a field pointing into the page ($-\hat z$). $\hat x\times(-\hat z)=+\hat y$, and the negative charge flips it: the force points **down**.
+> [!example]- Example 1 (direction)
+> An electron moves right ($+\hat x$) into a field pointing into the page ($-\hat z$). $\hat x\times(-\hat z)=+\hat y$, and the negative charge flips it: the force points **down**.
+
+> [!example]- Example 2 (full vector)
+> A proton has $\vec v=\langle v,0,0\rangle$ in $\vec B=\langle0,B,0\rangle$:
+> $$\vec F=q\vec v\times\vec B=e\,(v\hat x\times B\hat y)=\boxed{evB\,\hat z}$$
+
+> [!example]- Example 3 (angle)
+> A charge $q$ moves at speed $v$ at $30°$ to a uniform field $B$. Only the part of $\vec v$ perpendicular to $\vec B$ matters:
+> $$F=|q|vB\sin30°=\tfrac12|q|vB$$
+> At $0°$ (moving along the field) the force is $0$; at $90°$ it's the maximum, $|q|vB$.
+
+> [!example]- Example 4 (electric and magnetic together)
+> A proton moves with $\vec v=v\hat x$ through $\vec E=E\hat y$ and $\vec B=B\hat z$:
+> $$\vec F=q\vec E+q\vec v\times\vec B=eE\hat y+ev(\hat x\times B\hat z)=eE\hat y-evB\hat y=e(E-vB)\,\hat y$$
+> If $v=E/B$ the two cancel and it goes straight (the velocity selector, §12).
 
 **Force between two moving charges:** find the first charge's $\vec B$ at the second (§1), then $\vec F_2=q_2\vec v_2\times\vec B_1$. Two separate sign flips if both are negative: one for the source, one for the target.
 
@@ -424,6 +539,20 @@ where **$m$ is the particle's mass** (not a dipole moment), $v$ its speed, $|q|$
 
 - The period and angular frequency **don't depend on the speed**: a faster particle moves on a bigger circle and takes the same time.
 - **Which way it circles:** find $\vec F$ at one point; the center is in that direction. For $\vec B$ into the page, positive charges go counterclockwise and negative ones clockwise.
+
+> [!example]- Example 1 (proton vs. electron)
+> A proton and an electron enter the same field $B$ with the same speed $v$. Use $R=\dfrac{mv}{|q|B}$ for each; the charges have the same size $e$, so
+> $$\frac{R_p}{R_e}=\frac{m_p}{m_e}=\frac{1.7\times10^{-27}}{9\times10^{-31}}\approx1900$$
+> The proton's circle is about 1900 times bigger, and they circle in opposite directions.
+
+> [!example]- Example 2 (accelerated first)
+> A particle with charge $q$ and mass $m$ starts at rest, is accelerated through a potential difference $\Delta V$, then enters a perpendicular field $B$.
+> 1. Energy conservation: $\tfrac12mv^2=|q\Delta V|$, so $v=\sqrt{\dfrac{2|q\Delta V|}{m}}$.
+> 2. Radius: $R=\dfrac{mv}{|q|B}=\dfrac{m}{|q|B}\sqrt{\dfrac{2|q\Delta V|}{m}}=\boxed{\dfrac1B\sqrt{\dfrac{2m|\Delta V|}{|q|}}}$.
+> Heavier particles make bigger circles ($R\propto\sqrt m$), which is how a mass spectrometer sorts them.
+
+> [!example]- Example 3 (period)
+> Double the particle's speed: $R=mv/|q|B$ doubles, but $T=2\pi m/|q|B$ stays the same. It covers twice the distance in the same time.
 
 ```tikz
 \usetikzlibrary{arrows.meta,decorations.markings,calc}
@@ -461,6 +590,12 @@ mid/.default=0.5}
 
 If $\vec v$ has a part along $\vec B$, split it: $\vec v=\vec v_\parallel+\vec v_\perp$. The parallel part feels no force ($\vec v_\parallel\times\vec B=0$), so it stays constant, while the perpendicular part makes a circle of radius $mv_\perp/(|q|B)$. Together: a **helix** around the field lines. ⚠️ It moves forward $v_\parallel T=\dfrac{2\pi mv_\parallel}{|q|B}$ per turn.
 
+> [!example]- Example (helix at 60°)
+> A proton enters a uniform field $B\hat z$ with speed $v$ at $60°$ to the field.
+> 1. Split the velocity: $v_\parallel=v\cos60°=\tfrac12v$ (along $\hat z$), $v_\perp=v\sin60°=\tfrac{\sqrt3}2v$.
+> 2. Circle radius uses only $v_\perp$: $R=\dfrac{mv_\perp}{eB}=\dfrac{\sqrt3\,mv}{2eB}$.
+> 3. Forward distance per turn: $v_\parallel T=\tfrac12v\cdot\dfrac{2\pi m}{eB}=\dfrac{\pi mv}{eB}$.
+
 ## 12. Trajectory problems
 
 > [!example] Recipe: a charge entering a uniform field
@@ -470,11 +605,12 @@ If $\vec v$ has a part along $\vec B$, split it: $\vec v=\vec v_\parallel+\vec v
 > 4. **Time inside** = (fraction of a full circle) $\times\ T$.
 > 5. The **speed** is the same when it leaves.
 
-**Example.** A proton moving right at speed $v$ enters a field $\vec B$ into the page that fills the region $x>0$, crossing the boundary at the origin.
-1. $\vec F=ev\hat x\times(-B\hat z)=evB\,\hat y$: up, so it curves counterclockwise.
-2. It makes a half circle of radius $R=mv/(eB)$ and leaves at $(0,2R)$, moving left at speed $v$.
-3. Time inside: half a period, $\pi m/(eB)$.
-4. An electron would curve down (clockwise) on a smaller circle, since its mass is smaller.
+> [!example]- Example (proton entering a field region)
+> A proton moving right at speed $v$ enters a field $\vec B$ into the page that fills the region $x>0$, crossing the boundary at the origin.
+> 1. $\vec F=ev\hat x\times(-B\hat z)=evB\,\hat y$: up, so it curves counterclockwise.
+> 2. It makes a half circle of radius $R=mv/(eB)$ and leaves at $(0,2R)$, moving left at speed $v$.
+> 3. Time inside: half a period, $\pi m/(eB)$.
+> 4. An electron would curve down (clockwise) on a smaller circle, since its mass is smaller.
 
 **Velocity selector.** $\vec E$ points down and $\vec B$ into the page; a positive charge moves right. The electric force $qE$ is down and the magnetic force $qvB$ is up. They cancel for exactly one speed:
 
@@ -483,6 +619,9 @@ qE=qv_0B\quad\Longrightarrow\quad\boxed{v_0=\frac EB}
 $$
 
 ✍️ Not on the sheet; write the force balance. Here $E$ and $B$ are the sizes of the two fields and $v_0$ the one speed that passes straight through. Particles with that speed go straight; others bend. The charge's sign and mass don't matter (both forces flip together).
+
+> [!example]- Example (which way do the others bend?)
+> In the selector above, a positive particle moving **faster** than $v_0$ feels a magnetic force $qvB$ bigger than $qE$, so it bends **up** (toward the magnetic force). A slower one bends **down** (toward the electric force). An electron at exactly $v_0$ feels both forces flipped (electric up, magnetic down) and still goes straight.
 
 ## 13. The Hall effect
 
@@ -493,6 +632,12 @@ eE_H=ev_dB\quad\Longrightarrow\quad E_H=v_dB,\qquad |\Delta V_H|=v_dBw
 $$
 
 where $E_H$ is the Hall field across the strip, $v_d$ the drift speed of the moving charges, $\Delta V_H$ the voltage between the two edges, and $w$ the strip's width (the distance between the two edges). ✍️ Not on the sheet; write the force balance.
+
+> [!example]- Example (which edge goes positive)
+> A horizontal strip carries current to the **left**, so its electrons drift to the **right** ($\vec v_d=v_d\hat x$). The field points into the page ($-B\hat z$).
+> 1. Force on an electron: $\vec F=(-e)\,v_d\hat x\times(-B\hat z)=-ev_dB\,(\hat x\times-\hat z)=-ev_dB\,\hat y$: **down**.
+> 2. Electrons pile up on the bottom edge, so the bottom is negative and the top positive; $\vec E_H$ points down (from $+$ to $-$).
+> 3. It stops growing when $E_H=v_dB$, and the top is higher in potential by $\Delta V_H=v_dBw$.
 
 ---
 
@@ -512,6 +657,18 @@ where $I$ is the wire's current, $\vec\ell$ a vector as long as the wire pointin
 - ⚠️ **Uniform field, curved wire:** the force equals that on a straight wire between the same two endpoints. Example: a semicircle of radius $R$ feels $I(2R)B$.
 - **Non-uniform field:** find the force on each straight side separately (§15 has the standard example).
 
+> [!example]- Example 1 (straight wire)
+> A wire of length $\ell$ along $+\hat y$ carries $I$ in a uniform field $B\hat z$:
+> $$\vec F=I\vec\ell\times\vec B=I\ell B\,(\hat y\times\hat z)=\boxed{I\ell B\,\hat x}$$
+> If the wire were along $\hat z$ (parallel to $\vec B$), the force would be $0$.
+
+> [!example]- Example 2 (square loop, uniform field)
+> A square loop of side $a$ in the $xy$-plane sits in a uniform $B\hat z$. Opposite sides carry current in opposite directions, so their forces are equal and opposite: the right side gets $IaB$ one way and the left side $IaB$ the other way, same for top and bottom. Net force $0$.
+
+> [!example]- Example 3 (curved wire)
+> A semicircular wire of radius $R$ runs from $\langle-R,0,0\rangle$ over the top to $\langle R,0,0\rangle$ in a uniform field $B\hat z$. It feels the same force as the straight diameter from start to end, $\vec\ell=2R\,\hat x$:
+> $$\vec F=I(2R\,\hat x)\times B\hat z=2IRB\,(\hat x\times\hat z)=\boxed{-2IRB\,\hat y}$$
+
 ## 15. Forces between wires
 
 **Two parallel wires** a distance $d$ apart: wire 1's field at wire 2 is $2k_mI_1/d$, perpendicular to wire 2, so
@@ -521,6 +678,12 @@ $$
 $$
 
 (the reverse of charges). Here $F/L$ is the force per meter of wire, $I_1$ and $I_2$ the two currents, and $d$ the distance between the wires. ✍️ Not on the sheet: combine the sheet's wire field ($2k_mI_1/d$ for $r\ll L$) with $\Delta\vec F=I\Delta\vec\ell\times\vec B$. Check directions with the right-hand rule: find $\vec B_1$ at wire 2, then $\vec F_2=I_2\vec L\times\vec B_1$.
+
+> [!example]- Example (opposite currents, worked with vectors)
+> Wire 1 lies along the $x$-axis carrying $I$ in $+\hat x$. Wire 2 is parallel at $y=d$ (above it), carrying $2I$ in $-\hat x$. Find the force on a length $L$ of wire 2.
+> 1. Field of wire 1 at wire 2: size $\dfrac{2k_mI}{d}$; direction $\hat x\times\hat y=\hat z$ (out of the page).
+> 2. Force on wire 2: $\vec F_2=I_2\vec L\times\vec B_1=(2I)(-L\hat x)\times\dfrac{2k_mI}{d}\hat z=-\dfrac{4k_mI^2L}{d}(\hat x\times\hat z)=\boxed{+\dfrac{4k_mI^2L}{d}\,\hat y}$
+> 3. Up, away from wire 1: opposite currents repel ✓.
 
 **A rectangular loop next to a long wire.** The wire carries $I_1$ upward. The loop carries $I_2$; its sides of length $a$ are parallel to the wire (the near one at distance $d$, carrying current upward), and its sides of length $b$ are perpendicular.
 
@@ -581,6 +744,15 @@ The near side wins because it's closer. This is why a closed loop **can** feel a
 
 The same answers come from the wires: two stacked loops with the same circulation have parallel nearest currents (attract); two side-by-side loops have opposite nearest currents (repel).
 
+> [!example]- Example 1 (loop above a magnet)
+> A bar magnet stands upright with its N end on top. A small loop is held above it with current counterclockwise as seen from above.
+> 1. The loop's $\vec m$ points up, so its bottom face (facing the magnet) is its S pole.
+> 2. The magnet's N end faces the loop's S face: opposite poles attract.
+> 3. The loop is pulled **down**, toward the magnet. Reverse the loop's current and it's pushed up.
+
+> [!example]- Example 2 (loop beside a magnet)
+> The same upright magnet (N on top), and a loop beside it at the same height with its $\vec m$ also pointing up. Side by side and parallel: N next to N and S next to S, so they **repel**.
+
 ⚠️ ✍️ **Sizes**, if a problem asks for them (none of this is on the sheet). A dipole in a field has energy $U=-\vec m\cdot\vec B$ (§17), and the force pushes toward lower energy: $\vec F=\nabla(\vec m\cdot\vec B)$. For two moments $m_1,m_2$ a distance $r$ apart:
 
 | Arrangement | Force |
@@ -588,7 +760,11 @@ The same answers come from the wires: two stacked loops with the same circulatio
 | Head to tail on one axis | attract, $\dfrac{6k_mm_1m_2}{r^4}$ |
 | Side by side, parallel | repel, $\dfrac{3k_mm_1m_2}{r^4}$ |
 
-(For example, head to tail: $U=-m_2\cdot\dfrac{2k_mm_1}{r^3}$, and $F=-dU/dr=-\dfrac{6k_mm_1m_2}{r^4}$, negative meaning attractive.)
+> [!example]- Example (head to tail)
+> Dipole 1 sits at the origin with $\vec m_1=m_1\hat z$; dipole 2 sits on its axis at height $r$ with $\vec m_2=m_2\hat z$.
+> 1. Field of 1 at 2 (axis): $B_1=\dfrac{2k_mm_1}{r^3}$, along $+\hat z$.
+> 2. Energy: $U=-\vec m_2\cdot\vec B_1=-\dfrac{2k_mm_1m_2}{r^3}$.
+> 3. Force: $F_r=-\dfrac{dU}{dr}=-\dfrac{6k_mm_1m_2}{r^4}$. The minus sign means toward smaller $r$: **attraction**, as the pole rule said.
 
 ## 17. Torque on a loop
 
@@ -602,6 +778,16 @@ where $\vec\tau$ is the torque (the twist, in N·m), $\vec m$ the loop's dipole 
 
 - The torque turns $\vec m$ **toward** $\vec B$ and is zero once they line up. That's why a compass needle (a tiny magnet) points along the field.
 - **Energy:** $U=-\vec m\cdot\vec B$ ⚠️ ✍️ (not on the sheet). Derive it from the work against the torque: $U(\theta)=\int_{90°}^{\theta}mB\sin\theta'\,d\theta'=-mB\cos\theta$. Lowest ($-mB$) when aligned, which is stable; highest ($+mB$) when opposite. Flipping a dipole from aligned to opposite takes work $2mB$.
+
+> [!example]- Example 1 (torque vector)
+> A square loop of side $a$ lies in the $xy$-plane with current counterclockwise as seen from above, in a uniform field $B\hat x$.
+> 1. Moment: $\vec m=Ia^2\,\hat z$ (counterclockwise from above, thumb up).
+> 2. Torque: $\vec\tau=\vec m\times\vec B=Ia^2B\,(\hat z\times\hat x)=\boxed{Ia^2B\,\hat y}$.
+> 3. That's the maximum torque, since $\vec m\perp\vec B$ ($\theta=90°$). The loop turns about the $y$-axis until $\vec m$ points along $+\hat x$.
+
+> [!example]- Example 2 (energy)
+> The same loop starts with $\vec m$ along $\vec B$ ($\theta=0$). The work to turn it $90°$ is
+> $$W=\Delta U=U(90°)-U(0°)=(-mB\cos90°)-(-mB\cos0°)=0-(-mB)=+mB=Ia^2B$$
 
 **Where it comes from (rectangular loop, sides $a$ and $b$):** two sides of length $b$ feel forces $IbB$, equal and opposite but along different lines. Each has a lever arm $\tfrac a2\sin\theta$ from the center:
 
@@ -653,7 +839,8 @@ $$
 
 (the loop is seen edge-on; the other two sides' forces cancel and make no torque).
 
-**Example: same wire, different shape.** A square of side $L$ ($m=IL^2$) has maximum torque $IL^2B$. Bent into a circle, the same wire has $2\pi R=4L$, so $m=I\pi R^2=4IL^2/\pi$. For the circle's torque to equal the square's maximum: $\dfrac{4IL^2B}{\pi}\sin\theta=IL^2B$, so $\sin\theta=\pi/4$.
+> [!example]- Example: same wire, different shape
+> A square of side $L$ ($m=IL^2$) has maximum torque $IL^2B$. Bent into a circle, the same wire has $2\pi R=4L$, so $m=I\pi R^2=4IL^2/\pi$. For the circle's torque to equal the square's maximum: $\dfrac{4IL^2B}{\pi}\sin\theta=IL^2B$, so $\sin\theta=\pi/4$.
 
 ## 18. Several dipoles acting on each other
 
@@ -664,11 +851,12 @@ $$
 > 4. **Force:** direction from the magnetic charge trick; size from §16 if needed.
 > 5. **Swap roles** for the effect on dipole 1.
 
-**Example.** Two small magnets with equal moments $m$, a distance $d$ apart. The left one points right ($\vec m_L=m\hat x$, at the origin); the right one points up ($\vec m_R=m\hat y$, at $(d,0)$). Released so they can rotate but not move, which way does each start to turn?
-1. **Left magnet:** it sits on the right magnet's equator, so $\vec B_R=-\dfrac{k_mm}{d^3}\hat y$ there. $\vec\tau_L=m\hat x\times\left(-\dfrac{k_mm}{d^3}\hat y\right)=-\dfrac{k_mm^2}{d^3}\hat z$: **clockwise**.
-2. **Right magnet:** it sits on the left magnet's axis, so $\vec B_L=\dfrac{2k_mm}{d^3}\hat x$ there. $\vec\tau_R=m\hat y\times\dfrac{2k_mm}{d^3}\hat x=-\dfrac{2k_mm^2}{d^3}\hat z$: **clockwise**, twice as strong.
-
-Both turn clockwise; the two torques are **not** equal and opposite.
+> [!example]- Example (two magnets twisting each other)
+> Two small magnets with equal moments $m$, a distance $d$ apart. The left one points right ($\vec m_L=m\hat x$, at the origin); the right one points up ($\vec m_R=m\hat y$, at $(d,0)$). Released so they can rotate but not move, which way does each start to turn?
+> 1. **Left magnet:** it sits on the right magnet's equator, so $\vec B_R=-\dfrac{k_mm}{d^3}\hat y$ there. $\vec\tau_L=m\hat x\times\left(-\dfrac{k_mm}{d^3}\hat y\right)=-\dfrac{k_mm^2}{d^3}\hat z$: **clockwise**.
+> 2. **Right magnet:** it sits on the left magnet's axis, so $\vec B_L=\dfrac{2k_mm}{d^3}\hat x$ there. $\vec\tau_R=m\hat y\times\dfrac{2k_mm}{d^3}\hat x=-\dfrac{2k_mm^2}{d^3}\hat z$: **clockwise**, twice as strong.
+>
+> Both turn clockwise; the two torques are **not** equal and opposite.
 
 ## 19. Electric dipoles work the same way
 
@@ -682,6 +870,11 @@ An **electric dipole** is charges $\pm q$ a distance $s$ apart, with **electric 
 | Field on its axis / equator | $2k\vec p/r^3$ / $-k\vec p/r^3$ (✅) | $2k_m\vec m/r^3$ / $-k_m\vec m/r^3$ (✅) |
 
 Why $\vec p\times\vec E$ (the derivation to write, since it isn't on the sheet): the $+q$ end gets pushed along $\vec E$ and the $-q$ end against it. The two forces cancel but act at opposite ends, so they twist the dipole: torque $=\tfrac{\vec s}{2}\times q\vec E+\left(-\tfrac{\vec s}{2}\right)\times(-q\vec E)=q\vec s\times\vec E$.
+
+> [!example]- Example (torque on an electric dipole)
+> An electric dipole with $\vec p=qs\,\hat x$ sits in a uniform field $E\hat y$.
+> - Torque: $\vec\tau=\vec p\times\vec E=qsE\,(\hat x\times\hat y)=qsE\,\hat z$, counterclockwise, turning $\vec p$ toward $+\hat y$.
+> - Energy now: $U=-\vec p\cdot\vec E=0$ (perpendicular). Once it lines up with $\vec E$, $U=-qsE$, the minimum.
 
 ---
 
