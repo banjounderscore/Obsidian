@@ -15,7 +15,25 @@
 - $|\vec A\times\vec B|=AB\sin\theta$; right-hand rule; $\hat x\times\hat y=\hat z$ (cyclic $+$, reversed $-$); parallel vectors give 0. Component formula ✅.
 - $\odot$ out of the page, $\otimes$ into it; with $\hat x$ right and $\hat y$ up, $\hat z$ is out.
 - $\vec r=\vec r_{\text{obs}}-\vec r_{\text{source}}$; fields add as vectors 🧠.
-- $k_m=\mu_0/4\pi=10^{-7}$ ✅; $\mu_0=4\pi k_m$.
+- $\mu_0$ = **permeability of free space** (the magnetic constant): a fixed constant that sets how strong magnetic fields are, the way $\epsilon_0$ does for electric fields. $\mu_0=4\pi\times10^{-7}$ T·m/A ✅.
+- $k_m=\mu_0/4\pi=10^{-7}$ T·m/A ✅, the magnetic version of $k$. The sheet writes $\mu_0/4\pi$ wherever these notes write $k_m$.
+
+| Symbol | Meaning |
+|---|---|
+| $\vec B$ | magnetic field (tesla, T) |
+| $q$, $e$ | particle's charge (with sign); $e=1.6\times10^{-19}$ C |
+| $\vec v$, $v_d$ | particle velocity; drift speed in a wire |
+| $\vec r$ | from the source to the observation point |
+| $I$, $d\vec\ell$ | current; small piece of wire pointing along $I$ |
+| $s$ | perpendicular distance to a wire |
+| $L$ | wire or solenoid length |
+| $R$, $z$ | ring/arc/orbit radius; distance along a ring's axis |
+| $N$, $A$ | number of turns; loop area |
+| $\vec m$ (sheet: $\vec\mu$) | magnetic dipole moment, $NIA$ |
+| $m$ in $R=mv/qB$, $F=ma$ | **mass** (not the dipole moment) |
+| $\vec p$ | electric dipole moment, $q\vec s$ |
+| $\theta$ | angle: between $\vec v$ and $\vec B$ in $qvB\sin\theta$; between $\vec m$ and $\vec B$ in $mB\sin\theta$; arc angle (radians) in $k_mI\theta/R$ |
+| $\omega$, $T$ | angular frequency; period |
 
 ---
 
@@ -115,7 +133,7 @@ $$\vec F=q\vec E+q\vec v\times\vec B\qquad\text{🧠}$$
 
 ### 10–11. Circles and helices
 
-Start from the sheet's circular motion $\left|\frac{d\vec p}{dt}\right|_\perp=\frac{mv^2}{R}$ ✅ with $|q|vB$ 🧠.
+Start from the sheet's circular motion $\left|\frac{d\vec p}{dt}\right|_\perp=\frac{mv^2}{R}$ ✅ with $|q|vB$ 🧠. Here **$m$ is the particle's mass**.
 
 | Quantity | Formula | Sheet |
 |---|---|---|

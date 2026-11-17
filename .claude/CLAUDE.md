@@ -9,7 +9,7 @@ This repo is my Obsidian vault of college notes. The Obsidian vault root is `Col
 | `College/<Course>/<Course> Exam N Notes.md` | Full notes: teach the material from scratch |
 | `College/<Course>/<Course> Exam N Review.md` | Short review sheet: recall, not teaching |
 | `College/<Course>/<Course> Exam N Practice.md` | Practice questions with folded answers |
-| `College/definitions/<Course> Glossary.md` | Hover definitions for the Note Definitions plugin |
+| `College/<Course>/definitions/<Course> Glossary.md` | Hover definitions for the Note Definitions plugin (only active in that course's folder) |
 
 - Physics uses "Test" instead of "Exam" (e.g. `Physics 2212 Test 2 Notes.md`). Match whatever the course folder already uses.
 - Look at the existing notes for that course (and `Physics 2212 Test 2 Notes.md`) before writing new ones, and match their conventions.
@@ -67,7 +67,7 @@ Draw diagrams with TikZ in ` ```tikz ` blocks (rendered by the obsidian-tikzjax 
 
 ## Glossary (Note Definitions plugin)
 
-`College/definitions/<Course> Glossary.md`, in the plugin's "consolidated" format:
+`College/<Course>/definitions/<Course> Glossary.md`, in the plugin's "consolidated" format. A `definitions` folder inside a course folder only applies to notes in that course folder (local patch 3 below); `College/definitions/` (the plugin's global folder, now empty) applies to every note, so put only cross-course terms there.
 
 ```
 # Term
@@ -90,7 +90,7 @@ Two community plugins in `College/.obsidian/plugins/` are **locally patched** an
 
 | Plugin | Original version | Patches |
 |---|---|---|
-| `note-definitions` | 0.33.0 | (1) `rebuildHTML` skips `SCRIPT/STYLE/CODE/PRE/svg` so it doesn't rewrite TikZ source; (2) `onLayoutReady` reloads definitions and redraws open notes (`refreshOpenNotes`), so definitions work on startup |
+| `note-definitions` | 0.33.0 | (1) `rebuildHTML` skips `SCRIPT/STYLE/CODE/PRE/svg` so it doesn't rewrite TikZ source; (2) `onLayoutReady` reloads definitions and redraws open notes (`refreshOpenNotes`), so definitions work on startup; (3) folder-scoped definitions folders: any folder named like the global def folder (`definitions`) outside it is loaded too, but only applies to notes under that folder's parent (`applyScopedDefFolders`, called from `updateActiveFile` when a note has no `def-context`; also `isDefFile`, `loadGlobals` with per-scope duplicate checks, `getDefFilesAndFolders`, and a rebuild at the end of `loadUpdatedFiles`) |
 | `obsidian-tikzjax` | 0.5.2 | the `tikz` code-block processor listens for `tikzjax-load-finished` on the block element itself (with `stopPropagation`), so dark-mode recoloring still runs when reading view has the section detached |
 
 ## Git

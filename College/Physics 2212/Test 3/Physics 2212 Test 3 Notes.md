@@ -22,7 +22,7 @@
 > - **🧠 memorize:** the sheet lists these as "things you must have memorized" (magnetic force on a charge, field of a moving point charge, $\vec F=q\vec E$, point-charge $\vec E$, superposition, Newton's 2nd law, energy conservation).
 > - **✍️ not on the sheet:** the exam rule is "if a formula you need is not given, you must derive it," so write the short derivation shown next to it.
 >
-> **Notation:** the sheet writes $\dfrac{\mu_0}{4\pi}$ where these notes write $k_m$ (they're equal, $10^{-7}$ T·m/A), uses $\vec\mu$ for the dipole moment ($\vec m$ here), and gives dipole and wire fields as **magnitudes**: the direction is always yours to find.
+> **Notation:** the sheet writes $\dfrac{\mu_0}{4\pi}$ where these notes write $k_m$ (they're equal, $10^{-7}$ T·m/A; see §0.3 for what $\mu_0$ is, and §0.4 for every symbol), uses $\vec\mu$ for the dipole moment ($\vec m$ here), and gives dipole and wire fields as **magnitudes**: the direction is always yours to find.
 >
 > The sheet also prints flux, Gauss's law, Faraday's law, Ampère's law, and radiation formulas. Test 3 doesn't use them.
 
@@ -58,13 +58,52 @@ $$\vec A\times\vec B=(A_yB_z-A_zB_y)\,\hat x+(A_zB_x-A_xB_z)\,\hat y+(A_xB_y-A_y
 - **Separation vector** $\vec r=\vec r_{\text{obs}}-\vec r_{\text{source}}$ (observation point minus source), $r=|\vec r|$, $\hat r=\vec r/r$.
 - **Superposition:** fields from several sources add as vectors (add components, not magnitudes).
 
-## 0.3 The magnetic constant
+## 0.3 The magnetic constant $\mu_0$ (and $k_m$)
+
+**$\mu_0$** ("mu-naught," called the **permeability of free space** or the **magnetic constant**) is a fixed constant of nature. It sets how strong a magnetic field a given current or moving charge produces, the same way $\epsilon_0$ (through $k=\frac1{4\pi\epsilon_0}$) sets how strong an electric field a given charge produces. You never calculate it; it's just a number that appears in every magnetic field formula:
 
 $$
-k_m=\frac{\mu_0}{4\pi}=10^{-7}\ \text{N/A}^2,\qquad \mu_0=4\pi k_m
+\mu_0=4\pi\times10^{-7}\ \text{T·m/A}
 $$
 
-✅ (the sheet's constants table lists $\mu_0/4\pi=1\times10^{-7}$ T·m/A). $k_m$ plays the role $k$ played in electricity. Fields are measured in tesla (T). If a formula uses $\mu_0$, swap in $4\pi k_m$: e.g. $\dfrac{\mu_0I}{2\pi r}=\dfrac{2k_mI}{r}$.
+Since it almost always shows up as $\mu_0/4\pi$, the slides give that combination its own name, **$k_m$**:
+
+$$
+k_m=\frac{\mu_0}{4\pi}=10^{-7}\ \text{T·m/A}\qquad\left(\mu_0=4\pi k_m\right)
+$$
+ notes write $k_m$. To switch between forms, replace $\mu_0$ with $4\pi k_m$: e.g. $\dfrac{\mu_0I}{2\pi r}=\dfrac{4\pi k_mI}{2\pi r}=\dfrac{2k_mI}{r}$.
+✅ Both are in the sheet's constants table. $k_m$ plays the role in magnetism that $k$ plays in electricity: compare $\vec E=\dfrac{kq}{r^2}\hat r$ with $\vec B=\dfrac{k_mq\,\vec v\times\hat r}{r^2}$. The sheet writes $\dfrac{\mu_0}{4\pi}$ everywhere these
+
+Magnetic field $B$ is measured in **tesla** (T); $1\ \text{T}=1\ \text{N/(A·m)}$.
+
+## 0.4 Symbols used in these notes
+
+| Symbol | Meaning | Units |
+|---|---|---|
+| $\vec B$ | magnetic field | T (tesla) |
+| $\vec E$ | electric field | N/C |
+| $\mu_0$, $k_m$ | magnetic constant; $k_m=\mu_0/4\pi$ (§0.3) | T·m/A |
+| $k$, $\epsilon_0$ | electric constant; $k=1/(4\pi\epsilon_0)$ | N·m²/C² |
+| $q$ | charge of a particle ($+e$ for a proton, $-e$ for an electron) | C |
+| $e$ | elementary charge, $1.6\times10^{-19}$ C (always positive) | C |
+| $\vec v$, $v$ | particle's velocity, speed | m/s |
+| $v_d$ | drift speed of the charges moving in a wire | m/s |
+| $\vec r$, $r$, $\hat r$ | separation vector (observation point minus source), its length, its direction | m |
+| $I$ | current (direction = where positive charge would flow) | A |
+| $d\vec\ell$ (sheet: $\Delta\vec\ell$) | tiny piece of wire, pointing along the current | m |
+| $\vec\ell$, $L$ | a wire's length (as a vector along the current), a wire's or solenoid's length | m |
+| $s$ | perpendicular distance from a point to a wire | m |
+| $R$ | radius (of a ring, arc, or a particle's circular path) | m |
+| $z$ | distance along a ring's axis from its center | m |
+| $N$ | number of turns of wire | — |
+| $A$ | area enclosed by a loop | m² |
+| $\vec m$ (sheet: $\vec\mu$) | **magnetic dipole moment** of a loop or magnet | A·m² |
+| $m$ | **mass** in $F=ma$ and circular-motion formulas (§10, §12); otherwise the size of $\vec m$. Check which one a formula means | kg |
+| $\vec p$ | electric dipole moment, $\vec p=q\vec s$ | C·m |
+| $\vec F$, $\vec\tau$, $U$ | force, torque, potential energy | N, N·m, J |
+| $\theta$ | an angle (each formula says which one) | rad |
+| $\omega$, $T$ | angular frequency and period of circular motion | rad/s, s |
+| $\odot$ / $\otimes$ | vector out of / into the page | — |
 
 ---
 
@@ -77,6 +116,8 @@ A charge at rest makes only an electric field. A charge $q$ moving with velocity
 $$
 \boxed{\ \vec B=k_m\frac{q\,\vec v\times\vec r}{r^3}\ }\qquad\left(\text{same as }k_m\frac{q\,\vec v\times\hat r}{r^2}\right)
 $$
+
+where $q$ is the moving charge (with its sign), $\vec v$ its velocity, $\vec r$ the vector **from the charge to the point** where you want the field, $r=|\vec r|$, and $\hat r=\vec r/r$.
 
 🧠 **Memorize this one**: the sheet lists it as "magnetic field of a moving point charge" without printing it.
 
@@ -129,6 +170,8 @@ $$
 d\vec B=k_m\frac{I\,d\vec\ell\times\vec r}{r^3}\qquad\text{(Biot–Savart law)}
 $$
 
+where $I$ is the current in the wire, $d\vec\ell$ the small piece of wire (length $d\ell$, pointing along $I$), and $\vec r$ the vector from that piece to the observation point.
+
 ✅ On the sheet as $\Delta\vec B=\dfrac{\mu_0}{4\pi}\dfrac{I\Delta\vec\ell\times\hat r}{r^2}$ ("short wire").
 
 Every wire result below comes from adding up these pieces. You only need the results, but this explains two quick rules: a point **along the line of a straight piece** gets no field from it ($d\vec\ell\parallel\vec r$), and **the field always circles the current**.
@@ -163,7 +206,7 @@ mid/.default=0.5}
 \end{document}
 ```
 
-**Sizes.** Let $s$ be the perpendicular distance from the point to the wire's line.
+**Sizes.** $I$ is the wire's current, $L$ its length, and $s$ the perpendicular distance from the point to the wire's line.
 
 | Wire | $B$ | Sheet |
 |---|---|---|
@@ -196,7 +239,7 @@ $$
 \boxed{\ B=\frac{2\pi k_mIR^2}{(R^2+z^2)^{3/2}}\ }\qquad\text{at the center: }B=\frac{2\pi k_mI}{R}
 $$
 
-✅ On the sheet (with its far-away form). For the center, set $z=0$ in the sheet formula.
+where $I$ is the ring's current, $R$ its radius, and $z$ the distance from the ring's center to the point, measured along the axis. ✅ On the sheet (with its far-away form). For the center, set $z=0$ in the sheet formula.
 
 - **Direction:** curl your right-hand fingers along the current; your thumb gives $\vec B$ along the axis, the same direction on both sides of the ring.
 - Why only the axial part survives: pieces on opposite sides of the ring make sideways components that cancel.
@@ -209,7 +252,7 @@ $$
 B=\frac{k_mI\theta}{R}\qquad(\text{full circle }\theta=2\pi\text{ gives }2\pi k_mI/R\ ✓)
 $$
 
-with the same direction rule as the ring. Straight leads pointing **straight at** the center add nothing.
+where $\theta$ is the angle the arc covers **in radians** (a semicircle is $\pi$, a quarter circle $\pi/2$) and $R$ its radius. Same direction rule as the ring. Straight leads pointing **straight at** the center add nothing.
 
 **Example: a hairpin.** A long wire comes in from the left along $y=+R$, turns around a semicircle of radius $R$ centered at O, and goes back out along $y=-R$. Find $\vec B$ at O.
 
@@ -252,7 +295,7 @@ A **solenoid** is a coil of $N$ turns over a length $L$ carrying current $I$. It
 
 - **Inside** (long solenoid): a uniform field along the axis,
 $$\boxed{\ B=\frac{4\pi k_mNI}{L}=\mu_0\frac NLI\ }$$
-✅ on the sheet ($\mu_0NI/L$); direction by the ring rule (fingers along the current in the turns, thumb along $\vec B$).
+where $N$ is the number of turns, $L$ the solenoid's length (so $N/L$ is turns per meter), and $I$ the current in the wire. It doesn't depend on the radius or on where you are inside. ✅ on the sheet ($\mu_0NI/L$); direction by the ring rule (fingers along the current in the turns, thumb along $\vec B$).
 - **Outside:** the field of a single dipole with moment $M=NIA$ (§6–§7).
 
 ---
@@ -267,7 +310,7 @@ $$
 \boxed{\ |\vec m|=IA\quad(NIA\text{ for }N\text{ turns}),\qquad\text{direction: fingers along }I\text{, thumb along }\vec m\ }
 $$
 
-✅ The sheet gives $\mu=IA=I\pi R^2$; for $N$ turns, multiply by $N$ (each turn adds its own $IA$). Only the area matters, not the shape. The head of $\vec m$ is the **north pole**, the tail the **south pole**.
+where $I$ is the loop's current and $A$ the flat area it encloses ($\pi R^2$ for a circle, $ab$ for an $a\times b$ rectangle). Units A·m². ✅ The sheet gives $\mu=IA=I\pi R^2$ (the sheet calls the moment $\mu$, these notes call it $m$); for $N$ turns, multiply by $N$ (each turn adds its own $IA$). Only the area matters, not the shape. The head of $\vec m$ is the **north pole**, the tail the **south pole**.
 
 **Bar magnets** have moments too, even with no current: each electron is a tiny dipole (its **spin**), and in iron, cobalt, and nickel the spins line up so their moments add. A bar magnet behaves exactly like a current loop with the same $\vec m$, pointing from its S end to its N end.
 
@@ -280,6 +323,8 @@ Far from any small loop (or magnet), the field depends only on $\vec m$:
 $$
 \boxed{\ \vec B=k_m\frac{3(\vec m\cdot\hat r)\,\hat r-\vec m}{r^3}\ }
 $$
+
+where $\vec m$ is the dipole moment, $\vec r$ the vector from the dipole to the point ($r$ its length, $\hat r$ its direction), and $r$ is much bigger than the loop or magnet. The **axis** is the line through the dipole along $\vec m$; the **equator** is the plane through the dipole perpendicular to $\vec m$.
 
 ✍️ This general formula is **not** on the sheet. You'll mostly need two special places, and those **are** on the sheet (as magnitudes):
 
@@ -353,9 +398,11 @@ $$
 \boxed{\ \vec F=q\vec v\times\vec B\ }\qquad\text{(with an electric field too: }\vec F=q\vec E+q\vec v\times\vec B)
 $$
 
+where $q$ is the particle's charge (with its sign), $\vec v$ its velocity, and $\vec B$ the field at the particle's location (made by **something else**: a charge never pushes on itself).
+
 🧠 **Memorize**: the sheet's "relationship: magnetic field and magnetic force."
 
-- Size $|q|vB\sin\theta$. **Zero** if the charge is at rest or moves along $\vec B$.
+- Size $|q|vB\sin\theta$, where $\theta$ is the angle between $\vec v$ and $\vec B$. **Zero** if the charge is at rest or moves along $\vec B$.
 - $\vec F$ is perpendicular to both $\vec v$ and $\vec B$. Flip the direction for a negative charge.
 - **It does no work**, because it's always perpendicular to the motion. So the **speed never changes**; only the direction does. Energy conservation ($K+qV=$ constant) is unaffected by $\vec B$.
 
@@ -370,6 +417,8 @@ In a uniform field with $\vec v\perp\vec B$, the force is always perpendicular t
 $$
 \boxed{\ R=\frac{mv}{|q|B},\qquad \omega=\frac{|q|B}{m},\qquad T=\frac{2\pi m}{|q|B}\ }
 $$
+
+where **$m$ is the particle's mass** (not a dipole moment), $v$ its speed, $|q|$ the size of its charge, $B$ the field strength, $R$ the radius of the circle, $\omega$ the angular frequency (radians per second), and $T$ the time for one full circle.
 
 ✍️ None of these are on the sheet. Derive them in one line: the sheet gives circular motion as $\left|\dfrac{d\vec p}{dt}\right|_\perp=\dfrac{mv^2}{R}$ ✅, and the force is $|q|vB$ 🧠, so write $|q|vB=mv^2/R$ and solve. Then $\omega=v/R$ and $T=2\pi R/v$.
 
@@ -433,7 +482,7 @@ $$
 qE=qv_0B\quad\Longrightarrow\quad\boxed{v_0=\frac EB}
 $$
 
-✍️ Not on the sheet; write the force balance. Particles with that speed go straight; others bend. The charge's sign and mass don't matter (both forces flip together).
+✍️ Not on the sheet; write the force balance. Here $E$ and $B$ are the sizes of the two fields and $v_0$ the one speed that passes straight through. Particles with that speed go straight; others bend. The charge's sign and mass don't matter (both forces flip together).
 
 ## 13. The Hall effect
 
@@ -443,7 +492,7 @@ $$
 eE_H=ev_dB\quad\Longrightarrow\quad E_H=v_dB,\qquad |\Delta V_H|=v_dBw
 $$
 
-where $w$ is the strip's width (the distance between the two edges). ✍️ Not on the sheet; write the force balance.
+where $E_H$ is the Hall field across the strip, $v_d$ the drift speed of the moving charges, $\Delta V_H$ the voltage between the two edges, and $w$ the strip's width (the distance between the two edges). ✍️ Not on the sheet; write the force balance.
 
 ---
 
@@ -457,7 +506,7 @@ $$
 \boxed{\ \vec F=I\vec\ell\times\vec B\ }\ \text{(straight wire, uniform field)},\qquad \vec F=\int I\,d\vec\ell\times\vec B\ \text{(general)}
 $$
 
-where $\vec\ell$ points along the current. ✅ On the sheet as $\Delta\vec F=I\Delta\vec\ell\times\vec B$; for a long straight piece in a uniform field, the pieces just add up.
+where $I$ is the wire's current, $\vec\ell$ a vector as long as the wire pointing along the current, and $\vec B$ the field (from something else) at the wire. ✅ On the sheet as $\Delta\vec F=I\Delta\vec\ell\times\vec B$; for a long straight piece in a uniform field, the pieces just add up.
 
 - **Uniform field:** a **closed loop** feels **zero net force** (its pieces' forces cancel), though it can still feel a torque (§17).
 - ⚠️ **Uniform field, curved wire:** the force equals that on a straight wire between the same two endpoints. Example: a semicircle of radius $R$ feels $I(2R)B$.
@@ -471,7 +520,7 @@ $$
 \boxed{\ \frac FL=\frac{2k_mI_1I_2}{d}\ }\qquad\text{parallel currents attract, opposite currents repel}
 $$
 
-(the reverse of charges). ✍️ Not on the sheet: combine the sheet's wire field ($2k_mI_1/d$ for $r\ll L$) with $\Delta\vec F=I\Delta\vec\ell\times\vec B$. Check directions with the right-hand rule: find $\vec B_1$ at wire 2, then $\vec F_2=I_2\vec L\times\vec B_1$.
+(the reverse of charges). Here $F/L$ is the force per meter of wire, $I_1$ and $I_2$ the two currents, and $d$ the distance between the wires. ✍️ Not on the sheet: combine the sheet's wire field ($2k_mI_1/d$ for $r\ll L$) with $\Delta\vec F=I\Delta\vec\ell\times\vec B$. Check directions with the right-hand rule: find $\vec B_1$ at wire 2, then $\vec F_2=I_2\vec L\times\vec B_1$.
 
 **A rectangular loop next to a long wire.** The wire carries $I_1$ upward. The loop carries $I_2$; its sides of length $a$ are parallel to the wire (the near one at distance $d$, carrying current upward), and its sides of length $b$ are perpendicular.
 
@@ -549,7 +598,7 @@ $$
 \boxed{\ \vec\tau=\vec m\times\vec B,\qquad\tau=mB\sin\theta\ }
 $$
 
-where $\theta$ is the angle between $\vec m$ (perpendicular to the loop) and $\vec B$, **not** between the loop's plane and $\vec B$. ✅ On the sheet ($\vec\tau=\vec\mu\times\vec B$).
+where $\vec\tau$ is the torque (the twist, in N·m), $\vec m$ the loop's dipole moment ($m=NIA$), $\vec B$ the outside field, and $\theta$ the angle between $\vec m$ (perpendicular to the loop) and $\vec B$, **not** between the loop's plane and $\vec B$. ✅ On the sheet ($\vec\tau=\vec\mu\times\vec B$).
 
 - The torque turns $\vec m$ **toward** $\vec B$ and is zero once they line up. That's why a compass needle (a tiny magnet) points along the field.
 - **Energy:** $U=-\vec m\cdot\vec B$ ⚠️ ✍️ (not on the sheet). Derive it from the work against the torque: $U(\theta)=\int_{90°}^{\theta}mB\sin\theta'\,d\theta'=-mB\cos\theta$. Lowest ($-mB$) when aligned, which is stable; highest ($+mB$) when opposite. Flipping a dipole from aligned to opposite takes work $2mB$.
@@ -623,7 +672,7 @@ Both turn clockwise; the two torques are **not** equal and opposite.
 
 ## 19. Electric dipoles work the same way
 
-An **electric dipole** is charges $\pm q$ a distance $s$ apart, with $\vec p=qs$ pointing from $-$ to $+$. Swap $\vec m\to\vec p$, $\vec B\to\vec E$, $k_m\to k$:
+An **electric dipole** is charges $\pm q$ a distance $s$ apart, with **electric dipole moment** $\vec p=q\vec s$ (size $qs$, pointing from $-$ to $+$; units C·m). $\vec E$ is the outside electric field and $k=\frac1{4\pi\epsilon_0}$. Swap $\vec m\to\vec p$, $\vec B\to\vec E$, $k_m\to k$:
 
 | | Electric dipole | Magnetic dipole |
 |---|---|---|

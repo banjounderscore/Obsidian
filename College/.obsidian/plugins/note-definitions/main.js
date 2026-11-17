@@ -1422,6 +1422,51 @@ var DefManager = class {
     }
     return this.globalPrefixTree;
   }
+  // Local patch (scoped definition folders): a folder with the same name as the
+  // global definition folder (default "definitions") placed anywhere else in the
+  // vault only applies to notes inside that folder's parent folder. The global
+  // folder still applies everywhere. A note's def-context frontmatter overrides both.
+  getScopedDefFolderName() {
+    return this.getGlobalDefFolder().replace(/\/+$/, "").split("/").pop();
+  }
+  isInGlobalDefFolder(path) {
+    const global = this.getGlobalDefFolder().replace(/\/+$/, "");
+    return path === global || path.startsWith(global + "/");
+  }
+  getScopedDefFolders() {
+    const name = this.getScopedDefFolderName();
+    return this.app.vault.getAllLoadedFiles().filter(
+      (f) => f instanceof import_obsidian3.TFolder && f.name === name && !this.isInGlobalDefFolder(f.path)
+    );
+  }
+  isInScopedDefFolder(file) {
+    if (this.isInGlobalDefFolder(file.path)) {
+      return false;
+    }
+    return file.path.split("/").slice(0, -1).includes(this.getScopedDefFolderName());
+  }
+  // Limit the active note to the global folder plus scoped folders whose parent contains the note
+  applyScopedDefFolders() {
+    const scoped = this.getScopedDefFolders();
+    if (!this.activeFile || scoped.length === 0) {
+      return;
+    }
+    const notePath = this.activeFile.path;
+    const applicable = scoped.filter((folder) => {
+      const parent = folder.parent && folder.parent.path !== "/" ? folder.parent.path : "";
+      return parent === "" || notePath.startsWith(parent + "/");
+    });
+    const folderPaths = [
+      this.getGlobalDefFolder().replace(/\/+$/, "") + "/",
+      ...applicable.map((folder) => folder.path + "/")
+    ];
+    const filePaths = this.flattenPathList(folderPaths).filter(
+      (path) => this.globalDefs.getMapForFile(path)
+    );
+    this.buildLocalPrefixTree(filePaths);
+    this.buildLocalDefRepo(filePaths);
+    this.shouldUseLocal = true;
+  }
   // Updates active file and rebuilds local prefix tree if necessary
   updateActiveFile() {
     var _a;
@@ -1432,10 +1477,12 @@ var DefManager = class {
         this.activeFile
       );
       if (!metadataCache) {
+        this.applyScopedDefFolders();
         return;
       }
       const paths = (_a = metadataCache.frontmatter) == null ? void 0 : _a[DEF_CTX_FM_KEY];
       if (!paths) {
+        this.applyScopedDefFolders();
         return;
       }
       if (!Array.isArray(paths)) {
@@ -1531,6 +1578,10 @@ var DefManager = class {
     if (file.path.startsWith(this.getGlobalDefFolder())) {
       return true;
     }
+    // Local patch (scoped definition folders): files in a scoped "definitions" folder are def files too
+    if (this.isInScopedDefFolder(file)) {
+      return true;
+    }
     return getSettings().enableTagDefFileDiscovery && this.hasDefFileTag(file);
   }
   hasDefFileTag(file) {
@@ -1623,6 +1674,11 @@ Run 'List duplicate definitions' to review and resolve the duplicated definition
     this.markedDirty = [];
     this.buildPrefixTree();
     this.lastUpdate = Date.now();
+    // Local patch (scoped definition folders): the active note's scoped lookup holds
+    // references to the old per-file maps, so rebuild it after a definition file changes
+    if (dirtyFiles.length > 0) {
+      this.updateActiveFile();
+    }
   }
   // Global configs should always be used by default
   resetLocalConfigs() {
@@ -1652,13 +1708,28 @@ Run 'List duplicate definitions' to review and resolve the duplicated definition
     if (getSettings().enableTagDefFileDiscovery) {
       definitions.push(...await this.parseTaggedFiles());
     }
+    // Local patch (scoped definition folders): load every scoped folder too
+    // (updateActiveFile decides where each one applies). Different scopes may reuse a
+    // term, so only report duplicates that can be visible in the same note.
+    const caseSensitive = getSettings().defFileParseConfig.enableCaseSensitive;
+    const duplicates = findDuplicateDefinitions(definitions, caseSensitive);
+    const scopedDefinitions = [];
+    for (const folder of this.getScopedDefFolders()) {
+      const scopeDefs = await this.parseFolder(folder);
+      scopedDefinitions.push(...scopeDefs);
+      const scopeFiles = new Set(scopeDefs.map((def) => def.file.path));
+      findDuplicateDefinitions([...definitions, ...scopeDefs], caseSensitive).forEach((dup) => {
+        if (dup.occurrences.some((o) => scopeFiles.has(o.filePath))) {
+          duplicates.push(dup);
+        }
+      });
+    }
+    definitions.push(...scopedDefinitions);
     definitions.forEach((def) => {
       this.globalDefs.set(def);
     });
-    this.duplicateDefs = findDuplicateDefinitions(
-      definitions,
-      getSettings().defFileParseConfig.enableCaseSensitive
-    );
+    duplicates.sort((a, b) => a.key.localeCompare(b.key));
+    this.duplicateDefs = duplicates;
     this.buildPrefixTree();
     this.lastUpdate = Date.now();
   }
@@ -1731,6 +1802,12 @@ Error: ${msg}`,
       logWarn("Failed to get parent def folder");
     }
     const [folders, files] = parentDefFolder ? this.walkFolder(parentDefFolder) : [[], []];
+    // Local patch (scoped definition folders): offer scoped folders and files too (e.g. in "Add definition")
+    for (const scopedFolder of this.getScopedDefFolders()) {
+      const [scopedFolders, scopedFiles] = this.walkFolder(scopedFolder);
+      folders.push(...scopedFolders);
+      files.push(...scopedFiles);
+    }
     if (getSettings().enableTagDefFileDiscovery) {
       const existing = new Set(files.map((f) => f.path));
       this.app.vault.getMarkdownFiles().filter((f) => !existing.has(f.path) && this.hasDefFileTag(f)).forEach((f) => {
