@@ -639,7 +639,7 @@ To check a tree, ask: does every real constituent (*the author, the book, wrote 
 
 | Property | Meaning | Example |
 |---|---|---|
-| **Generative** | produce all (and only) the grammatical sentences, including new ones | |
+| **Generative** | produce all (and only) the grammatical sentences, including new ones | the fragment builds *Some reindeer eat lunch* and *They dance* (sentences no one memorized) but never \**Dance they* |
 | **One-to-many** | **one left side → several right sides** | **VP → V NP *and* VP → V** |
 | **Recursive** | a rule can invoke itself → no longest sentence (infinite generative capacity) | NP → NP PP, PP → P NP (*the book of the student in the forest of...*) |
 | **Language-specific** | they **must** be, because they encode **word order**, which varies | English Adj before N; French mostly after |
@@ -1015,8 +1015,8 @@ Test for subjectivity: A: *The box is {red / plastic / heavy / beautiful}.* B: *
 \begin{document}
 \begin{tikzpicture}[font=\normalsize]
 \begin{scope}
-\fill[corg!35] (0,0) circle (1.3);
-\fill[cblu!25] (1.5,0) circle (1.3);
+\fill[corg,fill opacity=0.3] (0,0) circle (1.3);
+\fill[cblu,fill opacity=0.25] (1.5,0) circle (1.3);
 \begin{scope}\clip (0,0) circle (1.3); \fill[green!50!black,opacity=0.55] (1.5,0) circle (1.3); \end{scope}
 \draw[thick] (0,0) circle (1.3) (1.5,0) circle (1.3);
 \node at (-0.5,1.6) {Swedish};
@@ -1024,15 +1024,15 @@ Test for subjectivity: A: *The box is {red / plastic / heavy / beautiful}.* B: *
 \node[align=center,font=\small] at (0.75,-1.9) {\textbf{intersective}: \emph{Swedish musician}\\= Swedish $\cap$ musician};
 \end{scope}
 \begin{scope}[xshift=6cm]
-\fill[cblu!25] (0,0) circle (1.4);
+\fill[cblu,fill opacity=0.25] (0,0) circle (1.4);
 \fill[green!50!black,opacity=0.55] (0.2,-0.2) circle (0.7);
 \draw[thick] (0,0) circle (1.4) (0.2,-0.2) circle (0.7);
 \node at (0,1.7) {musicians};
-\node[font=\small,text=white] at (0.2,-0.2) {skillful};
+\node[font=\small] at (0.2,-0.2) {skillful};
 \node[align=center,font=\small] at (0,-2) {\textbf{subsective}: \emph{skillful musician}\\$\subset$ musicians (skillful \emph{as} a musician)};
 \end{scope}
 \begin{scope}[xshift=11.5cm]
-\fill[cblu!25] (0,0) circle (1.2);
+\fill[cblu,fill opacity=0.25] (0,0) circle (1.2);
 \fill[green!50!black,opacity=0.55] (2.3,0) circle (0.8);
 \draw[thick] (0,0) circle (1.2) (2.3,0) circle (0.8);
 \node at (0,1.5) {musicians};
@@ -1048,7 +1048,7 @@ Test for subjectivity: A: *The box is {red / plastic / heavy / beautiful}.* B: *
 | **Intersective** | Adj N = Adj things ∩ N things | *Swedish musician*, ***American*** |
 | **Subsective** | Adj N ⊂ N, but not simply "Adj things" (a skillful musician isn't necessarily a skillful chef) | *skillful musician*, *important* |
 | **Privative** | Adj N is **not** an N | *former musician*, *fake* |
-| **Plastic** (??) | depends on the noun: *plastic chair* is a chair; *plastic flower* isn't a real flower | |
+| **Plastic** (??) | depends on the noun | *plastic chair* (still a chair: intersective) vs. *plastic flower* (not a real flower: privative-like) |
 
 ## Other word types
 
@@ -1203,7 +1203,7 @@ These inferences are called **conversational implicatures**. ⚠️ The slides o
 |---|---|---|
 | **Context-dependent** | same sentence, different implicature in a different context | $10 vs. $9 tickets |
 | **Cancelable** | can be retracted without contradiction | *Somewhere in the South of France, oh right, in **Marseille**!* (now B clearly knows) |
-| **Calculable** | the listener can work it out from what was said + the maxims | |
+| **Calculable** | the listener can work it out from what was said + the maxims | *Some passed* → "if all had, they'd have said *all* (Quantity), so not all did" |
 | **Reinforceable** | stating it outright isn't redundant | *some, but not all* |
 
 They do **not** project through negation (that's presuppositions).
@@ -1251,14 +1251,14 @@ Compliments are socially fraught even though they're "positive": accepting can s
 \definecolor{cpur}{RGB}{140,50,170}
 \begin{document}
 \begin{tikzpicture}[font=\normalsize,
-  q/.style={draw,thick,rounded corners,fill=cblu!10,align=center,minimum width=5cm,minimum height=1.1cm},
+  q/.style={draw,thick,rounded corners,fill=cblu,fill opacity=0.12,text opacity=1,align=center,minimum width=5cm,minimum height=1.1cm},
   a/.style={draw,very thick,rounded corners,align=center,minimum width=4.4cm,minimum height=1.3cm},
   arr/.style={-{Stealth[length=3mm]},thick}]
 \node[q] (q1) at (0,0) {Can the inference be \textbf{cancelled}\\without contradiction?};
-\node[a,fill=corg!15] (imp) at (6.5,0) {\textbf{Implicature}\\``It's late'' $\to$ ``I want to go home''\\(``...but I don't'' is fine)};
+\node[a,fill=corg,fill opacity=0.15,text opacity=1] (imp) at (6.5,0) {\textbf{Implicature}\\``It's late'' $\to$ ``I want to go home''\\(``...but I don't'' is fine)};
 \node[q] (q2) at (0,-3) {Does it \textbf{project} (survive)\\under negation?};
-\node[a,fill=cpur!15] (pre) at (6.5,-3) {\textbf{Presupposition}\\``The King is (not) bald''\\$\to$ ``There's a King''};
-\node[a,fill=cgrn!15] (ent) at (0,-6) {\textbf{Entailment}\\``I ran'' $\Rightarrow$ ``I exercised''\\``I didn't run'' $\not\Rightarrow$ ``I exercised''};
+\node[a,fill=cpur,fill opacity=0.15,text opacity=1] (pre) at (6.5,-3) {\textbf{Presupposition}\\``The King is (not) bald''\\$\to$ ``There's a King''};
+\node[a,fill=cgrn,fill opacity=0.15,text opacity=1] (ent) at (0,-6) {\textbf{Entailment}\\``I ran'' $\Rightarrow$ ``I exercised''\\``I didn't run'' $\not\Rightarrow$ ``I exercised''};
 \draw[arr] (q1) -- node[above]{yes} (imp);
 \draw[arr] (q1) -- node[left]{no} (q2);
 \draw[arr] (q2) -- node[above]{yes} (pre);
@@ -1311,8 +1311,8 @@ Compliments are socially fraught even though they're "positive": accepting can s
 | 23 | mentally organized with hierarchical structure | constituents |
 | 24 | metaphor ⚠️ | weight → seriousness, no "like" |
 | 25 | "project" through negation | survive *not* |
-| 26 | context-dependent, cancelable, calculable, reinforceable ⚠️ | |
-| 27 | changes involving their arguments | |
+| 26 | context-dependent, cancelable, calculable, reinforceable ⚠️ | the four implicature properties (projecting through negation is presupposition) |
+| 27 | changes involving their arguments | *I broke the window*: the window changes |
 | 28 | atelic | no endpoint (*for an hour*) |
 | 29 | furniture | \*two furnitures |
 | 30 | carbohydrate | defer to experts |
@@ -1327,13 +1327,13 @@ Compliments are socially fraught even though they're "positive": accepting can s
 | 39 | beautiful | not context-pointing |
 | 40 | American | American ∩ N |
 | 41 | all of these ⚠️ | good is up, time is money, arguments are wars |
-| 42 | fundamental to our thinking | |
+| 42 | fundamental to our thinking | we understand the abstract through the concrete |
 | 43 | "hereby" | performatives |
-| 44 | information we all mutually take for granted | |
+| 44 | information we all mutually take for granted | not all true facts, and not all entailments |
 | 45 | presupposition ⚠️ | factive *know* survives negation/questions |
 | 46 | implicature | cancelable (*...and a pencil too*) |
-| 47 | conventional pairing of discourse moves | |
-| 48 | we infer lots beyond what's strictly said | |
+| 47 | conventional pairing of discourse moves | greeting → greeting, question → answer |
+| 48 | we infer lots beyond what's strictly said | Grice's maxims; Levinson's sketchy Rembrandt drawing |
 | 49 | all of these | inference, short dependencies, short frequent words |
 | 50 | server shares our unstated assumptions ⚠️ | Searle |
 
