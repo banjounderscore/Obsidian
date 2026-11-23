@@ -349,27 +349,43 @@
     "expandedKeys": [
       "item-1-2"
     ],
-    "scroll": 87.69185615774776
+    "scroll": 200.64878048780488
   },
   "AP Precalculus/AP Precalculus Notes.md": {
     "expandedKeys": [
       "item-1-0",
-      "item-1-3",
-      "item-1-10",
-      "item-1-16",
       "item-1-21",
-      "item-1-46",
-      "item-1-37"
+      "item-1-16",
+      "item-1-10",
+      "item-1-28"
     ],
-    "scroll": 424.7913839891452,
+    "scroll": 272.7615062761506,
     "cursor": {
       "from": {
-        "line": 533,
-        "ch": 17
+        "line": 263,
+        "ch": 0
       },
       "to": {
-        "line": 533,
-        "ch": 17
+        "line": 263,
+        "ch": 0
+      }
+    }
+  },
+  "AP Precalculus/AP Precalculus Practice.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-1-3",
+      "item-1-19"
+    ],
+    "scroll": 546.6744186046511,
+    "cursor": {
+      "from": {
+        "line": 525,
+        "ch": 16
+      },
+      "to": {
+        "line": 525,
+        "ch": 16
       }
     }
   }

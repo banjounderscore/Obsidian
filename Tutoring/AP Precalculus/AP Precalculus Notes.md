@@ -25,23 +25,25 @@
 
 # Unit 0 — Prerequisite Skills
 
+In a quadratic, $a$, $b$, $c$ are the coefficients of $ax^2+bx+c$. In the factoring patterns, $a$ and $b$ stand for any two terms.
+
 | Skill | Rule | Example |
 |---|---|---|
-| Slope | $m=\frac{y_2-y_1}{x_2-x_1}$ | $(-2,5),(3,8)$: $m=\frac35$ |
-| Line forms | point-slope $y-y_1=m(x-x_1)$; slope-intercept $y=mx+b$; standard $Ax+By=C$ | $3x-5y=-31$ |
+| Slope | $m=\frac{y_2-y_1}{x_2-x_1}$ for the line through $(x_1,y_1)$ and $(x_2,y_2)$ | $(-2,5),(3,8)$: $m=\frac35$ |
+| Line forms | point-slope $y-y_1=m(x-x_1)$; slope-intercept $y=mx+b$ ($b$ = $y$-intercept); standard $Ax+By=C$ ($A,B,C$ integers) | $3x-5y=-31$ |
 | Inequalities | multiplying/dividing by a negative flips the sign | $-2x>6\Rightarrow x<-3$ |
 | Difference of squares | $a^2-b^2=(a-b)(a+b)$ | $4x^2-81=(2x-9)(2x+9)$ |
 | AC method | two numbers with product $ac$, sum $b$; split and group | $3x^2+13x-10=(3x-2)(x+5)$ |
 | Sum/difference of cubes | $a^3\pm b^3=(a\pm b)(a^2\mp ab+b^2)$ | $x^3-8=(x-2)(x^2+2x+4)$ |
-| Quadratic formula | $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$; vertex at $x=-\frac b{2a}$ | $2x^2-2x-5=0\Rightarrow x=\frac{1\pm\sqrt{11}}2$ |
+| Quadratic formula | $ax^2+bx+c=0\Rightarrow x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$; vertex at $x=-\frac b{2a}$ | $2x^2-2x-5=0\Rightarrow x=\frac{1\pm\sqrt{11}}2$ |
 | Discriminant | $b^2-4ac$: $>0$ two real, $=0$ one, $<0$ two non-real | $2x^2+3x+5$: $-31$ |
 | Quadratic inequality | find zeros, test signs between them | $(3x-2)(x-5)>0\Rightarrow x<\frac23$ or $x>5$ |
 | Rational expressions | factor and cancel; note excluded values | $\frac{x^2-x-6}{x^2-7x+12}=\frac{x+2}{x-4}$, $x\ne3,4$ |
-| Percent change | $a(1+r)^t$ growth, $a(1-r)^t$ decay | 30%/h: $250(1.3)^t$ |
+| Percent change | $a(1+r)^t$ growth, $a(1-r)^t$ decay ($a$ = starting amount, $r$ = rate as a decimal, $t$ = time) | 30%/h: $250(1.3)^t$ |
 
-**Exponents:** $b^mb^n=b^{m+n}$, $\frac{b^m}{b^n}=b^{m-n}$, $(b^m)^n=b^{mn}$, $b^0=1$, $b^{-n}=\frac1{b^n}$, $b^{m/n}=\sqrt[n]{b^m}$. **Radicals:** pull out squares ($\sqrt{75}=5\sqrt3$); rationalize ($\frac2{\sqrt3}=\frac{2\sqrt3}3$).
+**Exponents** (base $b$, exponents $m$, $n$): $b^mb^n=b^{m+n}$, $\frac{b^m}{b^n}=b^{m-n}$, $(b^m)^n=b^{mn}$, $b^0=1$, $b^{-n}=\frac1{b^n}$, $b^{m/n}=\sqrt[n]{b^m}$. **Radicals:** pull out squares ($\sqrt{75}=5\sqrt3$); rationalize ($\frac2{\sqrt3}=\frac{2\sqrt3}3$).
 
-**Complex numbers:** $i=\sqrt{-1}$, $i^2=-1$. A **complex number** is $a+bi$ (**non-real** if $b\ne0$); its **conjugate** is $a-bi$. Divide by multiplying by the conjugate: $\frac{3+7i}{2-i}=\frac{(3+7i)(2+i)}{5}=\frac{-1+17i}5$.
+**Complex numbers:** $i=\sqrt{-1}$, $i^2=-1$. A **complex number** is $a+bi$, where $a$ (the real part) and $b$ (the imaginary part) are real numbers. It's **non-real** if $b\ne0$; its **conjugate** is $a-bi$. Divide by multiplying by the conjugate: $\frac{3+7i}{2-i}=\frac{(3+7i)(2+i)}{5}=\frac{-1+17i}5$.
 
 ---
 
@@ -49,15 +51,15 @@
 
 ## 1.1 Change in tandem
 
-- A **function** maps each input to exactly one output. **Domain** = inputs, **range** = outputs. **Independent variable** = input, **dependent variable** = output. Two functions are **equal** if they share a domain and every output.
+- A **function** maps each input to exactly one output. In **function notation** $f(x)$, $f$ names the function, $x$ is the input, and $f(x)$ is the output. **Domain** = inputs, **range** = outputs. **Independent variable** = input, **dependent variable** = output. Two functions are **equal** if they share a domain and every output.
 - **Image** of an input = its output; **preimage** of an output = all inputs giving it.
 - Inputs and outputs vary together; a function can be given **V**erbally, **A**nalytically, **N**umerically, or **G**raphically (VANG).
-- **Increasing** on an interval: $a<b\Rightarrow f(a)<f(b)$. **Decreasing**: $a<b\Rightarrow f(a)>f(b)$. (Open vs. closed endpoints aren't tested.)
+- **Increasing** on an interval: for any two inputs $a<b$ in it, $f(a)<f(b)$. **Decreasing**: $a<b\Rightarrow f(a)>f(b)$. (Open vs. closed endpoints aren't tested.)
 - A **zero** is an input with output 0 (an $x$-intercept). The $y$-intercept is $(0,f(0))$.
 
 ## 1.2 Rates of change
 
-- **Average rate of change (AROC)** on $[a,b]$: $\dfrac{f(b)-f(a)}{b-a}$, outputs on top, units "output per input". Distance 76 m at 13 s and 30 m at 25 s: $\frac{-46}{12}\approx-3.833$ m/s.
+- **Average rate of change (AROC)** on the interval $[a,b]$ (from input $a$ to input $b$): $\dfrac{f(b)-f(a)}{b-a}$, outputs on top, units "output per input". Distance 76 m at 13 s and 30 m at 25 s: $\frac{-46}{12}\approx-3.833$ m/s.
 - **Rate of change at a point**: estimate with the AROC over a tiny interval. $x^3$ at 1: AROC on $[1,1.001]\approx3.003$.
 - **Positive** rate: both quantities move the same way. **Negative**: opposite ways.
 
@@ -102,16 +104,16 @@
 
 ## 1.4 Polynomial functions and rates of change
 
-- A **polynomial function** is $p(x)=a_nx^n+\dots+a_1x+a_0$ ($n$ a positive integer, $a_n\ne0$): **degree** $n$, **leading term** $a_nx^n$, **leading coefficient** $a_n$.
+- A **polynomial function** is $p(x)=a_nx^n+\dots+a_1x+a_0$, where $n$ is a positive integer and the **coefficients** $a_n,\dots,a_0$ are real numbers with $a_n\ne0$: **degree** $n$, **leading term** $a_nx^n$, **leading coefficient** $a_n$.
 - **Local (relative) max/min**: where it switches between increasing and decreasing (or an included endpoint). **Global (absolute) max/min**: largest/smallest output overall. Together these are **extrema**.
 - Between two distinct real zeros there's at least one local extremum. Even degree → a global max or a global min (a quadratic's is its vertex).
 - Example: $x^3-3x$ has local max 2 at $x=-1$, local min $-2$ at $x=1$, inflection at $x=0$.
 
 ## 1.5 Polynomial functions and complex zeros
 
-- $p(a)=0$ makes $a$ a **zero** of $p$ (a **root** of $p(x)=0$). For real $a$: $(x-a)$ is a factor ⇔ $a$ is a zero.
+- If a number $a$ (real or non-real) gives $p(a)=0$, then $a$ is a **zero** of $p$ (a **root** of $p(x)=0$). For real $a$: $(x-a)$ is a factor ⇔ $a$ is a zero.
 - A factor repeated $n$ times gives a zero of **multiplicity** $n$. Degree $n$ → exactly $n$ complex zeros, counting multiplicity.
-- Non-real zeros come in **conjugate pairs** $a\pm bi$, so odd degree → at least one real zero.
+- Non-real zeros come in **conjugate pairs** $a\pm bi$ (real $a,b$, $b\ne0$), so odd degree → at least one real zero.
 - Real zeros are $x$-intercepts and split the number line for inequalities: $(x+2)(x-1)^2(x-4)<0$ has signs $+,-,-,+$, so $-2<x<1$ or $1<x<4$.
 - Degree = smallest $n$ with constant $n$th differences (outputs 1, 2, 9, 28, 65 → third differences 6, 6 → cubic).
 
@@ -144,7 +146,7 @@
 
 ## 1.6 End behavior
 
-**End behavior** is what $p(x)$ does as $x\to\pm\infty$, written with **limit notation**: $\lim_{x\to\infty}p(x)=\infty$. The leading term decides it.
+**End behavior** is what a polynomial $p(x)$ does as $x\to\pm\infty$ ($x$ grows without bound in either direction), written with **limit notation**: $\lim_{x\to\infty}p(x)=\infty$. The leading term decides it.
 
 | Degree | Leading coefficient $>0$ | Leading coefficient $<0$ |
 |---|---|---|
@@ -166,7 +168,7 @@ A **rational function** is $r(x)=\frac{p(x)}{q(x)}$ with polynomials $p,q$. End 
 | numerator one higher | **slant asymptote** = long-division quotient | $\frac{x^2+3x+5}{x-1}\to y=x+4$ |
 | numerator ≥ two higher | like the polynomial quotient | $\frac{x^3+2}{x-1}$ acts like $x^2$ |
 
-A horizontal asymptote ($\lim_{x\to\pm\infty}r(x)=b$) describes only the ends; the graph can cross it in the middle.
+A horizontal asymptote $y=b$ (for a constant $b$, meaning $\lim_{x\to\pm\infty}r(x)=b$) describes only the ends; the graph can cross it in the middle.
 
 ## 1.8 Rational functions and zeros
 
@@ -175,12 +177,12 @@ A horizontal asymptote ($\lim_{x\to\pm\infty}r(x)=b$) describes only the ends; t
 
 ## 1.9 Vertical asymptotes
 
-- **Vertical asymptote** $x=a$: $a$ zeroes the denominator with higher multiplicity than in the numerator; outputs go to $\pm\infty$.
+- **Vertical asymptote** $x=a$ (a vertical line at input $a$): $a$ zeroes the denominator with higher multiplicity than in the numerator; outputs go to $\pm\infty$.
 - **One-sided limits**: $x\to a^+$ from the right, $x\to a^-$ from the left. Test a nearby value: $\frac{x+2}{x-3}$ has $\lim_{x\to3^+}=\infty$, $\lim_{x\to3^-}=-\infty$.
 
 ## 1.10 Holes
 
-A **hole** (a single missing point) is at $x=c$ when $c$'s multiplicity in the numerator is **at least** its multiplicity in the denominator. Cancel, then plug $c$ into the simplified form for its $y$-value: $\lim_{x\to c}r(x)$.
+A **hole** (a single missing point) is at an input $x=c$ when $c$'s multiplicity in the numerator is **at least** its multiplicity in the denominator. Cancel, then plug $c$ into the simplified form for its $y$-value: $\lim_{x\to c}r(x)$.
 
 Example: $\frac{(x-1)(x+2)}{(x-1)(x-3)}=\frac{x+2}{x-3}$, $x\ne1$: hole $(1,-1.5)$, vertical asymptote $x=3$, horizontal asymptote $y=1$, zero $x=-2$, $y$-intercept $-\frac23$.
 
@@ -210,8 +212,8 @@ Example: $\frac{(x-1)(x+2)}{(x-1)(x-3)}=\frac{x+2}{x-3}$, $x\ne1$: hole $(1,-1.5
 ## 1.11 Equivalent representations
 
 - **Factored form** shows zeros, asymptotes, holes, and the domain. **Standard form** shows end behavior.
-- **Binomial theorem**: $(a+b)^n$ takes its coefficients from row $n$ of **Pascal's triangle** (1; 1 1; 1 2 1; 1 3 3 1; 1 4 6 4 1). $(x+2)^4=x^4+8x^3+24x^2+32x+16$.
-- **Polynomial long division**: $f=g\cdot q+r$, with **quotient** $q$ and **remainder** $r$ (lower degree than $g$). $\frac{x^2+3x+5}{x-1}=x+4+\frac9{x-1}$; the quotient $y=x+4$ is the slant asymptote.
+- **Binomial theorem**: $(a+b)^n$ (any two terms $a$, $b$; whole-number power $n$) takes its coefficients from row $n$ of **Pascal's triangle** (1; 1 1; 1 2 1; 1 3 3 1; 1 4 6 4 1). $(x+2)^4=x^4+8x^3+24x^2+32x+16$.
+- **Polynomial long division**: dividing a polynomial $f$ by a polynomial $g$ gives $f=g\cdot q+r$, with **quotient** $q$ and **remainder** $r$ (lower degree than $g$). $\frac{x^2+3x+5}{x-1}=x+4+\frac9{x-1}$; the quotient $y=x+4$ is the slant asymptote.
 
 ---
 
@@ -219,7 +221,7 @@ Example: $\frac{(x-1)(x+2)}{(x-1)(x-3)}=\frac{x+2}{x-3}$, $x\ne1$: hole $(1,-1.5
 
 ## 1.12 Transformations
 
-A **parent function** is the simplest of its family ($x^2$, $\sqrt x$, $|x|$, $\frac1x$, $2^x$…). Adding a constant **translates** (slides) the graph; multiplying **dilates** (stretches) it.
+A **parent function** is the simplest of its family ($x^2$, $\sqrt x$, $|x|$, $\frac1x$, $2^x$…). Adding a constant **translates** (slides) the graph; multiplying **dilates** (stretches) it. Below, $f$ is the original function and $k$, $h$, $a$, $b$ are constants.
 
 | Equation | Effect on $f$ |
 |---|---|
@@ -228,7 +230,7 @@ A **parent function** is the simplest of its family ($x^2$, $\sqrt x$, $|x|$, $\
 | $a\,f(x)$ | vertical dilation by $\lvert a\rvert$; $a<0$ reflects over the $x$-axis |
 | $f(bx)$ | horizontal dilation by $\frac1{\lvert b\rvert}$; $b<0$ reflects over the $y$-axis |
 
-$y=a\,f(b(x-h))+k$ sends $(x,y)$ to $\left(\frac xb+h,\ ay+k\right)$: the **preimage** point maps to its **image**. Example: $-2f(x+3)+1$ sends $(1,4)$ to $(-2,-7)$. Domain and range can change.
+$y=a\,f(b(x-h))+k$ sends each point $(x,y)$ on the graph of $f$ to $\left(\frac xb+h,\ ay+k\right)$: the **preimage** point maps to its **image**. Example: $-2f(x+3)+1$ sends $(1,4)$ to $(-2,-7)$. Domain and range can change.
 
 ## Piecewise functions (between 1.12 and 1.13)
 
@@ -247,13 +249,13 @@ A **piecewise-defined function** uses different formulas on non-overlapping inte
 | Cubic | volume; constant third differences | open box |
 | Degree $n$ | $n+1$ points fit exactly; several zeros or extrema | 4 points → cubic |
 | Piecewise | different behavior on different intervals | accelerate, cruise, brake |
-| Rational | inverse proportion | gravity $\frac k{d^2}$ |
+| Rational | inverse proportion | gravity $\frac k{d^2}$ ($d$ = distance, $k$ = a constant) |
 
 Models carry **assumptions** (what stays constant) and need **domain/range restrictions** from context (time ≥ 0, whole people). FRQ 2 Part C asks for these.
 
 ## 1.14 Model construction and application
 
-Build from context (box: $V(x)=x(20-2x)(30-2x)$, $0<x<10$), from transformations of a parent, from **regression** (linear, quadratic, cubic, quartic on a calculator; round to 3 decimals at the end), or by combining pieces. Use the model to predict values and AROCs, with units.
+Build from context (cut $x$-inch squares from the corners of a 20 × 30 inch sheet and fold up the sides: the box's volume is $V(x)=x(20-2x)(30-2x)$, $0<x<10$), from transformations of a parent, from **regression** (linear, quadratic, cubic, quartic on a calculator; round to 3 decimals at the end), or by combining pieces. Use the model to predict values and AROCs, with units.
 
 ---
 
@@ -262,6 +264,11 @@ Build from context (box: $V(x)=x(20-2x)(30-2x)$, $0<x<10$), from transformations
 ## 2.1–2.2 Sequences; linear vs. exponential
 
 A **sequence** is a function on whole numbers $n=0,1,2,\dots$; its outputs are **terms**, and its graph is dots.
+
+Variables below:
+- $n$ is the term number, $a_n$ (arithmetic) or $g_n$ (geometric) is the $n$th term, and $a_0$, $g_0$ are the starting terms.
+- $k$ is the number of any term you already know, so $a_k$ or $g_k$ is that known term.
+- For functions, $(x_i,y_i)$ is any known point. In the linear form, $b$ is the starting value (the $y$-intercept). In the exponential form, $a$ is the starting value and $b$ is the base.
 
 | | Arithmetic / linear | Geometric / exponential |
 |---|---|---|
@@ -278,9 +285,11 @@ A **sequence** is a function on whole numbers $n=0,1,2,\dots$; its outputs are *
 $f(x)=ab^x$: **initial value** $a=f(0)\ne0$, **base** $b>0$, $b\ne1$. **Growth** if $a>0,b>1$; **decay** if $a>0,0<b<1$.
 
 - Domain all reals; always increasing or decreasing; one concavity; no extrema or inflection points.
-- Horizontal asymptote $y=0$ ($\lim_{x\to-\infty}2^x=0$). $ab^x+k$ moves it to $y=k$; subtract $k$ from data to reveal proportional outputs.
+- Horizontal asymptote $y=0$ ($\lim_{x\to-\infty}2^x=0$). Adding a constant $k$, as in $ab^x+k$, moves it to $y=k$; subtract $k$ from data to reveal proportional outputs.
 
 ## 2.4 Exponential manipulation
+
+Base $b>0$; $k$ and $c$ are constants.
 
 | Rule | Meaning | Example |
 |---|---|---|
@@ -291,8 +300,9 @@ $f(x)=ab^x$: **initial value** $a=f(0)\ne0$, **base** $b>0$, $b\ne1$. **Growth**
 
 ## 2.5 Exponential modeling
 
-- Growth factor $b=1+r$ ($r$ = percent per unit); decay $b=1-r$.
-- Rewrite to change units: $2^d=128^{d/7}$ (×2 daily = ×128 weekly); yearly 1.06 = monthly $1.06^{1/12}\approx1.00487$. Half-life $h$: $A_0(\frac12)^{t/h}$.
+- Growth factor $b=1+r$ ($r$ = percent change per unit of input, as a decimal); decay $b=1-r$.
+- Rewrite to change units: with $d$ in days, $2^d=128^{d/7}$ (×2 daily = ×128 weekly); yearly 1.06 = monthly $1.06^{1/12}\approx1.00487$.
+- Half-life (the time $h$ for the amount to halve): $A_0(\frac12)^{t/h}$, with starting amount $A_0$ and time $t$.
 - Build from an initial value and ratio, two points, transformations, or **exponential regression**. The **natural base** $e\approx2.718$ is common in models.
 
 ## 2.6 Competing models
@@ -303,7 +313,7 @@ $f(x)=ab^x$: **initial value** $a=f(0)\ne0$, **base** $b>0$, $b\ne1$. **Growth**
 
 ## 2.7A Composition
 
-$(f\circ g)(x)=f(g(x))$: apply $g$, then $f$.
+For two functions $f$ and $g$, the **composition** $(f\circ g)(x)=f(g(x))$ applies $g$, then $f$.
 
 - Domain: $x$ in $g$'s domain with $g(x)$ in $f$'s domain ($\sqrt{x-5}$ needs $x\ge5$).
 - Not commutative: $f(x)=x^2$, $g(x)=x+3$ give $(x+3)^2$ vs. $x^2+3$.
@@ -323,20 +333,22 @@ Write a function as $f(g(x))$: $\sqrt{3x+1}$ has $f=\sqrt x$, $g=3x+1$. Adding o
 ## 2.8 Inverse functions
 
 - **Invertible** on a domain if each output comes from exactly one input (**one-to-one**).
-- The **inverse** reverses pairs: $f(a)=b\iff f^{-1}(b)=a$. $f(f^{-1}(x))=f^{-1}(f(x))=x$; domain and range swap; the graph reflects over $y=x$.
+- The **inverse** $f^{-1}$ reverses every input-output pair: if $f$ sends input $a$ to output $b$, then $f^{-1}$ sends $b$ back to $a$ ($f(a)=b\iff f^{-1}(b)=a$). $f(f^{-1}(x))=f^{-1}(f(x))=x$; domain and range swap; the graph reflects over $y=x$.
 - To find it, swap $x$ and $y$ and solve: $f(x)=\frac{2x-1}3\Rightarrow f^{-1}(x)=\frac{3x+1}2$.
 - Restrict the domain to make a function invertible ($x^2$ on $x\ge0$ → $\sqrt x$). $f^{-1}\ne\frac1f$.
 - FRQ 1: justify "not invertible" with a repeated output ("$f(3)=f(5)=2$"), not the horizontal line test.
 
 ## 2.9 Logarithmic expressions
 
-$$\log_bc=a\iff b^a=c\qquad(b>0,\ b\ne1)$$
+A **logarithm** gives an exponent: $\log_bc$ is the power you raise the **base** $b$ to in order to get $c$.
+
+$$\log_bc=a\iff b^a=c\qquad(b>0,\ b\ne1,\ c>0)$$
 
 $\log x$ is base 10 (**common log**); $\ln x$ is base $e$ (**natural log**). Examples: $\log_28=3$, $\log_3\frac19=-2$, $\log_b1=0$, $\log_bb=1$. Estimate by bracketing: $\log_210$ is between 3 and 4. On a **logarithmic scale** each step multiplies by the base ($10^0,10^1,10^2,\dots$).
 
 ## 2.10–2.11 Logarithmic functions
 
-$f(x)=a\log_bx$ is the inverse of $b^x$: $(s,t)$ on $b^x$ ↔ $(t,s)$ on $\log_bx$. Exponential: outputs multiply as inputs add. Logarithmic: outputs add as inputs multiply.
+A **logarithmic function** is $f(x)=a\log_bx$ (constant $a\ne0$, base $b$). $\log_bx$ is the inverse of $b^x$: if a point $(s,t)$ is on $y=b^x$, then $(t,s)$ is on $y=\log_bx$. Exponential: outputs multiply as inputs add. Logarithmic: outputs add as inputs multiply.
 
 | Feature | $b^x$ ($b>1$) | $\log_bx$ ($b>1$) |
 |---|---|---|
@@ -346,7 +358,7 @@ $f(x)=a\log_bx$ is the inverse of $b^x$: $(s,t)$ on $b^x$ ↔ $(t,s)$ on $\log_b
 | Key point | $(0,1)$ | $(1,0)$ |
 | Shape | increasing, concave up | increasing, concave down |
 
-Logs, like exponentials, have no extrema and no inflection points. $\log_b(x+k)$ has its asymptote at $x=-k$.
+Logs, like exponentials, have no extrema and no inflection points. Shifting by a constant $k$, $\log_b(x+k)$ has its asymptote at $x=-k$.
 
 ```tikz
 \usetikzlibrary{arrows.meta}
@@ -370,6 +382,8 @@ Logs, like exponentials, have no extrema and no inflection points. $\log_b(x+k)$
 ```
 
 ## 2.12 Log properties
+
+For positive $x$ and $y$, any real power $n$, and bases $b$ (positive, not 1):
 
 | Property | Rule | Graph meaning |
 |---|---|---|
@@ -398,11 +412,11 @@ Expand: $\log_2\frac{8x^3}y=3+3\log_2x-\log_2y$. Never: $\log(x+y)=\log x+\log y
 
 ## 2.14 Log modeling
 
-Use a log model when inputs multiply while outputs add (inputs 1, 3, 9, 27 → outputs 2, 5, 8, 11). Build from two points or **logarithmic regression** (LnReg: $y=a+b\ln x$). Through $(1,5)$ and $(e^2,11)$: $f(x)=3\ln x+5$.
+Use a log model when inputs multiply while outputs add (inputs 1, 3, 9, 27 → outputs 2, 5, 8, 11). Build from two points or **logarithmic regression** (LnReg fits $y=a+b\ln x$ and reports the constants $a$ and $b$). Through $(1,5)$ and $(e^2,11)$: $f(x)=3\ln x+5$.
 
 ## 2.15 Semi-log plots
 
-A **semi-log plot** has a log-scaled $y$-axis; exponential data look **linear**. $y=ab^x$ becomes $\log y=(\log b)x+\log a$. A line $\log y=0.3x+1$ means $y=10(10^{0.3})^x$.
+A **semi-log plot** has a log-scaled $y$-axis; exponential data look **linear**. Taking $\log$ (base 10) of $y=ab^x$ gives $\log y=(\log b)x+\log a$: a line with slope $\log b$ and intercept $\log a$. A line $\log y=0.3x+1$ means $y=10(10^{0.3})^x$.
 
 ---
 
@@ -414,13 +428,13 @@ In a right triangle with acute angle $\theta$: $\sin\theta=\frac{\text{opposite}
 
 ## 3.1 Periodic phenomena
 
-A relationship is **periodic** if its outputs repeat over equal input intervals. The **period** is the smallest $k$ with $f(x+k)=f(x)$; one period of graph is a **cycle**. Estimate it as the time between consecutive maxima.
+A relationship is **periodic** if its outputs repeat over equal input intervals. The **period** is the smallest positive number $k$ with $f(x+k)=f(x)$ for every input $x$; one period of graph is a **cycle**. Estimate it as the time between consecutive maxima.
 
 ## 3.2 Sine, cosine, tangent
 
-- **Standard position**: vertex at the origin, **initial ray** on the positive $x$-axis; the other ray is the **terminal ray**. Counterclockwise is positive. **Coterminal** angles differ by $2\pi k$.
-- **Radians**: $\theta=\frac sr$ (arc over radius). $2\pi$ = full turn; degrees × $\frac\pi{180}$. On the **unit circle** (radius 1), $\theta=s$.
-- With $P=(x,y)$ on the terminal ray at distance $r$: $\sin\theta=\frac yr$, $\cos\theta=\frac xr$, $\tan\theta=\frac yx=\frac{\sin\theta}{\cos\theta}$ (the terminal ray's slope).
+- **Standard position**: vertex at the origin, **initial ray** on the positive $x$-axis; the other ray is the **terminal ray**. Counterclockwise is positive. **Coterminal** angles differ by $2\pi k$ for some integer $k$ (whole turns).
+- **Radians**: $\theta=\frac sr$, where $s$ is the length of the arc the angle cuts off and $r$ is the circle's radius. $2\pi$ = full turn; degrees × $\frac\pi{180}$. On the **unit circle** (radius 1), $\theta=s$.
+- Let $P=(x,y)$ be a point on the terminal ray and $r$ its distance from the origin: $\sin\theta=\frac yr$, $\cos\theta=\frac xr$, $\tan\theta=\frac yx=\frac{\sin\theta}{\cos\theta}$ (the terminal ray's slope).
 
 ## 3.3 Sine and cosine values
 
@@ -487,7 +501,7 @@ A **sinusoidal function** is a transformation of $\sin\theta$; $\cos\theta=\sin(
 
 ## 3.6 Sinusoidal transformations
 
-$f(\theta)=a\sin(b(\theta+c))+d$ (same for cosine):
+$f(\theta)=a\sin(b(\theta+c))+d$, with constants $a$, $b$, $c$, $d$ (same for cosine):
 
 | Parameter | Effect | In $3\sin(2(\theta-\frac\pi4))+1$ |
 |---|---|---|
@@ -502,7 +516,7 @@ Factor $b$ out first: $\sin(2\theta-\frac\pi2)$ shifts right $\frac\pi4$, not $\
 
 Period from consecutive maxima → $b=\frac{2\pi}{\text{period}}$; amplitude and $d$ from max and min; phase shift from a known point (cosine starts at a max, $-\cos$ at a min, sine on the midline going up). Or use sinusoidal regression.
 
-Ferris wheel (center 25 m, radius 20 m, 8 min per turn, starts at the bottom): $h(t)=-20\cos(\frac\pi4t)+25$. FRQ 3 labels the points as below: F$(4,45)$, G$(6,25)$, J$(8,5)$, K$(10,25)$, P$(12,45)$.
+Ferris wheel (center 25 m, radius 20 m, 8 min per turn, starts at the bottom): the rider's height in meters after $t$ minutes is $h(t)=-20\cos(\frac\pi4t)+25$. FRQ 3 labels the points as below: F$(4,45)$, G$(6,25)$, J$(8,5)$, K$(10,25)$, P$(12,45)$.
 
 ```tikz
 \usetikzlibrary{arrows.meta}
@@ -533,7 +547,7 @@ Ferris wheel (center 25 m, radius 20 m, 8 min per turn, starts at the bottom): $
 
 ## 3.8 Tangent 🔒
 
-$\tan\theta=\frac{\sin\theta}{\cos\theta}$: period $\pi$, vertical asymptotes at $\frac\pi2+k\pi$, zeros at $k\pi$. It increases between asymptotes (concave down, then up; inflection at the zero). For $a\tan(b(\theta+c))+d$: vertical dilation $\lvert a\rvert$ (no amplitude), period $\frac\pi{\lvert b\rvert}$, shift $-c$, and $d$ moves the inflection points.
+$\tan\theta=\frac{\sin\theta}{\cos\theta}$: period $\pi$, vertical asymptotes at $\frac\pi2+k\pi$, zeros at $k\pi$ ($k$ any integer). It increases between asymptotes (concave down, then up; inflection at the zero). For $a\tan(b(\theta+c))+d$ (constants $a$, $b$, $c$, $d$): vertical dilation $\lvert a\rvert$ (no amplitude), period $\frac\pi{\lvert b\rvert}$, shift $-c$, and $d$ moves the inflection points.
 
 ```tikz
 \usetikzlibrary{arrows.meta}
@@ -564,7 +578,7 @@ $\sin^{-1}x\ne\frac1{\sin x}$. Outputs must land in the range: $\arcsin(\sin\fra
 
 ## 3.10 Trig equations and inequalities 🔒
 
-Isolate the trig function, find every solution in $[0,2\pi)$ (usually two quadrants), then add $2\pi k$ (sine, cosine) or $\pi k$ (tangent).
+Isolate the trig function, find every solution in $[0,2\pi)$ (usually two quadrants), then add $2\pi k$ (sine, cosine) or $\pi k$ (tangent), where $k$ is any integer.
 
 | Equation | Solutions in $[0,2\pi)$ |
 |---|---|
@@ -585,7 +599,7 @@ Inequalities: solve the equation, then read intervals from the circle ($\sin\the
 
 ## 3.12 Identities 🔒
 
-An **identity** holds for every input where both sides are defined.
+An **identity** holds for every input where both sides are defined. $\alpha$ and $\beta$ are any two angles.
 
 | Identity | Formula |
 |---|---|
@@ -604,13 +618,15 @@ The **polar coordinate system** uses circles around the **pole** (origin) and ra
 
 - Polar → rectangular: $x=r\cos\theta$, $y=r\sin\theta$. $(4,\frac{2\pi}3)\to(-2,2\sqrt3)$.
 - Rectangular → polar: $r=\sqrt{x^2+y^2}$, $\theta=\arctan\frac yx$ (add $\pi$ if $x<0$). $(-3,3)\to(3\sqrt2,\frac{3\pi}4)$.
-- Complex plane: $a+bi$ is the point $(a,b)$, or $r\cos\theta+ir\sin\theta$.
+- Complex plane: $a+bi$ is the point $(a,b)$; with that point's polar coordinates $(r,\theta)$, it's $r\cos\theta+ir\sin\theta$.
 
 ## 3.14 Polar graphs 🔒
 
 A **polar function** $r=f(\theta)$ takes an angle and gives a radius. Plot from a table of $\theta$ values; restricting $\theta$ draws part of the curve.
 
-| Curve | Equation ($a,b>0$) | Tell |
+Below, $a$ and $b$ are positive constants and $n$ is a positive integer.
+
+| Curve | Equation | Tell |
 |---|---|---|
 | Circle | $r=a$; $r=a\cos\theta$ or $a\sin\theta$ | around the pole; through the pole |
 | Rose | $r=a\cos n\theta$ or $a\sin n\theta$ | $n$ petals if $n$ odd, $2n$ if even |
@@ -647,7 +663,7 @@ Distance from the pole is $\lvert r\rvert$:
 | $r>0$ | away from the pole | toward the pole |
 | $r<0$ | toward the pole | away from the pole |
 
-Where $r$ switches direction, the point is relatively closest to or farthest from the pole. AROC of $r$ = $\frac{\Delta r}{\Delta\theta}$ (radius per radian): $r=1+2\cos\theta$ on $[0,\frac\pi2]$ gives $-\frac4\pi$.
+Where $r$ switches direction, the point is relatively closest to or farthest from the pole. AROC of $r$ = $\frac{\Delta r}{\Delta\theta}$ ($\Delta$ means "change in"; radius per radian): $r=1+2\cos\theta$ on $[0,\frac\pi2]$ gives $-\frac4\pi$.
 
 ---
 
@@ -655,14 +671,16 @@ Where $r$ switches direction, the point is relatively closest to or farthest fro
 
 🔒 Taught after the AP exam; **not on the AP exam**.
 
+Notation: capital letters ($A$, $B$, $T$, $X$) are matrices. A $2\times2$ matrix is written $\begin{bmatrix}a&b\\c&d\end{bmatrix}$. A **vector** $\vec v=\langle x,y\rangle$ is a quantity with two components, written as a column; $\vec0=\langle0,0\rangle$.
+
 | Topic | Key facts | Example |
 |---|---|---|
-| 4.10 **Matrix** | $n\times m$ = rows × columns. $AB$ needs columns of $A$ = rows of $B$; entry = **dot product** of row and column (multiply matching entries, add). Usually $AB\ne BA$ | $\begin{bmatrix}1&2\\3&4\end{bmatrix}\begin{bmatrix}5\\6\end{bmatrix}=\begin{bmatrix}17\\39\end{bmatrix}$ |
+| 4.10 **Matrix** | a grid of numbers; $n\times m$ = $n$ rows × $m$ columns. $AB$ needs columns of $A$ = rows of $B$; entry = **dot product** of row and column (multiply matching entries, add). Usually $AB\ne BA$ | $\begin{bmatrix}1&2\\3&4\end{bmatrix}\begin{bmatrix}5\\6\end{bmatrix}=\begin{bmatrix}17\\39\end{bmatrix}$ |
 | 4.11 **Identity, determinant, inverse** | $I$ has 1s on the diagonal. $\det=ad-bc$. $A^{-1}=\frac1{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}$, exists iff $\det\ne0$. $\lvert\det\rvert$ = parallelogram area | $\begin{bmatrix}2&1\\5&3\end{bmatrix}^{-1}=\begin{bmatrix}3&-1\\-5&2\end{bmatrix}$ |
-| Systems | $AX=B\Rightarrow X=A^{-1}B$ | $2x+y=4$, $5x+3y=11$ → $(1,2)$ |
-| 4.12 **Linear transformation** | $L(\vec v)=A\vec v$; outputs are sums of constant multiples of inputs; sends $\vec0$ to $\vec0$ | many vectors at once: put them in columns |
+| Systems | $AX=B$ ($A$ = coefficients, $X$ = unknowns, $B$ = constants) $\Rightarrow X=A^{-1}B$ | $2x+y=4$, $5x+3y=11$ → $(1,2)$ |
+| 4.12 **Linear transformation** | a function $L$ from vectors to vectors with $L(\vec v)=A\vec v$ for a matrix $A$; outputs are sums of constant multiples of inputs; sends $\vec0$ to $\vec0$ | many vectors at once: put them in columns |
 | 4.13 Matrices as functions | columns = images of $\langle1,0\rangle,\langle0,1\rangle$; rotation $\begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix}$; $\lvert\det\rvert$ = area scale; $B$ then $A$ = $AB$; inverse uses $A^{-1}$ | 90°: $\langle3,1\rangle\to\langle-1,3\rangle$ |
-| 4.14 **Transition matrix** | columns = "from" states; next $=T\vec x$, past $=T^{-1}\vec x$, steady state $T\vec x=\vec x$ | $T=\begin{bmatrix}0.8&0.1\\0.2&0.9\end{bmatrix}$: $\begin{bmatrix}300\\0\end{bmatrix}\to\begin{bmatrix}240\\60\end{bmatrix}$; steady 100/200 |
+| 4.14 **Transition matrix** | $T$ holds the rates of moving between states, with columns = "from" states; the **state vector** $\vec x$ holds the current counts. Next $=T\vec x$, past $=T^{-1}\vec x$, steady state $T\vec x=\vec x$ | $T=\begin{bmatrix}0.8&0.1\\0.2&0.9\end{bmatrix}$: $\begin{bmatrix}300\\0\end{bmatrix}\to\begin{bmatrix}240\\60\end{bmatrix}$; steady 100/200 |
 
 ---
 
@@ -693,5 +711,5 @@ From the class's FRQ guides. Always: radian mode, store values and round to 3 de
 **FRQ 3 method:**
 - $y$-values: F and P are maxima, J is the minimum, G and K are on the midline.
 - $t$-values: put the start at $t=0$ (extend left if it starts at a min), then step by $\frac{\text{period}}4$.
-- $b$ and $d$ first. Sine must start on the midline, cosine at a max or min. $a<0$ if you start at G (sine) or J (cosine). $c$ = −(starting $t$).
+- For $h(t)=a\sin(b(t+c))+d$ or $a\cos(b(t+c))+d$, find $b$ and $d$ first. Sine must start on the midline, cosine at a max or min. $a<0$ if you start at G (sine) or J (cosine). $c$ = −(starting $t$).
 - Part C script: "The graph is concave up, and the rates of change are increasing over this interval."

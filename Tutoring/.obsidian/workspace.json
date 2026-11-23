@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AP Precalculus/AP Precalculus Notes.md",
-                "mode": "source",
+                "file": "AP Precalculus/AP Precalculus Review.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AP Precalculus Notes"
+              "title": "AP Precalculus Review"
             }
           },
           {
@@ -27,16 +27,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AP Precalculus/AP Precalculus Notes.md",
-                "mode": "source",
+                "file": "AP Precalculus/AP Precalculus Practice.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AP Precalculus Notes"
+              "title": "AP Precalculus Practice"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -215,26 +214,26 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "fe1b20d332b133b6",
+  "active": "1a1ff27e46b56492",
   "lastOpenFiles": [
-    "AP Precalculus/AP Precalculus Practice.md",
-    "AP Precalculus/AP Precalculus Practice.md.tmp.4332.b0293b754e48",
-    "AP Precalculus/AP Precalculus Review.md",
     "AP Precalculus/AP Precalculus Notes.md",
-    "AP Precalculus/AP Precalculus Notes.md.tmp.4332.e89fa8d8f45b",
-    "AP Precalculus/AP Precalculus Notes.md.tmp.4332.026bf86dc8f1",
-    "AP Precalculus/AP Precalculus Notes.md.tmp.4332.42ce9336fa59",
-    "AP Precalculus",
+    "AP Precalculus/AP Precalculus Practice.md",
+    "AP Precalculus/AP Precalculus Notes.md.tmp.4332.caa43f74e132",
+    "AP Precalculus/AP Precalculus Notes.md.tmp.4332.6eff02b004fd",
+    "AP Precalculus/AP Precalculus Notes.md.tmp.4332.2ed4a98173df",
+    "AP Precalculus/AP Precalculus Notes.md.tmp.4332.a2884c9f561c",
+    "AP Precalculus/AP Precalculus Notes.md.tmp.4332.06453582e9c5",
+    "AP Precalculus/AP Precalculus Notes.md.tmp.4332.d4737b7608dc",
+    "AP Precalculus/AP Precalculus Notes.md.tmp.4332.e3e8ceacc0cd",
+    "AP Precalculus/AP Precalculus Notes.md.tmp.4332.9fad73f346d2",
+    "AP Precalculus/AP Precalculus Notes.md.tmp.4332.d6cdc2757286",
+    "AP Precalculus/AP Precalculus Notes.md.tmp.4332.2eadf5da9dd4",
+    "AP Precalculus/AP Precalculus Review.md",
     "Physics 2212/Test 3/Physics 2212 Test 3 Practice Questions.md",
     "Physics 2212/Test 3/Physics 2212 Test 3 Notes.md",
     "Ling 2100/Exam 2/Ling 2100 Exam 2 Notes.md",
     "Ling 2100/definitions/Ling 2100 Glossary.md",
-    "Ling 2100/definitions",
     "Ling 2100/Exam 1/Ling 2100 Exam 1 Notes.md",
-    "Ling 2100/Exam 2",
-    "Ling 2100/Exam 1",
-    "Physics 2212/Test 3/Physics 2212 Test 3 Notes.md.tmp.5100.353d66dc2855",
-    "Physics 2212/Test 3/Physics 2212 Test 3 Notes.md.tmp.5100.aa6fa75211e0",
     "Physics 2212/Test 3/Physics 2212 Test 3 Review.md",
     "Physics 2212/Test 1/Physics 2212 Test 1 Practice Problems.md",
     "Physics 2212/Test 2/Physics 2212 Test 2 Wrapper.md",
@@ -261,7 +260,6 @@
     "Ling 2100/LING2100_Exam_Notes.md",
     "Ling 2100/LING2100_Notes/LING2100_Exam_Notes.md",
     "Ling 2100/Ling 2100 Notes - Copy.md",
-    "Physics 2212/Physics 2212 Notes V2.md",
-    "Physics 2212/Physics 2212 Notes (1).md"
+    "Physics 2212/Physics 2212 Notes V2.md"
   ]
 }
