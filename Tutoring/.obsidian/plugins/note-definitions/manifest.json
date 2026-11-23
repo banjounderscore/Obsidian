@@ -1,0 +1,9 @@
+{
+	"id": "note-definitions",
+	"name": "Note Definitions",
+	"version": "999.0.0",
+	"minAppVersion": "1.13.6",
+	"description": "Personal dictionary for your notes. [LOCALLY PATCHED from v0.33.0 (TikZ-safe rendering, startup refresh, folder-scoped definitions folders); version pinned to block updates]",
+	"author": "Dominic Let",
+	"isDesktopOnly": false
+}
